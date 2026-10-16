@@ -36,73 +36,89 @@ def load_json(name: str) -> list | dict:
     return []
 
 
+def _f(x, default: float) -> float:
+    """Безопасное приведение к float (None/пропуски -> default)."""
+    try:
+        v = float(x)
+        if v != v:  # NaN
+            return default
+        return v
+    except (TypeError, ValueError):
+        return default
+
+
 def instrument_universe() -> list[ProtocolRisk]:
-    """Строит вселенную инструментов из данных WS; fallback — консервативные дефолты."""
+    """Строит вселенную инструментов из данных WS; fallback — консервативные дефолты.
+
+    Все ставки в JSON-данных указаны В ПРОЦЕНТАХ (5.0 = 5%); здесь нормализуются в доли.
+    """
     instruments: list[ProtocolRisk] = []
 
-    def add(name, apy, p_hack, lgd=0.9, p_depeg=0.002, lgd_depeg=0.1,
-            rate_vol=0.02, recovery=0.3, src="DEFAULT"):
+    def add_pct(name, apy_pct, p_hack_pct=0.5, lgd=0.9, p_depeg=0.002, lgd_depeg=0.1,
+                rate_vol=0.02, recovery=0.3, src="DEFAULT"):
         instruments.append(ProtocolRisk(
-            name=f"{name} [{src}]", apy=apy, p_hack=p_hack, lgd_hack=lgd,
-            p_depeg=p_depeg, lgd_depeg=lgd_depeg, rate_volatility=rate_vol,
-            recovery_rate_hack=recovery))
+            name=f"{name} [{src}]",
+            apy=_f(apy_pct, 4.0) / 100.0,
+            p_hack=_f(p_hack_pct, 0.5) / 100.0,
+            lgd_hack=lgd, p_depeg=p_depeg, lgd_depeg=lgd_depeg,
+            rate_volatility=rate_vol, recovery_rate_hack=recovery))
 
     # --- данные WS1: lending ---
     ws1 = load_json("ws1_stablecoin_lending.json")
     if isinstance(ws1, list) and ws1:
         for it in ws1[:14]:
-            add(it.get("protocol", "?") + " " + it.get("asset", "USD"),
-                float(it.get("apy_pct", 4)) / 100.0,
-                float(it.get("hack_probability_annual_pct", 0.5)) / 100.0,
-                rate_vol=0.015, src="WS1")
+            add_pct(it.get("protocol", "?") + " " + str(it.get("asset", "USD")),
+                    it.get("apy_pct", 4),
+                    it.get("hack_probability_annual_pct", 0.5),
+                    rate_vol=0.015, src="WS1")
     else:
-        add("Aave v3 USDC", 0.045, 0.002, rate_vol=0.015, recovery=0.5)
-        add("Morpho USDC vault", 0.05, 0.004, rate_vol=0.02, recovery=0.3)
-        add("sUSDS (Sky)", 0.065, 0.003, rate_vol=0.02, recovery=0.4)
-        add("Kamino USDC", 0.06, 0.006, rate_vol=0.025, recovery=0.2)
+        add_pct("Aave v3 USDC", 4.5, 0.2, rate_vol=0.015, recovery=0.5)
+        add_pct("Morpho USDC vault", 5.0, 0.4, rate_vol=0.02, recovery=0.3)
+        add_pct("sUSDS (Sky)", 6.5, 0.3, rate_vol=0.02, recovery=0.4)
+        add_pct("Kamino USDC", 6.0, 0.6, rate_vol=0.025, recovery=0.2)
 
     # --- данные WS2: LST ---
     ws2 = load_json("ws2_lsd_restaking.json")
     if isinstance(ws2, list) and ws2:
         for it in ws2[:8]:
-            total_apy = (float(it.get("base_apy_pct", 3)) + float(it.get("extra_yield_pct", 0))) / 100.0
-            add(it.get("instrument", "?"), total_apy,
-                float(it.get("hack_probability_annual_pct", 0.5)) / 100.0,
-                p_depeg=0.005, lgd_depeg=0.05, rate_vol=0.005, src="WS2")
+            total_apy = _f(it.get("base_apy_pct", 3), 3) + _f(it.get("extra_yield_pct", 0), 0)
+            add_pct(it.get("instrument", "?"), total_apy,
+                    it.get("hack_probability_annual_pct", 0.5),
+                    p_depeg=0.005, lgd_depeg=0.05, rate_vol=0.005, src="WS2")
     else:
-        add("wstETH", 0.035, 0.003, p_depeg=0.005, lgd_depeg=0.04, rate_vol=0.004, recovery=0.4)
-        add("jitoSOL", 0.08, 0.006, p_depeg=0.005, lgd_depeg=0.04, rate_vol=0.004, recovery=0.2)
+        add_pct("wstETH", 3.5, 0.3, p_depeg=0.005, lgd_depeg=0.04, rate_vol=0.004, recovery=0.4)
+        add_pct("jitoSOL", 8.0, 0.6, p_depeg=0.005, lgd_depeg=0.04, rate_vol=0.004, recovery=0.2)
 
     # --- данные WS3: delta-neutral ---
     ws3 = load_json("ws3_delta_neutral.json")
     if isinstance(ws3, list) and ws3:
         for it in ws3[:5]:
             avg12 = it.get("avg_apy_12m_pct", it.get("current_apy_pct", 8))
-            add(it.get("instrument", "?"), float(avg12) / 100.0,
-                float(it.get("hack_probability_annual_pct", 1)) / 100.0,
-                p_depeg=0.01, lgd_depeg=0.12, rate_vol=0.05, recovery=0.1, src="WS3")
+            add_pct(it.get("instrument", "?"), avg12,
+                    it.get("hack_probability_annual_pct", 1.0),
+                    p_depeg=0.01, lgd_depeg=0.12, rate_vol=0.05, recovery=0.1, src="WS3")
     else:
-        add("sUSDe", 0.08, 0.012, lgd=0.7, p_depeg=0.01, lgd_depeg=0.12,
-            rate_vol=0.06, recovery=0.1)
+        add_pct("sUSDe", 8.0, 1.2, lgd=0.7, p_depeg=0.01, lgd_depeg=0.12,
+                rate_vol=0.06, recovery=0.1)
 
     # --- данные WS4: Pendle PT ---
     ws4 = load_json("ws4_pendle.json")
     if isinstance(ws4, list) and ws4:
         for it in ws4[:6]:
-            add("PT-" + it.get("market", "?"), float(it.get("implied_apy_pct", 6)) / 100.0,
-                0.008, p_depeg=0.004, lgd_depeg=0.06, rate_vol=0.002, src="WS4")
+            add_pct("PT-" + str(it.get("market", "?")), it.get("implied_apy_pct", 6),
+                    0.8, p_depeg=0.004, lgd_depeg=0.06, rate_vol=0.002, src="WS4")
 
     # --- данные WS6: RWA ---
     ws6 = load_json("ws6_rwa_niche.json")
     if isinstance(ws6, list) and ws6:
         for it in ws6[:6]:
-            add(it.get("product", "?"), float(it.get("current_yield_pct", 4.5)) / 100.0,
-                float(it.get("hack_probability_annual_pct", 0.4)) / 100.0,
-                p_depeg=0.001, lgd_depeg=0.02, rate_vol=0.003, src="WS6")
+            add_pct(it.get("product", "?"), it.get("current_yield_pct", 4.5),
+                    it.get("hack_probability_annual_pct", 0.4),
+                    p_depeg=0.001, lgd_depeg=0.02, rate_vol=0.003, src="WS6")
     else:
-        add("Ondo USDY", 0.045, 0.003, p_depeg=0.001, lgd_depeg=0.02, rate_vol=0.002, recovery=0.6)
-        add("BUIDL (через интегратора)", 0.043, 0.002, p_depeg=0.001, lgd_depeg=0.02,
-            rate_vol=0.002, recovery=0.8)
+        add_pct("Ondo USDY", 4.5, 0.3, p_depeg=0.001, lgd_depeg=0.02, rate_vol=0.002, recovery=0.6)
+        add_pct("BUIDL (через интегратора)", 4.3, 0.2, p_depeg=0.001, lgd_depeg=0.02,
+                rate_vol=0.002, recovery=0.8)
 
     return instruments
 
