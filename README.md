@@ -38,9 +38,18 @@ report/                    — авто-вывод моделей + итогов
 
 ```bash
 pip install pytest numpy
-python3 -m pytest tests/ -q          # 75 тестов
+python3 -m pytest tests/ -q          # 108 тестов
 python3 models/strategies.py         # пересчёт стратегий из data/*.json
+python3 models/alpha_scanner.py      # сканер аномалий доходности (DefiLlama)
 ```
+
+## Ключевые выводы по уровням риска
+
+| Уровень | Документ | Доходность | Суть |
+|---|---|---|---|
+| Консервативный | REPORT.md | E[APY] ~3.4% | T-bill RWA + blue-chip lending + PT-фикс |
+| Альфа-оверлей | ALPHA.md | ~4.3–4.5% | stUSDS + Solana + carry + reUSD |
+| Максимум | APY-MAX.md | **9.7% гросс / 8.5% E[APY]** | Лупы на дешёвом долге + наградные стеки + поинты-опционы |
 
 ## Ключевые выводы (TL;DR)
 
