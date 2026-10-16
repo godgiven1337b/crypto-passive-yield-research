@@ -1,0 +1,194 @@
+{
+  "meta": {
+    "task": "WS-3: delta-neutral strategies and synthetic dollars",
+    "date_checked": "2026-10-16",
+    "market_context": {
+      "btc_usd": 82138,
+      "eth_usd": 2428,
+      "fed_upper_rate_pct": 4.0,
+      "note": "BTC/ETH из Binance mark price 16.10.2026; ставка ФРС — из параллельного воркстрима (14.10.2026)"
+    }
+  },
+  "instruments": [
+    {
+      "instrument": "Ethena sUSDe",
+      "current_apy_pct": 4.87,
+      "avg_apy_12m_pct": 4.23,
+      "tvl_usd": 1199000000,
+      "risk_score_1to10": 6,
+      "hack_probability_annual_pct": 5,
+      "worst_case_loss_pct": -40,
+      "notes": "sAPY 15.10.2026 4.87-4.89%; доля sUSDe ~25% USDe supply $4.70B; reserve fund $62.57M (12.10.2026, 1.4x рекомендованного $45.7M); исторический минимум USDe $0.65 (10.10.2025, Binance, pricing dislocation); supply -68% с пика $14.82B (04.10.2025); ENA-инсентивы отключены 30.09.2026; перпетуалы ~11% бэкинга; ЕС-бан (BaFin wind-down 15.04.2025), США - GENIUS Act gray zone; hack_probability - оценка вероятности значимого counterparty/custody инцидента в год; worst_case - биржевой инцидент + отрицательный funding + exit haircut",
+      "source": "aavescan.com/rates/ethena-susde; yields.llama.fi (pool 66985a81, 365d); gov.ethenafoundation.com/t/ethena-s-july-september-2026-governance-update/857; llamarisk.com; bpi.com",
+      "date_checked": "2026-10-16"
+    },
+    {
+      "instrument": "Sky sUSDS",
+      "current_apy_pct": 3.8,
+      "avg_apy_12m_pct": 3.76,
+      "tvl_usd": 4755000000,
+      "risk_score_1to10": 3,
+      "hack_probability_annual_pct": 1,
+      "worst_case_loss_pct": -15,
+      "notes": "Sky Savings Rate; USDS circulating $7.06B; оверколлатерализован, без биржевого counterparty; бенчмарк безрисковой долларовой доходности on-chain",
+      "source": "aavescan.com/rates/sky-susde; stablecoins.llama.fi (id 209)",
+      "date_checked": "2026-10-16"
+    },
+    {
+      "instrument": "Usual BUSD0 (USD0++)",
+      "current_apy_pct": 5.13,
+      "avg_apy_12m_pct": 3.22,
+      "tvl_usd": 542000000,
+      "risk_score_1to10": 5,
+      "hack_probability_annual_pct": 2,
+      "worst_case_loss_pct": -25,
+      "notes": "USD0 circulating $542M (пик ~$1.8B нач. 2025); бэкинг T-bills через M0 (UsualM с 12.2024); доходность почти целиком USUAL-инсентивы; USD0a 5.37% base; depeg USD0++ январь 2025; USL заём 5% фикс через Euler",
+      "source": "yields.llama.fi (pool 55b0893b); usual.money; rwa.xyz/assets/USD0",
+      "date_checked": "2026-10-16"
+    },
+    {
+      "instrument": "Ethena USDtb (sUSDTB)",
+      "current_apy_pct": 4.0,
+      "avg_apy_12m_pct": null,
+      "tvl_usd": 518000000,
+      "risk_score_1to10": 4,
+      "hack_probability_annual_pct": 1,
+      "worst_case_loss_pct": -10,
+      "notes": "1:1 BlackRock BUIDL (T-bills); MiCA-совместимый продукт Ethena для ЕС; доходность ~T-bill; нет funding-риска",
+      "source": "stablecoins.llama.fi (id 221); ethena.fi",
+      "date_checked": "2026-10-16"
+    },
+    {
+      "instrument": "Reservoir wsrUSD",
+      "current_apy_pct": 6.0,
+      "avg_apy_12m_pct": null,
+      "tvl_usd": 110300000,
+      "risk_score_1to10": 7,
+      "hack_probability_annual_pct": 4,
+      "worst_case_loss_pct": -35,
+      "notes": "Жив, но сжался: протокол TVL $69.6M против пика $389.8M (26.10.2025); базовый rUSD ~$0.1M circulating - выводится; связь с Plane/UXD не подтверждена (UXD закрыт в 2024)",
+      "source": "yields.llama.fi (pool d646f32f); api.llama.fi/protocol/reservoir-protocol; coingecko.com/en/coins/reservoir-rusd",
+      "date_checked": "2026-10-16"
+    },
+    {
+      "instrument": "Resolv USR",
+      "current_apy_pct": null,
+      "avg_apy_12m_pct": null,
+      "tvl_usd": 6200000,
+      "risk_score_1to10": 9,
+      "hack_probability_annual_pct": 15,
+      "worst_case_loss_pct": -60,
+      "notes": "Фактически мёртв: $6.2M против пика $684.7M (20.02.2025); дельта-нейтральный конкурент Ethena не пережил 2025-2026",
+      "source": "api.llama.fi/protocol/resolv-usr",
+      "date_checked": "2026-10-16"
+    },
+    {
+      "instrument": "Level lvlUSD",
+      "current_apy_pct": null,
+      "avg_apy_12m_pct": null,
+      "tvl_usd": 500000,
+      "risk_score_1to10": 10,
+      "hack_probability_annual_pct": null,
+      "worst_case_loss_pct": -100,
+      "notes": "Мёртв: команда приобретена, продукт sunset (сент-окт 2025); остаточный TVL $0.5M; пик $189M (22.05.2025)",
+      "source": "x.com/levelusd/status/1971274925357814188; api.llama.fi/protocol/level",
+      "date_checked": "2026-10-16"
+    },
+    {
+      "instrument": "Amino (reflexivUSDC)",
+      "current_apy_pct": null,
+      "avg_apy_12m_pct": null,
+      "tvl_usd": 0,
+      "risk_score_1to10": 10,
+      "hack_probability_annual_pct": null,
+      "worst_case_loss_pct": -100,
+      "notes": "Следов активности нет (нет на DeFiLlama, нет новостей 2026) - помечен как мёртвый по отсутствию данных; официального анонса закрытия не найдено",
+      "source": "поиск WebSearch 16.10.2026; api.llama.fi (протокол отсутствует)",
+      "date_checked": "2026-10-16"
+    },
+    {
+      "instrument": "DIY cash-and-carry BTC (spot+short perp)",
+      "current_apy_pct": 3.9,
+      "avg_apy_12m_pct": 3.26,
+      "tvl_usd": null,
+      "risk_score_1to10": 5,
+      "hack_probability_annual_pct": 8,
+      "worst_case_loss_pct": -50,
+      "notes": "Мгновенный funding 16.10.2026: Binance +3.9%, Bybit +4.5%, OKX +6.4%, Hyperliquid +11.0% (средняя ~6.4%); 30d ср. Binance +3.63%; требуется капитал на две ноги, реальное плечо 1.5-2x, риск ликвидации шорт-ноги при сквизе; hack_probability - риск потери средств на бирже-контрагенте; worst_case - форсированная ликвидация в шорт-сквизе",
+      "source": "fapi.binance.com/fapi/v1/premiumIndex; api.bybit.com/v5/market/tickers; okx.com/api/v5/public/funding-rate; api.hyperliquid.xyz/info (расчёт автора)",
+      "date_checked": "2026-10-16"
+    },
+    {
+      "instrument": "DIY cash-and-carry ETH (spot+short perp)",
+      "current_apy_pct": 5.7,
+      "avg_apy_12m_pct": 2.47,
+      "tvl_usd": null,
+      "risk_score_1to10": 5,
+      "hack_probability_annual_pct": 8,
+      "worst_case_loss_pct": -50,
+      "notes": "Мгновенный funding 16.10.2026: Binance +5.7%, Bybit +11.0%, OKX +1.2%, Hyperliquid +11.0% (средняя ~7.2%); 30d ср. Binance +4.17%; 12м ср. низкое из-за фев-апр 2026 (ETH funding до -4% годовых помесячно)",
+      "source": "там же (расчёт автора)",
+      "date_checked": "2026-10-16"
+    },
+    {
+      "instrument": "Binance Simple Earn USDT",
+      "current_apy_pct": 4.8,
+      "avg_apy_12m_pct": null,
+      "tvl_usd": null,
+      "risk_score_1to10": 6,
+      "hack_probability_annual_pct": 3,
+      "worst_case_loss_pct": -30,
+      "notes": "Диапазон ~3.36-6.29% APR (flexible/locked, сент 2026); текущая ставка средняя оценка 4.8% без живой верификации; полностью кастодиально на CEX",
+      "source": "eco.com/support/en/articles/13296290-7-best-stablecoins-on-binance-in-2026-ranked (21.09.2026)",
+      "date_checked": "2026-10-16"
+    },
+    {
+      "instrument": "Binance FDUSD Simple Earn",
+      "current_apy_pct": null,
+      "avg_apy_12m_pct": null,
+      "tvl_usd": 315000000,
+      "risk_score_1to10": 7,
+      "hack_probability_annual_pct": 5,
+      "worst_case_loss_pct": -50,
+      "notes": "Живая ставка не публикуется вне платформы (последний промо до 11.8% APR, 09.2025); FDUSD supply $315-325M, -90%+ с пика $4.4B (04.2024); First Digital - SPAC-сделка ~$250M (06.10.2026); tvl_usd = circulating FDUSD",
+      "source": "binance.com announcement 09.09.2025; stablecoins.llama.fi (id 119); cohencm.com (06.10.2026)",
+      "date_checked": "2026-10-16"
+    }
+  ],
+  "funding_history": [
+    {"period": "2024-Q1", "avg_annualized_funding_pct": 22.6, "note": "Binance BTC+22.3/ETH+22.9"},
+    {"period": "2024-Q2", "avg_annualized_funding_pct": 9.8},
+    {"period": "2024-Q3", "avg_annualized_funding_pct": 4.1},
+    {"period": "2024-Q4", "avg_annualized_funding_pct": 13.3},
+    {"period": "2025-Q1", "avg_annualized_funding_pct": 5.2},
+    {"period": "2025-Q2", "avg_annualized_funding_pct": 3.9},
+    {"period": "2025-Q3", "avg_annualized_funding_pct": 6.5},
+    {"period": "2025-Q4", "avg_annualized_funding_pct": 4.5},
+    {"period": "2026-Q1", "avg_annualized_funding_pct": 0.6},
+    {"period": "2026-Q2", "avg_annualized_funding_pct": 0.9},
+    {"period": "2026-Q3", "avg_annualized_funding_pct": 5.7},
+    {"period": "2026-02", "avg_annualized_funding_pct": -2.4, "note": "BTC -0.8, ETH -4.0: начало отрицательного эпизода"},
+    {"period": "2026-03", "avg_annualized_funding_pct": -1.1, "note": "BTC -1.1, ETH -1.1"},
+    {"period": "2026-04", "avg_annualized_funding_pct": -1.9, "note": "BTC -2.2, ETH -1.7: минимум эпизода; sUSDe sAPY при этом 4.2% (RWA-часть компенсировала)"},
+    {"period": "2026-10 (1-16)", "avg_annualized_funding_pct": 2.25, "note": "BTC +2.2, ETH +2.3"},
+    {"period": "trailing_30d (to 2026-10-16)", "avg_annualized_funding_pct": 3.9, "note": "BTC +3.63, ETH +4.17"},
+    {"period": "trailing_365d (to 2026-10-16)", "avg_annualized_funding_pct": 2.9, "note": "BTC +3.26, ETH +2.47"}
+  ],
+  "ethena_sapy_yearly_avg_pct": {"2024": 17.7, "2025": 6.5, "2026_ytd": 4.2},
+  "usde_supply_key_points_usd_bn": {
+    "peak_2025-10-04": 14.82,
+    "post_bybit_2025-04-15": 4.95,
+    "trough_2026-04-30": 3.81,
+    "current_2026-10-15": 4.7
+  },
+  "reserve_fund": {"usd_2026-10-12": 62570000, "recommended_usd": 45700000, "coverage_of_supply_pct": 1.33},
+  "unverified": [
+    "Deribit funding (API 400)",
+    "живая ставка Binance FDUSD Simple Earn",
+    "точная доля перпетуалов в бэкинге USDe (~11% - из агрегаторов, не с transparency-дашборда)",
+    "распределение коллатерала Copper/Copper Prime",
+    "статус Amino - только по отсутствию следов",
+    "blend-funding Ethena за фев-апр 2026 (прокси Binance)",
+    "aENAj/c Tokens dashboard из ТЗ - не идентифицирован"
+  ]
+}
