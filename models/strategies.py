@@ -93,7 +93,9 @@ def instrument_universe() -> list[ProtocolRisk]:
     # --- данные WS2: LST ---
     ws2 = load_json("ws2_lsd_restaking.json")
     if isinstance(ws2, list) and ws2:
-        for it in ws2[:8]:
+        for it in ws2[:10]:
+            if _f(it.get("risk_score_1to10"), 10) >= 8:  # мёртвые LRT не включаем
+                continue
             total_apy = _f(it.get("base_apy_pct", 3), 3) + _f(it.get("extra_yield_pct", 0), 0)
             add_pct(it.get("instrument", "?"), total_apy,
                     it.get("hack_probability_annual_pct", 0.5),
@@ -105,8 +107,14 @@ def instrument_universe() -> list[ProtocolRisk]:
     # --- данные WS3: delta-neutral ---
     ws3 = load_json("ws3_delta_neutral.json")
     if isinstance(ws3, list) and ws3:
-        for it in ws3[:5]:
-            avg12 = it.get("avg_apy_12m_pct", it.get("current_apy_pct", 8))
+        for it in ws3[:8]:
+            cur = it.get("current_apy_pct")
+            if cur is None:      # мёртвые/без данных инструменты не включаем
+                continue
+            risk = _f(it.get("risk_score_1to10"), 10)
+            if risk >= 9:
+                continue
+            avg12 = it.get("avg_apy_12m_pct") or cur
             add_pct(it.get("instrument", "?"), avg12,
                     it.get("hack_probability_annual_pct", 1.0),
                     p_depeg=0.01, lgd_depeg=0.12, rate_vol=0.05, recovery=0.1, src="WS3")

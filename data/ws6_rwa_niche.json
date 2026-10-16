@@ -1,0 +1,30 @@
+{
+  "meta": {
+    "workstream": "WS-6 RWA / niche",
+    "date_checked": "2026-10-15",
+    "note": "Извлечено оркестратором из research/06-rwa-niche.md (таблица раздела 2) для машиночитаемости; источник — тот же отчёт",
+    "macro": {
+      "fed_funds_pct": 3.875,
+      "fed_funds_range": "3.75-4.00",
+      "tbill_3m_pct": 4.26,
+      "tbill_1y_pct": 4.48,
+      "cpi_yoy_pct": 3.7,
+      "date": "2026-10-13/15"
+    }
+  },
+  "entries": [
+    {"product": "USDY (Ondo)", "type": "T-bill note", "current_yield_pct": 3.72, "aum_usd": 2350000000, "min_entry_usd": 500, "kyc_required": true, "chain": "Multi (13 сетей)", "liquidity_note": "отличная, secondary без KYC", "risk_score_1to10": 4.0, "hack_probability_annual_pct": 0.3, "notes": "3.68-3.75% APY", "source": "research/06 §2", "date_checked": "2026-10-15"},
+    {"product": "OUSG (Ondo)", "type": "T-bill fund", "current_yield_pct": 3.65, "aum_usd": 319000000, "min_entry_usd": 100000, "kyc_required": true, "chain": "Multi", "liquidity_note": "средняя", "risk_score_1to10": 3.5, "hack_probability_annual_pct": 0.3, "notes": "держит BUIDL и др.", "source": "research/06 §2", "date_checked": "2026-10-15"},
+    {"product": "BUIDL (BlackRock)", "type": "MMF T-bills/repo", "current_yield_pct": 3.65, "aum_usd": 2160000000, "min_entry_usd": 5000000, "kyc_required": true, "chain": "Multi (9 сетей)", "liquidity_note": "хорошая (Securitize secondary)", "risk_score_1to10": 2.5, "hack_probability_annual_pct": 0.2, "notes": "3.48-3.82%; для розницы — через интеграторов", "source": "research/06 §2", "date_checked": "2026-10-15"},
+    {"product": "BENJI (Franklin)", "type": "US MMF 40Act", "current_yield_pct": 3.79, "aum_usd": 680000000, "min_entry_usd": 20, "kyc_required": true, "chain": "Stellar/Polygon/Arbitrum", "liquidity_note": "средняя, permissioned transfer", "risk_score_1to10": 2.5, "hack_probability_annual_pct": 0.2, "notes": "розничный вход $20 через Benji app (US)", "source": "research/06 §2", "date_checked": "2026-10-15"},
+    {"product": "USYC (Circle/Hashnote)", "type": "T-bill fund", "current_yield_pct": 3.38, "aum_usd": 2350000000, "min_entry_usd": 100000, "kyc_required": true, "chain": "ETH/BSC", "liquidity_note": "хорошая", "risk_score_1to10": 3.0, "hack_probability_annual_pct": 0.25, "notes": "NAV accretion", "source": "research/06 §2", "date_checked": "2026-10-15"},
+    {"product": "USTB (Invesco)", "type": "Short gov fund", "current_yield_pct": 3.57, "aum_usd": 606000000, "min_entry_usd": 100000, "kyc_required": true, "chain": "ETH/SOL/Plume", "liquidity_note": "средняя", "risk_score_1to10": 3.0, "hack_probability_annual_pct": 0.25, "notes": "б. Superstate", "source": "research/06 §2", "date_checked": "2026-10-15"},
+    {"product": "TBILL (OpenEden)", "type": "T-bill vault", "current_yield_pct": 3.54, "aum_usd": 295000000, "min_entry_usd": 500, "kyc_required": true, "chain": "Multi (5+)", "liquidity_note": "средняя", "risk_score_1to10": 4.0, "hack_probability_annual_pct": 0.4, "notes": "", "source": "research/06 §2", "date_checked": "2026-10-15"},
+    {"product": "syrupUSDC (Maple)", "type": "Corporate credit", "current_yield_pct": 5.20, "aum_usd": 2830000000, "min_entry_usd": 0, "kyc_required": false, "chain": "Ethereum (ERC-4626)", "liquidity_note": "отличная (collateral в Aave/Morpho/Kamino)", "risk_score_1to10": 5.5, "hack_probability_annual_pct": 2.0, "notes": "secured/overcollateralized; история дефолтов $36-54M (2022-23)", "source": "research/06 §2", "date_checked": "2026-10-15"},
+    {"product": "syrupUSDT (Maple)", "type": "Corporate credit", "current_yield_pct": 5.54, "aum_usd": 747000000, "min_entry_usd": 0, "kyc_required": false, "chain": "Ethereum", "liquidity_note": "отличная", "risk_score_1to10": 5.5, "hack_probability_annual_pct": 2.0, "notes": "", "source": "research/06 §2", "date_checked": "2026-10-15"},
+    {"product": "sUSDS (Sky)", "type": "Savings rate RWA-backed", "current_yield_pct": 3.78, "aum_usd": 5500000000, "min_entry_usd": 0, "kyc_required": false, "chain": "ETH + L2", "liquidity_note": "отличная", "risk_score_1to10": 4.5, "hack_probability_annual_pct": 0.4, "notes": "эталон качества среди децентрализованных", "source": "research/06 §2", "date_checked": "2026-10-15"},
+    {"product": "OpenTrade", "type": "T-bill vault", "current_yield_pct": 5.5, "aum_usd": 247000000, "min_entry_usd": 0, "kyc_required": false, "chain": "через партнёров", "liquidity_note": "средняя", "risk_score_1to10": 4.5, "hack_probability_annual_pct": 1.0, "notes": "30D yield", "source": "research/06 §2", "date_checked": "2026-10-15"},
+    {"product": "Binance Simple Earn USDC", "type": "CEX earn", "current_yield_pct": 4.04, "aum_usd": null, "min_entry_usd": 0, "kyc_required": true, "chain": "CEX", "liquidity_note": "мгновенная (flexible)", "risk_score_1to10": 5.5, "hack_probability_annual_pct": 1.5, "notes": "полностью кастодиально; прецедент Bybit 2025", "source": "research/06 §5", "date_checked": "2026-10-15"},
+    {"product": "OKX Simple Earn USDT", "type": "CEX earn", "current_yield_pct": 3.5, "aum_usd": null, "min_entry_usd": 0, "kyc_required": true, "chain": "CEX", "liquidity_note": "мгновенная", "risk_score_1to10": 5.5, "hack_probability_annual_pct": 1.5, "notes": "USDC ~5.0% по API", "source": "research/06 §5", "date_checked": "2026-10-15"}
+  ]
+}

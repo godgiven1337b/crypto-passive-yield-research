@@ -44,6 +44,11 @@ def risk_budget_weights(risks: list[ProtocolRisk]) -> list[PortfolioPosition]:
         risk_scores.append(max(total, 1e-6))
     inv = np.array([1.0 / s for s in risk_scores])
     w = inv / inv.sum()
+    # ограничение максимального веса (иначе ультрабезопасный инструмент забирает всё)
+    cap = 0.40
+    w = np.minimum(w, cap)
+    if w.sum() > 0:
+        w = w / w.sum()
     return [PortfolioPosition(r, float(wi)) for r, wi in zip(risks, w)]
 
 
