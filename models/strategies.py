@@ -32,7 +32,13 @@ def load_json(name: str) -> list | dict:
     path = os.path.join(DATA_DIR, name)
     if os.path.exists(path):
         with open(path) as f:
-            return json.load(f)
+            data = json.load(f)
+        # поддержка обёрток {"meta": ..., "entries": [...]} и {"markets": [...]}
+        if isinstance(data, dict):
+            for key in ("entries", "markets", "instruments", "items", "data"):
+                if isinstance(data.get(key), list):
+                    return data[key]
+        return data
     return []
 
 
@@ -66,8 +72,15 @@ def instrument_universe() -> list[ProtocolRisk]:
     # --- данные WS1: lending ---
     ws1 = load_json("ws1_stablecoin_lending.json")
     if isinstance(ws1, list) and ws1:
-        for it in ws1[:14]:
-            add_pct(it.get("protocol", "?") + " " + str(it.get("asset", "USD")),
+        # одна (лучшая по TVL) запись на протокол, иначе 7 копий Morpho искажают вселенную
+        best_by_protocol: dict = {}
+        for it in ws1:
+            proto = str(it.get("protocol", "?"))
+            tvl = _f(it.get("tvl_usd"), 0)
+            if proto not in best_by_protocol or tvl > _f(best_by_protocol[proto].get("tvl_usd"), 0):
+                best_by_protocol[proto] = it
+        for it in best_by_protocol.values():
+            add_pct(f"{it.get('protocol')} {it.get('asset')}",
                     it.get("apy_pct", 4),
                     it.get("hack_probability_annual_pct", 0.5),
                     rate_vol=0.015, src="WS1")
@@ -101,11 +114,14 @@ def instrument_universe() -> list[ProtocolRisk]:
         add_pct("sUSDe", 8.0, 1.2, lgd=0.7, p_depeg=0.01, lgd_depeg=0.12,
                 rate_vol=0.06, recovery=0.1)
 
-    # --- данные WS4: Pendle PT ---
+    # --- данные WS4: Pendle PT (только blue-chip стейбл-рынки для консервативных стратегий) ---
     ws4 = load_json("ws4_pendle.json")
     if isinstance(ws4, list) and ws4:
-        for it in ws4[:6]:
-            add_pct("PT-" + str(it.get("market", "?")), it.get("implied_apy_pct", 6),
+        for it in ws4:
+            market = str(it.get("market", "?"))
+            # не добавляем двойной префикс: market уже вида "PT-sUSDe 26NOV2026"
+            label = market if market.startswith("PT-") else f"PT-{market}"
+            add_pct(label, it.get("implied_apy_pct", 6),
                     0.8, p_depeg=0.004, lgd_depeg=0.06, rate_vol=0.002, src="WS4")
 
     # --- данные WS6: RWA ---
@@ -142,25 +158,32 @@ def build_strategies() -> dict[str, list[PortfolioPosition]]:
     picked = pick_universe(universe)
 
     # Используем осмысленные имена; fallback если каких-то категорий нет
-    def find(substr: str, default: ProtocolRisk | None = None):
+    def find(substr: str, default: ProtocolRisk | None = None) -> ProtocolRisk | None:
+        """Ищет инструмент, preferring самые ранние (данные WS1 идут раньше WS4)."""
         for p in universe:
             if substr.lower() in p.name.lower():
                 return p
         return default
 
-    aave = find("Aave", picked.get("Aave"))
-    susds = find("sUSDS", find("Sky", picked.get("sUSDS")))
-    morpho = find("Morpho", picked.get("Morpho"))
-    wsteth = find("wstETH", picked.get("wstETH"))
-    susde = find("sUSDe", picked.get("sUSDe"))
-    ondo = find("USDY", find("Ondo", picked.get("USDY")))
-    buidl = find("BUIDL", picked.get("BUIDL"))
+    aave = find("Aave v3")
+    susds = find("Sky (sUSDS)")
+    morpho = find("Morpho")
+    wsteth = find("wstETH")
+    susde = find("sUSDe")  # WS3-инструмент; PT-sUSDe не должен перехватить (WS1/3 раньше WS4? проверяем)
+    if susde and susde.name.startswith("PT-"):
+        susde = None
+    ondo = find("USDY", find("Ondo"))
+    buidl = find("BUIDL")
+    jito = find("jitoSOL")
+    # PT: предпочитаем blue-chip стейбл-фикс (sUSDS), не 18% junior-транши
     pt = None
-    for p in universe:
-        if p.name.startswith("PT-"):
-            pt = p
+    for pref in ("PT-sUSDS", "PT-sUSDe", "PT-"):
+        for p in universe:
+            if p.name.startswith(pref):
+                pt = p
+                break
+        if pt:
             break
-    jito = find("jitoSOL", picked.get("jitoSOL"))
 
     strategies: dict[str, list[PortfolioPosition]] = {}
 

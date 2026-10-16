@@ -82,12 +82,41 @@ class TestPortfolio:
         risky = [PortfolioPosition(make(p_hack=0.05), 1.0)]
         assert var_cvar(risky, n_sims=50_000)[0] >= var_cvar(safe, n_sims=50_000)[0]
 
+    def test_var_nonzero_when_catastrophe_likely(self):
+        """Регрессия: p_hack=50% -> VaR95 должен быть ~0.59 (loss 0.63 - yield).
+
+        Ловит баг, когда потери не накапливались в losses и VaR всегда был 0.
+        """
+        pr = make(p_hack=0.5, apy=0.04, rate_volatility=0.0, p_depeg=0.0,
+                  recovery_rate_hack=0.3)
+        pos = [PortfolioPosition(pr, 1.0)]
+        var95, cvar95 = var_cvar(pos, alpha=0.95, n_sims=50_000)
+        assert var95 == pytest.approx(0.59, abs=0.01)
+        assert cvar95 == pytest.approx(0.59, abs=0.01)
+
+    def test_var99_captures_tail(self):
+        """При совокупной p_hack ~3% хвост должен попадать в VaR99."""
+        pos = [PortfolioPosition(make(p_hack=0.008, apy=0.04, p_depeg=0.0), 0.25)
+               for _ in range(4)]
+        var99, cvar99 = var_cvar(pos, alpha=0.99, n_sims=200_000)
+        # один взлом: 0.25*0.9*0.7 = 15.75% потерь минус ~4% дохода
+        assert 0.05 < var99 < 0.20
+        assert cvar99 >= var99
+
     def test_diversified_lower_var(self):
+        """Диверсификация снижает МАСШТАБ хвостовой потери.
+
+        Сравниваем на alpha=0.99: у одиночной позиции взлом (p=2%) попадает
+        в 1%-хвост с потерей ~57%; у разбитой на 4 части 1%-хвост — потеря
+        одного сегмента ~9%. На alpha=0.95 сравнение некорректно: у одиночной
+        позиции 2% < 5% и VaR95=0 (хвост не пересекает порог).
+        """
         single = [PortfolioPosition(make(p_hack=0.02, apy=0.06), 1.0)]
         spread = [PortfolioPosition(make(p_hack=0.02, apy=0.06), 0.25) for _ in range(4)]
-        var_single = var_cvar(single, n_sims=60_000)[0]
-        var_spread = var_cvar(spread, n_sims=60_000)[0]
-        assert var_spread <= var_single + 0.005  # допускаем шум Монте-Карло
+        var_single = var_cvar(single, alpha=0.99, n_sims=60_000)[0]
+        var_spread = var_cvar(spread, alpha=0.99, n_sims=60_000)[0]
+        assert var_single == pytest.approx(0.57, abs=0.05)
+        assert var_spread == pytest.approx(0.095, abs=0.05)
 
 
 class TestBreakeven:

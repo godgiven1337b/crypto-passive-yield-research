@@ -114,6 +114,7 @@ def var_cvar(positions: list[PortfolioPosition], alpha: float = 0.95,
         loss = hacked * p.weight * p.risk.lgd_hack * (1.0 - p.risk.recovery_rate_hack)
         depegged = rng.random(n_sims) < p.risk.p_depeg
         loss += depegged * p.weight * p.risk.lgd_depeg
+        losses += loss  # FIX: накопление потерь (раньше loss не попадал в losses -> VaR всегда 0)
         # волатильность ставки: фактическая ставка ~ N(apy, rate_vol)
         realized_rate = rng.normal(p.risk.apy, p.risk.rate_volatility, n_sims)
         yields += p.weight * realized_rate
