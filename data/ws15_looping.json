@@ -1,0 +1,316 @@
+{
+  "worksheet": "WS-15",
+  "topic": "Looping and leverage for APY maximization",
+  "generated": "2026-10-16",
+  "data_cutoff": "2026-10-16T18:30Z",
+  "market_context": {
+    "eth_usd": 2414,
+    "eth_gas_gwei": 0.11,
+    "benchmarks_apr_pct": {"sUSDe": 4.8, "sUSDS": 3.8, "aave_v3_usdc_supply": 3.75, "lido_staking": 2.23},
+    "notes": "gas at historic lows -> entry cost no longer a size filter; all borrow rates floating unless stated"
+  },
+  "math": {
+    "core_formula": "net = L*s - (L-1)*b = s + (L-1)*(s-b)",
+    "sensitivity": "d(net)/db = -(L-1); +1pp borrow at L=5 -> -4pp net",
+    "same_pool_law": "s = u*b*(1-RF) < b always -> positive carry only cross-asset/cross-market; implemented in models/loop_math.py::same_pool_spread",
+    "max_leverage": "L_max = 1/(1-LTV); practical L = 1/(1-k*LTV), k=0.6-0.7",
+    "liquidation_distance": "x = 1 - (L-1)/(L*LT) relative drop of collateral vs debt",
+    "compounding": "loop self-compounds per block: APR 8% -> APY 8.33%",
+    "examples_net_apy_pct": {
+      "L2_spread1pp": 6.0, "L3_spread1pp": 7.0, "L5_spread1pp": 9.0,
+      "L5_spread2pp": 13.0, "L10_spread2pp": 23.0, "L5_spread3pp": 17.0
+    },
+    "costs": {
+      "eth_manual_loop_entry_usd_5x": [5, 15],
+      "eth_iteration_usd": [0.5, 1.5],
+      "annual_drag_50k_pct": [0.05, 0.15],
+      "solana_jupiter_multiply_fee_pct": 0.0,
+      "kamino_flashloan_fee_pct": 0.001,
+      "defisaver_fee_pct": {"stables": 0.01, "correlated": 0.10, "noncorrelated": 0.25, "automation_trigger": 0.05},
+      "furucombo": "retired 2026"
+    }
+  },
+  "structures": [
+    {
+      "id": "kamino_syrupusdc_maple",
+      "name": "Kamino Multiply syrupUSDC / USDC (Maple market)",
+      "chain": "Solana",
+      "category": "stable-yield-bearer loop",
+      "leverage": 5.26,
+      "rates_pct_2026_10_16": {"supply_or_yield": 5.5, "borrow_usdc_maple": 3.56, "borrow_usdc_main": 9.07, "note": "supply ~5.5 est; borrow = Maple market USDC, subsidized"},
+      "net_apy_pct": 13.8,
+      "spread_pp": 1.94,
+      "liquidation_distance": "NAV depeg of syrupUSDC ~14% (LT~0.94, calc); pegged oracle (exchange rate)",
+      "tvl_usd": 40200000,
+      "stack": ["Kamino Lend", "Kamino Swap", "Maple (syrupUSDC, CCIP)"],
+      "fees": {"flashloan_pct": 0.001, "liquidation_penalty_pct": 0.1, "protocol_spread_pct": 15},
+      "risks": ["Maple credit episode", "Maple-market USDC borrow spike >5.5% kills carry", "Solana stack"],
+      "verdict": "TOP-1: fat spread on cheap debt; size $50k-2M",
+      "breaks_when": "Maple USDC borrow > 5.5% (carry=base) or syrupUSDC NAV event"
+    },
+    {
+      "id": "3f_wfalconx",
+      "name": "3F wFalconX leveraged wrapper (Pareto x FalconX Credit Vault)",
+      "chain": "Ethereum",
+      "category": "levered RWA",
+      "tiers": {
+        "3x": {"net_apy_pct": 11.0, "liq_distance_nav_drop_pct": 27.1},
+        "4x": {"net_apy_pct": 12.6, "liq_distance_nav_drop_pct": 17.5},
+        "5x": {"net_apy_pct": 14.2, "liq_distance_nav_drop_pct": 12.6},
+        "6.5x": {"net_apy_pct": 16.7, "liq_distance_nav_drop_pct": 7.5}
+      },
+      "rates_pct_2026_10_16": {"falconx_cv_gross": 7.9, "falconx_cv_net_after_10pct_perf": 7.4, "morpho_usdc_borrow": 6.13, "site_max_apy_claim": 19.46},
+      "params": {"morpho_lltv": 0.915, "safe_ltv": 0.875, "oracle": "RedStone", "collateral_usd": 29300000, "borrow_usd": 23340000, "liquidity": "monthly (FalconX cycles)", "nav_frequency": "monthly"},
+      "fees": {"base_pct_on_collateral": 0.15, "perf_3f_pct": 0, "perf_falconx_cv_pct": 10},
+      "stack": ["Pareto Credit Vault (IdleCDO epoch)", "3F wrapper + bridge loan (Symbiotic)", "Morpho", "RedStone NAV oracle", "FalconX lending desk"],
+      "risks": ["monthly NAV marks jump discretely (can pierce all buffers at once)", "FalconX borrower credit", "monthly liquidity, KYC wrappers", "5-layer stack"],
+      "verdict": "TOP-2: biggest liq buffer among yielding loops; size $25k-500k",
+      "breaks_when": "wFalconX NAV drop >12.6% (5x) / >7.5% (6.5x), or Morpho USDC borrow >7.9%"
+    },
+    {
+      "id": "morpho_susde_pyusd",
+      "name": "Morpho sUSDe / PYUSD (LLTV 91.5%) manual loop; TESS wrapper on IPOR Fusion",
+      "chain": "Ethereum",
+      "category": "ethena loop, migrated to cheap stable debt",
+      "leverage": 5.9,
+      "max_leverage_theoretical": 11.8,
+      "rates_pct_2026_10_16": {"susde_yield": 4.8, "pyusd_borrow": 4.2, "pyusd_supply": 3.77},
+      "net_apy_pct": 7.7,
+      "tess_wrapper": {"net_apy_pct": 9.3, "tvl_usd": 1360000, "leverage": 7.6, "deposits": "closed", "source": "IPOR API 16.10.2026"},
+      "spread_pp": 0.6,
+      "liquidation_distance": "sUSDe/PYUSD relative depeg 9.2% at 5.9x",
+      "market": {"supply_usd": 109500000, "borrow_usd": 98500000, "utilization_pct": 89.9},
+      "stack": ["Morpho Blue", "Ethena sUSDe", "(optional) IPOR Fusion/TESS"],
+      "risks": ["spread only 0.6pp: +0.6pp borrow -> carry=base", "util 89.9% - own size moves rate", "USDe depeg (Apr-2025 precedent ~0.95-0.97)", "Ethena rewards cut"],
+      "verdict": "TOP-3: cleanest formula but fragile spread; size $100k-5M",
+      "breaks_when": "PYUSD borrow >= 4.8%, sUSDe depeg > 9.2%"
+    },
+    {
+      "id": "kamino_onyc_onre",
+      "name": "Kamino Multiply ONyc / USDC (OnRe Market)",
+      "chain": "Solana",
+      "category": "levered RWA",
+      "leverage": 2.2,
+      "rates_pct_2026_10_16": {"base_yield_docs": 16.0, "borrow_usdc_onre": 7.74},
+      "net_apy_pct": 26.0,
+      "tvl_usd": 91800000,
+      "caveat": "live base yield not published (16% from docs); largest dollar loop on Kamino",
+      "liquidation_distance": "NAV depeg ~30-40% (LT not verified)",
+      "risks": ["OnRe private credit", "rate estimate not live", "borrow spike"],
+      "verdict": "max APY but self-diligence required on OnRe credit"
+    },
+    {
+      "id": "kamino_prime_figure",
+      "name": "Kamino Multiply PRIME / PYUSD (Figure HELOC market)",
+      "chain": "Solana",
+      "category": "levered RWA",
+      "leverage": 5.0,
+      "rates_pct_2026_10_16": {"prime_yield_docs": 8.0, "borrow_pyusd_figure": 5.24},
+      "net_apy_pct": 19.0,
+      "tvl_usd": 74000000,
+      "liquidation_distance": "NAV depeg ~9% (LT~0.88)",
+      "risks": ["Figure HELOC credit", "thin NAV buffer at 5x"],
+      "verdict": "high yield, credit-risk driven"
+    },
+    {
+      "id": "kamino_usde_pyusd_ethena",
+      "name": "Kamino Multiply USDe / PYUSD (Ethena Market)",
+      "chain": "Solana",
+      "leverage": 9.32,
+      "rates_pct_2026_10_16": {"borrow_pyusd": 4.7, "usde_yield_effective": "est 5-6 (not published)"},
+      "net_apy_pct_est": [12, 15],
+      "tvl_usd": 15800000,
+      "liquidation_distance": "USDe depeg ~6% at 9.3x",
+      "risks": ["high leverage = fragility", "yield component unverified"],
+      "verdict": "estimate only; verify effective USDe yield incl. ENA/sUSDe rewards"
+    },
+    {
+      "id": "jupiter_strategies",
+      "name": "Jupiter Lend Multiply/Strategies (no 'JLM' ticker exists)",
+      "chain": "Solana",
+      "mechanics": "single atomic tx (flash-borrow->swap->deposit->borrow->repay), 0 protocol fee, free flashloan, ~0.02 SOL position",
+      "liquidation": "tick-based partial (ticks every 0.15% D/C), penalty ~1%, Liquidation Max Limit full sale; pegged pairs oracle by redemption rate - market depeg does not liquidate",
+      "markets": {
+        "jupiter_main": {"usdc_supply_apy": 7.94, "usdc_supply_apy_ui_instant": 8.98, "usdc_borrow_est": [9, 10], "note": "borrow not published; spike = borrow demand, in-market loop negative"},
+        "bitwise_ethena_usde_usdg": {"status": "winding down", "ltv": 0.94, "lt": 0.95, "max_mult": 16.3},
+        "sentora_usde_pyusd": {"live_since": "2026-09-30", "ltv": 0.94, "lt": 0.95, "doc_example_apy": 13.5},
+        "stusds": "DELISTED (absent from docs and Kamino scan 16.10.2026)"
+      },
+      "leverage_max_pegged": 16.3,
+      "liq_buffer_at_max_leverage_pp": 1.1,
+      "stack": ["Fluid Liquidity Layer (7 programs)", "Jupiter aggregator", "Chainlink+Pyth+redemption rates"],
+      "offerbook": {"type": "P2P fixed 1-30d, no price liquidations, maturity risk", "fees": "25% interest upfront from borrower, 10% lender", "est_multiply_apy_docs": 18.7},
+      "verdict": "16x pegged loops have ~1pp buffer - not recommended; in-pool USDC loop negative by construction"
+    },
+    {
+      "id": "aave_wsteth_eth",
+      "name": "Aave v3 wstETH/ETH loop (eMode ETH-correlated)",
+      "chain": "Ethereum",
+      "params": {"ltv": 0.93, "lt": 0.95, "liq_bonus": 1.01},
+      "rates_pct_2026_10_16": {"staking_lido": 2.23, "aave_wsteth_supply": 0.05, "weth_borrow": 1.96},
+      "net_apy_by_leverage": {"3x": 2.9, "5x": 3.6, "10x": 5.2},
+      "liquidation_distance": {"3x_wsteth_depeg_pct": 29.5, "5x": 15.8, "10x": 5.3},
+      "stack": ["Aave v3", "Lido wstETH"],
+      "historical_wsteth_depeg_pct": "<=1",
+      "risks": ["carry only +0.32pp: +1pp WETH borrow -> negative", "staking-rate drift"],
+      "verdict": "max survivability, min carry - parking with a boost, not an income strategy"
+    },
+    {
+      "id": "aave_v3_stable_loop",
+      "name": "Aave v3 stablecoin loop USDC/USDT",
+      "chain": "Ethereum",
+      "rates_pct_2026_10_16": {"usdc_supply": 3.75, "usdc_borrow": 4.47, "usdt_supply": 3.29, "usdt_borrow": 4.19},
+      "spread_pp": -0.72,
+      "generic_stable_emode": "does not exist (scanned on-chain); base LTV 75/LT 78",
+      "net_apy_pct": "negative at any leverage",
+      "verdict": "DEAD"
+    },
+    {
+      "id": "aave_ethena_loop",
+      "name": "Classic Ethena loop sUSDe->borrow USDe on Aave v3",
+      "chain": "Ethereum",
+      "rates_pct_2026_10_16": {"susde_yield": 4.8, "usde_borrow": 6.61, "usde_borrow_ipor_api": 6.84},
+      "spread_pp": -1.81,
+      "history": {"usde_borrow_2026": {"mar": 2.4, "apr_may_spike": 17.35, "jun_aug": 2.7, "sep": 6.16, "oct": 6.84}},
+      "emode": "sUSDe Stablecoins 90/92",
+      "net_apy_pct": "negative (2x -> 3.0% < 4.8% base)",
+      "verdict": "DEAD since Apr-2026 utilization pressure; CryptoSlate 11.09.2026",
+      "migration": "survivors switched debt to USDT/PYUSD (TESS) or moved to Morpho PYUSD market"
+    },
+    {
+      "id": "aave_v4_ethena_spoke",
+      "name": "Aave v4 'Ethena Ecosystem' spoke + Ethena Liquid Leverage promo",
+      "chain": "Ethereum",
+      "status": "live since ~2026-09-07 (USDe rewards)",
+      "claimed_apy_pct": 12,
+      "caveat": "promo incentives, campaign-end risk; live net rates not published",
+      "aave_v4_context": {"mainnet_launch": "2026-03-30", "tvl_v4_usd": 653000000, "tvl_v3_usd": 16980000000, "note": "v3 remains the market"}
+    },
+    {
+      "id": "ipor_fusion",
+      "name": "IPOR Fusion vaults",
+      "chain": "Ethereum+Base (+11 chains)",
+      "protocol_tvl_usd": 83800000,
+      "vaults_pct_2026_10_16": {
+        "aavethena_loop_mainnet_TAU": {"tvl_usd": 141000, "momentum_apy": -10.2, "apy_30d": -13.6, "leverage": 9.5, "borrow_over_collateral_pct": 89.4, "rewards_apy": 23, "realized_share_price_30d_annualized": 3.1, "deposits": "open", "verdict": "ANTI-EXAMPLE, avoid"},
+        "tess_susde_pyusd_loop": {"tvl_usd": 1360000, "net_apy": 9.3, "apy_30d": 9.0, "leverage": 7.6, "deposits": "closed"},
+        "tess_usde_susde_loop": {"tvl_usd": 858000, "net_apy": 8.9, "apy_30d": 5.6, "leverage": 7.9, "deposits": "closed"},
+        "steth_looping_ipor_dao": {"tvl_usd": 4870000, "gross_apy": 5.7, "net_apy": 5.2, "apy_30d": 5.4, "leverage": 9.7, "via": "Spark wstETH $45.2M / WETH $40.6M"},
+        "usdc_lending_optimizer": {"tvl_usd": 260000, "gross_apy": 4.4, "net_apy": 2.4, "note": "rate-chasing allocator, migrated Aave->Morpho->Euler in Oct"},
+        "yousd_looper_base": {"tvl_usd": 232000, "gross_apy": 4.5, "net_apy": 3.5, "note": "deleveraged (borrow 0), yoUSD = YO Protocol (yo.xyz)"}
+      },
+      "fees": {"performance_pct": 10, "management_pct_yr": 0.2, "onboarding_pct": 0.1, "observed_gross_to_net_drag_pp": [0.5, 1.5]},
+      "risk_recipient": "does not exist as mechanism; losses borne by depositors (OpenCover Covered Vaults only for select vaults since 2026-06-18)",
+      "audits": ["Protofire 2024-09", "BlocSec 2025-02"]
+    },
+    {
+      "id": "gauntlet_pareto_falconx",
+      "name": "Gauntlet gpAAFalconX (Levered FalconX on Morpho)",
+      "chain": "Ethereum",
+      "market": {"name": "AA_FalconXUSDC/USDC", "lltv": 0.77, "collateral_usd": 12530000, "borrow_usd": 7000000, "borrow_rate_pct": 5.17, "market_ltv": 0.559, "implied_leverage": 2.27},
+      "falconx_cv": {"gross_30d_pct_jun2026": 8.25, "net_after_perf_pct": 7.4, "tvl_peak_usd": 144000000, "cycle": "monthly"},
+      "estimated_net_apy_pct": 10.2,
+      "access": "min $50k, accredited, via Gauntlet team; APY not disclosed (JS page)",
+      "stack": ["Pareto/IdleCDO", "FalconX desk", "Gauntlet engine", "Morpho"],
+      "verdict": "institutional; disclosed-data-starved"
+    },
+    {
+      "id": "fluid_gho",
+      "name": "Fluid vaults: GHO 'cheap borrow' debunked",
+      "chain": "Ethereum",
+      "facts_2026_10_16": {
+        "gross_borrow_gho_all_vaults_pct": 5.66,
+        "merkl_reward_apr_gho_t4_pct": 1.56,
+        "fgho_supply_pct": 5.43,
+        "merkl_campaign_end": "2026-12-06",
+        "structure": "T4 smart-debt vault: LP GHO/sUSDe collateral, GHO+USDC debt; reward is Merkl subsidy + swap fees, NOT a borrow rate",
+        "no_t1_usdc_gho_vault": true,
+        "min_borrow_usd": 11500
+      },
+      "other_fluid_rates_pct": {"usdc_borrow": 7.33, "usdt_borrow": 5.62, "wsteth_eth_borrow": 2.39, "weeth_wsteth_borrow": 0.13, "susde_gho": {"cf": 0.92, "lt": 0.94, "penalty_pct": 2}},
+      "verdict": "Merkl-subsidized LP structure, not a rate arbitrage; wstETH/ETH loop worse than Aave at current rates"
+    },
+    {
+      "id": "kamino_jlp",
+      "name": "Kamino JLP/USDC multiply",
+      "chain": "Solana",
+      "rates_pct_2026_10_16": {"jlp_apy": 8.62, "usdc_borrow_main": 9.07},
+      "spread_pp": -0.45,
+      "verdict": "negative at current rates (only with rewards); JLP loops liquidated in both 2025-04 and 2026-02 crashes (not SOL-denominated)"
+    },
+    {
+      "id": "kamino_lst_sol",
+      "name": "Kamino LST loops jupSOL/jitoSOL vs SOL",
+      "chain": "Solana",
+      "structure": "both legs SOL-denominated, stake-rate oracle, zero price risk; only rate-spread risk",
+      "rates_pct_2026_10_16": {"jupsol_yield": 5.39, "sol_borrow": 5.0, "jitosol_yield": 4.71, "sol_borrow_jito": 4.6},
+      "net_apy_pct": {"jupsol_7.5x": 7.9, "jitosol_6.16x": 5.3},
+      "track_record": "zero price liquidations of LST multiply ever; Feb-2026 SOL -18%: $19.4M seized, 0 bad debt",
+      "verdict": "clean but thin (+0.39pp); one staking-rate revision can invert"
+    }
+  ],
+  "stress": {
+    "spread_to_zero": {
+      "jupiter_case": "USDC supply 8.98% (16.10) vs 4.21% (07.10): spike created by borrow demand -> in-pool loop negative from day 1; cross-market loop = short the spike; L=3 at +1pp spread: 7% -> 5% (par with base) when spread=0",
+      "fix": "Jupiter Offerbook fixed 1-30d rates (25% interest upfront) trades rate risk for counterparty maturity risk"
+    },
+    "borrow_rate_shock_net_apy_pct": {
+      "syrupusdc_5.26x": {"base": 13.8, "plus_1pp": 9.5, "plus_2pp": 5.2},
+      "3f_wfalconx_5x": {"base": 14.2, "plus_1pp": 10.2, "plus_2pp": 6.2},
+      "morpho_susde_5.9x": {"base": 7.7, "plus_1pp": 2.8, "plus_2pp": -2.1},
+      "aave_wsteth_5x": {"base": 3.6, "plus_1pp": -0.4, "plus_2pp": -4.4}
+    },
+    "liquidation_cascade": {
+      "precedents": [
+        {"event": "2025-04 tariff crash", "effect": "USDe depeg to ~0.95-0.97; stable loops at 5-9x came within ~2pp of liquidation"},
+        {"event": "2026-02-05/06 SOL -18%", "effect": "Kamino $19.4M seized, 0 bad debt, zero LST-multiply price liquidations; JLP loops liquidated"},
+        {"event": "2026-04/05 Aave USDe borrow 17.35%", "effect": "Ethena loops carry killed instantly"},
+        {"event": "2025-10 cascade type", "effect": "gas spikes 0.1 -> 100s gwei: manual unwind x100 cost; RWA monthly liquidity cannot exit"}
+      ],
+      "channels": ["depeg of yield asset (NAV/USDe/syrupUSDC)", "borrow-rate spike on mass unwind (loops are forced sellers)", "gas/congestion", "monthly RWA NAV marks", "partial-liquidation ticks pierced by NAV gaps"]
+    },
+    "fed_hike": {
+      "mechanism": "bases reprice up together (sUSDe=funding~SOFR+basis), pp-spreads roughly preserved; damage channel = rate volatility: floating borrow at kink reprices instantly, (L-1) multiplier turns +1pp into -4..-9pp net; new capital compresses spreads",
+      "cut_is_worse": "headline APY falls faster than bases; RWA fixed-rate spreads actually widen; LST inversion risk (jupSOL 5.39 vs borrow 5.00 = 0.39pp buffer)"
+    }
+  },
+  "verdict": {
+    "top3": [
+      {"rank": 1, "structure": "Kamino syrupUSDC/USDC-Maple @5.26x", "net_apy_pct": 13.8, "why": "fat spread (+1.94pp) on cheap subsidized debt, pegged oracle, 0.1% penalty, battle-tested liquidations", "size": "$50k-2M", "breaks": "Maple USDC borrow >5.5%; Maple credit event; overnight borrow spike"},
+      {"rank": 2, "structure": "3F wFalconX 3-5x", "net_apy_pct": "11.0-14.2", "why": "largest liquidation buffer among yielding loops (-12.6% NAV at 5x), USD-vs-USD, spread +1.77pp", "size": "$25k-500k", "breaks": "NAV drop >12.6% (5x) in one monthly mark; Morpho USDC borrow >7.9%"},
+      {"rank": 3, "structure": "Morpho sUSDe/PYUSD @5.9x (TESS 9.3% when open)", "net_apy_pct": 7.7, "why": "cleanest formulaic carry, one-protocol stack", "size": "$100k-5M", "breaks": "+0.6pp borrow = carry gone (thin!); sUSDe depeg >9.2%; market util 89.9% self-moving"}
+    ],
+    "dead": ["Aave v3 stable loop (negative)", "Ethena sUSDe->USDe on Aave (-1.81pp since Apr-2026)", "IPOR AavEthena TAU (-10%, HF~1)", "JLP loop at current rates", "Fluid GHO '1.6%' as a rate (Merkl subsidy)"],
+    "size_floor": {"solana_usd": 20000, "ethereum_manual_usd": 50000, "rwa_wrappers_usd": 25000, "note": "gas is no longer the filter (0.11 gwei); caps, closed deposits, pro-rata Merkl dilution and <5-10% of loop TVL are"},
+    "correction_to_prior_worksheets": "stUSDS delisted from Jupiter Lend and Kamino (16.10.2026) - WS-9/WS-10 'loop on stUSDS' premise outdated; niche taken by syrupUSDC/sUSDai/reUSD/ONyc/PRIME"
+  },
+  "sources": [
+    {"kind": "onchain", "ref": "Aave v3 Pool 0x87870Bca3F3fD6335C3F4ce8392D69350B4fA4E2 getReserveData/getEModeCategoryData", "date": "2026-10-16 block 26206858"},
+    {"kind": "api", "ref": "api.kamino.finance markets/reserves/leverage metrics", "date": "2026-10-16T18:00Z"},
+    {"kind": "api", "ref": "api.morpho.org/graphql vaults+markets", "date": "2026-10-16T18:30Z"},
+    {"kind": "api", "ref": "api.fluid.instadapp.io/v2/1/vaults", "date": "2026-10-16"},
+    {"kind": "api", "ref": "api.merkl.xyz/v4/opportunities", "date": "2026-10-16"},
+    {"kind": "api", "ref": "api.ipor.io/v2/fusion/vaults + vault-history", "date": "2026-10-16T18:14Z"},
+    {"kind": "api", "ref": "yields.llama.fi/pools + charts", "date": "2026-10-16"},
+    {"kind": "docs", "ref": "docs.jup.ag (multiply/strategies/markets/offerbook)", "date": "2026-10-16"},
+    {"kind": "docs", "ref": "kamino.com/docs (multiply/fees/liquidations/auto-deleverage)", "date": "2026-10-16"},
+    {"kind": "docs", "ref": "docs.3f.xyz deployments/wfalconx + app.3f.xyz", "date": "2026-10-16"},
+    {"kind": "docs", "ref": "docs.ipor.io (fees, withdrawals, audits)", "date": "2026-10-16"},
+    {"kind": "docs", "ref": "help.defisaver.com (fees, protocols)", "date": "2026-10-16"},
+    {"kind": "press", "ref": "gauntlet.xyz falconx-levered-rwa-strategy-with-pareto", "date": "2025-08-18"},
+    {"kind": "press", "ref": "falconx.io credit-vault newsroom (8.25% 30D, $144M)", "date": "2026-06-24"},
+    {"kind": "press", "ref": "cryptoslate.com: Aave borrow rates threaten to flip USDe loops negative", "date": "2026-09-11"},
+    {"kind": "press", "ref": "aave.com/blog aave-v4-live-ethereum", "date": "2026-03-30"},
+    {"kind": "press", "ref": "coindesk.com Jupiter Lend v2", "date": "2026-08-10"},
+    {"kind": "internal", "ref": "models/loop_math.py (loop_apy, max_leverage, same_pool_spread, liquidation_move_same_asset, loop_stack_ev) + tests 108 passed", "date": "2026-10-16"}
+  ],
+  "gaps": [
+    "Jupiter Lend borrow rates (no public API; est 9-10%)",
+    "Sentora/Bitwise market live rates on Jupiter",
+    "gpAAFalconX and sACRED vault APY/leverage (JS page, closed API)",
+    "live base yield ONyc and USDe yield component on Kamino Ethena market",
+    "Aave GHO borrow live rate",
+    "Spark LT for IPOR stETH loop",
+    "stUSDS delisting circumstances (search rate-limited)"
+  ]
+}

@@ -7,6 +7,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from models.loop_math import (
     loop_apy, max_leverage, carry_breakeven_leverage,
     liquidation_move_same_asset, effective_hack_risk, loop_stack_ev, optimal_leverage,
+    same_pool_spread,
 )
 
 
@@ -85,6 +86,23 @@ class TestLiquidation:
 
     def test_already_liquidatable(self):
         assert liquidation_move_same_asset(2.0, 0.4, start_ltv=0.5) == 0.0
+
+
+class TestSamePoolSpread:
+    def test_negative_at_any_utilization(self):
+        for u in (0.1, 0.5, 0.8, 0.99):
+            s, spread = same_pool_spread(0.09, u, 0.10)
+            assert spread < 0  # луп внутри одного пула всегда убыточен
+
+    def test_high_utilization_minimizes_loss(self):
+        _, spread_low = same_pool_spread(0.09, 0.3, 0.10)
+        _, spread_high = same_pool_spread(0.09, 0.99, 0.10)
+        assert spread_high > spread_low  # ближе к нулю, но не положителен
+        assert spread_high == pytest.approx(-0.09 * (1 - 0.99 * 0.9))
+
+    def test_zero_reserve_factor_still_negative(self):
+        _, spread = same_pool_spread(0.09, 0.9, 0.0)
+        assert spread == pytest.approx(-0.009)  # даже RF=0: s−b = −b(1−u) < 0
 
 
 class TestStackRisk:

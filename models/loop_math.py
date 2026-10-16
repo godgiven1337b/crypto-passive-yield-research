@@ -72,6 +72,23 @@ def liquidation_move_same_asset(leverage: float, liquidation_ltv: float,
     return price_drop  # доля падения collateral к долгу
 
 
+def same_pool_spread(borrow_apy: float, utilization: float, reserve_factor: float) -> tuple[float, float]:
+    """Спрэд внутри ОДНОГО резерва: s = u·b·(1−RF), поэтому s − b < 0 всегда.
+
+    Следствие: луп «supply X → borrow X» в одном пуле математически убыточен при
+    любой утилизации (спрэд = −b·(1 − u·(1−RF)) < 0). Положительный carry бывает
+    только МЕЖДУ разными резервами/активами (sUSDe vs USDe, wstETH vs ETH,
+        USDC(Jupiter) vs USDT и т.п.) или за счёт внешнего yield (стейкинг, RWA, LP).
+    Возвращает (supply_apy, spread).
+    """
+    if not (0 < utilization <= 1):
+        raise ValueError("utilization in (0,1]")
+    if not (0 <= reserve_factor < 1):
+        raise ValueError("reserve_factor in [0,1)")
+    supply_apy = utilization * (1.0 - reserve_factor) * borrow_apy
+    return supply_apy, supply_apy - borrow_apy
+
+
 def effective_hack_risk(layers: list[float], per_layer_p_hack: float = 0.008) -> float:
     """Совокупный риск стека протоколов: каждый слой независим.
 

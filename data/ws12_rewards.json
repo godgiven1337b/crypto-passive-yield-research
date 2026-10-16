@@ -1,0 +1,822 @@
+{
+ "meta": {
+  "title": "WS-12: Карта программ наград DeFi (Merkl, IPOR Fusion, нативные, цепочки)",
+  "date": "2026-10-16",
+  "method": "Merkl API v4 (api.merkl.xyz/opportunities, 897 LIVE на 2026-10-16), DeFiLlama yields API, докам протоколов (merkl.xyz, ipor.io, aave.com), веб-поиск"
+ },
+ "merkl": {
+  "snapshot_date": "2026-10-16",
+  "live_opportunities": 897,
+  "total_daily_rewards_usd": 678742,
+  "by_chain": {
+   "Ethereum": {
+    "daily_usd": 242401,
+    "opportunities": 217
+   },
+   "Base": {
+    "daily_usd": 136928,
+    "opportunities": 146
+   },
+   "Robinhood Chain": {
+    "daily_usd": 92453,
+    "opportunities": 50
+   },
+   "Plasma": {
+    "daily_usd": 80563,
+    "opportunities": 8
+   },
+   "Monad": {
+    "daily_usd": 69911,
+    "opportunities": 156
+   },
+   "Stellar": {
+    "daily_usd": 13775,
+    "opportunities": 9
+   },
+   "Mantle": {
+    "daily_usd": 9445,
+    "opportunities": 2
+   },
+   "World Chain": {
+    "daily_usd": 6018,
+    "opportunities": 10
+   },
+   "Arbitrum": {
+    "daily_usd": 5885,
+    "opportunities": 19
+   },
+   "Tempo": {
+    "daily_usd": 3580,
+    "opportunities": 102
+   },
+   "Arc": {
+    "daily_usd": 3084,
+    "opportunities": 14
+   },
+   "Katana": {
+    "daily_usd": 2541,
+    "opportunities": 66
+   },
+   "HyperEVM": {
+    "daily_usd": 2102,
+    "opportunities": 6
+   },
+   "Avalanche": {
+    "daily_usd": 2001,
+    "opportunities": 4
+   },
+   "Pharos": {
+    "daily_usd": 1351,
+    "opportunities": 1
+   },
+   "Fluent": {
+    "daily_usd": 1158,
+    "opportunities": 8
+   },
+   "0g ai": {
+    "daily_usd": 1119,
+    "opportunities": 5
+   },
+   "Optimism": {
+    "daily_usd": 738,
+    "opportunities": 9
+   },
+   "Celo": {
+    "daily_usd": 675,
+    "opportunities": 7
+   },
+   "Sei": {
+    "daily_usd": 666,
+    "opportunities": 2
+   },
+   "Hemi": {
+    "daily_usd": 629,
+    "opportunities": 10
+   },
+   "Polygon": {
+    "daily_usd": 595,
+    "opportunities": 13
+   },
+   "BNB Chain": {
+    "daily_usd": 391,
+    "opportunities": 13
+   },
+   "Citrea": {
+    "daily_usd": 299,
+    "opportunities": 1
+   },
+   "Immutable": {
+    "daily_usd": 294,
+    "opportunities": 3
+   },
+   "Rootstock": {
+    "daily_usd": 94,
+    "opportunities": 1
+   },
+   "Kaia": {
+    "daily_usd": 45,
+    "opportunities": 1
+   },
+   "MegaETH": {
+    "daily_usd": 0,
+    "opportunities": 1
+   },
+   "Ink": {
+    "daily_usd": 0,
+    "opportunities": 13
+   }
+  },
+  "top20_by_daily_rewards": [
+   {
+    "name": "Lend USDe on Aave (looping required)",
+    "chain": "Plasma",
+    "protocol": "Aave",
+    "action": "LEND",
+    "apr_reward_pct": 4.46,
+    "daily_rewards_usd": 69711,
+    "tvl_usd": 605410623,
+    "campaign_start": "2026-10-16",
+    "campaign_end": "2026-10-23",
+    "reward_tokens": [
+     {
+      "symbol": "aPlaUSDe",
+      "usd_per_day": 69711
+     }
+    ],
+    "deposit_url": "https://app.aave.com/reserve-overview/?underlyingAsset=0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34&marketName=proto_plasma_v3"
+   },
+   {
+    "name": "Deposit USDe as collateral on USDe/USDC 91.5%",
+    "chain": "Base",
+    "protocol": "Morpho",
+    "action": "LEND",
+    "apr_reward_pct": 4.75,
+    "daily_rewards_usd": 50447,
+    "tvl_usd": 387644554,
+    "campaign_start": "2026-10-16",
+    "campaign_end": "2026-10-23",
+    "reward_tokens": [
+     {
+      "symbol": "USDe",
+      "usd_per_day": 50442
+     }
+    ],
+    "deposit_url": "https://app.morpho.org/base/market/0x54cf9be57fdfa6457a660991907434ff9d295c465a603a50126ff647d50b7354"
+   },
+   {
+    "name": "Deposit USDe as collateral on USDe/USDG 91.5%",
+    "chain": "Robinhood Chain",
+    "protocol": "Morpho",
+    "action": "LEND",
+    "apr_reward_pct": 4.75,
+    "daily_rewards_usd": 45686,
+    "tvl_usd": 351058199,
+    "campaign_start": "2026-10-16",
+    "campaign_end": "2026-10-23",
+    "reward_tokens": [
+     {
+      "symbol": "USDe",
+      "usd_per_day": 45686
+     }
+    ],
+    "deposit_url": "https://app.morpho.org/robinhood-chain/market/0xc845da65a020ddca5f132efa8fea79676d8edfdea504226a4c01e7a9e34cddd6/usde-usdg#market"
+   },
+   {
+    "name": "[Robinhood Users Only] Supply to Steakhouse USDG V2 vault on Morpho",
+    "chain": "Robinhood Chain",
+    "protocol": "Morpho",
+    "action": "LEND",
+    "apr_reward_pct": 2.92,
+    "daily_rewards_usd": 40490,
+    "tvl_usd": 505681562,
+    "campaign_start": "2026-07-01",
+    "campaign_end": "2027-07-01",
+    "reward_tokens": [
+     {
+      "symbol": "steakUSDG",
+      "usd_per_day": 37027
+     },
+     {
+      "symbol": "steakUSDG",
+      "usd_per_day": 3464
+     }
+    ],
+    "deposit_url": "https://applink.robinhood.com/u/home"
+   },
+   {
+    "name": "Supply to Sentora RLUSD Main V2 vault on Morpho on Ethereum",
+    "chain": "Ethereum",
+    "protocol": "Morpho",
+    "action": "LEND",
+    "apr_reward_pct": 2.78,
+    "daily_rewards_usd": 34480,
+    "tvl_usd": 452852919,
+    "campaign_start": "2026-10-15",
+    "campaign_end": "2026-10-22",
+    "reward_tokens": [
+     {
+      "symbol": "RLUSD",
+      "usd_per_day": 34480
+     }
+    ],
+    "deposit_url": "https://app.morpho.org/ethereum/vault/0x6dC58a0FdfC8D694e571DC59B9A52EEEa780E6bf"
+   },
+   {
+    "name": "Supply to Steakhouse High Yield USDC Edition V2 vault on Morpho from Coinbase",
+    "chain": "Base",
+    "protocol": "Morpho",
+    "action": "LEND",
+    "apr_reward_pct": 2.66,
+    "daily_rewards_usd": 32899,
+    "tvl_usd": 462686294,
+    "campaign_start": "2026-09-21",
+    "campaign_end": "2026-11-12",
+    "reward_tokens": [
+     {
+      "symbol": "MORPHO",
+      "usd_per_day": 11843
+     },
+     {
+      "symbol": "USDC",
+      "usd_per_day": 21042
+     }
+    ],
+    "deposit_url": "https://app.morpho.org/base/vault/0xbeeff2490FEffa212faC2f6553682C219E6a8845"
+   },
+   {
+    "name": "Supply to Paypal USD Main V2 vault on Morpho on Ethereum",
+    "chain": "Ethereum",
+    "protocol": "Morpho",
+    "action": "LEND",
+    "apr_reward_pct": 2.93,
+    "daily_rewards_usd": 31661,
+    "tvl_usd": 395030562,
+    "campaign_start": "2026-10-15",
+    "campaign_end": "2026-10-22",
+    "reward_tokens": [
+     {
+      "symbol": "PYUSD",
+      "usd_per_day": 31661
+     }
+    ],
+    "deposit_url": "https://app.morpho.org/ethereum/vault/0xb576765fB15505433aF24FEe2c0325895C559FB2"
+   },
+   {
+    "name": "Lend USDe on Aave (looping required)",
+    "chain": "Ethereum",
+    "protocol": "Aave",
+    "action": "LEND",
+    "apr_reward_pct": 4.75,
+    "daily_rewards_usd": 30290,
+    "tvl_usd": 245534895,
+    "campaign_start": "2026-10-16",
+    "campaign_end": "2026-10-23",
+    "reward_tokens": [
+     {
+      "symbol": "aEthUSDe",
+      "usd_per_day": 30290
+     }
+    ],
+    "deposit_url": "https://app.aave.com/reserve-overview/?underlyingAsset=0x4c9EDD5852cd905f086C759E8383e09bff1E68B3&marketName=proto_mainnet_v3"
+   },
+   {
+    "name": "Supply USDC on USDe/USDC 91.5%",
+    "chain": "Base",
+    "protocol": "Morpho",
+    "action": "LEND",
+    "apr_reward_pct": 2.0,
+    "daily_rewards_usd": 21047,
+    "tvl_usd": 384101720,
+    "campaign_start": "2026-06-18",
+    "campaign_end": "2026-11-12",
+    "reward_tokens": [
+     {
+      "symbol": "USDC",
+      "usd_per_day": 21047
+     }
+    ],
+    "deposit_url": "https://app.morpho.org/base/market/0x54cf9be57fdfa6457a660991907434ff9d295c465a603a50126ff647d50b7354"
+   },
+   {
+    "name": "Lend USD1 on Dolomite",
+    "chain": "Ethereum",
+    "protocol": "Dolomite",
+    "action": "LEND",
+    "apr_reward_pct": 5.1,
+    "daily_rewards_usd": 18697,
+    "tvl_usd": 133894278,
+    "campaign_start": "2026-10-12",
+    "campaign_end": "2026-10-19",
+    "reward_tokens": [
+     {
+      "symbol": "WLFI",
+      "usd_per_day": 18697
+     }
+    ],
+    "deposit_url": "https://dolomite.io/"
+   },
+   {
+    "name": "Lend USDe on Aave (looping required)",
+    "chain": "Monad",
+    "protocol": "Aave",
+    "action": "LEND",
+    "apr_reward_pct": 4.75,
+    "daily_rewards_usd": 17212,
+    "tvl_usd": 132498193,
+    "campaign_start": "2026-10-16",
+    "campaign_end": "2026-10-23",
+    "reward_tokens": [
+     {
+      "symbol": "aMonUSDe",
+      "usd_per_day": 17210
+     }
+    ],
+    "deposit_url": "https://app.aave.com/reserve-overview/?underlyingAsset=0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34&marketName=proto_monad_v3"
+   },
+   {
+    "name": "Lend RLUSD on Aave Horizon",
+    "chain": "Ethereum",
+    "protocol": "Aave",
+    "action": "LEND",
+    "apr_reward_pct": 5,
+    "daily_rewards_usd": 14521,
+    "tvl_usd": 161872581,
+    "campaign_start": "2026-10-15",
+    "campaign_end": "2026-10-22",
+    "reward_tokens": [
+     {
+      "symbol": "aHorRwaRLUSD",
+      "usd_per_day": 14521
+     }
+    ],
+    "deposit_url": "https://app.aave.com/reserve-overview/?underlyingAsset=0x8292bb45bf1ee4d140127049757c2e0ff06317ed&marketName=proto_horizon_v3"
+   },
+   {
+    "name": "Provide liquidity to Gamma USDC-USDT vault",
+    "chain": "Base",
+    "protocol": "Gamma",
+    "action": "POOL",
+    "apr_reward_pct": 18696.43,
+    "daily_rewards_usd": 12067,
+    "tvl_usd": 285429,
+    "campaign_start": "2026-10-15",
+    "campaign_end": "2026-10-22",
+    "reward_tokens": [
+     {
+      "symbol": "QUICK",
+      "usd_per_day": 5
+     },
+     {
+      "symbol": "QUICK",
+      "usd_per_day": 7
+     },
+     {
+      "symbol": "QUICK",
+      "usd_per_day": 6
+     },
+     {
+      "symbol": "QUICK",
+      "usd_per_day": 2
+     },
+     {
+      "symbol": "QUICK",
+      "usd_per_day": 12
+     },
+     {
+      "symbol": "QUICK",
+      "usd_per_day": 672
+     },
+     {
+      "symbol": "QUICK",
+      "usd_per_day": 315
+     },
+     {
+      "symbol": "QUICK",
+      "usd_per_day": 198
+     },
+     {
+      "symbol": "QUICK",
+      "usd_per_day": 3
+     },
+     {
+      "symbol": "QUICK",
+      "usd_per_day": 10
+     },
+     {
+      "symbol": "QUICK",
+      "usd_per_day": 10836
+     }
+    ],
+    "deposit_url": "https://app.gamma.xyz/discover"
+   },
+   {
+    "name": "Supply to Sentora PRIME Main V2 vault on Morpho on Ethereum",
+    "chain": "Ethereum",
+    "protocol": "Morpho",
+    "action": "LEND",
+    "apr_reward_pct": 1.94,
+    "daily_rewards_usd": 11257,
+    "tvl_usd": 211569304,
+    "campaign_start": "2026-10-15",
+    "campaign_end": "2026-10-22",
+    "reward_tokens": [
+     {
+      "symbol": "PYUSD",
+      "usd_per_day": 11257
+     }
+    ],
+    "deposit_url": "https://app.morpho.org/ethereum/vault/0xC21b08C16458202593D4D9B26b9984Ee67b38BbD"
+   },
+   {
+    "name": "Supply USDC in Upshift sentUSDC",
+    "chain": "Stellar",
+    "protocol": "Upshift",
+    "action": "HOLD",
+    "apr_reward_pct": 8,
+    "daily_rewards_usd": 8760,
+    "tvl_usd": 39969319,
+    "campaign_start": "2026-10-15",
+    "campaign_end": "2026-10-22",
+    "reward_tokens": [
+     {
+      "symbol": "USDC",
+      "usd_per_day": 8760
+     }
+    ],
+    "deposit_url": "https://app.upshift.finance/pools/stellar/CALFCZ4TY2CLHDHNJWCZX6JKYGUPV7P3GNQ3UVABXNE5JCV2E774APUM"
+   },
+   {
+    "name": "Lend USDC on Aave",
+    "chain": "Monad",
+    "protocol": "Aave",
+    "action": "LEND",
+    "apr_reward_pct": 5.7,
+    "daily_rewards_usd": 8560,
+    "tvl_usd": 208091683,
+    "campaign_start": "2026-10-15",
+    "campaign_end": "2026-10-22",
+    "reward_tokens": [
+     {
+      "symbol": "WMON",
+      "usd_per_day": 8525
+     }
+    ],
+    "deposit_url": "https://app.aave.com/reserve-overview/?underlyingAsset=0x754704Bc059F8C67012fEd69BC8A327a5aafb603&marketName=proto_monad_v3"
+   },
+   {
+    "name": "Borrow USDT0 on Aave",
+    "chain": "Plasma",
+    "protocol": "Aave",
+    "action": "BORROW",
+    "apr_reward_pct": 0.41,
+    "daily_rewards_usd": 8554,
+    "tvl_usd": 761949946,
+    "campaign_start": "2026-09-24",
+    "campaign_end": "2026-10-29",
+    "reward_tokens": [
+     {
+      "symbol": "aPlaUSDT0",
+      "usd_per_day": 8554
+     }
+    ],
+    "deposit_url": "https://app.aave.com/reserve-overview/?underlyingAsset=0xB8CE59FC3717ada4C02eaDF9682A9e934F625ebb&marketName=proto_plasma_v3"
+   },
+   {
+    "name": "Supply to Flowdesk Confidential High Yield USDT V2 vault on Morpho on Ethereum",
+    "chain": "Ethereum",
+    "protocol": "Morpho",
+    "action": "LEND",
+    "apr_reward_pct": 8.89,
+    "daily_rewards_usd": 8106,
+    "tvl_usd": 33272207,
+    "campaign_start": "2026-10-12",
+    "campaign_end": "2026-11-08",
+    "reward_tokens": [
+     {
+      "symbol": "ZAMA",
+      "usd_per_day": 8159
+     }
+    ],
+    "deposit_url": "https://app.morpho.org/ethereum/vault/0xb48C056C5608bA2Ee4cD94AF2bF4b1F25295Bd7e"
+   },
+   {
+    "name": "Deposit USDe as collateral on USDe/RLUSD 91.5%",
+    "chain": "Ethereum",
+    "protocol": "Morpho",
+    "action": "BORROW",
+    "apr_reward_pct": 4.75,
+    "daily_rewards_usd": 7973,
+    "tvl_usd": 61265010,
+    "campaign_start": "2026-10-16",
+    "campaign_end": "2026-10-23",
+    "reward_tokens": [
+     {
+      "symbol": "USDe",
+      "usd_per_day": 7972
+     }
+    ],
+    "deposit_url": "https://app.morpho.org/ethereum/market/0xd9d2fc090bdbab1804ea960dd6669b62357787e5816f575f14ca4e6d999614bf"
+   },
+   {
+    "name": "Lend USDT0 on Aave",
+    "chain": "Mantle",
+    "protocol": "Aave",
+    "action": "LEND",
+    "apr_reward_pct": 4.5,
+    "daily_rewards_usd": 6218,
+    "tvl_usd": 160473964,
+    "campaign_start": "2026-10-08",
+    "campaign_end": "2026-10-22",
+    "reward_tokens": [
+     {
+      "symbol": "aManUSDT0",
+      "usd_per_day": 6218
+     }
+    ],
+    "deposit_url": "https://app.aave.com/reserve-overview/?underlyingAsset=0x779ded0c9e1022225f8e0630b35a9b54be713736&marketName=proto_mantle_v3"
+   }
+  ],
+  "mechanics": {
+   "who_pays": "создатели кампаний (протоколы/эмитенты стейблов/цепочки) вносят бюджет ончейн в DistributionCreator; Merkl не платит из своих",
+   "engine": "off-chain движок считает награды каждые ~2ч, time-weighted (area under the curve), без снапшотов",
+   "root": "merkle root публикуется каждые ~8ч (4-12ч) на цепочку",
+   "dispute_period": "1-2 часа после каждого апдейта, любой может оспорить root (залог сгорает если диспут невалиден)",
+   "claim": "claim в той же цепочке, одной транзакцией можно забрать все кампании; пруфы живут в среднем ~4ч; autoclaim доступен на ряде сетей/протоколов",
+   "admin": "контракты под 4/6 мультисигом",
+   "risk": "задержки выплат возможны (catch-up ретроактивно), централизованный оракул = trust, но бюджет ончейн и dispute period"
+  },
+  "payer_categories": {
+   "liquid_stables": {
+    "примеры": "USDe (Ethena, ~$104k/день на Morpho + $117k/день на Aave), PYUSD (PayPal, ~$48k/д), USDC (~$48k/д), RLUSD (Ripple, ~$35k/д), steakUSDG (~$40k/д), GHO (Aave DAO)",
+    "оценка": "крупнейший класс — эмитенты стейблов покупают депозитный спрос"
+   },
+   "native_token": {
+    "примеры": "WMON (Monad ~$40k/д), MORPHO (~$13k/д), ARB (~$4k/д), WMON/AERO и др.",
+    "оценка": "волатильные, ликвидные на CEX/DEX"
+   },
+   "points": {
+    "примеры": "Orbital Points, Curvance Bytes, поинты ProjectX/kHYPE",
+    "оценка": "номинальная цена, спекулятивные"
+   },
+   "wrapped_protocol_tokens": {
+    "примеры": "aEthUSDe/aPlaUSDe (aToken-обёртки USDe), cWMON",
+    "оценка": ""
+   }
+  }
+ },
+ "ipor_fusion": {
+  "snapshot_date": "2026-10-16",
+  "tvl_usd_total": 55000000,
+  "fees": {
+   "management": "0.2-0.3%/год (AUM)",
+   "automation": "0.2%/год",
+   "performance": "2% (типично), максимум по протоколу 5% mgmt / 50% perf",
+   "note": "Reserve RFC May-2025: 0.3% mgmt + 0.2% automation + 2% performance"
+  },
+  "mechanics": "ERC-4626 волты, кураторы = Atomists, стратегии модульные (Fuses), авто-ребалансировка, guardian-роли (пауза при аномалиях), изолированный риск между волтами, RewardsManager сам климит Merkl-награды (есть Merkl fuse)",
+  "vaults_now": [
+   {
+    "name": "Fusion ETH Mainnet",
+    "chain": "Ethereum",
+    "asset": "WETH",
+    "tvl_usd": 14650000,
+    "apy_pct": 6.26,
+    "apy_30d_avg": 5.98
+   },
+   {
+    "name": "USDC vault (лучшая ставка на стейблах)",
+    "chain": "Ethereum",
+    "asset": "USDC",
+    "tvl_usd": 800000,
+    "apy_pct": 13.06,
+    "apy_30d_avg": 12.35,
+    "note": "маленький TVL, проверять природу дохода"
+   },
+   {
+    "name": "Base USDC Optimizer",
+    "chain": "Base",
+    "asset": "USDC",
+    "tvl_usd": 1070000,
+    "apy_pct": 6.31,
+    "apy_30d_avg": 6.34
+   },
+   {
+    "name": "Base USDC (крупный)",
+    "chain": "Base",
+    "asset": "USDC",
+    "tvl_usd": 2920000,
+    "apy_pct": 4.75,
+    "apy_30d_avg": 4.59
+   },
+   {
+    "name": "RUSD",
+    "chain": "Ethereum",
+    "asset": "RUSD",
+    "tvl_usd": 620000,
+    "apy_pct": 7.61,
+    "apy_30d_avg": 4.44
+   }
+  ],
+  "aavethena_loop_history": "лупы USDe/sUSDe на Aave ушли в negative carry к сентябрю 2026 (ставка займа USDe 6.0-6.4% против ~5.0% доходности sUSDe; CryptoSlate/CryptoTicker Sep-2026); AavEthena Loop Mainnet слил >95% TVL (~$95k осталось, tradingstrategy.ai)",
+  "verdict": "агрегатор удобен как one-click (внутри климит Merkl), но на стейблах не бьёт ручные стеки: 4.6-6.3% против 6.8-7.1% ручных; комиссия 2% perf съедает апсайд"
+ },
+ "native_programs": [
+  {
+   "name": "Aave Merit",
+   "payer": "Aave DAO (stkAAVE+GHO, исторически ~$5M/квартал)",
+   "status_2026_10": "активной эпохи на Merkl не видно (0 LIVE merit-кампаний); программа исторически двухнедельными эпохами; sGHO участвует в Merit (ARFC 2026-02)",
+   "apy_share": "0.5-2 п.п. оппортунистически на GHO-позиции",
+   "reliability": "средняя (эпохи с перерывами)",
+   "capacity": "весь Aave"
+  },
+  {
+   "name": "Morpho rewarded vaults",
+   "payer": "эмитенты стейблов (Ethena/PayPal/Ripple/Sky-Steakhouse) + MORPHO",
+   "status_2026_10": "166 LIVE кампаний, $347k/день (51% всего Merkl)",
+   "apy_share": "1.9-4.9 п.п. поверх base",
+   "reliability": "высокая для issuer-funded (еженедельные продления)",
+   "capacity": "сотни $M на волт"
+  },
+  {
+   "name": "Kamino сезоны + $CASH",
+   "payer": "KMNO (сезоны ~квартальные, Season 4 vesting до 2026-05-12, Season 5 с 2025-11) + $CASH initiative ($540k/мес)",
+   "status_2026_10": "Lend USDC до 8.6% (5.4 п.п. rewards), PYUSD 6.39% (2.38 rewards), USDG 7.61% (2.5 rewards)",
+   "apy_share": "2.4-5.4 п.п.",
+   "reliability": "средняя-высокая",
+   "capacity": "$1.8B Kamino Lend"
+  },
+  {
+   "name": "Jupiter Lend",
+   "payer": "сейчас без наград (base-only)",
+   "status_2026_10": "USDC 7.94% чистая база (спайк 8.98% из WS-9 остыл)",
+   "apy_share": "0",
+   "reliability": "—",
+   "capacity": "$1.3B"
+  },
+  {
+   "name": "Fluid",
+   "payer": "GHO (Aave DAO) на Ethereum/Plasma, USDC на Base (Jumper-кампания)",
+   "status_2026_10": "$4k/день на Merkl; reward-слой 1.7-3.2 п.п. (llama)",
+   "apy_share": "1.7-3.2 п.п.",
+   "reliability": "средняя (малые бюджеты)",
+   "capacity": "$1B"
+  },
+  {
+   "name": "Aave v3 базовые rewards",
+   "payer": "разные спонсоры через Merkl",
+   "status_2026_10": "reward-слой 1.5-5 п.п. на отдельных рынках (Base WETH 5%, Monad 1.5-2.5%, ETH RLUSD 3.3%)",
+   "apy_share": "1.5-5 п.п.",
+   "reliability": "средняя",
+   "capacity": "$17B"
+  }
+ ],
+ "chain_programs": [
+  {
+   "chain": "Ethereum",
+   "$per_day": 242401,
+   "opps": 217,
+   "примечание": "ядро Merkl: Morpho-волты эмитентов стейблов + Aave + Pendle"
+  },
+  {
+   "chain": "Base",
+   "$per_day": 136928,
+   "opps": 146,
+   "примечание": "79% бюджета = Morpho (Ethena USDe-луп $50k/д + Steakhouse USDC $33k/д); Aerodrome платит USDC за LP токенизированных акций Coinbase (25.8% APR)"
+  },
+  {
+   "chain": "Robinhood Chain",
+   "$per_day": 92453,
+   "opps": 50,
+   "примечание": "Ethena USDe/USDG луп $45.7k/д + Steakhouse USDG $40.5k/д до 2027-07-01 (закрыто для не-Robinhood юзеров на части кампаний)"
+  },
+  {
+   "chain": "Plasma",
+   "$per_day": 80563,
+   "opps": 8,
+   "примечание": "Aave USDe-луп $69.7k/д (крупнейшая одиночная кампания Merkl), GHO-кампании Aave/Fluid до 2026-11-05"
+  },
+  {
+   "chain": "Monad",
+   "$per_day": 69911,
+   "opps": 156,
+   "примечание": "WMON-награды: Aave $41k/д, Euler $8.5k, Morpho $7k, Curvance $5.9k (cWMON+Bytes поинты), Accountable, wrapped Neverland; Pendle 470k MON для YT (июль 2026)"
+  },
+  {
+   "chain": "Stellar",
+   "$per_day": 13775,
+   "opps": 9,
+   "примечание": "Upshift платит USDC: sentUSDC 8% APR $8.8k/д; Templar borrow-награды"
+  },
+  {
+   "chain": "Arbitrum",
+   "$per_day": 5885,
+   "opps": 19,
+   "примечание": "STIP давно завершён; остались Gauntlet USDG Morpho ($3.6k/д в ARB) и GMX USDG vault ($1.5k/д в USDG)"
+  },
+  {
+   "chain": "Arc",
+   "$per_day": 3084,
+   "opps": 14,
+   "примечание": "Aero LP-кампании платят USDC: cirBTC-USDC 38.6% APR, WETH-USDC 33.7% (до 2026-10-22)"
+  },
+  {
+   "chain": "Tempo",
+   "$per_day": 3580,
+   "opps": 102,
+   "примечание": "pathUSD/OUSD 3.3-3.6% APR hold-награды до 2026-10-31/2027-01-06"
+  },
+  {
+   "chain": "HyperEVM",
+   "$per_day": 2102,
+   "opps": 6,
+   "примечание": "Merkl-слой мал (ProjectX kHYPE $1.6k/д, HyperSwap xSWAP); основной фарма нет: Season 2 HYPE не подтверждена (eco.com 2026-10-06), ~33% supply в резерве на community rewards"
+  },
+  {
+   "chain": "ZIGChain",
+   "$per_day": 0,
+   "opps": 0,
+   "примечание": "ZIG Rewards Program закрыт 2026-05-03; остался $100M ecosystem fund для билдеров, не для фарма"
+  },
+  {
+   "chain": "Mantle/World/Katana/Avalanche/Pharos",
+   "примечание": "Mantle $9.4k (Aave USDT0), World Chain $6k (WLD), Katana $2.5k, Avalanche $2k, Pharos $1.4k — второстепенные"
+  }
+ ],
+ "stacks": [
+  {
+   "name": "Стек 1: Morpho Sentora RLUSD (Ethereum)",
+   "components": [
+    "base волта 4.30%",
+    "Merkl RLUSD 2.75%"
+   ],
+   "total_apy_pct": 7.05,
+   "asset": "RLUSD",
+   "tvl": 457000000,
+   "daily_rewards": 34480,
+   "paid_in": "RLUSD (ликвидный)",
+   "reliability": "высокая",
+   "notes": "платит Ripple-фондed кампания, продление еженедельно; риск depeg RLUSD"
+  },
+  {
+   "name": "Стек 2: Steakhouse High Yield USDC = SIRLOINUSDC (Base)",
+   "components": [
+    "base 3.15%",
+    "Merkl USDC+MORPHO 2.66%"
+   ],
+   "total_apy_pct": 5.81,
+   "asset": "USDC",
+   "tvl": 463000000,
+   "daily_rewards": 32899,
+   "paid_in": "USDC (64%) + MORPHO (36%)",
+   "reliability": "высокая",
+   "notes": "кампания до 2026-11-12; куратор Steakhouse/Sky; низкий риск"
+  },
+  {
+   "name": "Стек 3: Ethena USDe-луп на Aave (Plasma/ETH/Monad) или Morpho USDe/USDC 91.5% (Base)",
+   "components": [
+    "reward на нетто-USDe 4.75%/д (USDe)",
+    "+ sUSDe-плечо опционально",
+    "на Morpho Base дополнительно +2.0% на USDC supply-сторону"
+   ],
+   "total_apy_pct": "4.8-7 (без плеча ~4.8%; с лупом на Morpho Base до ~7 на капитал)",
+   "asset": "USDe",
+   "daily_rewards": "69711 (Plasma Aave) + 50447 (Base Morpho)",
+   "paid_in": "USDe/aUSDe-обёртки (ликвидные)",
+   "reliability": "средняя-высокая",
+   "notes": "еженедельные контракты, газ на Plasma ~0; риск: смарт-риск лупа + rate-риск USDe borrow"
+  },
+  {
+   "name": "Стек 4: Monad-мультистек (Aave + WMON + Curvance)",
+   "components": [
+    "Aave Monad USDC base 4.12%",
+    "Merkl WMON 1.5%",
+    "опция Curvance cWMON +1.8% на wsrUSD/USDC (другой венью)"
+   ],
+   "total_apy_pct": "5.6 (Aave) / ~6 с Curvance-слоем на часть капитала",
+   "asset": "USDC",
+   "paid_in": "WMON/cWMON (волатильный)",
+   "reliability": "средняя",
+   "notes": "апсайд = MON-токен; 156 кампаний на Monad, бюджет $70k/д; молодая инфраструктура"
+  },
+  {
+   "name": "Стек 5: Solana Kamino PYUSD/USDG",
+   "components": [
+    "Kamino USDG base 5.11% + rewards 2.50%",
+    "или PYUSD base 4.02% + 2.38%",
+    "$CASH initiative $540k/мес"
+   ],
+   "total_apy_pct": "6.4-7.6",
+   "asset": "USDG/PYUSD/USDC",
+   "paid_in": "$CASH/KMNO + база в стейбле",
+   "reliability": "средняя-высокая",
+   "notes": "альтернатива без наград: Jupiter Lend USDC 7.94% чистой базой; $1.8B+ $1.3B ёмкость"
+  }
+ ],
+ "sources": {
+  "merkl_api": "https://api.merkl.xyz/v4/opportunities?status=LIVE (897 записей, 2026-10-16)",
+  "merkl_docs": "docs.merkl.xyz/merkl-mechanisms/technical-overview; docs.merkl.xyz/earn-with-merkl/earning-with-merkl",
+  "ipor": "docs.ipor.io (llms-full.txt, 2026-10-16); yields.llama.fi pools fusion-by-ipor; Reserve RFC May-2025 (fees); CryptoSlate/CryptoTicker Sep-2026 (negative carry)",
+  "llama": "yields.llama.fi/pools (kamino-lend, jupiter-lend, fluid-lending, morpho-blue, aave-v3, ethena) 2026-10-16",
+  "news": "Curvance X (750k month-1 incentives); Pendle Monad 470k MON (tradingview/coinmarketcal Jul-2026); eco.com Hyperliquid Season-2 status 2026-10-06; docs.zigchain.com (ZIG rewards ended 2026-05-03); kamino.com/season4 vesting"
+ }
+}

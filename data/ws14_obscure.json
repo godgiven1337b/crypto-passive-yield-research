@@ -1,0 +1,307 @@
+{
+  "workstream": "WS14 — малые/непопулярные протоколы: фарм vs ловушки",
+  "generated": "2026-10-16",
+  "data_source": "DefiLlama API (protocols/yields/charts, срез 2026-10-16), Hyperliquid API, CoinGecko, RPC Monad+Ethereum, Blockscout, DexScreener, доки протоколов, пресса",
+  "baselines_2026_10_16": {
+    "ethereum_usdc": {"aave_v3": 3.75, "maple": 5.23, "fluid": 5.43, "midas_rwa": 7.43, "pareto_credit": 8.06, "comment": "институциональный кредит ETH = 7.4-8.1%"},
+    "base_usdc": {"midas_rwa": 6.2, "centrifuge": 3.63},
+    "monad_usdc": {"aave_v3_total": 5.61, "aave_base": 4.12, "morpho": "6.3-8.1", "euler_v2": 8.22, "curvance": "4.3-7.3 base + 1.35-1.8 rew", "agua": 10.0, "accountable": "9.5-12"},
+    "sui_usdc": {"navi": 5.71, "current": 6.93, "ember": "10-12"},
+    "near_usdc": {"rhea_lend": 13.39, "comment": "единственный пул >$1M на цепи"}
+  },
+  "verdict_classes": {
+    "a": "реальный доход + фарм — взять",
+    "b": "реальные деньги, новый код — малый размер",
+    "c": "эмиссии/субсидии умрут — фарм только при ликвидном токене",
+    "d": "красный флаг — не входить"
+  },
+  "protocols": [
+    {
+      "slug": "accountable",
+      "name": "Accountable",
+      "chains": ["Monad", "Ethereum", "Arbitrum", "Citrea", "Pharos", "Robinhood Chain"],
+      "category": "Uncollateralized Lending / credit vaults + DVN",
+      "apy_tvl_snapshot": {
+        "monad_usdc_main": {"apy": 9.8, "base": 9.5, "reward_wmon": 0.3, "tvl_usd_m": 75.0},
+        "ethereum_usdc_pools": {"apy_range": "10.7-21.7", "real_base_range": "10.4-15.6", "pool_21_7": "10.43 base + 11.31 PIKU (ликвидность $968 — считать 0)", "tvl_usd_m": 21.3},
+        "ausd_pools": {"valos": {"apy_base": 6.55, "tvl_usd_m": 100.5}, "k3_galaxy": {"apy_base": 6.74, "tvl_usd_m": 30.8}},
+        "deployed_total_usd_m": 330.0,
+        "utilization_pct": 99
+      },
+      "apy_history": {"monad_main_90d_avg": 13.41, "monad_main_90d_min": 9.77, "monad_main_90d_max": 17.9, "note": "reward-компонента умерла (6%→0.3% за 9 мес), база стабильна 9.5%"},
+      "tvl_trend": "пул Monad: $0.13M (19.01.2026) → $75M; протокол выдано $330M",
+      "yield_source": "проценты институциональных заёмщиков: Valos (кредиты tier-1 маркетмейкерам, net 7-8%), K3 Capital→Galaxy (7.5%, линия $30M→$100M), Hyperithm (дельта-нейтральный деск, $0→$65M), Morini/Piku BMMF (FX-арбитраж USD/TRY); permissioless-волт 'working capital под дебиторку' (заёмщик не назван). НЕ субсидии Monad: экосистемная надбавка лишь ~0.3% в WMON",
+      "since": "листинг DefiLlama 2025-12-04; пулы с января/июня 2026",
+      "team_backing": "CEO Wojtek Pawlowski (ex-Maven 11/M11 Credit), осн. 02.2024, BVI. Seed $2.3M 12.2024 (Zee Prime, MitonC, Maven 11); $7.5M 10.2025 — Pantera Capital + OKX Ventures, Auros, kpk, Onigiri",
+      "audits": "заявлены 6 (Cyfrin, Quantstamp, ABA); DefiLlama 2. Cyba/ABA 03.2025 по Credit Vaults: 1 Critical + 4 High + 3 Medium (resolved/acknowledged)",
+      "defaults": "публичных дефолтов нет (отсутствие информации, не подтверждение); first-loss в доках НЕ задокументирован: 'no insurance, partial or total loss possible'",
+      "points_token": {"token": "нет", "points": "ACC Points с 12.2025 (конвертация не объявлена), множители NFT 1.2-1.6x", "farm_value": "высокий аирдроп-потенциал; WMON-награды ликвидны (liq $1.2M); PIKU-награды = 0"},
+      "verdict": "a",
+      "verdict_text": "Лучший кандидат: реальный кредитный доход (+2-8 п.п. к Pareto/Midas) + ACC-поинты. Ограничители: непрозрачный first-loss, утилизация 99%, молодой протокол. Пул Morini/PIKU не брать.",
+      "position_max_usd": "250000-750000",
+      "kill_switch": "первый дефолт любого волта; заморозка выводов; раскрытие unwind у Hyperithm"
+    },
+    {
+      "slug": "ember-protocol",
+      "name": "Ember Protocol",
+      "chains": ["Sui", "Ethereum", "Base", "Pharos", "Monad"],
+      "category": "Onchain Capital Markets / маркетплейс волтов",
+      "apy_tvl_snapshot": {
+        "eth_y10k": {"apy": 9.03, "tvl_usd_m": 18.0},
+        "sui_earn": {"apy": 10.03, "tvl_usd_m": 10.1},
+        "eth_129": {"apy": 12.9, "tvl_usd_m": 2.6},
+        "sui_r25": {"apy": 12.0, "base": 8.0, "reward_sui": 4.0, "tvl_usd_m": 8.5},
+        "total_tvl_usd_m": 103.6
+      },
+      "tvl_trend": "$126.3M (22.07) → $103.6M: сдувание Pharos-кампании (−$16M за последние 2 дня), разовый вывод $21.8M на ETH в июне; Sui/Base растут",
+      "yield_source": "сторонние Vault Managers: Y10K (кредитная бука), Hilbert hLEND (сверхобеспеченный кредит, +200 б.п. маркетинговый буст 3 мес), Bitwise Premium+ RWA (5.6%), R25 Treasury, Tulipa (12.9%), Zodiac (Monad 12.6%). 'Ember Earn 10%' — таргет-ставка менеджера (сглаживание), не мгновенный ончейн-захват",
+      "since": "09.2025",
+      "team_backing": "команда Bluewater (строители перп-декса Bluefin; подтверждено Sui Network, CryptoRank, миграцией легаси-волтов Bluefin, GitHub fireflyprotocol). Лондон, ~7 чел., публичных раундов нет",
+      "audits": "OtterSec (10.2025) + отчёт 12.2025 (аудитор не назван) + отчёт 10.2026 (аудитор не назван)",
+      "points_token": {"token": "нет", "points": "нет", "farm_value": "низкий"},
+      "verdict": "b",
+      "verdict_text": "Реальные кредитные/RWA-потоки; платформенный риск концентрации на одной команде и молодых эмитентах. Предпочесть пулы с идентифицируемым эмитентом.",
+      "position_max_usd": "200000-500000"
+    },
+    {
+      "slug": "veranta",
+      "name": "Veranta (экс-Avantis)",
+      "chains": ["Base"],
+      "category": "Derivatives — perpetuals DEX (пивот в RWA-перпы)",
+      "apy_tvl_snapshot": {"avusdc": {"apy": 20.0, "base": 20.0, "reward": 0, "tvl_usd_m": 9.66}},
+      "apy_history": {"90d_avg": 12.57, "90d_min": 0, "note": "01.09.2026 было 2.9%, подъём к 20% синхронно бета-промо; в 2024 доходило до 157% (эмиссии), 2025 — 3-6%"},
+      "tvl_trend": "ATH $119.4M (04.11.2025, пик XP-инсентивов) → $11.8M (−90%)",
+      "yield_source": "LP-волт avUSDC — контрагент всех сделок: LP получают 70% opening/closing/win-fee + 100% margin-fee (30% → buyback&burn AVNT). Объёмы $13.7B/30d, fees $585K/30d. Реальные комиссии, НЕ эмиссии (apyReward=0, XP закрыты 28.02.2026)",
+      "since": "листинг 02.2024; ребрендинг 14.09.2026",
+      "team_backing": "$12M: seed $4M Pantera+Founders Fund+Galaxy+Base Ecosystem Fund (09.2023); Series A $8M co-лид Founders Fund+Pantera (анонс 06.2025)",
+      "audits": "v1: Zellic+Zokyo; v1.5: Zellic+Sherlock; v2 (Guardian/Sherlock/Zellic) — отчёты НЕ опубликованы",
+      "points_token": {"token": "AVNT (TGE 09.09.2025; $0.116, −95.6% от ATH $2.64)", "points": "XP завершены", "farm_value": "нет"},
+      "verdict": "b",
+      "verdict_text": "Честные комиссионные, но режимные: при окончании промо возврат к 3-10%. Хвост LP: выплаты трейдерам сверх буфера бьют по телу волта.",
+      "position_max_usd": "100000-250000",
+      "kill_switch": "30d объёмы ×0.5; публикация v2-аудитов с критическими находками"
+    },
+    {
+      "slug": "ensuro",
+      "name": "Ensuro",
+      "chains": ["Ethereum (V3 с 03.2026; ex-Polygon)"],
+      "category": "Insurance — параметрическое перестрахование",
+      "apy_tvl_snapshot": {"senior_usdc": {"apy": 19.26, "base": 19.26, "tvl_usd_m": 1.3}, "spot_junior": {"apy": 34.13, "tvl_usd_m": 0.27, "outlier": true}},
+      "apy_history": {"senior_30d_avg": 21.48, "senior_90d_avg": 21.06, "90d_max": 58.81, "predictor": "Down 82%"},
+      "tvl_trend": "$0.39M (10.2025) → $2.28M, рост",
+      "yield_source": "страховые премии параметрических MGA: Otonomi (грузы, $11.5M capacity), Koala (travel), IBISA+One Acre Fund (агро, Кения), Rentennials, Avata, Spot. Senior пул исторически 25.2% годовых 2024-25 (Sharpe 2.13). Cost of capital LP из премий; свободный капитал в Aave/Morpho; утилизация ~90%",
+      "since": "листинг 04.2023; V3 на Ethereum с 18.03.2026",
+      "team_backing": "Марко Мирабелла (CEO) и Гильермо Нарваха, Аргентина (Circle Impact founder series 26.08.2024); лицензия Bermuda Monetary Authority (digital asset + general reinsurance)",
+      "audits": "Quantstamp 09.11.2022 (V2/Polygon), SlowMist 29.09.2021; ПУБЛИЧНОГО АУДИТА V3/Ethereum НЕТ",
+      "points_token": {"token": "нет", "points": "нет", "farm_value": "нет"},
+      "verdict": "b",
+      "verdict_text": "Реальный декоррелированный доход, но: V3-аудит гэп, катастрофический хвост параметрики, ёмкость пула мала (кэп ~10-15% пула). Венчурный карман микро-размером (аналог reUSD из WS-10).",
+      "position_max_usd": "50000-150000"
+    },
+    {
+      "slug": "vectis-finance",
+      "name": "Vectis Finance",
+      "chains": ["Ethereum", "Solana"],
+      "category": "Yield — дельта-нейтральный funding/basis-арбитраж",
+      "apy_tvl_snapshot": {"eth_ultrax": {"apy": 13.71, "base": 13.71, "tvl_usd_m": 1.8, "launched": "08-09.10.2026"}, "solana_usdc": {"apy": 7.41, "tvl_usd_m": 2.71}},
+      "tvl_trend": "$21.2M (10.2025) → $5.1M (10.2026)",
+      "yield_source": "funding/basis/кросс-биржевой арбитраж; >90% капитала на Binance/Hyperliquid/OKX, кастодии Ceffu/Cobo; ETH-волт на инфраструктуре Accountable (VaaS)",
+      "since": "листинг 12.2024",
+      "team_backing": "анонимная команда; маркетинг 'risk-free yield' — красный флаг",
+      "audits": "0 (на сайте 'audited' без аудитора)",
+      "incidents": "прямые потери в хаке Drift 01.04.2026 ($286M, DPRK): официальный портал 'Drift Recovery Token Claim', пометка 'UltraX Arbitrage — Affected'",
+      "points_token": {"token": "нет", "points": "нет"},
+      "verdict": "d",
+      "verdict_text": "Анонимы + 0 аудитов + уже сгорели в Drift + цепочка CEX/кастодиев. 13.7% не покрывают хвост.",
+      "position_max_usd": 0
+    },
+    {
+      "slug": "rhea-lend",
+      "name": "Rhea Lend (экс-Burrow)",
+      "chains": ["Near"],
+      "category": "Lending (pool-based, как Aave) + LST rNEAR + DEX (ex-Ref)",
+      "apy_tvl_snapshot": {"usdc": {"apy": 13.39, "base": 13.39, "tvl_usd_m": 1.6}, "usdt": {"apy": 12.11, "tvl_usd_m": 1.74}},
+      "apy_history": {"usdc_30d_avg": 9.12, "range": "3.5-16.85", "predictor": "Down 67%"},
+      "tvl_trend": "$97M → $196.5M за месяц — переоценка NEAR ×3 ($1.64→$5.01, AI-нарратив), не приток долларов; Rhea = ~96% DeFi TVL всей цепи NEAR",
+      "yield_source": "проценты заёмщиков — органический спрос на плечо в ралли NEAR; reward-APY = 0 (не эмиссии)",
+      "since": "Burrow с 03.2022; слияние Burrow+Ref в Rhea 27.02.2025; TGE RHEA 07.2025",
+      "team_backing": "команда Burrow/Ref; RHEA $0.075 (−62% от ATH $0.1999 27.09.2026)",
+      "audits": "BlockSec ×2 (2022); ХАК 16.04.2026: −$18.4M (фейковые NEP-141 через баг валидации в margin V2, вышедшей ПОСЛЕ аудитов; частично компенсировано, ~$4M ушли в Zcash)",
+      "points_token": {"token": "RHEA", "farm_value": "нет (токен есть, эмиссий в пулы нет)"},
+      "verdict": "b",
+      "verdict_text": "Реальные ставки, но это ставка на продолжение NEAR-ралли: при развороте ставки и TVL сожмутся синхронно. Хак-история (баг в послеаудитном коде). Малый размер или мимо.",
+      "position_max_usd": "100000-200000"
+    },
+    {
+      "slug": "agua",
+      "name": "Agua",
+      "chains": ["Ethereum", "Monad"],
+      "category": "Onchain Capital Allocator — 'Global Carry Vault'",
+      "apy_tvl_snapshot": {"eth": {"apy": 10.001, "tvl_usd_m": 11.51, "since": "13.08.2026"}, "monad": {"apy": 10.001, "tvl_usd_m": 9.07, "since": "14.10.2026"}, "note": "10.00% без единого отклонения — административная ставка"},
+      "yield_source": "СТАВКА ЗАДАЁТСЯ АДМИНОМ: setRate(uint256) → cumulativeRateFactor; 'Yield is not distributed as new token mints'. Фактический носитель — DeFi-кэрри (Aave/Morpho/Euler/IPOR + leveraged looping/basis) на усмотрение закрытой команды; при базовых ставках 4-8% чистая десятка требует левереджа",
+      "since": "листинг DefiLlama 03.08.2026",
+      "team_backing": "юрлицо Tropical Water Management Corp. (оболочка), размещено на аппе Reservoir (Fortunafi-контур); команда НЕ раскрыта; ответственность по Terms US$100; шеры не дают прав на активы",
+      "audits": "1 непрозрачный скан 'Vault Yield Contracts _ SSC.pdf' (без текстового слоя, аудитор по имени файла 'SSC')",
+      "centralization": "ADMIN_ROLE = MPC 3/5; adminWithdraw(ASSET, balanceOf(vault), anyAddress); earlyRedemptionFee 5% → до 100%; cap=0 (безлимит)",
+      "points_token": {"token": "нет", "points": "нет"},
+      "verdict": "d",
+      "verdict_text": "'Users of this vault unconditionally trust the ADMIN_ROLE key holder' — прямая цитата доков. Custodial-риск + админ-ставка + скрытая команда. Curvance оборачивает aguaUSDCgc ($9.1M, APY 0) — каскад того же риска.",
+      "position_max_usd": 0
+    },
+    {
+      "slug": "zerobase-cedefi",
+      "name": "ZEROBASE CeDeFi",
+      "chains": ["Ethereum", "BSC", "Arbitrum", "Base", "OP", "Polygon"],
+      "category": "Basis Trading — zk-верифицированный бэзис на Binance",
+      "apy_tvl_snapshot": {"eth_usdt": {"apy": 9.0, "base": 7.0, "reward_zbt": 2.0, "tvl_usd_m": 14.19}, "bsc_usdt": {"apy": 8.76, "base": 6.76, "reward_zbt": 2.0, "tvl_usd_m": 16.76}, "total_tvl_usd_m": 60.98},
+      "tvl_trend": "$542.6M (14.10.2025, надувание под TGE) → $61M (−89%): пост-раздачный исход фармеров; плато $54-63M весь 2026",
+      "yield_source": "~7% — реальный funding-бэзис на Binance (кастодия CEFFU; zk+TEE доказывают корректность трейдинга); +2% — эмиссии ZBT ($0.072, −93% от TGE), еженедельно по 7d-средней цене; кампания 60д (с 14.08.2026) истекает ~13.10.2026 — 'двойка' под угрозой",
+      "since": "листинг 06.2024; TGE 17.10.2025 (Binance HODLer)",
+      "team_backing": "CEO Mirror Tang (криптография, SJTU), из Salus Security, инкубация Binance Labs; сид $5M (03.2024): Binance Labs, Lightspeed Faction, dao5, Sequoia, IDG",
+      "audits": "PeckShield (Vault v1.0) + Salus 24.12.2024 — Salus РОДСТВЕННАЯ команда (конфликт интересов); HindenRank 15.02.2026: Grade C (44/100)",
+      "points_token": {"token": "ZBT (ликидный, но −93%)", "farm_value": "низкая: цена эмиссий тает"},
+      "verdict": "c",
+      "verdict_text": "Реальных ~7% при кастодиальном риске Binance; эмиссионная часть умирает. Фарм имеет смысл только если принимать CEX-контрагента и считать ZBT по нулю.",
+      "position_max_usd": "0-100000"
+    },
+    {
+      "slug": "nawa-protocol",
+      "name": "Nawa Protocol",
+      "chains": ["ZIGChain", "Ethereum"],
+      "category": "RWA — шариат-совместимые волты (private credit / trade finance)",
+      "apy_tvl_snapshot": {"zigchain_usdc": {"apy": 9.32, "base": 9.32, "tvl_usd_m": 3.46}},
+      "apy_history": {"30d_avg": 9.88, "note": "эпизодические 0% и 20.5% — крепкий поток неровный"},
+      "tvl_trend": "плоско $4M; Nawa = 88% DeFi TVL ZIGChain (без LST Valdora)",
+      "yield_source": "private credit / trade finance, курируется ZIG Markets (структурно связанная сторона — BD/risk-ветка Zignaly); независимой верификации потока нет; 'remittance financing' в прессе не подтверждено — подтверждаемая формулировка private credit/trade finance",
+      "since": "запуск на Core 04.2025; ZIGChain с 11.2025; Ethereum с 07.2026",
+      "team_backing": "инвесторы ZIGLabs, Disrupt.com, Solv, Core Ventures; шариат-сертификат Amanie Advisors (29.04.2025); Zignaly объявил о закрытии трейдинг-платформы и пивоте в 'ZIG Finance'",
+      "audits": "Halborn + Oak Security (по прессе; атрибуция инфраструктуре ZIGChain); ссылка на аудит с DefiLlama — 404",
+      "points_token": {"token": "NAWA (TGE нет)", "points": "нет"},
+      "verdict": "d",
+      "verdict_text": "Родственный доход внутри закрытого контура закрывающейся экосистемы; цепь с $4.3M реального DeFi TVL. 9.3% не компенсируют связанность + chain-risk.",
+      "position_max_usd": 0
+    },
+    {
+      "slug": "bitway-earn",
+      "name": "Bitway Earn",
+      "chains": ["BSC"],
+      "category": "Basis Trading / asset management (экс-Side Protocol L1)",
+      "apy_tvl_snapshot": {"usdt_core_alpha": {"apy": 8.0, "base": 8.0, "tvl_usd_m": 22.75, "note": "30d mean ровно 8.0 — ставка административная"}},
+      "tvl_trend": "плато $83-85M до 23.09.2026 → $39.9M (16.10): −53% за 3 недели; побуквенно: USD1 $10.5M→$0.02M (слит ЦЕЛИКОМ), U −63%, USDT −23%",
+      "yield_source": "'институциональные стратегии на CEX' под ФИКСИРОВАННУЮ ставку, излишек забирает платформа; верификации трейдов нет (в отличие от ZEROBASE); анстейк до 7 дней",
+      "since": "листинг 12.03.2026; TGE BTW 02.03.2026",
+      "team_backing": "осн. Shane Qiu (ex-Binance Labs research), CTO Dave Hrycyszyn; инкубация YZi Labs; раунды ~$5.4M (TRON DAO Ventures, HTX Ventures); FDV BTW $18-27B (~5000x к привлечённому); токен на ATH 14.10.2026 одновременно с исходом депозитов; анлок 101.6M BTW 02.11.2026",
+      "audits": "BlockSec + Salus ×2 — по контрактам, стратегия не покрыта",
+      "points_token": {"token": "BTW", "points": "BW Points 0.05/USD/год"},
+      "verdict": "d",
+      "verdict_text": "Паттерн наёмного капитала: фиксированный промисс из непрозрачных CEX-стратегий при бегстве десятков миллионов и пампе токена к ATH.",
+      "position_max_usd": 0
+    },
+    {
+      "slug": "harvest-finance",
+      "name": "Harvest Finance (пул = 40 Acres)",
+      "chains": ["Base"],
+      "category": "Yield Aggregator → волт 40 Acres (дельта-нейтральный бэзис на Hyperliquid)",
+      "apy_tvl_snapshot": {"usdc_40acres": {"apy": 27.17, "base": 27.17, "tvl_usd_m": 1.76, "pool_meta": "40 Acres"}},
+      "apy_history": {"2025": "10-16%", "dec2025-may2026": "4-8%", "peak_07_10_2026": 32.9, "30d_avg": 29.05, "apy_pct_30d": -103, "predictor": "Down 95% (conf 3)"},
+      "yield_source": "фандинг перпов через 40 Acres (шорт-перпы, Hyperliquid) — РЕАЛЬНЫЙ рыночный поток, не субсидии; режимный всплеск (как Jupiter WS-9)",
+      "since": "пул с 17.05.2025; всплеск с июня 2026",
+      "team_backing": "Harvest — старый агрегатор (FARM, 2020); 40 Acres — TVL $49.6M, 2 аудита",
+      "audits": "Harvest: PeckShield/Haechi/CertiK (2020), Least Authority (2021), Halborn 01.2025 (Base); инцидент 26.10.2020 ($24M); timelock вывода 12ч",
+      "points_token": {"token": "FARM", "farm_value": "нет"},
+      "verdict": "b",
+      "verdict_text": "Эпизодный фарм пика фандинга: взять маленько с планом выхода при нормализации (<12%). Не парковка.",
+      "position_max_usd": "100000-200000"
+    },
+    {
+      "slug": "growihf",
+      "name": "GrowiHF",
+      "chains": ["Hyperliquid L1"],
+      "category": "Yield — квант mean-reversion vault",
+      "apy_tvl_snapshot": {"usdc": {"apy_defillama": 10.43, "hl_api_apr_30d": 32.98, "tvl_usd_m": 13.67}},
+      "apy_history": {"30d_avg_defillama": 54.66, "max": 288.85, "note": "дневные APY 0→120→5% — артефакты расчёта по share price трейдинг-PnL; '29%' — сглаживание"},
+      "audits": "0 (подтверждено 16.10.2026; на сайте 'audited' без отчёта)",
+      "withdrawals": "allowDeposits=false, maxWithdrawable=0 (мгновенный вывод закрыт), у фолловеров lockupUntil",
+      "team_backing": "анонимы ('founded by engineers'); лидер-фонд 5.02%; контекст: 85% H-vaults Hyperliquid убыточны (Medium Growi 05.2026), кейс HLP0 ($29M юзер-фондов, The Defiant 07.08.2025)",
+      "verdict": "d",
+      "verdict_text": "Диагноз WS-10 подтверждён: аудитов нет, депозиты закрыты, вывод = 0. Не добавлять.",
+      "position_max_usd": 0
+    },
+    {
+      "slug": "morini",
+      "name": "Morini Capital",
+      "chains": ["Ethereum (Morpho V2.0), Accountable, Royco, Turtle"],
+      "category": "Emerging-markets asset manager (Турция)",
+      "apy_tvl_snapshot": {
+        "morpho_usdc_emerging": {"net_apy": 7.43, "tvl_usd_k": 346.7, "status": "UNVERIFIED (не листингован Morpho)", "fee": "10% performance"},
+        "royco_stock_tr_basis_senior": {"apy": 25.39, "tvl_usd_m": 0.8},
+        "accountable_bmmf": "= пул Accountable 21.7% (10.43 base + 11.31 PIKU)"
+      },
+      "yield_source": "арбитраж USD/TRY (Binance TR/OKX TR ↔ турецкие фиаты), TRY overnight керри, бэзис Borsa Istanbul vs single-stock futures; Morpho-волт — лендинг против 'curated emerging market collateral'",
+      "since": "X с 11.2025; vault suite на Piku с 04.06.2026",
+      "team_backing": "основатели не названы; листинг rwa.xyz",
+      "red_flag": "Турция в фондовом кризисе: ликвидация 131 инвестфонда на ~$18.3B (Turkish Minute 18.09.2026; Reuters 02.10.2026) — контрагентский/регуляторный риск всей машины",
+      "verdict": "d",
+      "verdict_text": "Реальный арбитражный доход, но эмерджент-хвост в разгар кризиса + нелистингованный волт $347K. Не позиция для книжки.",
+      "position_max_usd": 0
+    },
+    {
+      "slug": "sharpbyte",
+      "name": "SharpByte Capital",
+      "chains": ["Monad", "Ethereum"],
+      "category": "Risk curator (Morpho vaults)",
+      "apy_tvl_snapshot": {"usdc_high_yield_monad": {"scanner_apy": 0.7, "real_net_apy": 6.53, "tvl_usd_k": 506, "status": "DEPRECATED (Morpho)"}},
+      "verdict": "d",
+      "verdict_text": "Мёртвый/осиротевший волт: 0.7% в сканере — артефакт расчёта APY по share price deprecated-волта. Ethereum-волт SharpByte $0 TVL, deposits disabled. Исключить из скоринга как шум.",
+      "position_max_usd": 0
+    }
+  ],
+  "ecosystems": {
+    "monad": {
+      "chain_tvl_usd": "998M (1.91B с займами), стейблы 684M",
+      "usdc_payers": {
+        "aave_v3": "USDC 5.61% total (4.12 base + 1.5 WMON); SYRUPUSDC-пул $157M @ 1.14% — не путать",
+        "morpho": "6.3-8.1% + 0.7-1.4 WMON; AUGUSTUSDCV2 9.47%",
+        "euler_v2": "8.22%",
+        "curvance": "6.1-7.3% (4.3-7.3 base + 1.35-1.8 rew); Bytes-поинты продолжаются, CDT не выпущен; оборачивает aguaUSDCgc $9.1M (APY сейчас 0)",
+        "agua": "10.0% (см. красный флаг)",
+        "accountable": "9.5-12%"
+      },
+      "incentive_programs": "Monad Momentum (анонс 18.09.2025): матчинг инцентивов команд до 1:1 в MON — источник WMON-наград. MON $0.0225 (−54% от ATH 26.11.2025), обращение 11.8B/100.7B (12%) — фарм-ценность низкая",
+      "points": "пост-TGE поинтовой программы фонда НЕТ (аирдроп был при запуске 24-26.11.2025)",
+      "ausd": "Agora AUSD — крупнейший стейбл Monad (~$100M+): UST+repo, VanEck управляет, State Street кастодия, Grant Thornton аудитор, preliminary OCC approval",
+      "not_monad": "Kinetiq (экс-Meteor) — Hyperliquid LST kHYPE $850M, НЕ Monad; kPoints закрыты 10.2026"
+    },
+    "zigchain": {
+      "what": "Cosmos SDK L1 с EVM от Zignaly (анонс 04.2024, $100M ecosystem fund c DWF Labs; mainnet beta 25.06.2025)",
+      "tvl": "реальный DeFi ~$4.3M + LST Valdora $78M; Nawa = 88% первого",
+      "why_9pct": "бутстрап экосистемы: доход заявлен как private credit/trade finance, курируется связанным ZIG Markets; Zignaly закрывает трейдинг-платформу (пивот в 'ZIG Finance'), локап основателей до конца 2026",
+      "zig_token": "$0.054, FDV $105M"
+    },
+    "near": {
+      "what": "Rhea Finance = Burrow (лендинг) + Ref (DEX), слияние 27.02.2025, TGE RHEA 07.2025",
+      "tvl_driver": "NEAR $1.64 (18.08) → $5.01 (16.10): AI-нарратив + NEAR Intents-инсентивы + сокращение эмиссии 5%→2.5% + buyback; TVL цепи $92.5M→$233.5M; Rhea = ~96% DeFi цепи",
+      "usdc_rate": "13.39% — органический спрос заёмщиков на плечо; reward 0",
+      "hack": "16.04.2026 −$18.4M (фейковые NEP-141 через баг валидации margin V2, код после аудитов BlockSec; ~$3.3M заморожено Tether, ~$8.9M возвращено/компенсировано)"
+    },
+    "sui": {
+      "ember_team": "Bluewater (строители Bluefin) — подтверждено Sui Network/CryptoRank/миграцией легаси-волтов/GitHub fireflyprotocol",
+      "baseline_usdc": "Navi 5.71%, Current 6.93%; Ember 10-12% = премия кредитной книги/RWA-менеджера, не субсидия SUI (SUI платится только в пуле R25)"
+    }
+  },
+  "airdrop_watch": {
+    "protocols_with_token_launch_potential": {
+      "accountable": {"points": "ACC Points (12.2025, конвертация не объявлена)", "conviction": "высокий: Pantera, $330M выдано, 'future reward allocation mechanism'"},
+      "curvance": {"points": "Bytes", "conviction": "средний: TVL $100M+, но USDC-ставки обычные"},
+      "ember": {"points": "нет", "conviction": "низкий (команда пережила TGE Bluefin)"},
+      "nawa": {"token": "NAWA, TGE нет", "conviction": "низкий (закрытый контур ZIG)"}
+    },
+    "summary": "из 15 позиций неназванный токен с внятной аирдроп-гипотезой — у 2 (Accountable ACC, Curvance Bytes); у остальных токен уже есть или поинтов нет"
+  },
+  "final_verdicts": {
+    "take_limited": ["accountable (Monad/ETH базовые пулы)", "ensuro senior", "veranta avUSDC", "ember (пулы с именованным эмитентом)", "harvest→40acres (эпизод фандинга)", "rhea (только при желании NEAR-керри)"],
+    "small_or_skip": ["zerobase (реально ~7%, Binance-кастодия, эмиссии умирают)"],
+    "do_not_enter": ["agua", "bitway-earn", "vectis-finance", "growihf", "morini morpho unverified", "nawa/zigchain"],
+    "scanner_noise": ["sharpbyte (deprecated-волт)"]
+  }
+}
