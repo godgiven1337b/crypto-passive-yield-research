@@ -1,0 +1,166 @@
+{
+  "meta": {
+    "workstream": "WS-7 market state & risk registry",
+    "date_checked": "2026-10-16",
+    "primary_sources": [
+      "DefiLlama API (api.llama.fi /v2/chains, /v2/historicalChainTvl, /protocols) — direct queries 2026-10-16",
+      "CoinGecko API (simple/price, /global, market_chart 365d) — direct queries 2026-10-16",
+      "Galaxy Research (KelpDAO/LayerZero, Apr 2026), TRM Labs (H1 2026, Liquid Network), Reuters/CNBC (Bitget), Chainalysis (2024, H1 2025), FBI (Bybit), CoinDesk (USDe Oct 2025)"
+    ],
+    "notes": "Counts of hack incidents differ by methodology (TRM counts all incl. small; 'major exploits' lists ~75/yr for 2025). 2026 total = $2.68B through September (Cointelegraph) + ~$98M October 1-15. Yields 2024-2025 for sUSDe/stETH/3pool are range-based estimates (marked in report); Aave USDC averages verified via DefiLlama yields API (WS-1)."
+  },
+  "date": "2026-10-16",
+  "market": {
+    "btc_usd": 82664,
+    "eth_usd": 2478.69,
+    "sol_usd": 106.69,
+    "total_mcap_usd": 2799000000000,
+    "btc_dominance_pct": 59.27,
+    "eth_dominance_pct": 10.8,
+    "cycle_phase": "post-bear recovery: ATH Oct 2025 (BTC 126080), $19B liquidation cascade 2025-10-10/11, bottom Jun-Jul 2026 (BTC ~58K, -54%), now +41% off lows but -34% (BTC) / -50% (ETH) from ATH",
+    "change_12m_pct": {"btc": -23.6, "eth": -36.4, "sol": -42.3},
+    "from_ath_pct": {"btc": -34.4, "eth": -49.9, "sol": -63.6},
+    "realized_vol_30d_annualized_pct": {"btc": 37.5, "eth": 43.6, "sol": 60.7},
+    "realized_vol_90d_annualized_pct": {"btc": 38.0, "eth": 52.3, "sol": 56.4},
+    "calendar_returns_pct": {
+      "btc": {"y2024": 121.0, "y2025": -5.4, "y2026_ytd": -6.5},
+      "eth": {"y2024": 46.0, "y2025": -11.0, "y2026_ytd": -16.5},
+      "sol": {"y2024": 88.0, "y2025": -34.7, "y2026_ytd": -14.5}
+    }
+  },
+  "defi_tvl_usd": 90026000000,
+  "defi_tvl_context": {
+    "tvl_12m_ago_usd": 150860000000,
+    "tvl_change_12m_pct": -40.4,
+    "tvl_peak": {"usd": 171000000000, "date": "2025-10-07"},
+    "tvl_trough": {"usd": 72910000000, "date": "2026-08-01"},
+    "tvl_off_trough_pct": 23.0
+  },
+  "tvl_by_chain": {
+    "Ethereum": 50356817783,
+    "Base": 6149171141,
+    "Solana": 6019000000,
+    "Tron": 5554000000,
+    "BSC": 5352000000,
+    "Bitcoin": 4389000000,
+    "Arbitrum": 1414124550,
+    "Hyperliquid L1": 1059000000,
+    "Robinhood Chain": 1053000000,
+    "Monad": 1003000000,
+    "_note": "DefiLlama /v2/chains 2026-10-16; Solana/Tron/BSC/Bitcoin rounded from snapshot"
+  },
+  "top10_protocols": [
+    {"name": "Lido", "tvl_usd": 23674000000, "category": "Liquid Staking"},
+    {"name": "Aave (v2+v3+v4+Horizon)", "tvl_usd": 18204000000, "category": "Lending"},
+    {"name": "SSV Network", "tvl_usd": 12840000000, "category": "Staking Pool"},
+    {"name": "Morpho", "tvl_usd": 11046000000, "category": "Lending"},
+    {"name": "Spark", "tvl_usd": 9707000000, "category": "Lending (Sky ecosystem)"},
+    {"name": "Binance staked ETH", "tvl_usd": 9122000000, "category": "Liquid Staking"},
+    {"name": "JustLend", "tvl_usd": 7027000000, "category": "Lending (Tron)"},
+    {"name": "EigenCloud", "tvl_usd": 6334600000, "category": "Restaking"},
+    {"name": "Maker/Sky", "tvl_usd": 5906000000, "category": "CDP/RWA"},
+    {"name": "ether.fi", "tvl_usd": 5617000000, "category": "Liquid Staking"}
+  ],
+  "tvl_by_category_usd": {
+    "Liquid Staking": 55640000000,
+    "Lending": 52180000000,
+    "Staking Pool": 14680000000,
+    "DEXs": 13750000000,
+    "Restaking": 9990000000,
+    "CDP": 7840000000,
+    "Basis Trading (synthetic $)": 7690000000,
+    "Yield": 4800000000,
+    "RWA (DeFi-native)": 4040000000,
+    "_note": "DefiLlama /protocols aggregation, not deduplicated across parent/child; relative weights indicative",
+    "rwa_tokenized_ex_stablecoins": {
+      "dec_2024_usd": 15200000000,
+      "sep_2026_usd": 38600000000,
+      "yoy_growth_pct": 75,
+      "largest_segment": "tokenized US Treasuries $12.88B"
+    }
+  },
+  "hacks_by_year": {
+    "2024": {
+      "count": 303,
+      "count_note": "approx, Chainalysis methodology",
+      "total_usd": 2200000000,
+      "largest": [
+        {"name": "DMM Bitcoin (CEX)", "usd": 305000000, "cause": "private key (unconfirmed)", "month": "2024-05"},
+        {"name": "WazirX (CEX)", "usd": 235000000, "cause": "multisig compromise (Lazarus)", "month": "2024-07"},
+        {"name": "Munchables", "usd": 62500000, "cause": "insider/developer keys", "returned": true, "month": "2024-03"},
+        {"name": "Radiant Capital", "usd": 55000000, "cause": "private key signing malware", "month": "2024-10"}
+      ],
+      "private_key_share_of_value_pct": 43.8
+    },
+    "2025": {
+      "count": 75,
+      "count_note": "major exploits; 300+ total incidents by broader counts",
+      "total_usd": 2700000000,
+      "total_usd_range": [2100000000, 2700000000],
+      "largest": [
+        {"name": "Bybit (CEX)", "usd": 1500000000, "cause": "Safe{Wallet} supply-chain compromise, cold wallet signing (Lazarus/TraderTraitor, FBI-attributed)", "date": "2025-02-21", "recovered_pct": 0},
+        {"name": "Coinbase (CEX)", "usd": 400000000, "cause": "data breach / bribed support agents (social engineering)", "date": "2025-05", "recovered_pct": null},
+        {"name": "Cetus Protocol (Sui DEX)", "usd": 223000000, "cause": "u256 integer overflow in shared math library", "date": "2025-05-22", "recovered_pct": 73},
+        {"name": "BtcTurk (CEX)", "usd": 95000000, "cause": "hot wallet", "date": "2025-06"},
+        {"name": "Nobitex (CEX)", "usd": 90000000, "cause": "hacktivist (Gonjeshke Darande), partly burned funds", "date": "2025-06-18"},
+        {"name": "Phemex (CEX)", "usd": 69000000, "cause": "hot wallet", "date": "2025"}
+      ],
+      "defi_only_losses_usd": 680000000,
+      "defi_losses_yoy_pct": -74,
+      "protocol_logic_share_of_defi_losses_pct": 89
+    },
+    "2026": {
+      "count": 350,
+      "count_note": "estimate: 207 in H1 (TRM, record) + ~50 Aug + ~55 Sep + October run-rate",
+      "total_usd": 2780000000,
+      "total_usd_note": "$2.68B through September (Cointelegraph) + ~$98M Oct 1-15; year not finished",
+      "largest": [
+        {"name": "Bitget (CEX)", "usd": 387500000, "cause": "third-party zero-day -> wallet backend spoofing, signing service tricked (no keys stolen)", "date": "2026-09-24/25", "recovered_pct": 0.3},
+        {"name": "Liquid Network (BTC sidechain)", "usd": 319000000, "cause": "software bug: valueless tokens swapped for federation BTC", "date": "2026-09-06/07", "recovered_pct": 85, "recovery_note": "purported white-hats returned 85%"},
+        {"name": "KelpDAO/LayerZero (rsETH bridge)", "usd": 290000000, "cause": "RPC poisoning -> forged packet to 1-of-1 DVN; not a smart-contract bug; Lazarus (Galaxy Research)", "date": "2026-04-18", "recovered_pct": 24, "recovery_note": "Arbitrum Security Council rescued 30,766 ETH (~$71M); Aave bad debt ~$190M covered by industry 'DeFi United' ~$300M campaign, not attacker return"},
+        {"name": "Drift Protocol (Solana perp DEX)", "usd": 285000000, "cause": "6-month infiltration + admin key compromise (social engineering)", "date": "2026-04-01", "recovered_pct": 0},
+        {"name": "Tampered hardware wallets series", "usd": 86000000, "cause": "hardware/firmware supply chain", "date": "2026-10", "recovered_pct": null}
+      ],
+      "monthly": {"apr_usd": 620000000, "jul_usd": 270000000, "aug_usd": 136300000, "sep_usd": 766000000, "q3_usd": 1210000000}
+    }
+  },
+  "depeg_events": [
+    {"asset": "USDC", "date": "2023-03", "low": 0.87, "trigger": "$3.3-3.4B trapped at Silicon Valley Bank (Circle)", "outcome": "peg restored within ~a week"},
+    {"asset": "sUSD", "date": "2024-01", "low": 0.90, "trigger": "pegged-market deficit", "outcome": "restored"},
+    {"asset": "USD0++ (Usual)", "date": "2025-01", "low": null, "trigger": "bond-like redemption mechanics discount", "outcome": "DeFi liquidation cascade (Morpho et al.), restructured"},
+    {"asset": "USDe (Ethena)", "date": "2025-04", "low": 0.93, "trigger": "tariff shock, negative funding, mass redemption", "outcome": "restored within days (soft depeg)"},
+    {"asset": "USDe (Ethena)", "date": "2025-10-10/11", "low": 0.65, "trigger": "$19B liquidation cascade, forced deleveraging in perps (reserves intact)", "outcome": "peg restored but supply -40% ($15B -> $8.5B); regulatory debate on synthetic dollars"},
+    {"asset": "wave of DeFi stablecoins (fxUSD/Reservoir et al.)", "date": "2025-11", "low": null, "trigger": "post-USDe repricing; 3 depegs in first week of Nov", "outcome": "partial"},
+    {"asset": "none major", "date": "2026-01..10", "low": null, "trigger": null, "outcome": "no major depegs through mid-Oct 2026; sector grew ~50% in 2025 (Fed note). Forward risk: USDT delisting in EU by 2027-01-08 (ESMA)"}
+  ],
+  "regulation_snapshot": {
+    "eu_mica": "fully in force; CASP grandfathering ended 2026-07-01 (only ~210 of 3,167 pre-MiCA VASPs fully licensed by May 2026); yield/interest ban on EMT/ART issuers stands; ESMA opinion 2026-10-08: non-compliant stablecoins delisted, USDT off EU platforms by 2027-01-08; 'MiCA 2' review consultation 2025-09-22..10-07 (86 questions: interest ban, staking, lending, DeFi)",
+    "us_federal": "GENIUS Act signed 2025-07-18 (payment stablecoins, effective ~2027-01-18); CLARITY Act passed House 294-134 (Jul 2025) but failed Senate cloture 49-50 on 2026-09-15 — dead this Congress, 'CLARITY 2.0' draft pending; SEC: liquid staking not a security (staff FAQ), 'Regulation Crypto' proposed 2026-08-18, Innovation Exemption for tokenized stocks (Sep 2026), custody rules proposed 2026-10-06; CFTC no-action relief for passive software providers",
+    "tax_general": "US: Form 1099-DA (gross proceeds for 2025, cost basis from 2026); IRS DeFi-broker rules nullified by Congress 2025-04-10; OECD CARF data collection from CY2026, automatic exchange from 2027. Not legal advice."
+  },
+  "base_hack_probability": {
+    "blue_chip_pct": 0.3,
+    "blue_chip_pct_range": [0.1, 0.5],
+    "blue_chip_with_indirect_pct_range": [0.5, 1.0],
+    "mid_cap_pct": 1.0,
+    "mid_cap_pct_range": [0.5, 2.0],
+    "new_protocol_pct": 5.0,
+    "new_protocol_pct_range": [3.0, 8.0],
+    "definitions": {
+      "blue_chip": "audited by top firms, 3+ years live, $5B+ TVL (Aave, Lido, Morpho, Sky): direct exploit 0.1-0.5%/yr; incl. indirect losses (bad debt, collateral cascades like KelpDAO->Aave 2026) 0.5-1%/yr",
+      "mid_cap": "$0.5-5B TVL, audited, 1-3 years (Cetus/Radiant/Penpie precedent class)",
+      "new_protocol": "<$500M TVL, <1 year, unaudited or fork: 3-8%/yr, 10%+ for unaudited forks"
+    },
+    "justification": "naive base rate 60-120 DeFi incidents/yr across ~3,563 active protocols ~= 2-3%/yr average, heavily skewed: 1 direct + 2-3 indirect incidents across ~10 blue chips over ~5 years ~= 0.2-0.4%/yr; 207 incidents in H1 2026 (record count) concentrated in small/new protocols; recovery rate only ~10-15% by value (Lazarus cases ~0% return)",
+    "recovery_rate_by_value_pct": 12
+  },
+  "historical_yields": {
+    "aave_usdc": {"y2024": 7.2, "y2025": 4.1, "y2026_ytd": 3.4, "now_pct": 3.77, "source": "DefiLlama yields API, WS-1 verified", "note": "supply APY Aave v3 Ethereum, yearly averages"},
+    "sUSDe": {"y2024": 18.0, "y2024_range": [15, 25], "y2025": 8.0, "y2025_range": [4, 15], "now_pct": 4.9, "source": "eco.com (ATH 35.2% Q1-24, ATL 4.1% Aug-24), Aave blog (4-15% in 2025)", "note": "averages are range-based estimates"},
+    "stETH": {"y2024": 3.2, "y2024_range": [3.0, 3.4], "y2025": 2.85, "y2025_range": [2.7, 3.0], "now_pct": 2.26, "source": "WS-4 / DefiLlama (current), historical ranges estimated", "note": "consensus staking APR"},
+    "curve_3pool_lp": {"y2024": 3.0, "y2024_range": [2, 4], "y2025": 2.0, "y2025_range": [1, 3], "now_pct": 0.0, "now_tvl_usd": 159800000, "source": "WS-5 DefiLlama yields (current); 2024-25 estimated", "note": "base + incentives; currently zero"},
+    "hold_btc": {"y2024": 121.0, "y2025": -5.4, "y2026_ytd": -6.5, "source": "CoinGecko (2024 year-end reference prices)"},
+    "hold_eth": {"y2024": 46.0, "y2025": -11.0, "y2026_ytd": -16.5, "source": "CoinGecko"},
+    "benchmark_fed_funds_pct": {"y2024": 5.3, "now": 3.875, "note": "3.75-4.00% Oct 2026, first hikes of cycle Jul/Sep 2026 (WS-1)"}
+  }
+}
