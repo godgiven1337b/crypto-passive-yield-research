@@ -1,0 +1,131 @@
+{
+  "meta": {
+    "workstream": "WS-9 alpha: Solana USDC premium (2x vs Ethereum)",
+    "date_checked": "2026-10-16",
+    "primary_source": "DefiLlama API (yields.llama.fi, api.llama.fi) direct queries 2026-10-16",
+    "secondary_sources": [
+      "gov.kamino.finance Kamino Lend Monthly Risk Insights September 2026 (published 2026-10-06)",
+      "developers.jup.ag/docs/lend (architecture, earn)",
+      "CoinDesk 2026-08-10 (Lend v2 Smart Vaults)",
+      "Coinpedia/Crypto Briefing 2026-10-07..13 (Jupiter flips Kamino, Solana top stablecoin yields)",
+      "Kamino blog 2026-08-03 / Solana Compass 2026-09-29 (Institutional Commodity Yield)",
+      "Solana Compass / The Defiant / Kamino blog 2026-09-24..28 (USDai GPU sUSDai market)",
+      "Solana Compass 2026-10-06 (Apyx market)",
+      "eco.com support guides 2026-09-21..10-05 (Kamino Lending, Jupiter Perps/JLP, CCTP)",
+      "gov.ethenafoundation.com 2026-05-12/06-05 (Ethena backing assets into Kamino/Jupiter)",
+      "Helius/Solana Compass (Solana outage history, 2026-08-12 near-miss)",
+      "Bankless/Kiln 2026-09 (jupSOL boost), Code4rena 2026-01/2026-02 (Jupiter Lend audits)"
+    ],
+    "benchmark_ethereum": {"aave_v3_eth_usdc_base_pct": 3.77, "aave_30d_avg_pct": 3.80, "aave_90d_avg_pct": 3.52, "susds_pct": 3.80, "fed_funds_pct": 3.875},
+    "notes": "apy_pct = base supply APY (DefiLlama, без reward-токенов если не указано). ⚠️ = оценка/один источник. Промий считается к Aave v3 ETH USDC base."
+  },
+  "anomaly_snapshot": {
+    "date": "2026-10-16",
+    "jupiter_lend_usdc": {"apy_base_pct": 8.98, "tvl_usd": 470073413, "apy_mean30d_pct": 5.50, "apy_mean90d_pct": 4.99, "history_since": "2026-02-27", "history_avg_pct": 4.46, "range_180d_pct": [2.69, 8.98]},
+    "jupiter_lend_other_assets": {"PYUSD": 3.75, "WSOL": 3.94, "JupUSD": 6.99, "USDT": 4.99, "USDE": 4.75, "USDS": 5.87, "USDG": 3.68},
+    "kamino_usdc_pools": [
+      {"market": "SOL/BTC Market", "apy_pct": 8.15, "tvl_usd": 5489245},
+      {"market": "Kamino Institutional Commodity Yield", "apy_pct": 8.05, "tvl_usd": 54384071},
+      {"market": "Steakhouse USDC", "apy_pct": 7.73, "tvl_usd": 19932676},
+      {"market": "Kamino Institutional USDC", "apy_pct": 7.69, "tvl_usd": 7285968},
+      {"market": "Steakhouse USDC High Yield", "apy_pct": 7.32, "tvl_usd": 2556653},
+      {"market": "Allez USDC", "apy_pct": 6.57, "tvl_usd": 10846251},
+      {"market": "OnRe Market", "apy_pct": 6.10, "tvl_usd": 7444537},
+      {"market": "RockawayX RWA USDC", "apy_pct": 5.72, "tvl_usd": 59182267},
+      {"market": "Plume x Re7 USDC", "apy_pct": 8.53, "tvl_usd": 6322268},
+      {"market": "Gauntlet USDC Prime", "apy_pct": 8.39, "tvl_usd": 1386476},
+      {"market": "sUSDai Market", "apy_pct": 8.55, "tvl_usd": 656532},
+      {"market": "JLP Market", "apy_pct": 8.46, "tvl_usd": 310614}
+    ],
+    "premium_vs_aave_90d_pp": {"kamino_onre_pool": {"avg": 3.20, "min": 1.37, "max": 9.12}, "jupiter_lend_usdc": {"avg": 1.53, "min": -0.07, "max": 5.23}, "current_jupiter": 5.21}
+  },
+  "mechanism": {
+    "structural_demand": [
+      {"driver": "RWA/институциональный кредит (главный структурный фактор)", "evidence": "Kamino-полка кураторских рынков занимает USDC: Institutional Commodity Yield $54M (запуск 03.08.2026, $48.35M выдано под товарное финансирование, участник Copper, 11.07% при $32M в авг); USDai/sUSDai GPU-кредиты ($280M+ loan book, 16 займов AI-операторам через SPV, заём USDC до 80% LTV, запуск 24.09.2026 на Kamino+Jupiter); Apyx apyUSD (06.10.2026, ~70% LTV); Plume nOPAL ($3.3M долга); плюс Maple/Huma (+338% MoM)/OnRe/Obligate/Superstate/xStocks", "date": "2026-08..10"},
+      {"driver": "Торговая экономика Solana (meme-сезон)", "evidence": "pump.fun на годовых пиках объёмов (окт), ~91% мем-объёма, StonkFun токенизированные акции $1.76B (01.09-11.10), мемкоины ~67% DEX-объёма Solana → доллары держатся 'в движении', плечо на SOL в SOL/BTC-рынке", "date": "2026-10"},
+      {"driver": "Jupiter Lend v2 Smart Vaults / JLM-мультипликаторы", "evidence": "Lend v2 10.08.2026: заём дешевле за счёт торговых комиссий → рост заимствований; JLM-лупы ( supply→borrow→supply) повышают утилизацию", "date": "2026-08-10"}
+    ],
+    "acute_catalysts_sep_oct": [
+      {"driver": "Сжатие предложения стейблов", "evidence": "Kamino: стейбл-supply −$60M (−5.5%) за сент, в основном USDe/USX (Ethena-рынок −12.5% MoM), при долге −0.5%", "date": "2026-09"},
+      {"driver": "Рост долга USDC", "evidence": "+$33.1M новых займов USDC за сент (лидер роста) → утилизация USDC SOL/BTC 95.1%, borrow rate 15.3%, дневные проценты $160K→$229K", "date": "2026-09-28..30"},
+      {"driver": "TVL-война Jupiter vs Kamino", "evidence": "флип 06-09.10: Jupiter $1.41B vs Kamino $1.40B, депозиты Jupiter +28.1% MoM (JUP +15% до $0.38); Kamino всё ещё лидер по комиссиям ($4.47M vs $1.6M за 30d)", "date": "2026-10-06..09"},
+      {"driver": "почему именно USDC (не PYUSD 3.75%)", "evidence": "USDC — сетлмент-актив торговой экономики и всех RWA-рынков (займы номинированы в USDC), PYUSD-пулы институциональные с низкой утилизацией"}
+    ],
+    "rejected_hypotheses": [
+      {"hypothesis": "Поинтс-программы", "result": "не подтверждена: финальный Jupuary раздали в янв 2026 (~$160M), очков сейчас нет, ASR-клеймы (окно 20.10) второстепенны"},
+      {"hypothesis": "Перп-фандинг-арбитраж как главный драйвер", "result": "слабо: OI Jupiter Perps всего ~$38M, JLP-лупы на Kamino $22.9M долга (32% util); перп-спрос — фоновый, не главный"},
+      {"hypothesis": "ai16z/дебюты токенов", "result": "косвенно: meme-сезон и StonkFun подпитывают спрос, но конкретных мега-дебютов окт в данных нет ⚠️"}
+    ]
+  },
+  "protocol_details": {
+    "jupiter_lend": {
+      "launched": "2025-08-29 (public beta, $500M TVL за 24ч, $2M+ incentives); Lend v2 2026-08-10",
+      "engine": "Fluid (Instadapp) двухслойная архитектура: Liquidity (каустодия/курсы) + Lending/Earn + Vaults/Borrow; первое не-EVM развёртывание Fluid; 'Powered By FLUID' на jup.ag/lend",
+      "tvl_ath": 2410000000, "tvl_ath_date": "2026-09",
+      "current_supply_usd": 2098000000, "current_borrowed_usd": 1007000000, "utilization_pct": 48.0,
+      "audits": "7 аудитов + 1 формальная верификация (заявление Jupiter при выходе из беты); Code4rena #1 22.01-23.02.2026 и #2 12.02-13.03.2026 (по $107k)",
+      "backstop": "страховочного фонда в доках нет; тик-механика Fluid поглощает долг (absorbed debt/collateral в VaultState); JLP-пул (~$500M USDC инвентарь перпов) — смежная ликвидность экосистемы, формального бэкстопа Lend не документировано ⚠️",
+      "rate_history": "с 27.02.2026: 2.69–8.98%, средн 4.46%; волатильна (день к дню ±2.7 п.п.: 7.41→6.16→8.98 за 13-16.10); всплеск начался ~09.10 (4.21%→8.98% за 7 дней) — максимум за всю историю пула",
+      "withdrawal": "Automated Debt Ceiling — лимит изъятий растёт каждый блок (сглаживание очередей)",
+      "fees_30d": 1600000, "oracle": "standalone Oracle program (для Vaults/ликвидаций)"
+    },
+    "kamino": {
+      "tvl_lending_usd": 1309865727, "supply_total_usd": 2225000000, "borrowed_usd": 914600000, "utilization_pct": 41.1,
+      "markets": "изолированные рынки: SOL/BTC, JLP, Altcoins, Prime + кураторские (Steakhouse, Gauntlet, RockawayX, Re7, Hyperithm, Elemental, MEV Capital) + RWA (USDai, Plume, Apyx, OnRe, Maple, Huma, Obligate, Superstate, xStocks) — каждый резерв = отдельный пул USDC со своей ставкой",
+      "risk_params": "Max LTV ~75% станд., eMode Main ~87%, eMode Jito ~90%; close factor 20% (100% при >95% LTV); ликвидационный бонус 2-8%; $120M+ ликвидировано, $0 bad debt за историю",
+      "oracles": "Pyth + Chainlink + Switchboard + Redstone через агрегатор Scope; 8 аудитов Scope; $19.33B обработано; 0 оракульных эксплойтов",
+      "fees_30d": 4470000
+    }
+  },
+  "sustainability": {
+    "history_comparison": {
+      "year_ago_kamino_usdc_pct": "5.5-6.6 (WS-1, окт 2025)",
+      "kamino_onre_pool_now_pct": 6.10, "kamino_30d_avg_pct": 6.49, "kamino_90d_avg_pct": 6.72,
+      "aave_then_pct": "~4.1 (2025 avg) → 3.77 сейчас",
+      "conclusion": "структурная премия Solana над Ethereum существует ≥12 мес и расширилась с ~+1.5-2.5 п.п. до ~+2.5-3.2 п.п. (90d), т.к. Ethereum-ставки упали (глитч предложения: RWA-vaults/Ethena на EVM), а на Solana вырос кредитный спрос"
+    },
+    "scenarios_6_12m": [
+      {"name": "Спайк сохраняется", "prob_pct": 30, "usdc_base_pct": "7.5-9.0", "conditions": "meme-сезон продолжается, RWA-рынки наращивают долг (USDai cap ↑, Apyx/Commodity ramp), предложение стейблов не восстанавливается"},
+      {"name": "База: сплик схлопывается, структура остаётся", "prob_pct": 55, "usdc_base_pct": "5.5-6.5", "conditions": "арбитражный капитал приходит по CCTP, Ethena частично ре-деплоит USDe, утилизация USDC возвращается к 80-88%"},
+      {"name": "Компрессия", "prob_pct": 15, "usdc_base_pct": "4.0-4.7", "conditions": "суплай-флуд: Ethena разворачивает размещение (51.2% бэкинга уже в лендинге), мем-сезон умирает, JUP-инсентивы гонят новые депозиты"}
+    ],
+    "expected_apy_pct": 6.4,
+    "normalizing_forces": ["Ethena может вернуть USDe-обеспечение на Kamino/Jupiter (правление уже онбордило их как площадки в мае-июне 2026)", "арбитраж: спред 3.3-5.2 п.п. при мост-издержках <5 б.п. привлекает капитал", "Jupiter/Kamino TVL-война = субсидии депозиторам"]
+  },
+  "risks": {
+    "solana_infra": {"last_full_outage": "2024-02-06 (~5ч)", "outages_total_2020_2024": "7, >64.5 ч кумулятивно", "2025_2026": "0 полных остановок, 30 мес подряд", "near_miss": "2026-08-12: сбой датацентра Teraswitch, 29% стейка delinquent, 102/699 валидаторов, сеть устояла", "impact_on_lending": "во время outage нельзя выйти/забриджить, ставки продолжают начисляться; риск временной блокировки, не потери принципала (при отсутствии ликвидаций)"},
+    "oracles": {"kamino": "Scope-агрегатор 4 оракулов, 0 эксплойтов", "jupiter": "собственный Oracle program, деталей меньше ⚠️"},
+    "protocol_hack_probability_annual_pct": {"aave_eth": 0.7, "kamino": 1.8, "jupiter_lend": "1.5-2.5 ⚠️ (движок Fluid зрелый + 7 аудитов, но протоколу 14 мес; прецедент стека: Drift $285M 04.2026 — компрометация admin-ключей)"},
+    "liquidity_risk": "утилизация 95-99% в горячих резервах → риск очереди на изъятие (Automated Debt Ceiling сглаживает); кураторские RWA-vaults несут оф-чейн контрагентский риск (SPV, Copper, товарные кредиты)",
+    "rate_decay": "хедлайн 8.98% — максимум истории пула, не равновесие; 30d среднее 5.50%",
+    "others": ["USDC depeg/Circle tail", "CCTP-зависимость при выходе", "Fluid EVM имел инцидент Feb 2025 (под верификацией, WS-1)", "JUP-инсентивы могут отвалиться (очки уже закончились)"]
+  },
+  "jupsol_vs_jitosol": {"jupsol_apy_pct": 5.45, "jitosol_apy_pct": 4.57, "spread_bp": 88, "jupsol_tvl_usd": 540000000, "mechanism": "субсидия Jupiter: делегирование ~100K SOL команды с урезанной комиссией + программа boosted rewards (Kiln, сент 2026)", "sustainable": "пока стратегически нужно Jupiter (jupSOL как LST-флауил для JLM-мультипликаторов в Lend); при отмене субсидии сойдётся к jitoSOL-уровню; премия реальна, но не рыночная"},
+  "capacity_estimate": {
+    "method": "эмпирика Kamino (сент): $60M движения предложения (±8.6% стейбл-базы) ↔ ~1.7 п.п. средней ставки; у кинка утилизации 80→95% ↔ borrow 6.98→15.3%",
+    "jupiter_lend_usdc": {"tvl": 470073413, "no_visible_impact_usd": 15000000, "compresses_spike_to_65_70pct_usd": 50000000, "compresses_to_30d_mean_usd": 150000000, "note": "при неизменном спросе на заём ⚠️"},
+    "kamino_usdc_shelf_above_65pct_usd": 150000000,
+    "total_solana_usdc_above_65pct_usd": "200-300M ⚠️"
+  },
+  "bridge_costs": {
+    "cctp_v2_standard": "только газ (~$0.001 на Solana + $2-10 газ ETH), финальность ~10-20 мин",
+    "cctp_v2_fast": "1 б.п. ($0.10 на $1000), секунды-минуты",
+    "wormhole": "композиция поверх CCTP для нативного USDC (USDC.e не нужен)",
+    "round_trip_total_bp": "2-5 б.п. включая газ",
+    "breakeven_vs_spread": "спред 330-520 б.п. годовых окупает мост за <1 дня керри"
+  },
+  "strategy": {
+    "entry": "USDC → CCTP V2 (Fast 1 б.п.) → Jupiter Lend USDC (base 8.98%) 60% + Kamino (Commodity Yield 8.05% / Steakhouse 7.73% / SOL-BTC 8.15%) 40% — диверсификация протокольного риска",
+    "sizing_per_protocol_usd": "<=10000000 без видимого сдвига ставки; 40-60M уже давит на спайк",
+    "realistic_planning_apy_pct": "5.5-6.5 на 6-12 мес (не 8.98)",
+    "net_edge_vs_susds_pp": "+1.7...+3.2 (до риск-поправки); после ожидаемых потерь от p_hack ~1.7 п.п.: ~+0.5...+1.5",
+    "exit_triggers": ["base <5.0% в течение 7 дней подряд (слом структуры)", "утилизация USDC <70% (спрос умер)", "инцидент Jupiter/Kamino или Solana outage >2ч", "USDC depeg >50 б.п.", "Ethena разворачивает USDe-размещение"],
+    "monitoring": ["утилизация USDC (день/неделя) на Kamino risk reports (ежемесячные, gov.kamino.finance)", "TVL Jupiter vs Kamino (война субсидий)", "объёмы pump.fun/StonkFun (спрос торговли)", "новые RWA-листинги на Kamino BuildKit", "JLP mcap/OI"]
+  },
+  "verdict": {
+    "classification": "СТРУКТУРНАЯ АЛЬФА ОГРАНИЧЕННОЙ ЁМКОСТИ + ВРЕМЕННЫЙ БУСТ (гибрид)",
+    "one_liner": "устойчивая премия ~+2-3 п.п. над Aave существует ≥12 мес за счёт кредитного спроса RWA-рынков и торговой экономики Solana при меньшем флоу стейблов; текущие 8.98% — сдвиг кинка утилизации (95%+) из-за сентябрьского оттока $60M и meme-сезона, спайк скорее всего схлопнется за 2-6 недель к 5.5-6.5%",
+    "is_trap": false,
+    "caveat": "не ловушка, но и не 9%: хедлайн-ставка не равновесная; риск-скор 5.5-6/10, размер ограничен $10-50M на протокол"
+  }
+}

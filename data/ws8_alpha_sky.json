@@ -1,0 +1,54 @@
+[
+  {
+    "instrument": "stUSDS (Sky Protocol, Ethereum)",
+    "current_apy_pct": 5.64,
+    "premium_source": "Плата LSE-заёмщиков (SKY Borrow Rate ~6.42%) поверх SSR-флора 3.80% по формуле U*(borrow-0.10%)+(1-U)*SSR, таргет U~90%; НЕ инсентивы (reward=0 по DefiLlama). Спрос = ликвидность под залоченный SKY ($1.21B стейкинга, фарм ~6.6%); с 13.08.2026 (Stage 2) фарм-награды финансируются выручкой протокола (22.5% rev на SKY-байбеки, 22.5% на USDS Staking Rewards)",
+    "capacity_usd": 20000000,
+    "lockup": "нет lockup и формальной exit queue; redemption ограничен idle-ликвидностью конвертера (withdrawable amount = total value - долг LSE - USDS в аукционе); при таргетной U=90% мгновенно доступно ~10% TVL (~$18M), фактическая оценка U~73% -> ~$48M; в стартовой fill-up фазе выводы блокировались",
+    "exit_liquidity_usd": 2400000,
+    "premium_durability_months": 9,
+    "risk_score_1to10": 5,
+    "verdict": "структурная альфа (не фарм): премия живёт 12 мес (окт-2025 -> окт-2026), сжалась ~300->184 б.п. после срезания эмиссий, даты окончания нет; хвост: bad debt LSE списывается на держателя (cut), governance-slashing, UUPS-upgradeable, SKY-цена; p(премия>=150б.п. через 6м)~60%, p(обнуления)~15%, p(principal loss>2%)~3-5%; ёмкость $5-20M без задавливания ставки; аудит ToB 18.08.2025+10.04.2026, Cantina 28.07-08.08.2025, ChainSecurity 26.09.2025",
+    "source": "sky.money/stusds; developers.skyeco.com/protocol/tokens/stusds; github.com/sky-ecosystem/stusds; stablewatch.io (14.10.2025); executive vote 08.10.2026 stUSDS Keeper (financial.skyeco.com); DefiLlama Yields API 16.10.2026 (5.64%/178.45M, sUSDS 3.80%/4.96B)",
+    "date": "2026-10-16"
+  },
+  {
+    "instrument": "Aave v3 Base USDC (native)",
+    "current_apy_pct": 8.82,
+    "premium_source": "Merkl-кампания 'Lend USDC on Aave (Jumper bridgers)' в нативном USDC 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913 (нет dump-риска токена): бюджет $361/день, окно 14.10-28.10.2026, адресное ограничение (мост через Jumper); база 3.81-3.9% при U=89.5% резерва $188.4M",
+    "capacity_usd": 5000000,
+    "lockup": "нет",
+    "exit_liquidity_usd": 188400000,
+    "premium_durability_months": 0.5,
+    "risk_score_1to10": 2,
+    "verdict": "фарм: без Jumper-eligibility реально 3.8-3.9%; буст адресный, бюджет ~$5k/2нед, продление не гарантировано (депозиты уже сжались 395M->188M после мар-2026); сам резерв Aave глубокий, выход мгновенный",
+    "source": "DefiLlama Yields API 16.10.2026 (8.82 = 3.82+5.00, reward USDC); aavescan.com/base-v3/usdc; api.merkl.xyz/v4/opportunities?name=Aave&chainId=8453 (16.10.2026)",
+    "date": "2026-10-16"
+  },
+  {
+    "instrument": "Aave v4 Horizon USDC (Ethereum)",
+    "current_apy_pct": 8.79,
+    "premium_source": "Институциональный спрос на заём стейблов против permissioned RWA/MMF-залога (лицензируемый форк Aave v3.3 -> v4 hub, токены aHorRwa*) + недельные Merkl-кампании (net-lending корзины 500-600% APR, $5.1k/день; заём USDC 25-175% APR); трекаемый пул aHorRwaUSDC $0.2-0.5M, APY гуляет 4.6-9.6% от пульсов",
+    "capacity_usd": 1000000,
+    "lockup": "нет (permissionless поставка стейблов; займы только для RWA-заёмщиков)",
+    "exit_liquidity_usd": 500000,
+    "premium_durability_months": 1,
+    "risk_score_1to10": 4,
+    "verdict": "фарм/артефакт малого пула: 8.79% - волатильный срез микроскопического USDC-резерва; сам Horizon (TVL ~$390M, цель $1B+, RLUSD net-lending $162M) - структурно интересный рынок в watchlist; риски: NAV-оракулы RWA, комплаенс-ветки, аварийный мультисиг",
+    "source": "aave.com/docs/aave-v3/horizon; avara.xyz/blog/horizon; governance.aave.com/t/arfc-horizon-s-rwa-instance/21898 ($500k AAVE, апр-2025); sentora.com (04.09.2026, TVL $390M); DefiLlama chart pool 27296bf9 (16.10: 9.57%/$0.21M); api.merkl.xyz chainId=1 (16.10.2026)",
+    "date": "2026-10-16"
+  },
+  {
+    "instrument": "Curve USDS-stUSDS LP (Ethereum, вспомогательный)",
+    "current_apy_pct": 4.57,
+    "premium_source": "base 2.65% (стейкинг-пул) + 1.92% награда SPK 0xdC035D45d973E3EC169d2276DDab16f1e407384F (стимулы Spark на ликвидность экосистемы stUSDS)",
+    "capacity_usd": 2400000,
+    "lockup": "нет",
+    "exit_liquidity_usd": 2400000,
+    "premium_durability_months": 3,
+    "risk_score_1to10": 6,
+    "verdict": "не альфа: APY ниже самого stUSDS; смысл только как выход-ликвидность; SPK-эмиссии дампятся; глубина ~$1.2M/сторону",
+    "source": "DefiLlama Yields API 16.10.2026 (pool USDS-STUSDS, rewardTokens SPK); beefy-обёртка $2.23M",
+    "date": "2026-10-16"
+  }
+]

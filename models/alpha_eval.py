@@ -34,11 +34,23 @@ class AlphaCandidate:
     lgd_hack: float             # потеря при инциденте
     costs_in_out: float         # издержки входа+выхода (доля капитала)
     horizon_months: float = 12
+    p_hack_baseline_annual: float = 0.004  # хвост-риск базовой альтернативы (sUSDS/Aave)
+    lgd_baseline: float = 0.6
     tail_reload_bonus: float = 0.0  # если премия умерла — капитал возвращается в baseline
 
     def survival(self, t: int) -> float:
         """Вероятность, что премия ещё жива в месяце t (счёт с 1)."""
         return (1.0 - self.hazard_monthly) ** t
+
+    def hack_delta(self) -> float:
+        """Приращение хвост-потери относительно базовой альтернативы (годовая доля).
+
+        Честное сравнение: обе стороны несут свой риск — сравниваем ДЕЛЬТУ, иначе
+        кандидата штрафуем за риск, который несёт и baseline.
+        """
+        cand = self.p_hack_annual * self.lgd_hack
+        base = self.p_hack_baseline_annual * self.lgd_baseline
+        return cand - base
 
     def expected_excess_apy(self) -> float:
         """Ожидаемый годовой спрэд с учётом затухания (в долях)."""
@@ -56,7 +68,7 @@ class AlphaCandidate:
         # помесячный профиль: пока премия жива — spread, умерла — 0 (капитал в baseline)
         excess_sum = sum(spread / 12.0 * self.survival(t) for t in range(1, months + 1))
         baseline_sum = self.baseline_apy * months / 12.0
-        hack_penalty = self.p_hack_annual * (months / 12.0) * self.lgd_hack
+        hack_penalty = self.hack_delta() * (months / 12.0)
         costs = self.costs_in_out
         ev_alpha = excess_sum - costs - hack_penalty
         ev_total = ev_alpha + baseline_sum

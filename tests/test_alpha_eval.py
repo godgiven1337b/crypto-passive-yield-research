@@ -31,10 +31,25 @@ class TestSurvival:
 
 class TestEV:
     def test_no_costs_no_risk_full_premium(self):
-        """Идеальный случай: спрэд живёт весь год без рисков -> EV = spread."""
-        c = mk(hazard_monthly=0.0, p_hack_annual=0.0, costs_in_out=0.0)
+        """Идеальный случай: спрэд живёт весь год, риски равны baseline -> EV = spread."""
+        c = mk(hazard_monthly=0.0, p_hack_annual=0.004, lgd_hack=0.6, costs_in_out=0.0,
+               p_hack_baseline_annual=0.004, lgd_baseline=0.6)
+        assert c.hack_delta() == pytest.approx(0.0)
         ev = c.expected_value()
         assert ev["ev_excess_annualized"] == pytest.approx(0.0184)  # 184 б.п.
+
+    def test_same_risk_as_baseline_zero_penalty(self):
+        """Кандидат с тем же хвост-риском, что baseline, не несёт штраф-дельты."""
+        c = mk(p_hack_annual=0.004, lgd_hack=0.6, p_hack_baseline_annual=0.004,
+               lgd_baseline=0.6, hazard_monthly=0.0, costs_in_out=0.0)
+        assert c.expected_value()["hack_penalty_annualized"] == pytest.approx(0.0)
+
+    def test_safer_than_baseline_gets_credit(self):
+        """Кандидат безопаснее baseline получает «бонус» (отрицательный штраф)."""
+        c = mk(p_hack_annual=0.001, lgd_hack=0.5, p_hack_baseline_annual=0.01,
+               lgd_baseline=0.8, hazard_monthly=0.0, costs_in_out=0.0)
+        assert c.hack_delta() < 0
+        assert c.expected_value()["ev_excess_annualized"] > c.expected_excess_apy()
 
     def test_costs_reduce(self):
         base = mk(hazard_monthly=0.0, p_hack_annual=0.0)
@@ -78,7 +93,8 @@ class TestEV:
         assert dead.verdict().startswith("НЕТ АЛЬФИ")
 
     def test_total_includes_baseline(self):
-        c = mk(hazard_monthly=0.0, p_hack_annual=0.0, costs_in_out=0.0)
+        c = mk(hazard_monthly=0.0, p_hack_annual=0.004, lgd_hack=0.6, costs_in_out=0.0,
+               p_hack_baseline_annual=0.004, lgd_baseline=0.6)
         ev = c.expected_value()
         assert ev["ev_total_annualized"] == pytest.approx(0.038 + 0.0184)
 
