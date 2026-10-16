@@ -1,0 +1,786 @@
+[
+ {
+  "name": "Provide liquidity to Uniswap PUFFER-WETH 1%",
+  "chain": "Ethereum",
+  "apr": 12.391988525508905,
+  "tvl": 196210.1269649795,
+  "proto": "Uniswap"
+ },
+ {
+  "name": "Deposit into the Keyrock USDC Morpho V2 vault",
+  "chain": "Ethereum",
+  "apr": 0.2611614605499878,
+  "tvl": 8256544.667651196,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Hold Frax USD",
+  "chain": "Ethereum",
+  "apr": 3.5000000000000004,
+  "tvl": 580962.2950789889,
+  "proto": "?"
+ },
+ {
+  "name": "Deposit wBTC on the Gearbox WBTC vault",
+  "chain": "Ethereum",
+  "apr": 2.5527726319186095,
+  "tvl": 781699.2028341102,
+  "proto": "Gearbox"
+ },
+ {
+  "name": "Supply to Yearn OG USDC V2 vault on Morpho on Ethereum",
+  "chain": "Ethereum",
+  "apr": 0.5011088691800374,
+  "tvl": 3257440.6768552694,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Deposit cbBTC to YO",
+  "chain": "Ethereum",
+  "apr": 2.0000000000000004,
+  "tvl": 775600.9703732386,
+  "proto": "yo"
+ },
+ {
+  "name": "Supply to RockawayX NUVA Ecosystem V2 vault on Morpho on Ethereum",
+  "chain": "Ethereum",
+  "apr": 2.6828189303792342,
+  "tvl": 561437.0008429328,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Deposit to the Trezor Steakhouse ETH Prime vault from Trezor Suite app",
+  "chain": "Ethereum",
+  "apr": 1.0471811787124494,
+  "tvl": 1414211.9022461744,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Supply to Wintermute USDC Select V2 vault on Morpho on Ethereum",
+  "chain": "Ethereum",
+  "apr": 0.02526062228816266,
+  "tvl": 53001436.69173962,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Stake into the Curve pufETHwstE gauge",
+  "chain": "Ethereum",
+  "apr": 1.3263310683994431,
+  "tvl": 1000682.4855827892,
+  "proto": "Curve"
+ },
+ {
+  "name": "Supply to Tenor USD3/USDC Lending V2 vault on Morpho on Ethereum",
+  "chain": "Ethereum",
+  "apr": 0.8987009509609627,
+  "tvl": 1463960.0025939543,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Borrow GHO-USDC from Fluid GHO-sUSDe/GHO-USDC Vault",
+  "chain": "Ethereum",
+  "apr": 1.5608718590744675,
+  "tvl": 832799.9240752085,
+  "proto": "Fluid"
+ },
+ {
+  "name": "Curve MUSD/USDC/USDT",
+  "chain": "Ethereum",
+  "apr": 5.842372802023668,
+  "tvl": 205203.87440512798,
+  "proto": "Curve"
+ },
+ {
+  "name": "Supply to YO Ecosystem V2 vault on Morpho on Ethereum",
+  "chain": "Ethereum",
+  "apr": 8.611719165528784,
+  "tvl": 138994.00569339242,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Hold Pendle YT or LP of wETH from the SY Flagship WETH SuperVault market",
+  "chain": "Ethereum",
+  "apr": 1.704804624416378,
+  "tvl": 691834.0251249057,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Stake into the Curve MUSD/2pool gauge",
+  "chain": "Ethereum",
+  "apr": 5.8424398895859735,
+  "tvl": 201173.7216684688,
+  "proto": "Curve"
+ },
+ {
+  "name": "Deposit wstETH on the Gearbox wstETH v3 vault",
+  "chain": "Ethereum",
+  "apr": 0.11106100012788225,
+  "tvl": 10537632.662343044,
+  "proto": "Gearbox"
+ },
+ {
+  "name": "Borrow wstETH with tETH on Aave",
+  "chain": "Ethereum",
+  "apr": 0.49999999999999994,
+  "tvl": 1461749.30708762,
+  "proto": "Aave"
+ },
+ {
+  "name": "Stake MUSD/USDC/USDT in Stake DAO Gauge",
+  "chain": "Ethereum",
+  "apr": 5.842372802023671,
+  "tvl": 124189.98077413034,
+  "proto": "Stake DAO"
+ },
+ {
+  "name": "LP in Pendle Flagship USDC SuperVault 26NOV2026",
+  "chain": "Ethereum",
+  "apr": 1.9124147209537046,
+  "tvl": 377882.73194954096,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Supply to Stake DAO frxUSD v2 vault on Morpho on Ethereum",
+  "chain": "Ethereum",
+  "apr": 0.8698851852893192,
+  "tvl": 648352.3989513239,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Provide liquidity to Curve pufETH-wstETH",
+  "chain": "Ethereum",
+  "apr": 0.19787872095953696,
+  "tvl": 2793758.775391822,
+  "proto": "Curve"
+ },
+ {
+  "name": "Stake into the Curve crvPufETH gauge",
+  "chain": "Ethereum",
+  "apr": 0.19780524319754608,
+  "tvl": 2469565.1084619034,
+  "proto": "Curve"
+ },
+ {
+  "name": "LP in Pendle Flagship WETH SuperVault 26NOV2026",
+  "chain": "Ethereum",
+  "apr": 1.0562093545340339,
+  "tvl": 335094.559704676,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Supply to the Steakhouse Reservoir USDC vault on Morpho on Ethereum",
+  "chain": "Ethereum",
+  "apr": 0.5554156227123812,
+  "tvl": 579731.17659,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Supply to KPK USDC Yield RWA V2 vault on Morpho on Ethereum",
+  "chain": "Ethereum",
+  "apr": 0.3401880538682442,
+  "tvl": 842220.9399832938,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Deposit USDC to YO",
+  "chain": "Ethereum",
+  "apr": 2.0,
+  "tvl": 135988.45210407313,
+  "proto": "yo"
+ },
+ {
+  "name": "Hold Staked Spark",
+  "chain": "Ethereum",
+  "apr": 0.0220525219363139,
+  "tvl": 11868009.491964735,
+  "proto": "SparkLend"
+ },
+ {
+  "name": "Provide liquidity to Curve CADD-frxUSD",
+  "chain": "Ethereum",
+  "apr": 1.0898640417353511,
+  "tvl": 222102.82288916057,
+  "proto": "Curve"
+ },
+ {
+  "name": "Hold CAD Digital Inc",
+  "chain": "Ethereum",
+  "apr": 1.608576807334728,
+  "tvl": 150482.01561222738,
+  "proto": "?"
+ },
+ {
+  "name": "Deposit EURC to YO",
+  "chain": "Ethereum",
+  "apr": 1.5,
+  "tvl": 138417.5034973099,
+  "proto": "yo"
+ },
+ {
+  "name": "Provide liquidity to Curve AUDF-frxUSD",
+  "chain": "Ethereum",
+  "apr": 1.7577434121557285,
+  "tvl": 112652.1848304255,
+  "proto": "Curve"
+ },
+ {
+  "name": "Deposit USDC in TAU InfiniFi Pointsmax Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 1283586.308942,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Hold YT Staked USDat 14JAN2027",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 206030.24377620037,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Hold Covered rETH Liquity LP Carry (OC-rETHLPC)",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 142372.637688678,
+  "proto": "?"
+ },
+ {
+  "name": "Deposit USDC in Bitcoin Dollar USDC Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 800657.772429,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Provide liquidity to Curve USDC-USDat",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 4228089.286200975,
+  "proto": "Curve"
+ },
+ {
+  "name": "Deposit USDe in AavEthena Loop Mainnet Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 140351.20766742667,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Supply to Saturn USDC V2 vault on Morpho on Ethereum",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 160443.54476148856,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Hold YT USDat 14JAN2027",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 556410.8245221383,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Hold Dialectic ETH",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 6105282.769090293,
+  "proto": "Makina"
+ },
+ {
+  "name": "Deposit wETH in rETH Liquity LP Carry Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 14466753.240257867,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Provide liquidity to Curve PYUSD-crvUSD",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 1261424.9531768733,
+  "proto": "Curve"
+ },
+ {
+  "name": "Hold Strata Junior USDat (jrUSDat)",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 995981.5004107575,
+  "proto": "?"
+ },
+ {
+  "name": "Provide liquidity to Curve USDC-sUSDat",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 123405.73775705346,
+  "proto": "Curve"
+ },
+ {
+  "name": "Deposit rUSD in Reservoir srUSD Looping Ethereum Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 618020.7907104309,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Hold Dialectic USD",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 1829832.5003828458,
+  "proto": "Makina"
+ },
+ {
+  "name": "Deposit USDC in IPOR USDC Ethereum Optimizer Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 172475.044631415,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Hold Steakhouse USD Machine",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 20451232.54934226,
+  "proto": "?"
+ },
+ {
+  "name": "Hold USDat",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 67396406.86560258,
+  "proto": "?"
+ },
+ {
+  "name": "Curve DETH/WETH",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 100750.61203228761,
+  "proto": "Curve"
+ },
+ {
+  "name": "LP in Pendle Staked USDat 14JAN2027",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 1382850.5959732945,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Hold Dialectic BTC",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 716355.0388230323,
+  "proto": "Makina"
+ },
+ {
+  "name": "LP in Pendle Strata Senior USDat 14JAN2027",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 209166.2110368724,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Deposit stETH in Fusion stETH looping Ethereum Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 4733612.339179716,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Deposit wstETH in TAU infiniFi ETH Carry Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 198608.77682984504,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Supply to Steakhouse High Yield Term AUSD V2 vault on Ethereum",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 3043105.3747193213,
+  "proto": "Steakhouse Financial"
+ },
+ {
+  "name": "Supply to Flowdesk AUSD RWA Strategy V2 vault on Morpho on Ethereum",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 3173152.6396360258,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Stake into the Curve USDCUSDat gauge",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 276542.39904247154,
+  "proto": "Curve"
+ },
+ {
+  "name": "Deposit USDC in Ensuro IPOR Vault Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 352271.61265299993,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Hold Strata Senior USDat (srUSDat)",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 4376674.042452614,
+  "proto": "?"
+ },
+ {
+  "name": "Borrow AUSD on sUSDat/AUSD 86%",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 472131.9227809054,
+  "proto": "Morpho"
+ },
+ {
+  "name": "LP in Pendle USDat 14JAN2027",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 2412710.228208311,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Hold Staked USDat (sUSDat)",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 42617909.10376474,
+  "proto": "?"
+ },
+ {
+  "name": "Deposit wBTC in wBTC Dollar Carry Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 792706.9864627507,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Deposit USDC in Hyperithm mHYPER Looping Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 123635.20404699999,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Deposit USDC in TAU Yield Bond ETF Fusion Vault",
+  "chain": "Ethereum",
+  "apr": 0.0,
+  "tvl": 208683.63750899996,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Supply to the Moonwell Flagship ETH vault on Morpho on Base",
+  "chain": "Base",
+  "apr": 0.13890114655514343,
+  "tvl": 3696130.363600193,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Deposit USDC in yoUSD Looopeer Fusion Vault",
+  "chain": "Base",
+  "apr": 2.000550832382468,
+  "tvl": 231791.02913764052,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Supply to the Moonwell Flagship USDC vault on Morpho on Base",
+  "chain": "Base",
+  "apr": 0.12957453270146294,
+  "tvl": 3539582.3706517094,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Hold Yield.xyz Base yoETH (yie-yoeth)",
+  "chain": "Base",
+  "apr": 1.4874475168330912,
+  "tvl": 286211.38944648224,
+  "proto": "?"
+ },
+ {
+  "name": "Hold Yield.xyz Base yoEURC (yie-yoEURC)",
+  "chain": "Base",
+  "apr": 1.4998834887354469,
+  "tvl": 213033.02537827622,
+  "proto": "?"
+ },
+ {
+  "name": "Supply to the Moonwell Frontier cbBTC vault on Morpho on Base",
+  "chain": "Base",
+  "apr": 0.12880765191388532,
+  "tvl": 1409063.672069091,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Hold Pendle YT or LP of wETH from the SY yoVaultETH market",
+  "chain": "Base",
+  "apr": 1.5,
+  "tvl": 107670.99883516812,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Supply to the Moonwell Flagship EURC vault on Morpho on Base",
+  "chain": "Base",
+  "apr": 0.1282322706307827,
+  "tvl": 823957.2975340172,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Supply to Moonwell Frontier cbBTC V2 vault on Morpho on Base",
+  "chain": "Base",
+  "apr": 0.12880827312559306,
+  "tvl": 373333.2385623937,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Deposit wstETH in IPOR WstETH Base Fusion Vault",
+  "chain": "Base",
+  "apr": 0.0,
+  "tvl": 149446.26777465182,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Deposit WETH to Clearstar cbETH Yield MetaVault",
+  "chain": "Base",
+  "apr": 0.0,
+  "tvl": 116811.65135493269,
+  "proto": "Spectra"
+ },
+ {
+  "name": "Deposit USDC in Autopilot USDC Base Fusion Vault",
+  "chain": "Base",
+  "apr": 0.0,
+  "tvl": 1068475.0087945673,
+  "proto": "?"
+ },
+ {
+  "name": "Deposit USDC in TAU Base USDC LO Fusion Vault",
+  "chain": "Base",
+  "apr": 0.0,
+  "tvl": 142079.4655567603,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Deposit wETH in Base ETH Lending Optimizer Fusion Vault",
+  "chain": "Base",
+  "apr": 0.0,
+  "tvl": 7485388.251987959,
+  "proto": "IPOR Fusion"
+ },
+ {
+  "name": "Hold Pendle YT or LP of AUSD from the SY earnAUSD market",
+  "chain": "Monad",
+  "apr": 0.5299811860157433,
+  "tvl": 894195.7123644173,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Supply AUSD to Curvance YZM/AUSD market",
+  "chain": "Monad",
+  "apr": 1.8,
+  "tvl": 257267.55461411196,
+  "proto": "Curvance"
+ },
+ {
+  "name": "Hold Wrapped Neverland AUSD (wnAUSD)",
+  "chain": "Monad",
+  "apr": 2.0169667592219036,
+  "tvl": 216459.14234311553,
+  "proto": "?"
+ },
+ {
+  "name": "Supply AUSD to Curvance syzUSD/AUSD market",
+  "chain": "Monad",
+  "apr": 1.7999999999999998,
+  "tvl": 235074.50035020546,
+  "proto": "Curvance"
+ },
+ {
+  "name": "Supply USDC to Curvance WMON/USDC market",
+  "chain": "Monad",
+  "apr": 1.35,
+  "tvl": 303073.4510165729,
+  "proto": "Curvance"
+ },
+ {
+  "name": "Hold Wrapped Neverland USDC (wnUSDC)",
+  "chain": "Monad",
+  "apr": 2.022203818875619,
+  "tvl": 199269.7266523959,
+  "proto": "?"
+ },
+ {
+  "name": "Stake into the Curve triBTC gauge",
+  "chain": "Monad",
+  "apr": 1.3105996986572093,
+  "tvl": 292642.2480078982,
+  "proto": "Curve"
+ },
+ {
+  "name": "[UNVERIFIED] Supply to SharpByte USDC High Yield V2 vault on Morpho on Monad",
+  "chain": "Monad",
+  "apr": 0.7200331419625128,
+  "tvl": 506378.78873999993,
+  "proto": "?"
+ },
+ {
+  "name": "Lend earnAUSD on Neverland",
+  "chain": "Monad",
+  "apr": 0.5299814684376903,
+  "tvl": 686211.5677168906,
+  "proto": "neverland"
+ },
+ {
+  "name": "Supply WMON to Curvance WMON/AUSD market",
+  "chain": "Monad",
+  "apr": 1.35,
+  "tvl": 183656.9550016064,
+  "proto": "Curvance"
+ },
+ {
+  "name": "Supply AUSD to Curvance WMON/AUSD market",
+  "chain": "Monad",
+  "apr": 1.3499999999999999,
+  "tvl": 101171.81362496565,
+  "proto": "Curvance"
+ },
+ {
+  "name": "Supply to SharpByte AUSD mROX V2 vault on Morpho on Monad",
+  "chain": "Monad",
+  "apr": 0.1859938148025663,
+  "tvl": 501014.371647535,
+  "proto": "Morpho"
+ },
+ {
+  "name": "Supply YZM to Curvance YZM/AUSD market",
+  "chain": "Monad",
+  "apr": 0.4338664806556923,
+  "tvl": 214637.19833319462,
+  "proto": "Curvance"
+ },
+ {
+  "name": "Hold Glasgow Cosmic by Ryllo (RYLG)",
+  "chain": "Monad",
+  "apr": 0.5000000000000001,
+  "tvl": 124875.57767138409,
+  "proto": "Accountable"
+ },
+ {
+  "name": "LP in Pendle srUSDat 14JAN2027",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 382283.6715861357,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Hold YT Saturn USD 14JAN2027",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 1163232.918777047,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Supply shMON on K3 Isolated shMON-WMON-USDC vault ",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 114502.09395347974,
+  "proto": "Euler"
+ },
+ {
+  "name": "Hold Pendle YT or LP of MON from the SY ShMonad market",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 220664.66894466183,
+  "proto": "Pendle"
+ },
+ {
+  "name": "LP in Pendle ShMonad 18MAR2027",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 125835.6574436333,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Lend shMON on Neverland",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 985096.5330661307,
+  "proto": "neverland"
+ },
+ {
+  "name": "Hold ShMonad (shMON)",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 4885626.526194474,
+  "proto": "?"
+ },
+ {
+  "name": "LP in Pendle Saturn USD 14JAN2027",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 1560878.3468304004,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Hold Holistic MON",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 643504.818807518,
+  "proto": "?"
+ },
+ {
+  "name": "LP in Pendle Staked Saturn USD 14JAN2027",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 1923913.2797733403,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Lend GHO on Aave",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 7827149.621861841,
+  "proto": "Aave"
+ },
+ {
+  "name": "Hold Saturn USD",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 1543498.3347561902,
+  "proto": "?"
+ },
+ {
+  "name": "Supply shMON to Curvance shMON/WMON market",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 569408.9587249421,
+  "proto": "Curvance"
+ },
+ {
+  "name": "Hold YT Staked Saturn USD 14JAN2027",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 180141.81923371623,
+  "proto": "Pendle"
+ },
+ {
+  "name": "Supply WMON to Curvance shMON/WMON market",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 168564.74766104354,
+  "proto": "Curvance"
+ },
+ {
+  "name": "Provide liquidity to Curve USDat-USDC",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 2332797.2923687203,
+  "proto": "Curve"
+ },
+ {
+  "name": "Hold Staked Saturn USD",
+  "chain": "Monad",
+  "apr": 0.0,
+  "tvl": 116251.4436709416,
+  "proto": "?"
+ }
+]
