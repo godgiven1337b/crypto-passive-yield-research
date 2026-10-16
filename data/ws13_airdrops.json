@@ -1,0 +1,434 @@
+{
+  "meta": {
+    "worksheet": "WS-13 points & airdrops",
+    "date": "2026-10-16",
+    "benchmarks": {
+      "passive_stable_yield_pct": [4, 6],
+      "benchmark_instruments": "stUSDS 5.64%, sUSDS 3.80%, Merkl 0.3-8.6% APR (merkl_live.json снапшот 16.10.2026), Jupiter Lend USDC ~9% (спайк)",
+      "ev_on_10k_12m_passive_usd": 560
+    },
+    "key_market_context": {
+      "HYPE_usd": 79.28,
+      "MON_usd": 0.0224,
+      "XPL_usd": 0.0824,
+      "LIT_usd": 3.07,
+      "LINEA_usd": 0.0029,
+      "KMNO_usd": 0.0379,
+      "JUP_usd": 0.2985,
+      "JTO_usd": 0.4622,
+      "EIGEN_usd": 0.2485,
+      "IP_usd": 0.1847,
+      "hyperliquid_chain_tvl_usd": 6890985845,
+      "source": "CoinGecko/DefiLlama API, снапшот 2026-10-16"
+    }
+  },
+  "historical_airdrops": [
+    {
+      "project": "Hyperliquid (HYPE)",
+      "drop_date": "2024-11-29",
+      "supply_share_pct": 31.0,
+      "recipients": 94000,
+      "avg_check_at_launch_usd": 45000,
+      "median_check_at_launch_usd": 1500,
+      "avg_check_now_usd": 231000,
+      "yield_per_dollar_farmer": "1-5x капитала (объёмный фарм 6-12 мес)",
+      "tier": 1,
+      "verdict": "эталон; ранний рынок + 31% сапплая + no-VC; HYPE вырос ~11x, половина итоговой доходности — пост-TGE удержание"
+    },
+    {
+      "project": "Jito (JTO)",
+      "drop_date": "2023-12-07",
+      "supply_share_pct": 10.0,
+      "recipients": 9852,
+      "avg_check_at_launch_usd": 22800,
+      "min_check_at_launch_usd": 10000,
+      "avg_check_now_usd": 4700,
+      "yield_per_dollar_farmer": "1-2.5x на стейк jitoSOL + стейкинг-yield",
+      "tier": 1,
+      "verdict": "узкий и щедрый; ранний SOL-LSD"
+    },
+    {
+      "project": "Jupiter (JUP, Jupuary 1)",
+      "drop_date": "2024-01-31",
+      "supply_share_pct": 4.0,
+      "recipients": 955000,
+      "avg_check_at_launch_usd": 700,
+      "min_check_at_launch_usd": 200,
+      "avg_check_now_usd": 210,
+      "yield_per_dollar_farmer": "0.02-0.1x объёма; Jupuary 2 (янв-2025): 700M JUP на ~2M кошельков",
+      "tier": 2,
+      "verdict": "широкий и мелкий; объёмный фармер не окупился"
+    },
+    {
+      "project": "EigenLayer (EIGEN S1+S2)",
+      "drop_date": "2024-05-10 / 2024-09-16",
+      "supply_share_pct": 11.95,
+      "recipients": 1000000,
+      "avg_check_at_launch_usd": 2000,
+      "avg_check_now_usd": 400,
+      "yield_per_dollar_farmer": "0.01-0.03x на $ стейка в год; EIGEN -93% от пика",
+      "tier": 2,
+      "verdict": "рестейкинг на $10B+ TVL размыл доходность до 1-3% годовых"
+    },
+    {
+      "project": "Kamino (KMNO S1+S2)",
+      "drop_date": "2024-04-30",
+      "supply_share_pct": 11.0,
+      "recipients": 250000,
+      "avg_check_at_launch_usd": 330,
+      "avg_check_now_usd": 114,
+      "yield_per_dollar_farmer": "0.02-0.05x за квартал ($-депозит); модель 1 поинт/$/день",
+      "tier": 3,
+      "verdict": "депозитная модель масштабируется линейно и мгновенно арбитражируется"
+    },
+    {
+      "project": "Berachain (BERA)",
+      "drop_date": "2025-02-06",
+      "supply_share_pct": 15.75,
+      "recipients": "сотни тысяч тестнет-аккаунтов",
+      "avg_check_testnet_farmer_usd": 35,
+      "yield_per_dollar_farmer": "~0.001x (месяцы тестнет-активности); NFT-холдерам — тысячи $ (34.5M BERA)",
+      "tier": 3,
+      "verdict": "тестнет-фармерам 1.65% сапплая; пирог у Bong Bears NFT"
+    },
+    {
+      "project": "Story Protocol (IP)",
+      "drop_date": "2025-02-13",
+      "supply_share_pct": 10.0,
+      "avg_check_now_usd": null,
+      "yield_per_dollar_farmer": "<0.02x (3 мес тестнета)",
+      "tier": 3,
+      "verdict": "тир-1 для фармеров не состоялся; IP $0.185"
+    },
+    {
+      "project": "Plasma (XPL)",
+      "drop_date": "2025-09-25",
+      "supply_share_pct": 1.0,
+      "recipients": "ICO-преддепозиторы + стейбл-депозиторы",
+      "genesis_bonus_per_ico_participant_usd": 8390,
+      "avg_check_now_usd": null,
+      "yield_per_dollar_farmer": "стейбл-депозит: ~0-5% годовых; принципал цел; XPL -95% ($1.68 -> $0.082)",
+      "tier": 3,
+      "verdict": "стейбл-фарм сохранил капитал, доходность ниже трастового 4%"
+    },
+    {
+      "project": "Monad (MON)",
+      "drop_date": "2025-11-24",
+      "supply_share_pct": 3.3,
+      "recipients": 230000,
+      "avg_check_at_launch_usd": 360,
+      "avg_check_now_usd": 320,
+      "yield_per_dollar_farmer": "0.01-0.05x (месяцы тестнета)",
+      "tier": 3,
+      "verdict": "НЕ тир-1: 3.3% сапплая, цена $0.025 на TGE и $0.022 сейчас"
+    },
+    {
+      "project": "Lighter (LIT)",
+      "drop_date": "2025-12-30",
+      "supply_share_pct": 25.0,
+      "point_value_usd_oct2025": "33-80",
+      "yield_per_dollar_farmer": "ранним объёмным 0.2-1x+ объёма; декей по мере притока фармеров",
+      "tier": 2,
+      "verdict": "поинт-декей в реальном времени; оба сезона закрыты дек-2025"
+    },
+    {
+      "project": "Linea (LINEA)",
+      "drop_date": "2025-09-10",
+      "supply_share_pct": 9.0,
+      "recipients": 749000,
+      "avg_check_at_launch_usd": 90,
+      "avg_check_now_usd": 36,
+      "yield_per_dollar_farmer": "<0.01x; 1.5 года LXP-фарма с газом",
+      "tier": 3,
+      "verdict": "овефарм L2: 749k кошельков, чеки $40-90, токен -49% пост-листинг"
+    },
+    {
+      "project": "Backpack (BP)",
+      "drop_date": "2026-03-23",
+      "supply_share_pct": 25.0,
+      "points_share_of_drop_pct": 96,
+      "yield_per_dollar_farmer": "0.05-0.3x объёма для активных трейдеров биржи",
+      "tier": 2,
+      "verdict": "24% сапплая поинт-участникам, no-insider; биржевой поинт-фарм платил умеренно"
+    },
+    {
+      "project": "Katana (KAT)",
+      "drop_date": "2026-03-18",
+      "supply_share_pct": 35.0,
+      "recipients": "POL-стейкеры (05.2025-03.2026)",
+      "yield_per_dollar_farmer": "POL-стейк ~0.5-2% годовых в KAT; mcap на листинге ~$30M",
+      "tier": 3,
+      "verdict": "no-VC + Binance-листинг не спасли от микро-капы"
+    },
+    {
+      "project": "HyperLend (HPL)",
+      "drop_date": "2026-08 (TGE)",
+      "avg_check_now_usd": null,
+      "yield_per_dollar_farmer": "депозит $10k -> десятки-сотни $; ATH HPL $0.024 (23.08.2026), TVL протокола $322M",
+      "tier": 4,
+      "verdict": "поинты после TGE = retention-инсентивы, не аирдроп"
+    },
+    {
+      "project": "MegaETH Terminal (выплаты в USDm)",
+      "drop_date": "2026-06-17",
+      "promised_supply_share_pct": 2.5,
+      "promised_value_usd": 40000000,
+      "actually_paid_usd": 1000000,
+      "paid_in": "USDm (стейблкоин, не MEGA)",
+      "kyc_threshold_usd": 1000,
+      "yield_per_dollar_farmer": "~0x; $1-20 на кошелёк",
+      "tier": 4,
+      "verdict": "провал-эталон: досрочное закрытие 21.05.2026, выплачено ~2.5% обещанного, KYC>$1000; нового сезона нет на 29.09.2026"
+    },
+    {
+      "project": "Pump.fun (PUMP)",
+      "drop_date": null,
+      "status": "TGE июль-2025 (сейл $600M), юзер-аирдропа НЕТ на 16.10.2026",
+      "buyback_burn_usd_by_jul2026": 414600000,
+      "p_no_airdrop_by_end_2026_pct": 74.5,
+      "yield_per_dollar_farmer": "0x для фармеров активности",
+      "tier": 0,
+      "verdict": "активность не гарантирует дроп; приоритет — байбеки"
+    },
+    {
+      "project": "Baseline (BASE)",
+      "drop_date": "~2026-09 (TGE)",
+      "base_price_usd": 3.17,
+      "tvl_now_usd": 1815620,
+      "yield_per_dollar_farmer": "0.05-0.2x годовых ранним USDC-депозиторам",
+      "tier": 3,
+      "verdict": "платил, но ёмкость микроскопическая"
+    },
+    {
+      "project": "HyperSwap (SWAP) / Kinetiq (KNTQ)",
+      "drop_date": "2025-10-20 / 2025-2026",
+      "yield_per_dollar_farmer": "0.02-0.1x",
+      "tier": 3,
+      "verdict": "ранние HyperEVM-программы закрыты TGE"
+    }
+  ],
+  "live_programs_2026_10_16": [
+    {
+      "rank": 1,
+      "name": "Variational (Omni, VAR)",
+      "points_for": "maker/taker объём на Omni перп-DEX (приват-бета, коды доступа); 150k поинтов/нед до TGE; нужно >=1 поинт + подписанный ToS",
+      "capital": "$2-10k маржа, объёмы от $50k",
+      "timeline": "TGE Q4 2026",
+      "confirmation": "32% сапплая на genesis-аирдроп (макс. подтверждённая доля в отрасли)",
+      "p_tier2_plus": 0.5,
+      "ev_on_10k_6_12m_usd": "1500-6000 минус fees $300-800",
+      "ev_vs_passive": "1.5-6x пассива; окно — недели до TGE",
+      "risk": "бета-доступ, правила могут меняться; риск 6/10"
+    },
+    {
+      "rank": 2,
+      "name": "Arcus (dYdX Labs)",
+      "points_for": "трейдинг, MM, депозиты на платформе, рефералы; буст за stock-токены и внечасовые сделки; ~250k поинтов/нед",
+      "capital": "депозиты учитываются напрямую — капитало-эффективно; $2-10k",
+      "timeline": "Season 1 c 01.10.2026 до <=H1-2027",
+      "confirmation": "токен подтверждён dYdX Labs (отдельный от DYDX); конверсия поинтов не опубликована",
+      "p_tier2_plus": 0.55,
+      "ev_on_10k_6_12m_usd": "500-3000",
+      "ev_vs_passive": "0.5-3.5x пассива; лучший депозит-гибрид октября",
+      "risk": "новая платформа, неизвестная формула; 5/10"
+    },
+    {
+      "rank": 3,
+      "name": "Hyperliquid (гипотеза S2)",
+      "points_for": "официальных поинтов НЕТ; фарм = органическая активность на Core-DEX + HyperEVM",
+      "capital": "любой; значима fee-генерация и время",
+      "timeline": "не анонсировано; резерв 38.888% сапплая (~$30B номинала при HYPE $79.28); Polymarket-рынок ставок на S2 до 31.12.2026",
+      "confirmation": "нет анонса (docs: последняя фаза поинтов ноя-2024)",
+      "p_tier2_plus": "p(S2 до конца-2027) 0.35-0.5; если случится — тир-1",
+      "ev_on_10k_6_12m_usd": "300-3000 для органического трейдера",
+      "ev_vs_passive": "паритет-2.5x при нулевых предельных издержках (торгуешь и так); крупнейший хвост",
+      "risk": "платформенный риск + неопределённость S2; 4/10"
+    },
+    {
+      "rank": 4,
+      "name": "BULK (Solana)",
+      "points_for": "стейкинг SOL через BULK + активность на mainnet (с 05.09.2026)",
+      "capital": "SOL-стейк (ценовой риск), вход по инвайт-кодам",
+      "timeline": "mainnet с 05.09.2026; снапшот/формула не опубликованы",
+      "confirmation": "30% сапплая юзерам (со-фаундер в X)",
+      "p_tier2_plus": 0.35,
+      "ev_on_10k_6_12m_usd": "500-2000 x p + ~7% SOL-стейкинг",
+      "ev_vs_passive": "около паритета + стейк-yield + ранняя стадия",
+      "risk": "инвайт-барьер, неизвестная формула, SOL-волатильность; 7/10"
+    },
+    {
+      "rank": 5,
+      "name": "Lighter x Robinhood (LIT)",
+      "points_for": "перп-объём; Robinhood Wallet 2x, веб 1x; еженедельный расчёт с 10.08.2026",
+      "capital": "маржа перпов; TVL Lighter $742M",
+      "timeline": "идёт; пул 11M LIT (~$34M при $3.07)",
+      "confirmation": "известный пул и механика (самая прозрачная программа списка)",
+      "p_tier2_plus": null,
+      "ev_on_10k_6_12m_usd": "100-800",
+      "ev_vs_passive": "ниже-около пассива, но риск капитала минимальный и всё предсказуемо",
+      "risk": "метод расчёта могут менять; 3/10"
+    },
+    {
+      "rank": 6,
+      "name": "Polymarket",
+      "points_for": "официальных поинтов нет; фарм = органика (объёмы, LP; Perps-мейкеры делят $75k/день в pUSD)",
+      "capital": "любой",
+      "timeline": "CMC (окт-2026): 'токен будет, аирдроп будет'; TOKEN2049 07.10.2026: 'on-chain asset с utility' без запуска; отложено ради polymarket.us",
+      "confirmation": "устное подтверждение команды; help-центр планов не подтверждает",
+      "p_tier2_plus": "p(дроп до конца-2027) 0.5-0.6; первый дроп — кандидат в тир-1",
+      "ev_on_10k_6_12m_usd": "0 (для органического трейдера — бесплатный колл) до 5000 целевым фармом вне US",
+      "ev_vs_passive": "не подлежит сравнению: это колл-опцион поверх обычной торговли",
+      "risk": "гео-блок US (нарушение ToS), CFTC-контекст, фейк-клэймы; 5/10"
+    },
+    {
+      "rank": 7,
+      "name": "Extended (EXT)",
+      "points_for": "активность/объём; еженедельные дропы <=600k поинтов; слашинг сибилов до TGE",
+      "capital": "средний",
+      "timeline": "лимит 70M поинтов, распределено 69.24M на 06.10.2026 — окно 1-2 недели",
+      "confirmation": "план 30% EXT раннему сообществу; конверсия не опубликована",
+      "p_tier2_plus": 0.12,
+      "ev_on_10k_6_12m_usd": "поздний вход 50-300",
+      "ev_vs_passive": "ниже пассива для новых входов",
+      "risk": "окно закрыто на 98.9%; 6/10"
+    },
+    {
+      "rank": 8,
+      "name": "N1",
+      "points_for": "maker/taker объём; фикс. пул 1.987B поинтов (75M/нед, 26 недель с 10.08.2026)",
+      "capital": "$2-10k маржа",
+      "timeline": "Season 1 до ~февраля 2027",
+      "confirmation": "токен НЕ подтверждён",
+      "p_tier2_plus": 0.25,
+      "ev_on_10k_6_12m_usd": "200-1000 x p",
+      "ev_vs_passive": "чаще ниже пассива",
+      "risk": "чистая спекуляция; 7/10"
+    },
+    {
+      "rank": 9,
+      "name": "RISEx",
+      "points_for": "объём/fees/slippage/OI/время удержания; 200k поинтов/нед; веса непубликуемые (анти-wash)",
+      "capital": "$2-10k маржа",
+      "timeline": "Ignite с 20.07.2026 до <=Q2-2027",
+      "confirmation": "токен не анонсирован; 100% поинтов юзерам",
+      "p_tier2_plus": 0.25,
+      "ev_on_10k_6_12m_usd": "200-800 x p",
+      "ev_vs_passive": "ниже пассива в среднем",
+      "risk": "7/10"
+    },
+    {
+      "rank": 10,
+      "name": "Axis Robotics",
+      "points_for": "ML-таски (траектории роботов), эпохи по 2 недели; тир-минимумы 100/300/600 траекторий",
+      "capital": "$0 (только время)",
+      "timeline": "идёт",
+      "confirmation": "поинты = вход в Community Contributor Airdrop; без права claim",
+      "p_tier2_plus": 0.3,
+      "ev_on_10k_6_12m_usd": "500-2000 на активного контрибьютора (время, не капитал)",
+      "ev_vs_passive": "несравнимо: доход на время, не на капитал",
+      "risk": "2/10"
+    },
+    {
+      "rank": 11,
+      "name": "Ostium (RWA-перпы)",
+      "points_for": "объём/позиции; Season 2 кэп 25M поинтов",
+      "capital": "маржа",
+      "timeline": "S2 идёт (статус гайдов июля-2026 требует перепроверки)",
+      "confirmation": "токен не анонсирован",
+      "p_tier2_plus": 0.25,
+      "ev_on_10k_6_12m_usd": "100-600 x p",
+      "ev_vs_passive": "ниже пассива",
+      "risk": "7/10"
+    },
+    {
+      "rank": 12,
+      "name": "Pacifica (перпы)",
+      "points_for": "объём/позиции",
+      "capital": "маржа",
+      "timeline": "поинты идут (перепроверять)",
+      "confirmation": "токен не анонсирован",
+      "p_tier2_plus": 0.25,
+      "ev_on_10k_6_12m_usd": "100-600 x p",
+      "ev_vs_passive": "ниже пассива",
+      "risk": "7/10"
+    },
+    {
+      "rank": 13,
+      "name": "HypurrFi (HyperEVM лендинг на Euler)",
+      "points_for": "депозит/заём USDT и др.; токена нет на 16.10.2026",
+      "capital": "$1k+; TVL всего $5.2M",
+      "timeline": "неизвестен",
+      "confirmation": "нет",
+      "p_tier2_plus": 0.15,
+      "ev_on_10k_6_12m_usd": "100-500 x p + base-yield",
+      "ev_vs_passive": "ниже пассива",
+      "risk": "микро-протокол; 6/10"
+    },
+    {
+      "rank": 14,
+      "name": "HyperLend S2-поинты / Felix (HyperEVM)",
+      "points_for": "депозит/заём (HPL токен уже торгуется; Felix: HIP-3-рынки свернуты 19-22.06.2026, FLX не запущен)",
+      "capital": "$1k+ (HyperLend TVL $322M)",
+      "timeline": "—",
+      "confirmation": "HPL — retention-поинты; Felix — судьба неясна",
+      "p_tier2_plus": 0.05,
+      "ev_on_10k_6_12m_usd": "~0-200",
+      "ev_vs_passive": "мусорный EV",
+      "risk": "9/10 (Felix)"
+    },
+    {
+      "rank": null,
+      "name": "Ложные цели",
+      "note": "MetaMask (официально отрицает токен), Base/Coinbase (официально без планов токена), 'Hyperlink' (на 16.10.2026 не существует/не индексируется), OpenSea (SEA торговался с окт-2025), LayerZero (ZRO давно вышел), APYX (нишевые ноды, по Cryptorank)"
+    }
+  ],
+  "sybil_and_multiaccount": {
+    "standard_2026": "слашинг поинтов до TGE за wash-trading/self-referrals/мульти-аккаунты (Extended); чистка обоих сезонов (Lighter); непубликуемые веса против wash-трейда (RISEx); airdrops.io: 'multiple wallets more likely to zero you than multiply you'",
+    "detection_signals": "тайминг-кластеризация транзакций (Binance Square апр-2026), графовая кластеризация (arXiv 2505.09313), финансирование с CEX-депозитов",
+    "historical_prevalence": "в Arbitrum сибилы захватывали ~48% дропнутых токенов (BlockEden янв-2026)",
+    "cex_funding_precedent": "Hyperliquid исключал HYPE-дроп для кошельков с прямым пополнением с Binance (ноя-2024, по памяти); Binance рандомизирует адреса выводов с июня-2025 (по памяти)",
+    "kyc_trend": "MegaETH Terminal: KYC для клэймов >$1000; выплата в USDm; вероятное распространение KYC-порогов в 2027",
+    "regulatory_flags": "Polymarket.com закрыт для US (фарм = нарушение ToS); Hyperliquid: предупреждение AMF Франция (апр-2025, по памяти), JELLY-инцидент (март-2025, по памяти); Entropy — MiCA-флаг для EEA",
+    "conclusion": "соло-аккаунт с органическим паттерном доминирует мульти-ферму по EV; мульти-аккаунтинг в топ-программах октября-2026 имеет отрицательное матожидание"
+  },
+  "strategy_stables_vs_activity": {
+    "stable_deposit_farm_2026_status": "класс почти вымер: Plasma/MegaETH/Baseline/Kamino закрыты; остались Arcus (депозиты считаются), BULK (SOL-стейк), Polymarket Perps LP ($75k/день pUSD), HypurrFi ($5.2M); Merkl-кампании дают 0.3-8.6% APR без аирдроп-опции",
+    "stable_deposit_farm_history_yield": "Kamino 2-5%/квартал; Plasma 0-5% годовых (XPL -95%); Baseline 5-20% годовых; итог: около или ниже пассива 4-6%, но принципал в стейблах сохранялся",
+    "activity_farm_history_yield": "платил только ранним: Hyperliquid 1-5x, ранний Lighter 0.2-1x объёма, Jito 1-2.5x на стейк; поздний вход — отрицательный EV (Linea, Bera-тестнет)",
+    "recommendation_100k": "$70-85k стейбл-yield 4-6%; $10-20k торговый капитал на платформах с аирдроп-опциями (Hyperliquid, Lighter x RH, Polymarket вне US); $2-5k ранние ставки (Variational до TGE Q4, Arcus S1, BULK по инвайту); $0 — мульти-аккаунты и перепаханные программы",
+    "key_asymmetry": "у активности-фарма издержки в любом сценарии, выплата вероятностна; у депозит-фарма издержки — только упущенная ставка; органический фарм (торгуешь и так) — единственный с нулевыми предельными издержками"
+  },
+  "verdict": "Против пассивных 4-6% овчинка стоит выделки только в трёх формах: (1) ранний вход в программы с подтверждённым % сапплая — Variational (32%, TGE Q4-2026), Arcus S1 (dYdX Labs), BULK (30%) — EV 0.5-3.5x годовых на капитал; (2) органический фарм как побочный продукт обычной торговли — Hyperliquid-S2-хвост (резерв 38.888%), Lighter x Robinhood (11M LIT), Polymarket (обещание CMO) — бесплатные колл-опционы; (3) удержание токена после дропа (HYPE 11x vs XPL -95%). Массовый фарм объёмами на перепаханных программах и мульти-аккаунтинг — EV ниже пассива. Эпоха 'стейбл-депозит -> поинты -> тир-1' закончилась (MegaETH выплатил ~2.5% обещанного, Pump.fun не заплатил ничего).",
+  "top5_live_by_ev": [
+    "Variational (VAR) — 32% подтверждено, TGE Q4-2026, окно недели; EV $1.5-6k на аккаунт при умеренном объёме",
+    "Arcus (dYdX Labs) — токен подтверждён, Season 1 до H1-2027, депозиты генерят поинты; EV $0.5-3k на $10k",
+    "Hyperliquid S2 — крупнейший хвост отрасли (38.888% резерва), фарм = органическая торговля, нулевые предельные издержки",
+    "BULK (Solana) — 30% подтверждено, mainnet сен-2026, ранний вход по инвайтам; EV 5-20% + 7% стейк-yield",
+    "Lighter x Robinhood — известный пул 11M LIT (~$34M), прозрачная механика, минимальный риск капитала"
+  ],
+  "sources": [
+    "airdrops.io/blog/best-crypto-airdrops (last checked 12.10.2026) — живая десятка октября-2026, метрики Extended/Variational/Arcus/N1/BULK/RISEx/Axis",
+    "CoinMarketCap Academy / CoinGecko / Arkham (ноя-2024) — HYPE 310M/31%, ~94k адресов, средний ~$45k, медиана ~64.5 HYPE",
+    "jito.network/blog (04.12.2023) — JTO 100M/9,852 кошельков",
+    "Beluga / SwissBorg / Binance Square — JUP $700M/~1M кошельков; Jupuary 2 янв-2025",
+    "docs.eigenfoundation.org (сен-2024) — EIGEN S2 5.2%",
+    "phantom.com / gov.kamino.finance / thedefiant.io (апр-2024) — KMNO 750M/250k+",
+    "blog.berachain.com (05.02.2025) — BERA 79M/15.75%, тестнет 8.25M/1.65%",
+    "monad.xyz/blog (10.11.2025) + CoinMarketCap — MON 3.3B/3.3%, ~230k кошельков, $0.025 TGE",
+    "terminal.megaeth.com/guide + airdrops.io/megaeth (30.09.2026) + SpendNode — MegaETH ~$1M USDm против обещанных ~$40M, KYC>$1000",
+    "BingX (25.09.2025) + datawallet (13.08.2026) — Plasma XPL $8,390/ICO-участник, XPL -95%",
+    "CoinDesk (30.12.2025) + docs.lighter.xyz — LIT TGE 25% сапплая, конвертация поинтов",
+    "atomicwallet (05.09.2025) + CoinGecko — Linea 9.36B/749k, LINEA $0.0029",
+    "CoinDesk (23.03.2026) — Backpack BP 25%/24% поинтам, no-insider",
+    "TradingView/CoinMarketCal (18.03.2026) + PR Newswire — Katana KAT",
+    "hyperiondefi.com IR (08.06.2026) — sunset Felix HIP-3/USDH 19-22.06.2026",
+    "Bitget Academy (окт-2025) — HyperSwap SWAP TGE 20.10.2025",
+    "Phemex (05.08.2026) + Lines.com — Pump.fun $414.6M бёрн, 74.5% без аирдропа",
+    "eco.com (06.10.2026) — у Hyperliquid нет фазы поинтов после ноя-2024",
+    "cryptonews.com (19.06.2026) + Crypto Briefing (TOKEN2049 07.10.2026) — Polymarket: токен обещан, не запущен; Perps $75k/день pUSD",
+    "DefiLlama TVL API (16.10.2026) — HypurrFi $5.2M, Felix $63.7M, HyperLend $322M, Lighter $742M, Polymarket $352M, Baseline $1.8M, Hyperliquid chain $6.89B",
+    "CoinGecko price API (16.10.2026) — все цены токенов",
+    "Binance Square (апр-2026) + arXiv 2505.09313 + BlockEden (27.01.2026) — sybil-детекция и масштаб",
+    "память (помечено в тексте, не перепроверено сегодня): Hyperliquid x Binance-исключения ноя-2024; Binance randomization выводов июнь-2025; AMF апр-2025; JELLY март-2025"
+  ]
+}

@@ -9,7 +9,9 @@
 
 ```
 PLAN.md                    — план исследования (7 воркстримов, гипотезы H1–H5)
-REPORT.md                  — ИТОГОВЫЙ ОТЧЁТ (начинать отсюда)
+REPORT.md                  — ИТОГОВЫЙ ОТЧЁТ: консервативная база (начинать отсюда)
+ALPHA.md                   — охота за спрэдами: stUSDS, Solana, carry, reUSD
+APY-MAX.md                 — МАКСИМИЗАЦИЯ APY: лупы, наградные стеки, малые протоколы, поинты
 research/                  — детальные отчёты по воркстримам
   01-stablecoin-lending.md — money markets (Aave, Morpho, Sky, ...)
   02-lsd-restaking.md      — liquid staking / restaking ETH+SOL
@@ -18,6 +20,8 @@ research/                  — детальные отчёты по воркст
   05-dex-lp.md             — LP в AMM: IL/LVR, стейбл-пулы
   06-rwa-niche.md          — токенизированные T-bills, Maple, CEX
   07-market-state-risks.md — снимок рынка, реестр взломов, p_hack
+  08-11 (alpha)            — stUSDS, Solana, Pendle high-yield, carry
+  12-15 (apy-max)          — программы наград, поинты/аирдропы, малые протоколы, лупинг
 data/*.json                — машиночитаемые данные (проверены cross-check)
 models/                    — количественные модели (Python, numpy)
   yield_math.py            — APR↔APY, комиссии, газ
@@ -26,7 +30,7 @@ models/                    — количественные модели (Python
   funding_model.py         — дельта-нейтральные стратегии, стресс-тесты
   portfolio.py             — аллокации: risk-budget, fractional Kelly
   strategies.py            — синтез стратегий S1–S4 (генерирует report/)
-tests/                     — pytest: 75 тестов (формулы + регрессии)
+tests/                     — pytest: 108 тестов (формулы + регрессии)
 report/                    — авто-вывод моделей + итоговые артефакты
 ```
 
