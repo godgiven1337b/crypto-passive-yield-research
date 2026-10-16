@@ -1,0 +1,167 @@
+{
+  "worksheet": "WS-11",
+  "topic": "Venue funding spreads and DIY carry on Hyperliquid",
+  "generated": "2026-10-16",
+  "data_cutoff": "2026-10-16T16:00Z",
+  "market_context": {
+    "btc_usd": 81310,
+    "eth_usd": 2429,
+    "benchmarks_apr_pct": {"sUSDe": 4.87, "sUSDS": 3.80}
+  },
+  "anomaly_ws3": {
+    "date": "2026-10-16",
+    "instantaneous_funding_apr_pct": {
+      "BTC": {"binance": 3.9, "bybit": 4.5, "okx": 6.4, "hyperliquid": 11.0},
+      "ETH": {"binance": 5.7, "bybit": 11.0, "okx": 1.2, "hyperliquid": 11.0}
+    }
+  },
+  "funding_snapshot_2026_10_16": {
+    "source": "exchange APIs (hyperliquid /info, binance fapi, okx v5, bybit v5)",
+    "instantaneous_apr_pct": {
+      "BTC": {"hyperliquid": 10.95, "binance": 5.63, "okx": 7.05, "bybit": 3.53},
+      "ETH": {"hyperliquid": 5.43, "binance": 4.20, "okx": 3.87, "bybit": 0.51}
+    },
+    "mean_apr_pct": {
+      "BTC": {
+        "hyperliquid": {"30d": 8.83, "90d": 8.30, "180d": 7.14, "365d": 7.06},
+        "binance": {"30d": 3.69, "90d": 5.65, "180d": 4.81, "365d": null},
+        "okx": {"30d": 4.50, "90d": 5.22, "180d": 5.28, "365d": null},
+        "bybit": {"30d": 4.00, "90d": 4.35, "180d": 3.23, "365d": null}
+      },
+      "ETH": {
+        "hyperliquid": {"30d": 9.46, "90d": 8.88, "180d": 7.89, "365d": 6.80},
+        "binance": {"30d": 4.39, "90d": 4.42, "180d": 3.70, "365d": null},
+        "okx": {"30d": 3.65, "90d": 4.22, "180d": 4.14, "365d": null},
+        "bybit": {"30d": 4.04, "90d": 4.16, "180d": 2.96, "365d": null}
+      }
+    },
+    "hyperliquid_monthly_mean_apr_pct": {
+      "BTC": {"2025-10": 9.87, "2025-11": 10.42, "2025-12": 6.23, "2026-01": 4.76, "2026-02": 3.61, "2026-03": 0.90, "2026-04": 0.31, "2026-05": 3.07, "2026-06": 5.88, "2026-07": 7.56, "2026-08": 8.33, "2026-09": 8.78, "2026-10": 7.91},
+      "ETH": {"2025-10": 7.88, "2025-11": 3.89, "2025-12": 8.91, "2026-01": 5.69, "2026-02": -7.28, "2026-03": 2.57, "2026-04": -1.03, "2026-05": 7.49, "2026-06": 3.32, "2026-07": 7.90, "2026-08": 8.63, "2026-09": 10.19, "2026-10": 7.61}
+    },
+    "open_interest_btc_usd": {"hyperliquid": 3.40e9, "binance": 7.74e9, "bybit": 4.77e9, "okx": 2.49e9},
+    "hyperliquid_hist_points": 5844,
+    "notes": "Funding is volatile hour-to-hour; use 30-90d means for decisions. HL median sits exactly at the 10.95% APR interest-component plateau (47-52% of hours)."
+  },
+  "spread_analysis": {
+    "hl_minus_binance_daily_stats_may_oct_2026": {
+      "BTC": {"days": 127, "mean_pp": 3.13, "median_pp": 2.98, "positive_days_pct": 77, "p5_pp": -3.2, "p95_pp": 11.0},
+      "ETH": {"days": 127, "mean_pp": 4.27, "median_pp": 4.62, "positive_days_pct": 87, "p5_pp": -2.1, "p95_pp": 9.9}
+    },
+    "hl_minus_binance_12m_estimate_pp": {"BTC": [2.5, 3.1]},
+    "cex_vs_cex": {
+      "okx_minus_binance_btc_pp": {"30d": 0.81, "90d": -0.43},
+      "bybit_minus_binance_btc_pp": {"30d": 0.31, "90d": -1.30},
+      "verdict": "not persistent - within noise after 4-leg costs; only HL vs all-CEX spread is structural"
+    },
+    "why_hyperliquid_higher": [
+      "identical formula but interest plateau: premium in [-0.04%, +0.06%] pins funding at exactly 10.95% APR; HL perp trades at/above oracle most hours (long-biased flow)",
+      "leverage-hungry user base (up to 40x) skews long",
+      "constrained cross-venue arbitrage capital: thinner HL spot book, legging risk, USDC on-chain friction keeps premium from being arb'd away",
+      "hourly settlement and 4%/hour cap let imbalance express more aggressively (Talos: HL funding 1.95x more volatile than Binance)"
+    ],
+    "inversion_precedents": [
+      {"asset": "ETH", "month": "2026-02", "hl_apr_pct": -7.28, "binance_apr_pct": -4.0, "spread_pp": -3.3},
+      {"asset": "BTC", "worst_daily_spread_pp": -7.4, "month": "2026-08"}
+    ]
+  },
+  "diy_carry": {
+    "structure": "spot BTC on Binance + USDC-margined short perp on Hyperliquid, delta ~ 0",
+    "fees_pct": {
+      "binance_spot_round_trip": 0.15,
+      "binance_spot_no_bnb": 0.20,
+      "coinbase_spot_taker_round_trip": 1.20,
+      "hyperliquid_perp_maker_round_trip": 0.03,
+      "hyperliquid_perp_taker_round_trip": 0.09,
+      "hl_deposit": 0.0,
+      "hl_withdrawal_usd": 1.0,
+      "slippage_4_legs": 0.08,
+      "round_trip_total_pct_of_notional": 0.26,
+      "rebalance_drag_pct_per_year": 0.30
+    },
+    "liquidation": {
+      "maintenance_margin_btc": 0.0125,
+      "formula": "uplift u = (M/N - 0.0125)/1.0125",
+      "uplift_by_leverage_pct": {"1x": 97.5, "1.5x": 64.6, "2x": 48.1, "3x": 31.7, "4x": 23.5}
+    },
+    "net_return_on_capital_apr_pct": {
+      "A_conservative_N40_M60": {"instant_10.95": 4.26, "avg30d_8.83": 3.41, "avg12m_7.06": 2.70},
+      "B_balanced_N60_M40": {"instant_10.95": 6.39, "avg30d_8.83": 5.11, "avg12m_7.06": 4.05},
+      "C_aggressive_N75_M25": {"instant_10.95": 7.98, "avg30d_8.83": 6.39, "avg90d_8.30": 6.00, "avg12m_7.06": 5.07}
+    },
+    "edge_vs_sUSDe_pp": {"B_balanced": [0.2, 1.5], "C_aggressive": [0.2, 1.5], "comment": "0.2-1.5pp depending on funding scenario; instant 11% would give up to +3.1pp but is not a run-rate"},
+    "liquidation_economics": "delta-neutral structure makes short liquidation economically near-neutral (spot gain offsets short loss; residual maintenance ~1.25% notional burns); real costs = delta gap before re-short, re-entry timing, margin top-up ops"
+  },
+  "hyperliquid_risks": {
+    "custody_validators": {
+      "validator_set": 27,
+      "validators_sign_bridge_and_oracles": true,
+      "bridge_history_usd": {"inflow": 80.08e9, "outflow": 79.66e9, "addresses": 1.28e6},
+      "bridge_audit": "Zellic",
+      "arbitrum_bridge_retired": "2025-12",
+      "june_2026_bank_run": "58% of outflow was one wallet; withdrawals processed"
+    },
+    "incidents": [
+      {"date": "2024-12", "event": "North Korea-linked probing; ~$250M outflows in a day, HYPE -21%"},
+      {"date": "2025-03-26", "event": "JELLY exploit vs HLP (~$12M); forced delist/settlement by validator vote; memecoin leverage capped"},
+      {"date": "2025-10-10/11", "event": "cascade: 60,650+ traders liquidated, ~$1.25B liquidations, $7.4B+ OI destroyed; cross-margin ADL closed $2.1B in 12 min incl. profitable shorts"},
+      {"date": "2026-06", "event": "bridge bank-run stress; processed without halt"}
+    ],
+    "adl_risk_for_carry": "profitable short force-closed at bankruptcy price in cascades; funding collapses post-cascade (income stops exactly when it matters)",
+    "oracle": "validators compute weighted median of CEX spot prices; low risk for BTC/ETH, elevated for memecoins (JELLY)",
+    "regulatory": "US geofenced; EU gray zone (no MiCA); CFTC onshoring push Aug-2026 (Kraken/Payward via Bitnomial); CFTC ANPRM 2026-10-05"
+  },
+  "hl_ecosystem_yields": [
+    {"name": "HYPE staking", "type": "staking", "tvl": null, "apy_pct": 2.23, "usd_denominated": false, "verdict": "not a USD yield; price risk dominates"},
+    {"name": "HLP (protocol vault)", "type": "market-making vault", "tvl_usd": 1.8e8, "apy_hist_pct": [15, 30], "drawdowns_pct": [5, 12], "apy_30d_pct": 0.3, "verdict": "legit but volatile alpha; cap 2-3% of capital"},
+    {"name": "Growi HF (growihf)", "type": "quant mean-reversion vault", "tvl_usd": 1.37e7, "apy_pct": 28.99, "apy_mean30d_pct": 66.13, "red_flags": ["no named third-party audit", "DeFiLlama misrepresentedTokens flag", "semi-anon team, self-reported performance", "short-volatility payoff profile", "yield not decomposable"], "live_since": "2024-09", "verdict": "NOT carry; venture sleeve only, cap 1-2%, expect total-loss tail"},
+    {"name": "Liminal Basis LIMUSD", "type": "basis-trade synthetic dollar", "tvl_usd": 8.5e6, "apy_pct": 8.07, "verdict": "productized version of this carry; cap 1-2%"},
+    {"name": "Harmonix USDC", "type": "delta-neutral strategies", "tvl_usd": 1.53e7, "apy_pct": 6.40, "verdict": "cap 1-2%"},
+    {"name": "HyperLend USDC (pooled)", "type": "lending", "tvl_usd": 4.37e6, "apy_pct": 6.61, "apy_mean30d_pct": 4.47, "verdict": "no reason to prefer vs Morpho analogs"},
+    {"name": "Morpho feUSDCv2 (HyperEVM)", "type": "lending", "tvl_usd": 8.49e6, "apy_pct": 6.57, "verdict": "small market, HyperEVM contract risk"},
+    {"name": "Katana UM/USDX", "type": "unverified", "tvl_usd": null, "apy_pct": null, "red_flags": ["not in DeFiLlama yields", "not indexed by search"], "verdict": "unverifiable; skip"}
+  ],
+  "allocation_advice": {
+    "principle": "post-Bitget ($387.5M, Sept-2026): any exchange balance = unsecured lending to the exchange",
+    "shares_of_usd_portfolio_conservative": {
+      "self_custody_tbills": "60-75%",
+      "sUSDe_sUSDS": "<=15-20%",
+      "diy_carry_hl": "5-10% (HL margin leg 2-4% of portfolio)",
+      "hlp": "<=2-3%",
+      "growihf_liminal_harmonix_each": "<=1-2% (venture pocket)",
+      "any_cex_balance_total": "<=10-15%"
+    },
+    "rules": [
+      "HL margin <= 5% of portfolio",
+      "HL short leg leverage <= 2-3x with 15-25% USDC buffer",
+      "exit when 30d spread < +2pp; flat when 7d spread negative",
+      "never both legs on one venue",
+      "capacity fine up to ~$5-10M per account (BTC OI $3.4B, daily volume $2.45B)"
+    ]
+  },
+  "verdict": {
+    "spread_real": true,
+    "spread_nature": "structural (interest plateau 10.95% + long-biased leveraged user base + constrained arb capital), not a one-candle artifact like OKX/Bybit snapshots",
+    "spread_persistence": "12m avg +2.5-3.1pp BTC; positive 77% (BTC) / 87% (ETH) of days; compresses to ~0 in risk-off quarters; one monthly inversion (ETH Feb-2026 -3.3pp)",
+    "diy_carry_net": "4.0-6.4% APR on capital after costs (12m/30d funding scenarios); premium over sUSDe +0.2-1.5pp",
+    "worth_it": "yes, as small automated sleeve (5-10% of alpha budget) with strict exit rules - not as an sUSDe replacement at 11%",
+    "hl_pools": "HLP ok (2-3%, volatile); growihf = anonymous quant fund, short-vol, no audit - venture only 1-2%; Katana unverifiable"
+  },
+  "sources": [
+    "Hyperliquid Docs - Funding (2026-04-08), Liquidations (2025-06-23), Margin tiers (2026-04-24), Fees (2026-08-19), USDC bridge (2026-08-07)",
+    "Hyperliquid API api.hyperliquid.xyz/info - metaAndAssetCtxs, fundingHistory BTC/ETH 365d (2026-10-16)",
+    "Binance fapi / OKX v5 / Bybit v5 APIs - funding history, OI, snapshots (2026-10-16)",
+    "WS-3 research/03-delta-neutral.md - Binance quarterly funding 2024-2026",
+    "Talos State of the Network - HL funding volatility vs Binance/Deribit",
+    "Oak Research - JELLY attack analysis (2025-03-28)",
+    "SSRN - Anatomy of the Oct 10-11 2025 Liquidation Cascade; Forbes/arXiv - ADL $2.1B in 12 min",
+    "Bitquery - Hyperliquid bridge ledger (2026-08-10)",
+    "DeFiLlama API - growihf protocol, yields pools snapshot (2026-10-16)",
+    "growi.fi, RootData - Growi HF strategy and team",
+    "Eco - Hyperliquid Vault Strategies 2026 (2026-09-15); DefiLlama HLP ~$180M",
+    "VanEck, Artemis, Bitsgap - user base structure and interest component",
+    "DataWallet - restricted countries (2026-10-02); The Defiant - CFTC onshoring (2026-08)",
+    "Coinbase Earn - HYPE staking ~2.23% (2026-10)",
+    "Binance/Coinbase fee schedules (2026-10-16)"
+  ]
+}
