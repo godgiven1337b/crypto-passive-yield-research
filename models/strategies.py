@@ -115,8 +115,10 @@ def instrument_universe() -> list[ProtocolRisk]:
             if risk >= 9:
                 continue
             avg12 = it.get("avg_apy_12m_pct") or cur
+            # LGD 0.4 = оценка WS-3 тяжести серьёзного события для Ethena ("worst case −40%")
             add_pct(it.get("instrument", "?"), avg12,
                     it.get("hack_probability_annual_pct", 1.0),
+                    lgd=0.4,
                     p_depeg=0.01, lgd_depeg=0.12, rate_vol=0.05, recovery=0.1, src="WS3")
     else:
         add_pct("sUSDe", 8.0, 1.2, lgd=0.7, p_depeg=0.01, lgd_depeg=0.12,
