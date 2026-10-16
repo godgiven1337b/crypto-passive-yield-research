@@ -75,7 +75,7 @@ class TestEV:
         assert "СИЛЬНАЯ" in strong.verdict()
         dead = mk(spread_bp=50, hazard_monthly=0.5, p_hack_annual=0.05,
                   costs_in_out=0.01)
-        assert dead.verdict() in ("НЕТ АЛЬФИ", "СЛАБАЯ (<100 б.п., не стоит операции)")
+        assert dead.verdict().startswith("НЕТ АЛЬФИ")
 
     def test_total_includes_baseline(self):
         c = mk(hazard_monthly=0.0, p_hack_annual=0.0, costs_in_out=0.0)
