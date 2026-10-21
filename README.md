@@ -12,6 +12,7 @@ PLAN.md                    — план исследования (7 воркст
 REPORT.md                  — ИТОГОВЫЙ ОТЧЁТ: консервативная база (начинать отсюда)
 ALPHA.md                   — охота за спрэдами: stUSDS, Solana, carry, reUSD
 APY-MAX.md                 — МАКСИМИЗАЦИЯ APY: лупы, наградные стеки, малые протоколы, поинты
+OPTIONS.md                 — 📋 СВОДНАЯ ТАБЛИЦА ВСЕХ ВАРИАНТОВ (APY/капитал/риски)
 QUANT-EDGES.md             — МИКРОСТРУКТУРА: Pendle mispricing, undersupplied-пулы, фандинг
 models/live_monitor.py     — живой монитор дислокаций (фандинг/пеги/vol-TVL/PT)
 research/                  — детальные отчёты по воркстримам
