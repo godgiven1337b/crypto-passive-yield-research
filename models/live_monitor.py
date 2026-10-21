@@ -102,6 +102,45 @@ def pendle_discounts() -> dict[str, float]:
     return out
 
 
+
+def undersupplied_pools() -> list[dict]:
+    """Пулы с volume/TVL > 20x (недоснабжённая ликвидность) — кандидат на LP (WS-16)."""
+    out = []
+    try:
+        d = _get("https://yields.llama.fi/pools")
+        for p in d["data"]:
+            tvl = p.get("tvlUsd") or 0
+            vol = (p.get("volumeUsd1d") or 0)
+            if tvl > 3e5 and vol / tvl > 20:
+                out.append({"pool": p.get("symbol"), "project": p.get("project"),
+                            "chain": p.get("chain"), "tvl_usd": round(tvl),
+                            "vol_tvl_x": round(vol / tvl, 1),
+                            "apy_pct": round(p.get("apy") or 0, 1)})
+        out.sort(key=lambda x: -x["vol_tvl_x"])
+    except Exception:
+        pass
+    return out[:10]
+
+
+def pendle_pt_signal() -> list[dict]:
+    """Правило WS-17: PT интересен, когда implied > trailing realized +200 б.п."""
+    out = []
+    try:
+        d = _get("https://api-v2.pendle.finance/api/v1/markets?chain=1&is_expired=false")
+        for m in d.get("data", []):
+            pt = m.get("pt", {})
+            implied = float(pt.get("impliedApy") or 0) * 100
+            underlying = float(m.get("underlyingApy", 0)) * 100 if m.get("underlyingApy") else None
+            if underlying and implied - underlying > 1.5:
+                out.append({"market": m.get("name", "?")[:40],
+                            "implied_pct": round(implied, 2),
+                            "underlying_pct": round(underlying, 2),
+                            "spread_bp": round((implied - underlying) * 100)})
+    except Exception:
+        pass
+    return out[:8]
+
+
 def check_dislocations(funding: dict) -> list[str]:
     alerts = []
     by_asset: dict[str, dict] = {}
@@ -148,6 +187,17 @@ def main():
         print("Pendle PT:")
         for k, v in list(pendle.items())[:6]:
             print(f"  {k}: implied {v['implied_apy_pct']}%, дисконт {v['discount_pct']}%")
+
+    us = undersupplied_pools()
+    if us:
+        print("\nНедоснабжённые пулы (vol/TVL>20x, WS-16):")
+        for u in us[:6]:
+            print(f"  {u['project']}/{u['chain']}: {u['pool']} x{u['vol_tvl_x']} TVL ${u['tvl_usd']/1e6:.1f}M APY {u['apy_pct']}%")
+    pt_sig = pendle_pt_signal()
+    if pt_sig:
+        print("\nPendle PT-сигнал (implied>underlying+150 б.п., WS-17):")
+        for s in pt_sig[:6]:
+            print(f"  {s['market']}: implied {s['implied_pct']}% vs {s['underlying_pct']}% (+{s['spread_bp']} б.п.)")
 
     if alerts:
         print("\n!!! АЛЕРТЫ:")

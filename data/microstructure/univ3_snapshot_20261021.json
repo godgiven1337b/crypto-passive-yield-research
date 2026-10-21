@@ -1,0 +1,56 @@
+{
+ "block": 26241557,
+ "ts": "2026-10-21T14:25:32Z",
+ "binance": {
+  "ETHUSDT_bid": 2477.84,
+  "ETHUSDT_ask": 2477.85,
+  "ETHUSDC_bid": 2475.43,
+  "ETHUSDC_ask": 2475.44
+ },
+ "pools": {
+  "WETHUSDC_5bp": {
+   "addr": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+   "fee_bp": 5.0,
+   "tick": 198177,
+   "mid_px": 4.03912642477167e+20,
+   "active_liq": 2232992689750287965,
+   "dev_mid_vs_binance_pct": 1.6316834919000785e+19,
+   "buy_10000_usd_effective_px": null,
+   "buy_100000_usd_effective_px": null,
+   "buy_1000000_usd_effective_px": null
+  },
+  "WETHUSDT_1bp": {
+   "addr": "0xc7bbec68d12a0d1830360f8ec58fa599ba1b0e9b",
+   "fee_bp": 1.0,
+   "tick": -198171,
+   "mid_px": 2477.269,
+   "active_liq": 168213643371727471,
+   "dev_mid_vs_binance_pct": -0.0233,
+   "buy_10000_usd_effective_px": null,
+   "buy_100000_usd_effective_px": null,
+   "buy_1000000_usd_effective_px": null
+  },
+  "WETHUSDT_5bp": {
+   "addr": "0x11b815efb8f581194ae79006d24e0d814b7697f6",
+   "fee_bp": 5.0,
+   "tick": -198168,
+   "mid_px": 2478.012,
+   "active_liq": 737759958953061875,
+   "dev_mid_vs_binance_pct": 0.0067,
+   "buy_10000_usd_effective_px": null,
+   "buy_100000_usd_effective_px": null,
+   "buy_1000000_usd_effective_px": null
+  },
+  "WETHUSDT_30bp": {
+   "addr": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36",
+   "fee_bp": 30.0,
+   "tick": -198190,
+   "mid_px": 2472.567,
+   "active_liq": 13605759307078212295,
+   "dev_mid_vs_binance_pct": -0.213,
+   "buy_10000_usd_effective_px": null,
+   "buy_100000_usd_effective_px": null,
+   "buy_1000000_usd_effective_px": null
+  }
+ }
+}

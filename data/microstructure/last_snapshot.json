@@ -1,6 +1,31 @@
 {
- "ts": "2026-10-21 14:18 UTC",
+ "ts": "2026-10-21 15:24 UTC",
  "funding": {
+  "Binance:BTC": 7.15,
+  "Binance:ETH": 9.76,
+  "Binance:SOL": 4.7,
+  "Bybit:BTC": 10.95,
+  "OKX:BTC": 3.53,
+  "HL:BTC": 10.95,
+  "HL:ETH": 10.95,
+  "HL:SOL": 10.63
+ },
+ "pegs": {
+  "usde": 0.9998,
+  "usd-coin": 0.9995,
+  "tether": 0.9992,
+  "usds": 1.0,
+  "ethena-usde": 0.9996
+ },
+ "lst": {
+  "wsteth_eth_market_ratio": 1.24663
+ },
+ "pendle": {},
+ "alerts": [
+  "\u0424\u0410\u041d\u0414\u0418\u041d\u0413 BTC: \u0441\u043f\u0440\u044d\u0434 7.4 \u043f.\u043f. (Bybit +10.9% vs OKX +3.5%) \u2014 \u043f\u0435\u0440\u043f-\u043f\u0435\u0440\u043f: \u0448\u043e\u0440\u0442 Bybit + \u043b\u043e\u043d\u0433 OKX",
+  "\u0424\u0410\u041d\u0414\u0418\u041d\u0413 SOL: \u0441\u043f\u0440\u044d\u0434 5.9 \u043f.\u043f. (HL +10.6% vs Binance +4.7%) \u2014 \u043f\u0435\u0440\u043f-\u043f\u0435\u0440\u043f: \u0448\u043e\u0440\u0442 HL + \u043b\u043e\u043d\u0433 Binance"
+ ],
+ "prev_funding": {
   "Binance:BTC": 10.15,
   "Binance:ETH": 10.85,
   "Binance:SOL": 4.36,
@@ -9,20 +34,5 @@
   "HL:BTC": 10.95,
   "HL:ETH": 10.95,
   "HL:SOL": 4.72
- },
- "pegs": {
-  "usde": 0.9998,
-  "usd-coin": 0.9994,
-  "tether": 0.999,
-  "usds": 1.001,
-  "ethena-usde": 0.9995
- },
- "lst": {
-  "wsteth_eth_market_ratio": 1.24576
- },
- "pendle": {},
- "alerts": [
-  "\u0424\u0410\u041d\u0414\u0418\u041d\u0413 BTC: \u0441\u043f\u0440\u044d\u0434 8.7 \u043f.\u043f. (Bybit +10.9% vs OKX +2.2%) \u2014 \u043f\u0435\u0440\u043f-\u043f\u0435\u0440\u043f: \u0448\u043e\u0440\u0442 Bybit + \u043b\u043e\u043d\u0433 OKX"
- ],
- "prev_funding": {}
+ }
 }

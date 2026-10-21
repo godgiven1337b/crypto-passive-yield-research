@@ -12,6 +12,8 @@ PLAN.md                    — план исследования (7 воркст
 REPORT.md                  — ИТОГОВЫЙ ОТЧЁТ: консервативная база (начинать отсюда)
 ALPHA.md                   — охота за спрэдами: stUSDS, Solana, carry, reUSD
 APY-MAX.md                 — МАКСИМИЗАЦИЯ APY: лупы, наградные стеки, малые протоколы, поинты
+QUANT-EDGES.md             — МИКРОСТРУКТУРА: Pendle mispricing, undersupplied-пулы, фандинг
+models/live_monitor.py     — живой монитор дислокаций (фандинг/пеги/vol-TVL/PT)
 research/                  — детальные отчёты по воркстримам
   01-stablecoin-lending.md — money markets (Aave, Morpho, Sky, ...)
   02-lsd-restaking.md      — liquid staking / restaking ETH+SOL
@@ -22,6 +24,7 @@ research/                  — детальные отчёты по воркст
   07-market-state-risks.md — снимок рынка, реестр взломов, p_hack
   08-11 (alpha)            — stUSDS, Solana, Pendle high-yield, carry
   12-15 (apy-max)          — программы наград, поинты/аирдропы, малые протоколы, лупинг
+  16-19 (quant)            — DEX-микроструктура, Pendle-бэктест, ликвидации, депеги
 data/*.json                — машиночитаемые данные (проверены cross-check)
 models/                    — количественные модели (Python, numpy)
   yield_math.py            — APR↔APY, комиссии, газ
@@ -50,6 +53,7 @@ python3 models/alpha_scanner.py      # сканер аномалий доход�
 | Консервативный | REPORT.md | E[APY] ~3.4% | T-bill RWA + blue-chip lending + PT-фикс |
 | Альфа-оверлей | ALPHA.md | ~4.3–4.5% | stUSDS + Solana + carry + reUSD |
 | Максимум | APY-MAX.md | **9.7% гросс / 8.5% E[APY]** | Лупы на дешёвом долге + наградные стеки + поинты-опционы |
+| Квант | QUANT-EDGES.md | **~10–14%** | PT-mispricing (hit 92%), undersupplied LP, фандинг-дислокации |
 
 ## Ключевые выводы (TL;DR)
 

@@ -1,0 +1,65 @@
+{
+ "strict_jit_26240442": {
+  "gasUsed": 768726,
+  "effectiveGasPrice_gwei": 0.038022246,
+  "events": [
+   {
+    "ev": "BURN",
+    "amount0_usdc": 0.0,
+    "amount1_weth": 0.0
+   },
+   {
+    "ev": "BURN",
+    "amount0_usdc": 49925.678779,
+    "amount1_weth": 17.849070968027377
+   },
+   {
+    "ev": "SWAP",
+    "amount0_usdc": 1.043559,
+    "amount1_weth": -0.000425698483710525
+   },
+   {
+    "ev": "MINT",
+    "amount0_usdc": 49935.620054,
+    "amount1_weth": 17.85262141206015
+   }
+  ]
+ },
+ "same_block_jit_26241498": {
+  "gasUsed": 671275,
+  "effectiveGasPrice_gwei": 2.388005944,
+  "events": [
+   {
+    "ev": "BURN",
+    "amount0_usdc": 0.0,
+    "amount1_weth": 0.0
+   },
+   {
+    "ev": "MINT",
+    "amount0_usdc": 27.378468,
+    "amount1_weth": 0.01001241001945724
+   }
+  ]
+ },
+ "same_block_jit_26241178": {
+  "gasUsed": 983786,
+  "effectiveGasPrice_gwei": 0.321121341,
+  "events": [
+   {
+    "ev": "BURN",
+    "amount0_usdc": 1015.436427,
+    "amount1_weth": 0.0
+   },
+   {
+    "ev": "SWAP",
+    "amount0_usdc": 510.709381,
+    "amount1_weth": -0.2057193105581184
+   },
+   {
+    "ev": "MINT",
+    "amount0_usdc": 503.542815,
+    "amount1_weth": 0.20571509265787846
+   }
+  ]
+ }
+}

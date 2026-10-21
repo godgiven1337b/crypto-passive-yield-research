@@ -1,0 +1,12 @@
+{
+ "n_swaps_2h": 473,
+ "median_usd": 5425,
+ "p90_usd": 32052,
+ "p99_usd": 87619,
+ "max_usd": 181178,
+ "total_usd": 5603652,
+ "fee_usd_2h_5bp": 2801.8,
+ "swaps_gt100k": 2,
+ "swaps_gt500k": 0,
+ "swaps_gt1m": 0
+}

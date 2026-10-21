@@ -1,0 +1,48 @@
+{
+ "scan_utc": "2026-10-21T14:33:56Z",
+ "pool": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+ "span_blocks": 3000,
+ "totals": {
+  "swaps": 1771,
+  "mints": 29,
+  "burns": 52,
+  "jit_same_block": 1,
+  "strict_same_tx": 1,
+  "nearjit": 3
+ },
+ "strict": [
+  {
+   "block": 26240442,
+   "jit_tx": [
+    "0x26445254446547e2b547e8ef33079850a3943c8a7e842567391b3ef8e0b966bc"
+   ],
+   "swaps_same_block": 2
+  }
+ ],
+ "near": [
+  {
+   "mint_block": 26241498,
+   "burn_block": 26241498,
+   "tx": "0xfe4113ff718d3cad5c3bfc326b1ccdf7c364d9c837533454342975d0337d47ff"
+  },
+  {
+   "mint_block": 26241178,
+   "burn_block": 26241178,
+   "tx": "0x754029c232c844a7a55f3f9f81d3d39f0d3351eb0814f9538f181845fade9092"
+  },
+  {
+   "mint_block": 26240442,
+   "burn_block": 26240442,
+   "tx": "0x26445254446547e2b547e8ef33079850a3943c8a7e842567391b3ef8e0b966bc"
+  }
+ ],
+ "jit_blocks_detail": [
+  {
+   "26240442": {
+    "m": 1,
+    "b": 2,
+    "s": 2
+   }
+  }
+ ]
+}

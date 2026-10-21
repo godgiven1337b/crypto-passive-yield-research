@@ -1,0 +1,309 @@
+{
+ "meta": {
+  "ws": "16-dex-microstructure",
+  "date": "2026-10-21",
+  "author": "WS-16",
+  "market_context": {
+   "eth_usd": 2477,
+   "gas_basefee_gwei_range": [
+    0.03,
+    0.67
+   ],
+   "gas_note": "base fee снят с блоков 26239000-26241633, 2026-10-21"
+  },
+  "completed": "2026-10-21"
+ },
+ "t1_lvr_jit": {
+  "mechanic": "LP mint в текущий тик за 1 блок до большого свапа (backrun-бандл), burn после; захват 50-95% комиссии",
+  "key_numbers": {
+   "jit_share_of_volume_2021_22": "0.3% ликвидностного спроса (Uniswap Labs/Wan 2022, 8287 JIT-атtempts, >95% с одного аккаунта)",
+   "jit_profit_total": "36 671 атака / 20 мес, 7 498 ETH (Xiong et al 2023) ≈ $31k/день на всех ботов при ETH=$2477",
+   "jit_roi_per_attack": "~0.04% ROI (Xiong et al 2023) — игра китов с капиталом ~$1M/атака",
+   "dexosphere_2025": "~$45M комиссий перехвачено JIT у пассивных LP (кумулятивно, отчёт сент-окт 2025)",
+   "lvr_annual": "$500M+/год теряют LP на LVR (CoW Swap)",
+   "lvr_vs_fees_2024": "Fritsch & Canidio 2024 (arXiv:2404.05803): LVR > fee-доходов на большинстве топ-пулов v2/v3 (данные 2022-23)",
+   "lvr_vs_fees_oct2026": "Оценка: дневная вола 1.9% → теоретич. LVR ≈ σ²/8 = 1.65%/год против fee-APY 8.8-26% на WETH/USDC тирах (переворот режима)",
+   "uniswapx_concentration": "SCP + Wintermute > 90% объёма UniswapX (arXiv:2503.00738, март 2025) — JIT мигрировал в intents"
+  },
+  "live_scan_2026_10_21": {
+   "pool": "uniswap-v3 WETH/USDC 0.05% mainnet 0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640",
+   "window_blocks": 3000,
+   "window_hours": 10,
+   "swaps": 1771,
+   "mints": 29,
+   "burns": 52,
+   "jit_same_tx": 1,
+   "jit_same_block": 3,
+   "examples": [
+    {
+     "tx": "0x754029c232c844a7a55f3f9f81d3d39f0d3351eb0814f9538f181845fade9092",
+     "block": 26241178,
+     "pattern": "mint $1k ($503 USDC + 0.206 WETH) → swap $510 → burn",
+     "gas": 983786,
+     "eff_gas_gwei": 0.321,
+     "cost_usd": 0.78
+    },
+    {
+     "tx": "0x26445254446547e2b547e8ef33079850a3943c8a7e842567391b3ef8e0b966bc",
+     "block": 26240442,
+     "pattern": "burn+re-mint позиции $94k вокруг $1 свапа (репозиция JIT-типа)",
+     "gas": 768726,
+     "eff_gas_gwei": 0.038,
+     "cost_usd": 0.07
+    }
+   ],
+   "swap_sizes_2h": {
+    "n": 473,
+    "median_usd": 5425,
+    "p90_usd": 32052,
+    "p99_usd": 87619,
+    "max_usd": 181178,
+    "swaps_gt100k": 2,
+    "note": "классических JIT-целей (>$100k) ~24/день на флагманском пуле"
+   },
+   "conclusion": "порог входа по газу обнулён ($0.05-2/событие), но on-chain JIT на mainnet почти вымер — крупный флоу в UniswapX/RFQ; эдж мигрировал к филлерам intents"
+  },
+  "threshold": "капитал $50k-1M на событие, инфраструктура: свой узел/bundles через builder, скорость <100мс; реалистичная маржа новичка ~0 после бид-войн"
+ },
+ "t2_stale_pools": {
+  "mechanic": "CEX-DEX арбитраж держит пул в бэнде ±fee tier; «отстающие» пулы — те, где бэнд широк (0.3%) или арбитраж редкий (L2, длинные хвосты)",
+  "live_scan_2026_10_21": {
+   "block": 26241557,
+   "pools": {
+    "WETHUSDC_5bp": {
+     "fee_bp": 5.0,
+     "tick": 198177,
+     "mid_px": 2475.78,
+     "dev_vs_binance_pct": 0.014,
+     "active_liq": 2232992689750287965,
+     "addr": "0x88e6a0c2ddd26feeb64f039a2c41296fcb3f5640"
+    },
+    "WETHUSDT_1bp": {
+     "fee_bp": 1.0,
+     "tick": -198171,
+     "mid_px": 2477.27,
+     "dev_vs_binance_pct": -0.023,
+     "active_liq": 168213643371727471,
+     "addr": "0xc7bbec68d12a0d1830360f8ec58fa599ba1b0e9b"
+    },
+    "WETHUSDT_5bp": {
+     "fee_bp": 5.0,
+     "tick": -198168,
+     "mid_px": 2478.01,
+     "dev_vs_binance_pct": 0.007,
+     "active_liq": 737759958953061875,
+     "addr": "0x11b815efb8f581194ae79006d24e0d814b7697f6"
+    },
+    "WETHUSDT_30bp": {
+     "fee_bp": 30.0,
+     "tick": -198190,
+     "mid_px": 2472.57,
+     "dev_vs_binance_pct": -0.213,
+     "active_liq": 13605759307078212295,
+     "addr": "0x4e68ccd3e89f51c3074ca5072bbac773960dfa36"
+    }
+   },
+   "binance": {
+    "ETHUSDT_bid": 2477.84,
+    "ETHUSDT_ask": 2477.85,
+    "ETHUSDC_bid": 2475.43,
+    "ETHUSDC_ask": 2475.44
+   },
+   "finding": "отклонения 0.007-0.213% прижаты к краю fee-бэнда (1bp-пул -0.023% чуть за краем ±0.01%, остаточный эдж 1.3bp ниже издержек); last swap на активных пулах 0.2 мин назад, 68-132 свапа/100 блоков"
+  },
+  "research": {
+   "cex_dex_arb_volume": "$2M/день на ОДНОМ пуле ETH-USDT (сент 2025, arXiv:2604.15973) ≈ 50% объёма пула, концентрируется у краёв бэнда",
+   "mispricing_outside_band": "вне fee-бэнда цена проводит 12.3% времени (30bp) / 4% (100bp) (тот же источник)",
+   "market_saturated": "арбитражный рынок насыщен, профит уходит билдерам (bid-войны)",
+   "who_wins": "неатомарный CEX-DEX в 40x больше атомарного по объёму; прибыль остаётся у поискеров с офчейн-исполнением (AFT 2025, Aug2023-Mar2025)"
+  },
+  "edge_after_costs": "для ритейла с taker-fee 7.5-10bp на CEX эджа нет; для аккаунтов с 0-fee/мейкером — 2-5bp на всплесках, капитал $200k+, автоматизация"
+ },
+ "t4_misconfigured_pools": {
+  "scan_method": "DefiLlama /pools: vol/TVL > 20x, затем /chart на устойчивость APY",
+  "live_examples": [
+   {
+    "pool": "uniswap-v4 USDC/USDT Ethereum",
+    "tvl": 5384271,
+    "vol1d": 139658051,
+    "turnover": 26,
+    "apy_10d": [
+     1.9,
+     2.1,
+     5.9,
+     3.8,
+     9.4,
+     7.8,
+     5.7,
+     1.6,
+     4.3,
+     7.1
+    ],
+    "stablecoin": true,
+    "read": "структурно недоснабжённый LP: стейбл-пара без IL, ~5% fee-APY устойчиво"
+   },
+   {
+    "pool": "uniswap-v4 USDC/USDT Base",
+    "tvl": 83983,
+    "vol1d": 115046171,
+    "turnover": 1370,
+    "apy_spike": 300,
+    "read": "event-driven: 14.10.2026 всплеск роутинга $115M через $84k TVL; до этого 2-4% APY"
+   },
+   {
+    "pool": "uniswap-v3 USDC/WETH 0.01% Ethereum",
+    "tvl": 8095942,
+    "vol1d": 53124048,
+    "turnover": 6.6,
+    "apy": 24.0,
+    "read": "классика «тонкий тир под большим объёмом»: $53M/день через $8M"
+   },
+   {
+    "pool": "aerodrome-slipstream WETH/cbBTC Base",
+    "tvl": 3252708,
+    "vol1d": 69462210,
+    "turnover": 21,
+    "apy_base": 66.3,
+    "apy_rewards": 4273.7,
+    "read": "fee 66% + эмиссии AERO 4300% — цикл наград живой"
+   },
+   {
+    "pool": "quickshot USDC/MAUSDC Polygon",
+    "apy_spikes": [
+     16091,
+     16162
+    ],
+    "read": "depeg-дни 16.10 и 21.10: APY-снимок ловит конвергенцию, а не устойчивый доход"
+   }
+  ],
+  "how_to_hunt": "сканер vol/TVL ежедневно; фильтр stable=TRUE & turnover>20; проверка chart/{pool} на устойчивость ≥7 дней; расчёт effective fee = daily_fee/vol"
+ },
+ "t5_oracle_lag": {
+  "chainlink": "push, heartbeat 3600c / deviation 0.5% (ETH/USD); фактический интервал обновления ETH mainnet ~1466c (2-3/час), Optimism ~181c (arXiv:2606.03434)",
+  "incident_10_10_2025": {
+   "chainlink_usde_lag": "5-6 мин за AMM",
+   "speculative_liquidators": "64 бота = 57% ликвидаторов Aave, 831 ликвидация = 39% успешных",
+   "top_bot_profit": "$915k/24ч на Arbitrum"
+  },
+  "competition": {
+   "liquidation_bots_1877 адресов с 2021": "топ-10 берут 57-75%",
+   "median_liquidation": "$4845 (2021) → $80 (2026)",
+   "tips": "90%+ брутто-прибыли билдерам",
+   "aave_svr": "$675M ликвидаций, $16M MEV рекапчур (73% медиана), март-2025—фев-2026"
+  },
+  "pyth": "pull 400мс (Perseus), Data Streams ~300мс, Lazer ~1мс — лаг как эдж существует только в push-модели Chainlink",
+  "legal_edge": "мониторинг staleness для СВОИХ позиций + long-tail ликвидации; спекулятивный OEV забит"
+ },
+ "t6_money_on_floor": {
+  "uniswap_v3_unclaimed": {
+   "paid_12m": "$59.5M",
+   "collected": "$41.6M",
+   "gap": "$17.9M (30%)",
+   "source": "Bitquery 16.10.2026, 121k позиций"
+  },
+  "pendle": {
+   "live_check_2026_10_21": {
+    "active_markets_eth": 53,
+    "active_liquidity": "$130M",
+    "total_markets_chain1": 504
+   },
+   "expired_pt": "погашаются 1:1 бессрочно, yield НЕ конфискуется (FAQ) — «зависшие» $91M из WS-4 это idle-капитал держателей, не трофей",
+   "euler_offboarding": "PT-eUSDe $2.57M лежали 4+ дня после экспирации (июнь-авг 2025)"
+  },
+  "airdrops": {
+   "ENS": "5.4M unclaimed → DAO treasury (2022)",
+   "ARB": "$56-58M (6%) → DAO (2023)"
+  },
+  "dust": "2.3-3.7M BTC потеряно (Chainalysis); ERC-20 пыль — млрд $ без точного замера",
+  "verdict": "чужое недоступно криптографически (collect только owner; redemption только holder); систематический способ = автоматизация СВОЕГО сбора (Gamma/Arrakis/Tokemak, v4-hooks)"
+ },
+ "t3_sniping": {
+  "mechanic": "боты ловят PairCreated/Mint/первый Swap; покупка в блоке 0/1; приоритет через PGA/Jito-бандлы ($50M типов/10мес, 67% от tx без свопа)",
+  "anti_bot": "17.9% ETH / 37.4% BSC контрактов имеют >=1 механизм (TOIT 2024); 21% запусков pump.fun — бандл дева в блоке 0",
+  "results": {
+   "evm_snipers_2021_24": {
+    "win_rate_eth": "56.1%",
+    "avg_gain_usd": 1655,
+    "avg_loss_usd": 255,
+    "fail_reason_gas": "43.2%",
+    "src": "ACM TOIT 10.1145/3736763"
+   },
+   "pumpfun_snipers_2025_26": {
+    "wallets": 25882,
+    "spend_usd": "440M",
+    "profitable": "54%",
+    "top100_share_of_profit": "13.1M/31.5M",
+    "best": "$1.4M на 98 888 запусках",
+    "src": "Bitquery 10.10.2026"
+   },
+   "retail_solana": {
+    "buyers_lose": "74% после комиссий",
+    "median_loss_usd": -13,
+    "first_minute_win": "34% vs 28% через день",
+    "top1pct_gains_share": "56%",
+    "src": "Bitquery 15.10.2026"
+   },
+   "devs_vs_snipers": {
+    "devs_usd": "579M",
+    "snipers_usd": "31.5M",
+    "ratio": "18x",
+    "src": "Bitquery 10.10.2026"
+   }
+  },
+  "rug_stats": {
+   "meteora_dammv2": "1 015 687 пулов/8мес: 89% слиты, 79%<1ч, медиана 7 мин, покупатели оставили ~$750M",
+   "pumpswap_curve_skip": "451 402 пула, 99% слиты, медиана 12 мин",
+   "graduation": "1 из 58"
+  },
+  "insider_scandals": [
+   "LIBRA фев-2025: -$251M, класс-акшн $57M/15 токенов (отклонён 02.10.2026)",
+   "KIMCHI 20.10.2026: $104k за 9 мин, 79% сапплая у деплойера",
+   "ANSEM: 65% сапплая до старта"
+  ],
+  "infrastructure_wins": "терминалы $422.4M комиссий/10мес (Axiom 48%), Jito $50M, лендинг-сервисы $38.1M — платформа зарабатывает стабильнее игрока",
+  "early_lp_verdict": "НЕ эдж: v3 LP 12мес -$20.4M к холду при $41.6M комиссий (34% позиций бьют холд); на launchpad'ах LP не твой (Raydium LaunchLab: создателю 10% комиссий); 89% пулов сливаются за час",
+  "aerodrome_2026": {
+   "emissions_week": "5.27M AERO (15.10.2026)",
+   "locked_veAERO": "49.8%",
+   "fees_go_to": "veAERO-вотерам, НЕ LP (v2-пулы); Slipstream LP получает комиссии пула",
+   "scale": "TVL >$1.3B, 57-63% объёма Base, Q4-2025 fees $37.7M",
+   "note": "эдж новых пулов — у голосующих (bribe-арбитраж), не у LP"
+  },
+  "verdict": "отрицательное МО для аутсайдера; выживает инфраструктура и девы-бандлеры"
+ },
+ "synthesis": {
+  "implement_now": [
+   {
+    "rank": 1,
+    "mechanic": "LP в undersupplied-пулах (vol/TVL сканер)",
+    "capital": "$10k-1M",
+    "competition": "низкая",
+    "expected_return_on_capital": "10-25% годовых (стейбл-версия, fee-APY с концентрацией)",
+    "examples": [
+     "v4 USDC/USDT ETH ~5% базой",
+     "v3 USDC/WETH 1bp 24% fee-APY"
+    ]
+   },
+   {
+    "rank": 2,
+    "mechanic": "Концентрированный LP в высокооборотных пулах с дельта-хеджем (Aerodrome Slipstream-паттерн)",
+    "capital": "$20k-500k",
+    "competition": "средняя",
+    "expected_return_on_capital": "30-60% годовых net",
+    "examples": [
+     "WETH/cbBTC: $69.5M/день через $3.25M TVL, fee 66% + AERO"
+    ]
+   }
+  ],
+  "implement_as_risk_module": {
+   "mechanic": "oracle/stale-мониторинг собственных позиций",
+   "cost": "$0"
+  },
+  "rejected": {
+   "JIT mainnet": "инфраструктурный барьер + выжрано intents",
+   "cex_dex_arb_majors": "убивается taker-fee CEX",
+   "sniping": "отрицательное МО",
+   "collect_others_unclaimed": "криптографически невозможно"
+  }
+ }
+}
