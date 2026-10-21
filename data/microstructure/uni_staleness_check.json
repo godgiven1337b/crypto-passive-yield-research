@@ -1,0 +1,17 @@
+{
+ "ts": "2026-10-21T14:25Z",
+ "method": "slot0 Uni v3 через publicnode RPC vs Binance ticker, с декомпозицией USDT/USDC базы",
+ "binance": {
+  "eth_usdc": 2469.29,
+  "eth_usdt": 2472.01,
+  "usdc_usdt": 1.001
+ },
+ "pools": {
+  "WETH/USDC 0.05% (mainnet)": {
+   "pool_px": 2468.66,
+   "pure_staleness_vs_ethusdc_bp": -2.6,
+   "vs_ethusdt_bp": -13.6
+  }
+ },
+ "conclusion": "Топ-пул синхронизирован с Binance в пределах 2.6 б.п. — простого staleness-арбитража нет; -14 б.п. к ETH/USDT разлагаются на +10 б.п. USDT-базы + 2.6 б.п. шума. Микроструктурный эдж надо искать глубже (JIT, мелкие пулы, LVR-потоки), не в топ-пулах."
+}
