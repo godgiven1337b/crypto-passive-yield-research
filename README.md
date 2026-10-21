@@ -14,6 +14,7 @@ ALPHA.md                   — охота за спрэдами: stUSDS, Solana,
 APY-MAX.md                 — МАКСИМИЗАЦИЯ APY: лупы, наградные стеки, малые протоколы, поинты
 OPTIONS.md                 — 📋 СВОДНАЯ ТАБЛИЦА ВСЕХ ВАРИАНТОВ (APY/капитал/риски)
 QUANT-EDGES.md             — МИКРОСТРУКТУРА: Pendle mispricing, undersupplied-пулы, фандинг
+BOT-BLUEPRINT.md           — 🤖 АВТОМАТИЗАЦИЯ: архитектура бота, risk-governor, роадмап
 models/live_monitor.py     — живой монитор дислокаций (фандинг/пеги/vol-TVL/PT)
 research/                  — детальные отчёты по воркстримам
   01-stablecoin-lending.md — money markets (Aave, Morpho, Sky, ...)
