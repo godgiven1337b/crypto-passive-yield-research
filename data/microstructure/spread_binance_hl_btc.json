@@ -1,0 +1,602 @@
+[
+ {
+  "ts": 1789718400,
+  "binance_annual": 8.65,
+  "hl_annual": 8.58,
+  "spread_pp": 0.08
+ },
+ {
+  "ts": 1789747200,
+  "binance_annual": 7.5,
+  "hl_annual": 10.95,
+  "spread_pp": -3.45
+ },
+ {
+  "ts": 1789776000,
+  "binance_annual": 7.27,
+  "hl_annual": 10.95,
+  "spread_pp": -3.68
+ },
+ {
+  "ts": 1789804800,
+  "binance_annual": 10.95,
+  "hl_annual": 11.34,
+  "spread_pp": -0.39
+ },
+ {
+  "ts": 1789833600,
+  "binance_annual": 10.95,
+  "hl_annual": 10.95,
+  "spread_pp": 0.0
+ },
+ {
+  "ts": 1789862400,
+  "binance_annual": 10.95,
+  "hl_annual": 10.95,
+  "spread_pp": 0.0
+ },
+ {
+  "ts": 1789891200,
+  "binance_annual": 10.95,
+  "hl_annual": 10.95,
+  "spread_pp": 0.0
+ },
+ {
+  "ts": 1789920000,
+  "binance_annual": 8.24,
+  "hl_annual": 10.95,
+  "spread_pp": -2.71
+ },
+ {
+  "ts": 1789948800,
+  "binance_annual": 4.6,
+  "hl_annual": 10.95,
+  "spread_pp": -6.35
+ },
+ {
+  "ts": 1789977600,
+  "binance_annual": 10.95,
+  "hl_annual": 10.95,
+  "spread_pp": 0.0
+ },
+ {
+  "ts": 1790006400,
+  "binance_annual": 6.01,
+  "hl_annual": 29.52,
+  "spread_pp": -23.52
+ },
+ {
+  "ts": 1790035200,
+  "binance_annual": 8.39,
+  "hl_annual": 14.24,
+  "spread_pp": -5.84
+ },
+ {
+  "ts": 1790064000,
+  "binance_annual": 10.95,
+  "hl_annual": 11.41,
+  "spread_pp": -0.46
+ },
+ {
+  "ts": 1790092800,
+  "binance_annual": 3.05,
+  "hl_annual": 13.87,
+  "spread_pp": -10.82
+ },
+ {
+  "ts": 1790121600,
+  "binance_annual": 1.12,
+  "hl_annual": 10.95,
+  "spread_pp": -9.83
+ },
+ {
+  "ts": 1790150400,
+  "binance_annual": 0.37,
+  "hl_annual": 10.96,
+  "spread_pp": -10.6
+ },
+ {
+  "ts": 1790179200,
+  "binance_annual": 1.41,
+  "hl_annual": 10.95,
+  "spread_pp": -9.54
+ },
+ {
+  "ts": 1790208000,
+  "binance_annual": 0.14,
+  "hl_annual": 10.87,
+  "spread_pp": -10.72
+ },
+ {
+  "ts": 1790236800,
+  "binance_annual": 5.25,
+  "hl_annual": 2.56,
+  "spread_pp": 2.7
+ },
+ {
+  "ts": 1790265600,
+  "binance_annual": 1.56,
+  "hl_annual": 8.34,
+  "spread_pp": -6.78
+ },
+ {
+  "ts": 1790294400,
+  "binance_annual": 0.23,
+  "hl_annual": 10.95,
+  "spread_pp": -10.72
+ },
+ {
+  "ts": 1790323200,
+  "binance_annual": 3.85,
+  "hl_annual": 10.95,
+  "spread_pp": -7.1
+ },
+ {
+  "ts": 1790352000,
+  "binance_annual": -0.63,
+  "hl_annual": 10.95,
+  "spread_pp": -11.58
+ },
+ {
+  "ts": 1790380800,
+  "binance_annual": 0.84,
+  "hl_annual": 9.75,
+  "spread_pp": -8.91
+ },
+ {
+  "ts": 1790409600,
+  "binance_annual": 5.4,
+  "hl_annual": 7.63,
+  "spread_pp": -2.24
+ },
+ {
+  "ts": 1790438400,
+  "binance_annual": -0.6,
+  "hl_annual": 10.14,
+  "spread_pp": -10.73
+ },
+ {
+  "ts": 1790467200,
+  "binance_annual": 5.15,
+  "hl_annual": 6.63,
+  "spread_pp": -1.48
+ },
+ {
+  "ts": 1790496000,
+  "binance_annual": 1.59,
+  "hl_annual": 10.95,
+  "spread_pp": -9.36
+ },
+ {
+  "ts": 1790524800,
+  "binance_annual": 1.15,
+  "hl_annual": 10.95,
+  "spread_pp": -9.8
+ },
+ {
+  "ts": 1790553600,
+  "binance_annual": 2.18,
+  "hl_annual": 9.35,
+  "spread_pp": -7.18
+ },
+ {
+  "ts": 1790582400,
+  "binance_annual": -2.83,
+  "hl_annual": -1.15,
+  "spread_pp": -1.68
+ },
+ {
+  "ts": 1790611200,
+  "binance_annual": 7.12,
+  "hl_annual": 10.76,
+  "spread_pp": -3.64
+ },
+ {
+  "ts": 1790640000,
+  "binance_annual": 4.2,
+  "hl_annual": 4.84,
+  "spread_pp": -0.64
+ },
+ {
+  "ts": 1790668800,
+  "binance_annual": 7.44,
+  "hl_annual": 3.61,
+  "spread_pp": 3.83
+ },
+ {
+  "ts": 1790697600,
+  "binance_annual": 1.53,
+  "hl_annual": 7.19,
+  "spread_pp": -5.66
+ },
+ {
+  "ts": 1790726400,
+  "binance_annual": 8.43,
+  "hl_annual": 9.89,
+  "spread_pp": -1.46
+ },
+ {
+  "ts": 1790755200,
+  "binance_annual": -0.27,
+  "hl_annual": 3.69,
+  "spread_pp": -3.96
+ },
+ {
+  "ts": 1790784000,
+  "binance_annual": 7.23,
+  "hl_annual": 6.9,
+  "spread_pp": 0.33
+ },
+ {
+  "ts": 1790812800,
+  "binance_annual": 8.74,
+  "hl_annual": 10.95,
+  "spread_pp": -2.21
+ },
+ {
+  "ts": 1790841600,
+  "binance_annual": 5.0,
+  "hl_annual": 10.95,
+  "spread_pp": -5.95
+ },
+ {
+  "ts": 1790870400,
+  "binance_annual": 7.64,
+  "hl_annual": 10.62,
+  "spread_pp": -2.98
+ },
+ {
+  "ts": 1790899200,
+  "binance_annual": 2.95,
+  "hl_annual": 5.79,
+  "spread_pp": -2.84
+ },
+ {
+  "ts": 1790928000,
+  "binance_annual": 10.95,
+  "hl_annual": 9.86,
+  "spread_pp": 1.09
+ },
+ {
+  "ts": 1790956800,
+  "binance_annual": 1.33,
+  "hl_annual": 10.95,
+  "spread_pp": -9.62
+ },
+ {
+  "ts": 1790985600,
+  "binance_annual": 5.01,
+  "hl_annual": 8.66,
+  "spread_pp": -3.65
+ },
+ {
+  "ts": 1791014400,
+  "binance_annual": 0.4,
+  "hl_annual": 7.23,
+  "spread_pp": -6.83
+ },
+ {
+  "ts": 1791043200,
+  "binance_annual": 4.96,
+  "hl_annual": 6.06,
+  "spread_pp": -1.11
+ },
+ {
+  "ts": 1791072000,
+  "binance_annual": -1.47,
+  "hl_annual": 9.48,
+  "spread_pp": -10.96
+ },
+ {
+  "ts": 1791100800,
+  "binance_annual": 3.78,
+  "hl_annual": 9.89,
+  "spread_pp": -6.11
+ },
+ {
+  "ts": 1791129600,
+  "binance_annual": 4.14,
+  "hl_annual": 10.95,
+  "spread_pp": -6.81
+ },
+ {
+  "ts": 1791158400,
+  "binance_annual": 8.2,
+  "hl_annual": 10.95,
+  "spread_pp": -2.75
+ },
+ {
+  "ts": 1791187200,
+  "binance_annual": 4.58,
+  "hl_annual": 10.95,
+  "spread_pp": -6.37
+ },
+ {
+  "ts": 1791216000,
+  "binance_annual": -1.69,
+  "hl_annual": 10.95,
+  "spread_pp": -12.64
+ },
+ {
+  "ts": 1791244800,
+  "binance_annual": -2.72,
+  "hl_annual": 10.95,
+  "spread_pp": -13.67
+ },
+ {
+  "ts": 1791273600,
+  "binance_annual": -1.74,
+  "hl_annual": 10.95,
+  "spread_pp": -12.69
+ },
+ {
+  "ts": 1791302400,
+  "binance_annual": 2.46,
+  "hl_annual": 10.95,
+  "spread_pp": -8.49
+ },
+ {
+  "ts": 1791331200,
+  "binance_annual": -0.81,
+  "hl_annual": 10.95,
+  "spread_pp": -11.76
+ },
+ {
+  "ts": 1791360000,
+  "binance_annual": -4.0,
+  "hl_annual": 10.95,
+  "spread_pp": -14.95
+ },
+ {
+  "ts": 1791388800,
+  "binance_annual": 1.26,
+  "hl_annual": 10.95,
+  "spread_pp": -9.69
+ },
+ {
+  "ts": 1791417600,
+  "binance_annual": -1.09,
+  "hl_annual": 10.95,
+  "spread_pp": -12.04
+ },
+ {
+  "ts": 1791446400,
+  "binance_annual": -1.3,
+  "hl_annual": 9.98,
+  "spread_pp": -11.28
+ },
+ {
+  "ts": 1791475200,
+  "binance_annual": 3.77,
+  "hl_annual": 10.31,
+  "spread_pp": -6.54
+ },
+ {
+  "ts": 1791504000,
+  "binance_annual": 1.93,
+  "hl_annual": 8.34,
+  "spread_pp": -6.4
+ },
+ {
+  "ts": 1791532800,
+  "binance_annual": 5.65,
+  "hl_annual": 8.11,
+  "spread_pp": -2.46
+ },
+ {
+  "ts": 1791561600,
+  "binance_annual": 1.41,
+  "hl_annual": 5.39,
+  "spread_pp": -3.98
+ },
+ {
+  "ts": 1791590400,
+  "binance_annual": 5.73,
+  "hl_annual": -0.46,
+  "spread_pp": 6.19
+ },
+ {
+  "ts": 1791619200,
+  "binance_annual": -0.47,
+  "hl_annual": 3.79,
+  "spread_pp": -4.26
+ },
+ {
+  "ts": 1791648000,
+  "binance_annual": 0.5,
+  "hl_annual": 2.24,
+  "spread_pp": -1.74
+ },
+ {
+  "ts": 1791676800,
+  "binance_annual": -2.98,
+  "hl_annual": 0.54,
+  "spread_pp": -3.51
+ },
+ {
+  "ts": 1791705600,
+  "binance_annual": -1.09,
+  "hl_annual": -6.03,
+  "spread_pp": 4.95
+ },
+ {
+  "ts": 1791734400,
+  "binance_annual": 1.47,
+  "hl_annual": -6.18,
+  "spread_pp": 7.65
+ },
+ {
+  "ts": 1791763200,
+  "binance_annual": 0.61,
+  "hl_annual": 7.78,
+  "spread_pp": -7.17
+ },
+ {
+  "ts": 1791792000,
+  "binance_annual": 2.04,
+  "hl_annual": 7.36,
+  "spread_pp": -5.32
+ },
+ {
+  "ts": 1791820800,
+  "binance_annual": 2.13,
+  "hl_annual": 10.61,
+  "spread_pp": -8.48
+ },
+ {
+  "ts": 1791849600,
+  "binance_annual": 7.38,
+  "hl_annual": 3.68,
+  "spread_pp": 3.71
+ },
+ {
+  "ts": 1791878400,
+  "binance_annual": 9.14,
+  "hl_annual": 5.43,
+  "spread_pp": 3.71
+ },
+ {
+  "ts": 1791907200,
+  "binance_annual": 3.78,
+  "hl_annual": 4.34,
+  "spread_pp": -0.56
+ },
+ {
+  "ts": 1791936000,
+  "binance_annual": -1.12,
+  "hl_annual": 10.31,
+  "spread_pp": -11.43
+ },
+ {
+  "ts": 1791964800,
+  "binance_annual": 1.67,
+  "hl_annual": 8.76,
+  "spread_pp": -7.08
+ },
+ {
+  "ts": 1791993600,
+  "binance_annual": -1.96,
+  "hl_annual": 10.82,
+  "spread_pp": -12.78
+ },
+ {
+  "ts": 1792022400,
+  "binance_annual": -4.53,
+  "hl_annual": 10.95,
+  "spread_pp": -15.48
+ },
+ {
+  "ts": 1792051200,
+  "binance_annual": 7.25,
+  "hl_annual": 8.73,
+  "spread_pp": -1.48
+ },
+ {
+  "ts": 1792080000,
+  "binance_annual": 2.0,
+  "hl_annual": 4.43,
+  "spread_pp": -2.43
+ },
+ {
+  "ts": 1792108800,
+  "binance_annual": 5.94,
+  "hl_annual": 10.33,
+  "spread_pp": -4.38
+ },
+ {
+  "ts": 1792137600,
+  "binance_annual": 7.45,
+  "hl_annual": 10.95,
+  "spread_pp": -3.5
+ },
+ {
+  "ts": 1792166400,
+  "binance_annual": 4.72,
+  "hl_annual": 10.95,
+  "spread_pp": -6.23
+ },
+ {
+  "ts": 1792195200,
+  "binance_annual": 10.95,
+  "hl_annual": 10.67,
+  "spread_pp": 0.28
+ },
+ {
+  "ts": 1792224000,
+  "binance_annual": 4.06,
+  "hl_annual": 10.95,
+  "spread_pp": -6.89
+ },
+ {
+  "ts": 1792252800,
+  "binance_annual": 4.08,
+  "hl_annual": 9.54,
+  "spread_pp": -5.46
+ },
+ {
+  "ts": 1792281600,
+  "binance_annual": 7.02,
+  "hl_annual": 6.14,
+  "spread_pp": 0.88
+ },
+ {
+  "ts": 1792310400,
+  "binance_annual": 6.6,
+  "hl_annual": 4.6,
+  "spread_pp": 2.01
+ },
+ {
+  "ts": 1792339200,
+  "binance_annual": 6.4,
+  "hl_annual": 2.23,
+  "spread_pp": 4.17
+ },
+ {
+  "ts": 1792368000,
+  "binance_annual": 5.43,
+  "hl_annual": 6.69,
+  "spread_pp": -1.26
+ },
+ {
+  "ts": 1792396800,
+  "binance_annual": 10.95,
+  "hl_annual": 10.15,
+  "spread_pp": 0.8
+ },
+ {
+  "ts": 1792425600,
+  "binance_annual": 8.72,
+  "hl_annual": 10.95,
+  "spread_pp": -2.23
+ },
+ {
+  "ts": 1792454400,
+  "binance_annual": 10.08,
+  "hl_annual": 10.95,
+  "spread_pp": -0.87
+ },
+ {
+  "ts": 1792483200,
+  "binance_annual": 7.78,
+  "hl_annual": 10.95,
+  "spread_pp": -3.17
+ },
+ {
+  "ts": 1792512000,
+  "binance_annual": 8.6,
+  "hl_annual": 10.95,
+  "spread_pp": -2.35
+ },
+ {
+  "ts": 1792540800,
+  "binance_annual": 7.16,
+  "hl_annual": 10.95,
+  "spread_pp": -3.79
+ },
+ {
+  "ts": 1792569600,
+  "binance_annual": 9.35,
+  "hl_annual": 10.95,
+  "spread_pp": -1.6
+ }
+]
