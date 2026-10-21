@@ -1,0 +1,2139 @@
+{
+ "generated": "2026-10-21",
+ "liquid_baskets": [
+  {
+   "event": "Highest temperature in Shenzhen on October 21?",
+   "n_outcomes": 6,
+   "sum_yes": 0.005,
+   "yes_basket_edge_pct": 99.5,
+   "no_basket_edge_pct": -99.5,
+   "min_leg_liquidity": 795,
+   "vol24": 49333,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Highest temperature in London on October 21?",
+   "n_outcomes": 10,
+   "sum_yes": 0.0185,
+   "yes_basket_edge_pct": 98.15,
+   "no_basket_edge_pct": -98.15,
+   "min_leg_liquidity": 627,
+   "vol24": 37627,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "FC Internazionale Milano vs. FK Shakhtar Donetsk - Exact Sco",
+   "n_outcomes": 36,
+   "sum_yes": 1.671,
+   "yes_basket_edge_pct": -67.1,
+   "no_basket_edge_pct": 67.1,
+   "min_leg_liquidity": 1120,
+   "vol24": 54234,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Celtic FC vs. RC Celta de Vigo - Exact Score",
+   "n_outcomes": 35,
+   "sum_yes": 1.6095,
+   "yes_basket_edge_pct": -60.95,
+   "no_basket_edge_pct": 60.95,
+   "min_leg_liquidity": 760,
+   "vol24": 37608,
+   "end_date": "2026-10-22"
+  },
+  {
+   "event": "Real Madrid CF vs. RB Leipzig - Exact Score",
+   "n_outcomes": 36,
+   "sum_yes": 1.538,
+   "yes_basket_edge_pct": -53.8,
+   "no_basket_edge_pct": 53.8,
+   "min_leg_liquidity": 512,
+   "vol24": 54703,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Aston Villa FC vs. Viking FK - Exact Score",
+   "n_outcomes": 34,
+   "sum_yes": 1.3985,
+   "yes_basket_edge_pct": -39.85,
+   "no_basket_edge_pct": 39.85,
+   "min_leg_liquidity": 538,
+   "vol24": 40590,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Sporting CP vs. LASK Linz - Exact Score",
+   "n_outcomes": 32,
+   "sum_yes": 1.2595,
+   "yes_basket_edge_pct": -25.95,
+   "no_basket_edge_pct": 25.95,
+   "min_leg_liquidity": 949,
+   "vol24": 43007,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "FC Bayern München vs. Arsenal FC - Exact Score",
+   "n_outcomes": 36,
+   "sum_yes": 1.237,
+   "yes_basket_edge_pct": -23.7,
+   "no_basket_edge_pct": 23.7,
+   "min_leg_liquidity": 3735,
+   "vol24": 141768,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Highest temperature in Istanbul on October 21?",
+   "n_outcomes": 9,
+   "sum_yes": 0.765,
+   "yes_basket_edge_pct": 23.5,
+   "no_basket_edge_pct": -23.5,
+   "min_leg_liquidity": 918,
+   "vol24": 50747,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Republican Presidential Nominee 2028",
+   "n_outcomes": 43,
+   "sum_yes": 0.7875,
+   "yes_basket_edge_pct": 21.25,
+   "no_basket_edge_pct": -21.25,
+   "min_leg_liquidity": 239484,
+   "vol24": 197922,
+   "end_date": "2028-11-08"
+  },
+  {
+   "event": "Lille OSC vs. Galatasaray SK - Exact Score",
+   "n_outcomes": 33,
+   "sum_yes": 1.21,
+   "yes_basket_edge_pct": -21.0,
+   "no_basket_edge_pct": 21.0,
+   "min_leg_liquidity": 1635,
+   "vol24": 61516,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Democratic Presidential Nominee 2028",
+   "n_outcomes": 53,
+   "sum_yes": 0.8975,
+   "yes_basket_edge_pct": 10.25,
+   "no_basket_edge_pct": -10.25,
+   "min_leg_liquidity": 158754,
+   "vol24": 437798,
+   "end_date": "2028-11-08"
+  },
+  {
+   "event": "Como 1907 vs. Manchester United FC - Exact Score",
+   "n_outcomes": 32,
+   "sum_yes": 1.0825,
+   "yes_basket_edge_pct": -8.25,
+   "no_basket_edge_pct": 8.25,
+   "min_leg_liquidity": 2134,
+   "vol24": 114991,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Presidential Election Winner 2028",
+   "n_outcomes": 54,
+   "sum_yes": 0.924,
+   "yes_basket_edge_pct": 7.6,
+   "no_basket_edge_pct": -7.6,
+   "min_leg_liquidity": 158153,
+   "vol24": 388732,
+   "end_date": "2028-11-08"
+  },
+  {
+   "event": "Ballon d'Or 2026: 3rd Place",
+   "n_outcomes": 30,
+   "sum_yes": 1.071,
+   "yes_basket_edge_pct": -7.1,
+   "no_basket_edge_pct": 7.1,
+   "min_leg_liquidity": 3694,
+   "vol24": 51602,
+   "end_date": "2027-01-01"
+  },
+  {
+   "event": "Ballon d'Or 2026: 2nd Place",
+   "n_outcomes": 30,
+   "sum_yes": 1.0645,
+   "yes_basket_edge_pct": -6.45,
+   "no_basket_edge_pct": 6.45,
+   "min_leg_liquidity": 5082,
+   "vol24": 77225,
+   "end_date": "2027-01-01"
+  },
+  {
+   "event": "NHL: 2027 Champion",
+   "n_outcomes": 32,
+   "sum_yes": 1.061,
+   "yes_basket_edge_pct": -6.1,
+   "no_basket_edge_pct": 6.1,
+   "min_leg_liquidity": 43909,
+   "vol24": 50313,
+   "end_date": "2027-07-01"
+  },
+  {
+   "event": "Worlds 2026: Winner",
+   "n_outcomes": 16,
+   "sum_yes": 1.0545,
+   "yes_basket_edge_pct": -5.45,
+   "no_basket_edge_pct": 5.45,
+   "min_leg_liquidity": 25592,
+   "vol24": 329353,
+   "end_date": "2026-11-29"
+  },
+  {
+   "event": "UEFA Champions League: 2027 Champion",
+   "n_outcomes": 36,
+   "sum_yes": 1.0495,
+   "yes_basket_edge_pct": -4.95,
+   "no_basket_edge_pct": 4.95,
+   "min_leg_liquidity": 110361,
+   "vol24": 2257034,
+   "end_date": "2027-06-20"
+  },
+  {
+   "event": "EPL: 2027 Champion",
+   "n_outcomes": 20,
+   "sum_yes": 0.9535,
+   "yes_basket_edge_pct": 4.65,
+   "no_basket_edge_pct": -4.65,
+   "min_leg_liquidity": 114948,
+   "vol24": 39984,
+   "end_date": "2027-06-15"
+  },
+  {
+   "event": "Next leader out of power before 2027?",
+   "n_outcomes": 22,
+   "sum_yes": 1.0415,
+   "yes_basket_edge_pct": -4.15,
+   "no_basket_edge_pct": 4.15,
+   "min_leg_liquidity": 18162,
+   "vol24": 53984,
+   "end_date": "2027-01-01"
+  },
+  {
+   "event": "Republican Senate seats after the 2026 midterm elections?",
+   "n_outcomes": 11,
+   "sum_yes": 1.0395,
+   "yes_basket_edge_pct": -3.95,
+   "no_basket_edge_pct": 3.95,
+   "min_leg_liquidity": 118291,
+   "vol24": 54742,
+   "end_date": "2026-11-03"
+  },
+  {
+   "event": "Next Prime Minister of Serbia?",
+   "n_outcomes": 10,
+   "sum_yes": 0.961,
+   "yes_basket_edge_pct": 3.9,
+   "no_basket_edge_pct": -3.9,
+   "min_leg_liquidity": 47840,
+   "vol24": 53097,
+   "end_date": "2026-10-26"
+  },
+  {
+   "event": "NBA: 2027 Champion",
+   "n_outcomes": 30,
+   "sum_yes": 1.0335,
+   "yes_basket_edge_pct": -3.35,
+   "no_basket_edge_pct": 3.35,
+   "min_leg_liquidity": 154808,
+   "vol24": 1262804,
+   "end_date": "2027-07-01"
+  },
+  {
+   "event": "Next Fable Model (5.2+) released on...?",
+   "n_outcomes": 12,
+   "sum_yes": 0.9665,
+   "yes_basket_edge_pct": 3.35,
+   "no_basket_edge_pct": -3.35,
+   "min_leg_liquidity": 2047,
+   "vol24": 38445,
+   "end_date": "2026-11-01"
+  },
+  {
+   "event": "Highest temperature in Tokyo on October 22?",
+   "n_outcomes": 11,
+   "sum_yes": 1.0305,
+   "yes_basket_edge_pct": -3.05,
+   "no_basket_edge_pct": 3.05,
+   "min_leg_liquidity": 966,
+   "vol24": 57117,
+   "end_date": "2026-10-22"
+  },
+  {
+   "event": "Elon Musk # tweets October 20 - October 27, 2026?",
+   "n_outcomes": 28,
+   "sum_yes": 1.0275,
+   "yes_basket_edge_pct": -2.75,
+   "no_basket_edge_pct": 2.75,
+   "min_leg_liquidity": 2876,
+   "vol24": 116338,
+   "end_date": "2026-10-27"
+  },
+  {
+   "event": "Iran leader end of 2026?",
+   "n_outcomes": 30,
+   "sum_yes": 1.0235,
+   "yes_basket_edge_pct": -2.35,
+   "no_basket_edge_pct": 2.35,
+   "min_leg_liquidity": 43052,
+   "vol24": 105167,
+   "end_date": "2026-12-31"
+  },
+  {
+   "event": "El Ahly SC vs. El Qanah Club",
+   "n_outcomes": 3,
+   "sum_yes": 0.9775,
+   "yes_basket_edge_pct": 2.25,
+   "no_basket_edge_pct": -2.25,
+   "min_leg_liquidity": 17446,
+   "vol24": 60774,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Iowa Senate Election Margin of Victory",
+   "n_outcomes": 10,
+   "sum_yes": 1.0215,
+   "yes_basket_edge_pct": -2.15,
+   "no_basket_edge_pct": 2.15,
+   "min_leg_liquidity": 24497,
+   "vol24": 29507,
+   "end_date": "2026-11-04"
+  },
+  {
+   "event": "Elon Musk # tweets October 16 - October 23, 2026?",
+   "n_outcomes": 18,
+   "sum_yes": 1.0195,
+   "yes_basket_edge_pct": -1.95,
+   "no_basket_edge_pct": 1.95,
+   "min_leg_liquidity": 5905,
+   "vol24": 635392,
+   "end_date": "2026-10-23"
+  },
+  {
+   "event": "Prime Minister of Israel after the next election?",
+   "n_outcomes": 19,
+   "sum_yes": 0.982,
+   "yes_basket_edge_pct": 1.8,
+   "no_basket_edge_pct": -1.8,
+   "min_leg_liquidity": 92224,
+   "vol24": 586675,
+   "end_date": "2026-10-28"
+  },
+  {
+   "event": "Next French Presidential Election",
+   "n_outcomes": 45,
+   "sum_yes": 1.018,
+   "yes_basket_edge_pct": -1.8,
+   "no_basket_edge_pct": 1.8,
+   "min_leg_liquidity": 68355,
+   "vol24": 454314,
+   "end_date": "2027-04-19"
+  },
+  {
+   "event": "Highest temperature in Tokyo on October 21?",
+   "n_outcomes": 11,
+   "sum_yes": 1.018,
+   "yes_basket_edge_pct": -1.8,
+   "no_basket_edge_pct": 1.8,
+   "min_leg_liquidity": 576,
+   "vol24": 36060,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Venezuela leader end of 2026?",
+   "n_outcomes": 16,
+   "sum_yes": 0.9825,
+   "yes_basket_edge_pct": 1.75,
+   "no_basket_edge_pct": -1.75,
+   "min_leg_liquidity": 75309,
+   "vol24": 99605,
+   "end_date": "2027-01-01"
+  },
+  {
+   "event": "LALIGA: 2027 Champion",
+   "n_outcomes": 21,
+   "sum_yes": 0.9845,
+   "yes_basket_edge_pct": 1.55,
+   "no_basket_edge_pct": -1.55,
+   "min_leg_liquidity": 160975,
+   "vol24": 75844,
+   "end_date": "2027-06-15"
+  },
+  {
+   "event": "Real Madrid CF vs. RB Leipzig",
+   "n_outcomes": 3,
+   "sum_yes": 1.015,
+   "yes_basket_edge_pct": -1.5,
+   "no_basket_edge_pct": 1.5,
+   "min_leg_liquidity": 417209,
+   "vol24": 255118,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Highest temperature in Seoul (Incheon) on October 21?",
+   "n_outcomes": 8,
+   "sum_yes": 1.014,
+   "yes_basket_edge_pct": -1.4,
+   "no_basket_edge_pct": 1.4,
+   "min_leg_liquidity": 536,
+   "vol24": 28872,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Brazil Presidential Election Second Round: Turnout",
+   "n_outcomes": 5,
+   "sum_yes": 1.013,
+   "yes_basket_edge_pct": -1.3,
+   "no_basket_edge_pct": 1.3,
+   "min_leg_liquidity": 40139,
+   "vol24": 28839,
+   "end_date": "2026-10-26"
+  },
+  {
+   "event": "Bank of Canada Decision in October?",
+   "n_outcomes": 5,
+   "sum_yes": 0.988,
+   "yes_basket_edge_pct": 1.2,
+   "no_basket_edge_pct": -1.2,
+   "min_leg_liquidity": 9029,
+   "vol24": 30944,
+   "end_date": "2026-10-28"
+  },
+  {
+   "event": "Highest grossing movie in 2026?",
+   "n_outcomes": 14,
+   "sum_yes": 0.99,
+   "yes_basket_edge_pct": 1.0,
+   "no_basket_edge_pct": -1.0,
+   "min_leg_liquidity": 27492,
+   "vol24": 94063,
+   "end_date": "2027-01-08"
+  },
+  {
+   "event": "Club Puebla vs. CF Monterrey",
+   "n_outcomes": 3,
+   "sum_yes": 1.01,
+   "yes_basket_edge_pct": -1.0,
+   "no_basket_edge_pct": 1.0,
+   "min_leg_liquidity": 61166,
+   "vol24": 58771,
+   "end_date": "2026-10-22"
+  },
+  {
+   "event": "California Governor Election Winner",
+   "n_outcomes": 23,
+   "sum_yes": 1.01,
+   "yes_basket_edge_pct": -1.0,
+   "no_basket_edge_pct": 1.0,
+   "min_leg_liquidity": 111971,
+   "vol24": 39999,
+   "end_date": "2026-11-04"
+  },
+  {
+   "event": "Fed Decision in January?",
+   "n_outcomes": 5,
+   "sum_yes": 1.0095,
+   "yes_basket_edge_pct": -0.95,
+   "no_basket_edge_pct": 0.95,
+   "min_leg_liquidity": 122982,
+   "vol24": 45790,
+   "end_date": "2027-01-28"
+  },
+  {
+   "event": "Who wins the Senate pending Hormuz Agreement before the midt",
+   "n_outcomes": 3,
+   "sum_yes": 0.9905,
+   "yes_basket_edge_pct": 0.95,
+   "no_basket_edge_pct": -0.95,
+   "min_leg_liquidity": 54193,
+   "vol24": 36813,
+   "end_date": "2026-11-04"
+  },
+  {
+   "event": "How many Fed rate cuts in 2026?",
+   "n_outcomes": 13,
+   "sum_yes": 0.992,
+   "yes_basket_edge_pct": 0.8,
+   "no_basket_edge_pct": -0.8,
+   "min_leg_liquidity": 110674,
+   "vol24": 88749,
+   "end_date": "2027-01-01"
+  },
+  {
+   "event": "Fed Decision in October?",
+   "n_outcomes": 5,
+   "sum_yes": 1.0075,
+   "yes_basket_edge_pct": -0.75,
+   "no_basket_edge_pct": 0.75,
+   "min_leg_liquidity": 678896,
+   "vol24": 2575576,
+   "end_date": "2026-10-29"
+  },
+  {
+   "event": "Ballon d'Or Winner 2026",
+   "n_outcomes": 19,
+   "sum_yes": 1.0075,
+   "yes_basket_edge_pct": -0.75,
+   "no_basket_edge_pct": 0.75,
+   "min_leg_liquidity": 122534,
+   "vol24": 1483500,
+   "end_date": "2027-01-01"
+  },
+  {
+   "event": "# of views of Grand Theft Auto VI Launch Trailer on week 1?",
+   "n_outcomes": 7,
+   "sum_yes": 0.993,
+   "yes_basket_edge_pct": 0.7,
+   "no_basket_edge_pct": -0.7,
+   "min_leg_liquidity": 6185,
+   "vol24": 258847,
+   "end_date": "2026-10-23"
+  },
+  {
+   "event": "Toronto Mayoral Election Winner",
+   "n_outcomes": 8,
+   "sum_yes": 0.993,
+   "yes_basket_edge_pct": 0.7,
+   "no_basket_edge_pct": -0.7,
+   "min_leg_liquidity": 57876,
+   "vol24": 53506,
+   "end_date": "2026-10-27"
+  },
+  {
+   "event": "Where will Zelenskyy and Putin meet next before 2027?",
+   "n_outcomes": 14,
+   "sum_yes": 1.0065,
+   "yes_basket_edge_pct": -0.65,
+   "no_basket_edge_pct": 0.65,
+   "min_leg_liquidity": 49794,
+   "vol24": 75611,
+   "end_date": "2027-01-01"
+  },
+  {
+   "event": "British Columbia General Election Winner",
+   "n_outcomes": 5,
+   "sum_yes": 1.0065,
+   "yes_basket_edge_pct": -0.65,
+   "no_basket_edge_pct": 0.65,
+   "min_leg_liquidity": 35357,
+   "vol24": 36955,
+   "end_date": "2026-10-24"
+  },
+  {
+   "event": "Which company has best AI model end of 2026?",
+   "n_outcomes": 15,
+   "sum_yes": 1.006,
+   "yes_basket_edge_pct": -0.6,
+   "no_basket_edge_pct": 0.6,
+   "min_leg_liquidity": 32959,
+   "vol24": 125108,
+   "end_date": "2026-12-31"
+  },
+  {
+   "event": "Worlds 2026 Winning Region",
+   "n_outcomes": 6,
+   "sum_yes": 1.006,
+   "yes_basket_edge_pct": -0.6,
+   "no_basket_edge_pct": 0.6,
+   "min_leg_liquidity": 43713,
+   "vol24": 117415,
+   "end_date": "2027-01-01"
+  },
+  {
+   "event": "Largest Company end of December 2026?",
+   "n_outcomes": 8,
+   "sum_yes": 0.994,
+   "yes_basket_edge_pct": 0.6,
+   "no_basket_edge_pct": -0.6,
+   "min_leg_liquidity": 66009,
+   "vol24": 110728,
+   "end_date": "2027-01-01"
+  },
+  {
+   "event": "Which company has the best AI model end of October?",
+   "n_outcomes": 21,
+   "sum_yes": 0.994,
+   "yes_basket_edge_pct": 0.6,
+   "no_basket_edge_pct": -0.6,
+   "min_leg_liquidity": 26239,
+   "vol24": 63962,
+   "end_date": "2026-10-31"
+  },
+  {
+   "event": "Bulgaria Presidential Election",
+   "n_outcomes": 14,
+   "sum_yes": 1.006,
+   "yes_basket_edge_pct": -0.6,
+   "no_basket_edge_pct": 0.6,
+   "min_leg_liquidity": 60592,
+   "vol24": 29136,
+   "end_date": "2026-10-26"
+  },
+  {
+   "event": "FC Bayern München vs. Arsenal FC",
+   "n_outcomes": 3,
+   "sum_yes": 1.005,
+   "yes_basket_edge_pct": -0.5,
+   "no_basket_edge_pct": 0.5,
+   "min_leg_liquidity": 739157,
+   "vol24": 2132253,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Balance of Power: 2026 Midterms",
+   "n_outcomes": 5,
+   "sum_yes": 0.995,
+   "yes_basket_edge_pct": 0.5,
+   "no_basket_edge_pct": -0.5,
+   "min_leg_liquidity": 606654,
+   "vol24": 2014752,
+   "end_date": "2026-11-04"
+  },
+  {
+   "event": "Como 1907 vs. Manchester United FC",
+   "n_outcomes": 3,
+   "sum_yes": 0.995,
+   "yes_basket_edge_pct": 0.5,
+   "no_basket_edge_pct": -0.5,
+   "min_leg_liquidity": 249311,
+   "vol24": 1512554,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Aston Villa FC vs. Viking FK",
+   "n_outcomes": 3,
+   "sum_yes": 1.005,
+   "yes_basket_edge_pct": -0.5,
+   "no_basket_edge_pct": 0.5,
+   "min_leg_liquidity": 375090,
+   "vol24": 961286,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Lille OSC vs. Galatasaray SK",
+   "n_outcomes": 3,
+   "sum_yes": 0.995,
+   "yes_basket_edge_pct": 0.5,
+   "no_basket_edge_pct": -0.5,
+   "min_leg_liquidity": 188587,
+   "vol24": 808191,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Sporting CP vs. LASK Linz",
+   "n_outcomes": 3,
+   "sum_yes": 0.995,
+   "yes_basket_edge_pct": 0.5,
+   "no_basket_edge_pct": -0.5,
+   "min_leg_liquidity": 422654,
+   "vol24": 250369,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Club Brugge KV vs. Racing Club de Lens",
+   "n_outcomes": 3,
+   "sum_yes": 1.005,
+   "yes_basket_edge_pct": -0.5,
+   "no_basket_edge_pct": 0.5,
+   "min_leg_liquidity": 432864,
+   "vol24": 129940,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "FC Internazionale Milano vs. FK Shakhtar Donetsk",
+   "n_outcomes": 3,
+   "sum_yes": 0.995,
+   "yes_basket_edge_pct": 0.5,
+   "no_basket_edge_pct": -0.5,
+   "min_leg_liquidity": 341439,
+   "vol24": 88651,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Real Betis Balompié vs. Feyenoord Rotterdam",
+   "n_outcomes": 3,
+   "sum_yes": 0.995,
+   "yes_basket_edge_pct": 0.5,
+   "no_basket_edge_pct": -0.5,
+   "min_leg_liquidity": 334183,
+   "vol24": 64009,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "FC Cincinnati vs. D.C. United SC",
+   "n_outcomes": 3,
+   "sum_yes": 1.005,
+   "yes_basket_edge_pct": -0.5,
+   "no_basket_edge_pct": 0.5,
+   "min_leg_liquidity": 49355,
+   "vol24": 54524,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "FC Barcelona vs. Real Madrid CF",
+   "n_outcomes": 3,
+   "sum_yes": 0.995,
+   "yes_basket_edge_pct": 0.5,
+   "no_basket_edge_pct": -0.5,
+   "min_leg_liquidity": 72221,
+   "vol24": 29949,
+   "end_date": "2026-10-25"
+  },
+  {
+   "event": "Highest temperature in Hong Kong on October 21?",
+   "n_outcomes": 11,
+   "sum_yes": 1.0045,
+   "yes_basket_edge_pct": -0.45,
+   "no_basket_edge_pct": 0.45,
+   "min_leg_liquidity": 7832,
+   "vol24": 73717,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Israeli Legislative Election Winner",
+   "n_outcomes": 6,
+   "sum_yes": 0.996,
+   "yes_basket_edge_pct": 0.4,
+   "no_basket_edge_pct": -0.4,
+   "min_leg_liquidity": 72047,
+   "vol24": 147779,
+   "end_date": "2026-10-28"
+  },
+  {
+   "event": "Who wins the Senate pending oil below $85 before the midterm",
+   "n_outcomes": 4,
+   "sum_yes": 0.996,
+   "yes_basket_edge_pct": 0.4,
+   "no_basket_edge_pct": -0.4,
+   "min_leg_liquidity": 241305,
+   "vol24": 116985,
+   "end_date": "2026-11-04"
+  },
+  {
+   "event": "Israel Election: Likud # of seats?",
+   "n_outcomes": 5,
+   "sum_yes": 1.004,
+   "yes_basket_edge_pct": -0.4,
+   "no_basket_edge_pct": 0.4,
+   "min_leg_liquidity": 62568,
+   "vol24": 93176,
+   "end_date": "2026-10-28"
+  },
+  {
+   "event": "Brazil Presidential Election Second Round: Margin of Victory",
+   "n_outcomes": 8,
+   "sum_yes": 1.0035,
+   "yes_basket_edge_pct": -0.35,
+   "no_basket_edge_pct": 0.35,
+   "min_leg_liquidity": 90918,
+   "vol24": 625909,
+   "end_date": "2026-10-26"
+  },
+  {
+   "event": "Elon Musk # tweets October 19 - October 21, 2026?",
+   "n_outcomes": 9,
+   "sum_yes": 1.0035,
+   "yes_basket_edge_pct": -0.35,
+   "no_basket_edge_pct": 0.35,
+   "min_leg_liquidity": 7391,
+   "vol24": 489125,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Largest Company end of October 2026?",
+   "n_outcomes": 9,
+   "sum_yes": 1.0035,
+   "yes_basket_edge_pct": -0.35,
+   "no_basket_edge_pct": 0.35,
+   "min_leg_liquidity": 26649,
+   "vol24": 59118,
+   "end_date": "2026-11-01"
+  },
+  {
+   "event": "Bulgaria Presidential Election First Round: Margin of Victor",
+   "n_outcomes": 9,
+   "sum_yes": 1.0025,
+   "yes_basket_edge_pct": -0.25,
+   "no_basket_edge_pct": 0.25,
+   "min_leg_liquidity": 58694,
+   "vol24": 266215,
+   "end_date": "2026-10-25"
+  },
+  {
+   "event": "Fed Decision in December?",
+   "n_outcomes": 5,
+   "sum_yes": 1.0025,
+   "yes_basket_edge_pct": -0.25,
+   "no_basket_edge_pct": 0.25,
+   "min_leg_liquidity": 131940,
+   "vol24": 140096,
+   "end_date": "2026-12-10"
+  },
+  {
+   "event": "Alaska Senate Election Winner",
+   "n_outcomes": 7,
+   "sum_yes": 1.0025,
+   "yes_basket_edge_pct": -0.25,
+   "no_basket_edge_pct": 0.25,
+   "min_leg_liquidity": 66638,
+   "vol24": 82125,
+   "end_date": "2026-11-04"
+  },
+  {
+   "event": "MLS Cup Winner 2026",
+   "n_outcomes": 29,
+   "sum_yes": 0.9985,
+   "yes_basket_edge_pct": 0.15,
+   "no_basket_edge_pct": -0.15,
+   "min_leg_liquidity": 16785,
+   "vol24": 380350,
+   "end_date": "2027-01-01"
+  },
+  {
+   "event": "Who wins the Senate pending oil above or below $80 before th",
+   "n_outcomes": 4,
+   "sum_yes": 1.0015,
+   "yes_basket_edge_pct": -0.15,
+   "no_basket_edge_pct": 0.15,
+   "min_leg_liquidity": 244948,
+   "vol24": 92720,
+   "end_date": "2026-11-04"
+  },
+  {
+   "event": "Bank of Russia decision in October?",
+   "n_outcomes": 3,
+   "sum_yes": 1.0015,
+   "yes_basket_edge_pct": -0.15,
+   "no_basket_edge_pct": 0.15,
+   "min_leg_liquidity": 2189,
+   "vol24": 40636,
+   "end_date": "2026-10-24"
+  },
+  {
+   "event": "Serbia Parliamentary Election Winner",
+   "n_outcomes": 10,
+   "sum_yes": 0.999,
+   "yes_basket_edge_pct": 0.1,
+   "no_basket_edge_pct": -0.1,
+   "min_leg_liquidity": 55829,
+   "vol24": 227054,
+   "end_date": "2026-10-25"
+  },
+  {
+   "event": "Taipei Mayor Election Winner",
+   "n_outcomes": 3,
+   "sum_yes": 1.001,
+   "yes_basket_edge_pct": -0.1,
+   "no_basket_edge_pct": 0.1,
+   "min_leg_liquidity": 116175,
+   "vol24": 106884,
+   "end_date": "2026-11-29"
+  },
+  {
+   "event": "Ghazl El Mahalla SC vs. El Ittihad SC El Iskandary",
+   "n_outcomes": 3,
+   "sum_yes": 1.0005,
+   "yes_basket_edge_pct": -0.05,
+   "no_basket_edge_pct": 0.05,
+   "min_leg_liquidity": 65456,
+   "vol24": 146145,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Nebraska Senate Election Winner  ",
+   "n_outcomes": 3,
+   "sum_yes": 1.0005,
+   "yes_basket_edge_pct": -0.05,
+   "no_basket_edge_pct": 0.05,
+   "min_leg_liquidity": 61030,
+   "vol24": 76482,
+   "end_date": "2026-11-04"
+  },
+  {
+   "event": "Como 1907 vs. Manchester United FC - Halftime Result",
+   "n_outcomes": 3,
+   "sum_yes": 1.0005,
+   "yes_basket_edge_pct": -0.05,
+   "no_basket_edge_pct": 0.05,
+   "min_leg_liquidity": 58875,
+   "vol24": 44281,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Who wins the Senate pending Hormuz Agreement by Oct 23?",
+   "n_outcomes": 3,
+   "sum_yes": 1.0005,
+   "yes_basket_edge_pct": -0.05,
+   "no_basket_edge_pct": 0.05,
+   "min_leg_liquidity": 45396,
+   "vol24": 43977,
+   "end_date": "2026-11-04"
+  },
+  {
+   "event": "Test Match: South Africa vs Australia",
+   "n_outcomes": 3,
+   "sum_yes": 0.9995,
+   "yes_basket_edge_pct": 0.05,
+   "no_basket_edge_pct": -0.05,
+   "min_leg_liquidity": 3449,
+   "vol24": 36708,
+   "end_date": "2026-10-25"
+  },
+  {
+   "event": "Harju JK Laagri vs. Tallinna FC Flora",
+   "n_outcomes": 3,
+   "sum_yes": 1.0005,
+   "yes_basket_edge_pct": -0.05,
+   "no_basket_edge_pct": 0.05,
+   "min_leg_liquidity": 25540,
+   "vol24": 34190,
+   "end_date": "2026-10-21"
+  },
+  {
+   "event": "Pro Football: 2027 Champion",
+   "n_outcomes": 32,
+   "sum_yes": 1.0,
+   "yes_basket_edge_pct": 0.0,
+   "no_basket_edge_pct": 0.0,
+   "min_leg_liquidity": 85124,
+   "vol24": 91149,
+   "end_date": "2027-04-01"
+  },
+  {
+   "event": "Anthropic IPO Closing Market Cap",
+   "n_outcomes": 10,
+   "sum_yes": 1.0,
+   "yes_basket_edge_pct": 0.0,
+   "no_basket_edge_pct": 0.0,
+   "min_leg_liquidity": 10154,
+   "vol24": 50819,
+   "end_date": "2028-01-01"
+  }
+ ],
+ "neg_risk_baskets_all": [
+  {
+   "event": "Gençlerbirliği SK vs. Alanyaspor - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 12.81,
+   "yes_basket_edge": -24.63,
+   "no_basket_edge": 11.8,
+   "min_liquidity": 15,
+   "vol24": 31568
+  },
+  {
+   "event": "Gil Vicente FC vs. Vitória SC - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 11.86,
+   "yes_basket_edge": -22.73,
+   "no_basket_edge": 10.85,
+   "min_liquidity": 14,
+   "vol24": 33090
+  },
+  {
+   "event": "FK Shakhtar Donetsk vs. Sporting CP - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 11.67,
+   "yes_basket_edge": -22.35,
+   "no_basket_edge": 10.66,
+   "min_liquidity": 14,
+   "vol24": 33140
+  },
+  {
+   "event": "Galatasaray SK vs. VfB Stuttgart - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 11.345,
+   "yes_basket_edge": -21.7,
+   "no_basket_edge": 10.335,
+   "min_liquidity": 20,
+   "vol24": 35234
+  },
+  {
+   "event": "PEC Zwolle vs. ADO Den Haag - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 11.345,
+   "yes_basket_edge": -21.7,
+   "no_basket_edge": 10.335,
+   "min_liquidity": 19,
+   "vol24": 32084
+  },
+  {
+   "event": "Falkirk FC vs. Celtic FC - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 11.07,
+   "yes_basket_edge": -21.15,
+   "no_basket_edge": 10.06,
+   "min_liquidity": 14,
+   "vol24": 34088
+  },
+  {
+   "event": "FC Porto vs. Estoril Praia - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 10.745,
+   "yes_basket_edge": -20.5,
+   "no_basket_edge": 9.735,
+   "min_liquidity": 19,
+   "vol24": 33162
+  },
+  {
+   "event": "Sport Lisboa e Benfica vs. FC Alverca - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 10.745,
+   "yes_basket_edge": -20.5,
+   "no_basket_edge": 9.735,
+   "min_liquidity": 14,
+   "vol24": 33136
+  },
+  {
+   "event": "Como 1907 vs. Manchester United FC - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 3.0395,
+   "yes_basket_edge": -4.164,
+   "no_basket_edge": 1.9655,
+   "min_liquidity": 4,
+   "vol24": 114991
+  },
+  {
+   "event": "Lille OSC vs. Galatasaray SK - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 2.724,
+   "yes_basket_edge": -3.579,
+   "no_basket_edge": 1.409,
+   "min_liquidity": 6,
+   "vol24": 61516
+  },
+  {
+   "event": "Celtic FC vs. RC Celta de Vigo - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 1.7645,
+   "yes_basket_edge": -1.693,
+   "no_basket_edge": 0.682,
+   "min_liquidity": 351,
+   "vol24": 37608
+  },
+  {
+   "event": "Aston Villa FC vs. Viking FK - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 1.722,
+   "yes_basket_edge": -1.603,
+   "no_basket_edge": 0.6505,
+   "min_liquidity": 276,
+   "vol24": 40590
+  },
+  {
+   "event": "Sporting CP vs. LASK Linz - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 1.7405,
+   "yes_basket_edge": -1.664,
+   "no_basket_edge": 0.628,
+   "min_liquidity": 74,
+   "vol24": 43007
+  },
+  {
+   "event": "Real Madrid CF vs. RB Leipzig - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 1.693,
+   "yes_basket_edge": -1.605,
+   "no_basket_edge": 0.6045,
+   "min_liquidity": 195,
+   "vol24": 54703
+  },
+  {
+   "event": "FC Internazionale Milano vs. FK Shakhtar Donetsk - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 1.6875,
+   "yes_basket_edge": -1.556,
+   "no_basket_edge": 0.5935,
+   "min_liquidity": 123,
+   "vol24": 54234
+  },
+  {
+   "event": "Republican Presidential Nominee 2028",
+   "neg_risk": true,
+   "n_outcomes": 43,
+   "sum_yes_mid": 0.7875,
+   "yes_basket_edge": 0.179,
+   "no_basket_edge": -0.241,
+   "min_liquidity": 239484,
+   "vol24": 197922
+  },
+  {
+   "event": "Democratic Presidential Nominee 2028",
+   "neg_risk": true,
+   "n_outcomes": 53,
+   "sum_yes_mid": 0.8975,
+   "yes_basket_edge": 0.052,
+   "no_basket_edge": -0.147,
+   "min_liquidity": 158754,
+   "vol24": 437798
+  },
+  {
+   "event": "Presidential Election Winner 2028",
+   "neg_risk": true,
+   "n_outcomes": 54,
+   "sum_yes_mid": 0.924,
+   "yes_basket_edge": 0.034,
+   "no_basket_edge": -0.1065,
+   "min_liquidity": 158153,
+   "vol24": 388732
+  },
+  {
+   "event": "Worlds 2026: Winner",
+   "neg_risk": true,
+   "n_outcomes": 16,
+   "sum_yes_mid": 1.0545,
+   "yes_basket_edge": -0.091,
+   "no_basket_edge": 0.019,
+   "min_liquidity": 25592,
+   "vol24": 329353
+  },
+  {
+   "event": "EPL: 2027 Champion",
+   "neg_risk": true,
+   "n_outcomes": 20,
+   "sum_yes_mid": 0.9535,
+   "yes_basket_edge": 0.012,
+   "no_basket_edge": -0.078,
+   "min_liquidity": 114948,
+   "vol24": 39984
+  },
+  {
+   "event": "Next Prime Minister of Serbia?",
+   "neg_risk": true,
+   "n_outcomes": 10,
+   "sum_yes_mid": 0.961,
+   "yes_basket_edge": 0.011,
+   "no_basket_edge": -0.065,
+   "min_liquidity": 47840,
+   "vol24": 53097
+  },
+  {
+   "event": "Ballon d'Or 2026: 2nd Place",
+   "neg_risk": true,
+   "n_outcomes": 30,
+   "sum_yes_mid": 1.0645,
+   "yes_basket_edge": -0.154,
+   "no_basket_edge": 0.002,
+   "min_liquidity": 5082,
+   "vol24": 77225
+  },
+  {
+   "event": "FC Bayern München vs. Arsenal FC - Exact Score",
+   "neg_risk": true,
+   "n_outcomes": 37,
+   "sum_yes_mid": 1.285,
+   "yes_basket_edge": -0.65,
+   "no_basket_edge": 0.0015,
+   "min_liquidity": 481,
+   "vol24": 141768
+  },
+  {
+   "event": "Who wins the Senate pending Hormuz Agreement before the midterms?",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 0.9905,
+   "yes_basket_edge": -0.005,
+   "no_basket_edge": -0.024,
+   "min_liquidity": 54193,
+   "vol24": 36813
+  },
+  {
+   "event": "Highest temperature in Tokyo on October 21?",
+   "neg_risk": true,
+   "n_outcomes": 11,
+   "sum_yes_mid": 1.018,
+   "yes_basket_edge": -0.054,
+   "no_basket_edge": -0.0055,
+   "min_liquidity": 576,
+   "vol24": 36060
+  },
+  {
+   "event": "Highest temperature in Hong Kong on October 21?",
+   "neg_risk": true,
+   "n_outcomes": 11,
+   "sum_yes_mid": 1.0045,
+   "yes_basket_edge": -0.02,
+   "no_basket_edge": -0.006,
+   "min_liquidity": 7832,
+   "vol24": 73717
+  },
+  {
+   "event": "California Governor Election Winner",
+   "neg_risk": true,
+   "n_outcomes": 23,
+   "sum_yes_mid": 1.01,
+   "yes_basket_edge": -0.036,
+   "no_basket_edge": -0.006,
+   "min_liquidity": 111971,
+   "vol24": 39999
+  },
+  {
+   "event": "Elon Musk # tweets October 19 - October 21, 2026?",
+   "neg_risk": true,
+   "n_outcomes": 9,
+   "sum_yes_mid": 1.0035,
+   "yes_basket_edge": -0.018,
+   "no_basket_edge": -0.007,
+   "min_liquidity": 7391,
+   "vol24": 484891
+  },
+  {
+   "event": "UEFA Champions League: 2027 Champion",
+   "neg_risk": true,
+   "n_outcomes": 36,
+   "sum_yes_mid": 1.0495,
+   "yes_basket_edge": -0.112,
+   "no_basket_edge": -0.009,
+   "min_liquidity": 110361,
+   "vol24": 2257034
+  },
+  {
+   "event": "Iran leader end of 2026?",
+   "neg_risk": true,
+   "n_outcomes": 30,
+   "sum_yes_mid": 1.0235,
+   "yes_basket_edge": -0.072,
+   "no_basket_edge": -0.009,
+   "min_liquidity": 43052,
+   "vol24": 105167
+  },
+  {
+   "event": "Next French Presidential Election",
+   "neg_risk": true,
+   "n_outcomes": 45,
+   "sum_yes_mid": 1.018,
+   "yes_basket_edge": -0.064,
+   "no_basket_edge": -0.0095,
+   "min_liquidity": 68355,
+   "vol24": 454314
+  },
+  {
+   "event": "Real Madrid CF vs. RB Leipzig",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.015,
+   "yes_basket_edge": -0.04,
+   "no_basket_edge": -0.01,
+   "min_liquidity": 417209,
+   "vol24": 255118
+  },
+  {
+   "event": "Ghazl El Mahalla SC vs. El Ittihad SC El Iskandary",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.0005,
+   "yes_basket_edge": -0.012,
+   "no_basket_edge": -0.01,
+   "min_liquidity": 65456,
+   "vol24": 146145
+  },
+  {
+   "event": "Who wins the Senate pending oil below $85 before the midterms?",
+   "neg_risk": true,
+   "n_outcomes": 4,
+   "sum_yes_mid": 0.996,
+   "yes_basket_edge": -0.01,
+   "no_basket_edge": -0.018,
+   "min_liquidity": 241305,
+   "vol24": 116985
+  },
+  {
+   "event": "Como 1907 vs. Manchester United FC - Halftime Result",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.0005,
+   "yes_basket_edge": -0.012,
+   "no_basket_edge": -0.01,
+   "min_liquidity": 58875,
+   "vol24": 44281
+  },
+  {
+   "event": "Harju JK Laagri vs. Tallinna FC Flora",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.0005,
+   "yes_basket_edge": -0.012,
+   "no_basket_edge": -0.01,
+   "min_liquidity": 25540,
+   "vol24": 34190
+  },
+  {
+   "event": "NBA: 2027 Champion",
+   "neg_risk": true,
+   "n_outcomes": 30,
+   "sum_yes_mid": 1.0335,
+   "yes_basket_edge": -0.079,
+   "no_basket_edge": -0.011,
+   "min_liquidity": 154808,
+   "vol24": 1262804
+  },
+  {
+   "event": "Prime Minister of Israel after the next election?",
+   "neg_risk": true,
+   "n_outcomes": 19,
+   "sum_yes_mid": 0.982,
+   "yes_basket_edge": -0.012,
+   "no_basket_edge": -0.043,
+   "min_liquidity": 92224,
+   "vol24": 586675
+  },
+  {
+   "event": "How many Fed rate cuts in 2026?",
+   "neg_risk": true,
+   "n_outcomes": 13,
+   "sum_yes_mid": 0.992,
+   "yes_basket_edge": -0.012,
+   "no_basket_edge": -0.0235,
+   "min_liquidity": 110674,
+   "vol24": 88749
+  },
+  {
+   "event": "Fed Decision in January?",
+   "neg_risk": true,
+   "n_outcomes": 5,
+   "sum_yes_mid": 1.0095,
+   "yes_basket_edge": -0.031,
+   "no_basket_edge": -0.012,
+   "min_liquidity": 122982,
+   "vol24": 45790
+  },
+  {
+   "event": "Fed Decision in October?",
+   "neg_risk": true,
+   "n_outcomes": 5,
+   "sum_yes_mid": 1.0075,
+   "yes_basket_edge": -0.029,
+   "no_basket_edge": -0.0135,
+   "min_liquidity": 678896,
+   "vol24": 2575576
+  },
+  {
+   "event": "Ballon d'Or Winner 2026",
+   "neg_risk": true,
+   "n_outcomes": 19,
+   "sum_yes_mid": 1.0075,
+   "yes_basket_edge": -0.033,
+   "no_basket_edge": -0.0135,
+   "min_liquidity": 122534,
+   "vol24": 1483500
+  },
+  {
+   "event": "Venezuela leader end of 2026?",
+   "neg_risk": true,
+   "n_outcomes": 16,
+   "sum_yes_mid": 0.9825,
+   "yes_basket_edge": -0.014,
+   "no_basket_edge": -0.0455,
+   "min_liquidity": 75309,
+   "vol24": 99605
+  },
+  {
+   "event": "Who wins the Senate pending oil above or below $80 before the midterms",
+   "neg_risk": true,
+   "n_outcomes": 4,
+   "sum_yes_mid": 1.0015,
+   "yes_basket_edge": -0.017,
+   "no_basket_edge": -0.014,
+   "min_liquidity": 244948,
+   "vol24": 92720
+  },
+  {
+   "event": "Bulgaria Presidential Election",
+   "neg_risk": true,
+   "n_outcomes": 14,
+   "sum_yes_mid": 1.006,
+   "yes_basket_edge": -0.032,
+   "no_basket_edge": -0.014,
+   "min_liquidity": 60592,
+   "vol24": 29136
+  },
+  {
+   "event": "Taipei Mayor Election Winner",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.001,
+   "yes_basket_edge": -0.017,
+   "no_basket_edge": -0.0145,
+   "min_liquidity": 116175,
+   "vol24": 106884
+  },
+  {
+   "event": "Ballon d'Or 2026: 3rd Place",
+   "neg_risk": true,
+   "n_outcomes": 30,
+   "sum_yes_mid": 1.071,
+   "yes_basket_edge": -0.169,
+   "no_basket_edge": -0.0145,
+   "min_liquidity": 3694,
+   "vol24": 51602
+  },
+  {
+   "event": "Highest grossing movie in 2026?",
+   "neg_risk": true,
+   "n_outcomes": 14,
+   "sum_yes_mid": 0.99,
+   "yes_basket_edge": -0.015,
+   "no_basket_edge": -0.029,
+   "min_liquidity": 27492,
+   "vol24": 94063
+  },
+  {
+   "event": "Largest Company end of October 2026?",
+   "neg_risk": true,
+   "n_outcomes": 9,
+   "sum_yes_mid": 1.0035,
+   "yes_basket_edge": -0.026,
+   "no_basket_edge": -0.015,
+   "min_liquidity": 26649,
+   "vol24": 59118
+  },
+  {
+   "event": "Who wins the Senate pending Hormuz Agreement by Oct 23?",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.0005,
+   "yes_basket_edge": -0.016,
+   "no_basket_edge": -0.015,
+   "min_liquidity": 45396,
+   "vol24": 43977
+  },
+  {
+   "event": "El Ahly SC vs. El Qanah Club",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 0.9775,
+   "yes_basket_edge": -0.016,
+   "no_basket_edge": -0.061,
+   "min_liquidity": 17446,
+   "vol24": 60774
+  },
+  {
+   "event": "NHL: 2027 Champion",
+   "neg_risk": true,
+   "n_outcomes": 32,
+   "sum_yes_mid": 1.061,
+   "yes_basket_edge": -0.138,
+   "no_basket_edge": -0.016,
+   "min_liquidity": 43909,
+   "vol24": 50313
+  },
+  {
+   "event": "LALIGA: 2027 Champion",
+   "neg_risk": true,
+   "n_outcomes": 21,
+   "sum_yes_mid": 0.9845,
+   "yes_basket_edge": -0.017,
+   "no_basket_edge": -0.038,
+   "min_liquidity": 160975,
+   "vol24": 75844
+  },
+  {
+   "event": "Alaska Senate Election Winner",
+   "neg_risk": true,
+   "n_outcomes": 7,
+   "sum_yes_mid": 1.0025,
+   "yes_basket_edge": -0.025,
+   "no_basket_edge": -0.0175,
+   "min_liquidity": 66638,
+   "vol24": 82125
+  },
+  {
+   "event": "Israeli Legislative Election Winner",
+   "neg_risk": true,
+   "n_outcomes": 6,
+   "sum_yes_mid": 0.996,
+   "yes_basket_edge": -0.018,
+   "no_basket_edge": -0.0245,
+   "min_liquidity": 72047,
+   "vol24": 147779
+  },
+  {
+   "event": "Next leader out of power before 2027?",
+   "neg_risk": true,
+   "n_outcomes": 22,
+   "sum_yes_mid": 1.0415,
+   "yes_basket_edge": -0.101,
+   "no_basket_edge": -0.018,
+   "min_liquidity": 18162,
+   "vol24": 53984
+  },
+  {
+   "event": "British Columbia General Election Winner",
+   "neg_risk": true,
+   "n_outcomes": 5,
+   "sum_yes_mid": 1.0065,
+   "yes_basket_edge": -0.033,
+   "no_basket_edge": -0.0185,
+   "min_liquidity": 35357,
+   "vol24": 36955
+  },
+  {
+   "event": "Fed Decision in December?",
+   "neg_risk": true,
+   "n_outcomes": 5,
+   "sum_yes_mid": 1.0025,
+   "yes_basket_edge": -0.024,
+   "no_basket_edge": -0.019,
+   "min_liquidity": 131940,
+   "vol24": 140096
+  },
+  {
+   "event": "Nebraska Senate Election Winner  ",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.0005,
+   "yes_basket_edge": -0.021,
+   "no_basket_edge": -0.0195,
+   "min_liquidity": 61030,
+   "vol24": 76482
+  },
+  {
+   "event": "FC Bayern München vs. Arsenal FC",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.005,
+   "yes_basket_edge": -0.03,
+   "no_basket_edge": -0.02,
+   "min_liquidity": 739157,
+   "vol24": 2132253
+  },
+  {
+   "event": "Como 1907 vs. Manchester United FC",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 0.995,
+   "yes_basket_edge": -0.02,
+   "no_basket_edge": -0.03,
+   "min_liquidity": 249311,
+   "vol24": 1512554
+  },
+  {
+   "event": "Aston Villa FC vs. Viking FK",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.005,
+   "yes_basket_edge": -0.03,
+   "no_basket_edge": -0.02,
+   "min_liquidity": 375090,
+   "vol24": 961286
+  },
+  {
+   "event": "Lille OSC vs. Galatasaray SK",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 0.995,
+   "yes_basket_edge": -0.02,
+   "no_basket_edge": -0.03,
+   "min_liquidity": 188587,
+   "vol24": 808191
+  },
+  {
+   "event": "Sporting CP vs. LASK Linz",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 0.995,
+   "yes_basket_edge": -0.02,
+   "no_basket_edge": -0.03,
+   "min_liquidity": 422654,
+   "vol24": 250369
+  },
+  {
+   "event": "Club Brugge KV vs. Racing Club de Lens",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.005,
+   "yes_basket_edge": -0.03,
+   "no_basket_edge": -0.02,
+   "min_liquidity": 432864,
+   "vol24": 129940
+  },
+  {
+   "event": "Largest Company end of December 2026?",
+   "neg_risk": true,
+   "n_outcomes": 8,
+   "sum_yes_mid": 0.994,
+   "yes_basket_edge": -0.02,
+   "no_basket_edge": -0.031,
+   "min_liquidity": 66009,
+   "vol24": 110728
+  },
+  {
+   "event": "FC Internazionale Milano vs. FK Shakhtar Donetsk",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 0.995,
+   "yes_basket_edge": -0.02,
+   "no_basket_edge": -0.03,
+   "min_liquidity": 341439,
+   "vol24": 88651
+  },
+  {
+   "event": "Real Betis Balompié vs. Feyenoord Rotterdam",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 0.995,
+   "yes_basket_edge": -0.02,
+   "no_basket_edge": -0.03,
+   "min_liquidity": 334183,
+   "vol24": 64009
+  },
+  {
+   "event": "Club Puebla vs. CF Monterrey",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.01,
+   "yes_basket_edge": -0.04,
+   "no_basket_edge": -0.02,
+   "min_liquidity": 61166,
+   "vol24": 58771
+  },
+  {
+   "event": "FC Cincinnati vs. D.C. United SC",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 1.005,
+   "yes_basket_edge": -0.03,
+   "no_basket_edge": -0.02,
+   "min_liquidity": 49355,
+   "vol24": 54524
+  },
+  {
+   "event": "FC Barcelona vs. Real Madrid CF",
+   "neg_risk": true,
+   "n_outcomes": 3,
+   "sum_yes_mid": 0.995,
+   "yes_basket_edge": -0.02,
+   "no_basket_edge": -0.03,
+   "min_liquidity": 72221,
+   "vol24": 29949
+  },
+  {
+   "event": "Balance of Power: 2026 Midterms",
+   "neg_risk": true,
+   "n_outcomes": 5,
+   "sum_yes_mid": 0.995,
+   "yes_basket_edge": -0.021,
+   "no_basket_edge": -0.031,
+   "min_liquidity": 606654,
+   "vol24": 2014752
+  },
+  {
+   "event": "Highest temperature in London on October 21?",
+   "neg_risk": true,
+   "n_outcomes": 11,
+   "sum_yes_mid": 1.005,
+   "yes_basket_edge": -0.035,
+   "no_basket_edge": -0.021,
+   "min_liquidity": 175,
+   "vol24": 37627
+  },
+  {
+   "event": "# of views of Grand Theft Auto VI Launch Trailer on week 1?",
+   "neg_risk": true,
+   "n_outcomes": 7,
+   "sum_yes_mid": 0.993,
+   "yes_basket_edge": -0.022,
+   "no_basket_edge": -0.033,
+   "min_liquidity": 6185,
+   "vol24": 258847
+  },
+  {
+   "event": "Worlds 2026 Winning Region",
+   "neg_risk": true,
+   "n_outcomes": 6,
+   "sum_yes_mid": 1.006,
+   "yes_basket_edge": -0.035,
+   "no_basket_edge": -0.023,
+   "min_liquidity": 43713,
+   "vol24": 117415
+  },
+  {
+   "event": "Which company has best AI model end of 2026?",
+   "neg_risk": true,
+   "n_outcomes": 15,
+   "sum_yes_mid": 1.006,
+   "yes_basket_edge": -0.037,
+   "no_basket_edge": -0.024,
+   "min_liquidity": 32959,
+   "vol24": 125108
+  },
+  {
+   "event": "Which company has the best AI model end of October?",
+   "neg_risk": true,
+   "n_outcomes": 21,
+   "sum_yes_mid": 0.994,
+   "yes_basket_edge": -0.025,
+   "no_basket_edge": -0.0285,
+   "min_liquidity": 26239,
+   "vol24": 63962
+  },
+  {
+   "event": "Bank of Canada Decision in October?",
+   "neg_risk": true,
+   "n_outcomes": 5,
+   "sum_yes_mid": 0.988,
+   "yes_basket_edge": -0.025,
+   "no_basket_edge": -0.047,
+   "min_liquidity": 9029,
+   "vol24": 30944
+  },
+  {
+   "event": "Serbia Parliamentary Election Winner",
+   "neg_risk": true,
+   "n_outcomes": 10,
+   "sum_yes_mid": 0.999,
+   "yes_basket_edge": -0.028,
+   "no_basket_edge": -0.026,
+   "min_liquidity": 55829,
+   "vol24": 227054
+  },
+  {
+   "event": "Toronto Mayoral Election Winner",
+   "neg_risk": true,
+   "n_outcomes": 8,
+   "sum_yes_mid": 0.993,
+   "yes_basket_edge": -0.026,
+   "no_basket_edge": -0.037,
+   "min_liquidity": 57876,
+   "vol24": 53506
+  }
+ ],
+ "spreads_top": [
+  {
+   "q": "Exact Score: Any Other Score?",
+   "spread_pct": 37.5,
+   "mid": 0.375,
+   "vol24": 35234,
+   "liquidity": 20
+  },
+  {
+   "q": "Exact Score: Any Other Score?",
+   "spread_pct": 37.5,
+   "mid": 0.375,
+   "vol24": 34088,
+   "liquidity": 17
+  },
+  {
+   "q": "Exact Score: Any Other Score?",
+   "spread_pct": 37.5,
+   "mid": 0.375,
+   "vol24": 33162,
+   "liquidity": 19
+  },
+  {
+   "q": "Exact Score: Any Other Score?",
+   "spread_pct": 37.5,
+   "mid": 0.375,
+   "vol24": 33140,
+   "liquidity": 14
+  },
+  {
+   "q": "Exact Score: Any Other Score?",
+   "spread_pct": 37.5,
+   "mid": 0.375,
+   "vol24": 33136,
+   "liquidity": 20
+  },
+  {
+   "q": "Exact Score: Any Other Score?",
+   "spread_pct": 37.5,
+   "mid": 0.375,
+   "vol24": 33090,
+   "liquidity": 14
+  },
+  {
+   "q": "Exact Score: Any Other Score?",
+   "spread_pct": 37.5,
+   "mid": 0.375,
+   "vol24": 32084,
+   "liquidity": 19
+  },
+  {
+   "q": "Exact Score: Any Other Score?",
+   "spread_pct": 37.5,
+   "mid": 0.375,
+   "vol24": 31568,
+   "liquidity": 15
+  },
+  {
+   "q": "Will the highest temperature in Istanbul be 15°C or below on",
+   "spread_pct": 15.9,
+   "mid": 0.75,
+   "vol24": 27177,
+   "liquidity": 2771
+  },
+  {
+   "q": "S&P 500 (SPY) closes above $775 on October 21?",
+   "spread_pct": 14.4,
+   "mid": 0.229,
+   "vol24": 14836,
+   "liquidity": 869
+  },
+  {
+   "q": "Will the highest temperature in Shenzhen be 36°C on October ",
+   "spread_pct": 12.8,
+   "mid": 0.854,
+   "vol24": 10533,
+   "liquidity": 277
+  },
+  {
+   "q": "Como 1907 vs. Manchester United FC: O/U 9.5 Total Corners",
+   "spread_pct": 10.0,
+   "mid": 0.15,
+   "vol24": 78058,
+   "liquidity": 6279
+  },
+  {
+   "q": "Aaron Nesmith: Rebounds O/U 3.5",
+   "spread_pct": 7.6,
+   "mid": 0.046,
+   "vol24": 15981,
+   "liquidity": 6170
+  },
+  {
+   "q": "Will Predict.fun launch a token by November 30, 2026?",
+   "spread_pct": 7.0,
+   "mid": 0.875,
+   "vol24": 10473,
+   "liquidity": 2059
+  },
+  {
+   "q": "Spread: Hapoel Tel Aviv (-8.5)",
+   "spread_pct": 6.0,
+   "mid": 0.56,
+   "vol24": 28424,
+   "liquidity": 769
+  },
+  {
+   "q": "Will there be Houthi military action against Israel by Decembe",
+   "spread_pct": 6.0,
+   "mid": 0.22,
+   "vol24": 49657,
+   "liquidity": 12458
+  },
+  {
+   "q": "Map Handicap: MGLZ (-1.5) vs PRIVATE (+1.5)",
+   "spread_pct": 4.0,
+   "mid": 0.38,
+   "vol24": 17503,
+   "liquidity": 15312
+  },
+  {
+   "q": "Will El Ahly SC win on 2026-10-21?",
+   "spread_pct": 4.0,
+   "mid": 0.62,
+   "vol24": 26820,
+   "liquidity": 17446
+  },
+  {
+   "q": "Will the Bank of Russia decrease the key rate after the Octo",
+   "spread_pct": 4.0,
+   "mid": 0.15,
+   "vol24": 14436,
+   "liquidity": 8775
+  },
+  {
+   "q": "S&P 500 (SPY) closes above $770 on October 21?",
+   "spread_pct": 3.6,
+   "mid": 0.961,
+   "vol24": 12377,
+   "liquidity": 14826
+  },
+  {
+   "q": "Will Zelenskyy and Putin not meet before 2027?",
+   "spread_pct": 3.3,
+   "mid": 0.911,
+   "vol24": 12919,
+   "liquidity": 67926
+  },
+  {
+   "q": "Predict.fun FDV above $1B one day after launch?",
+   "spread_pct": 3.2,
+   "mid": 0.525,
+   "vol24": 27363,
+   "liquidity": 30390
+  },
+  {
+   "q": "S&P 500 (SPX) Up or Down on October 21?",
+   "spread_pct": 3.1,
+   "mid": 0.979,
+   "vol24": 59399,
+   "liquidity": 23857
+  },
+  {
+   "q": "Will Iliana Iotova win the 2026 Bulgarian presidential first",
+   "spread_pct": 3.0,
+   "mid": 0.345,
+   "vol24": 18387,
+   "liquidity": 64075
+  },
+  {
+   "q": "Will WTI Crude Oil (WTI) hit (HIGH) $105 in October?",
+   "spread_pct": 3.0,
+   "mid": 0.265,
+   "vol24": 16701,
+   "liquidity": 26649
+  },
+  {
+   "q": "Will Ethereum reach $2,550 on October 21?",
+   "spread_pct": 3.0,
+   "mid": 0.275,
+   "vol24": 21796,
+   "liquidity": 15611
+  },
+  {
+   "q": "Will the highest temperature in Tokyo be 26°C on October 22?",
+   "spread_pct": 3.0,
+   "mid": 0.945,
+   "vol24": 12485,
+   "liquidity": 1255
+  },
+  {
+   "q": "Will Predict.fun launch a token by October 31, 2026?",
+   "spread_pct": 3.0,
+   "mid": 0.225,
+   "vol24": 20176,
+   "liquidity": 2325
+  },
+  {
+   "q": "Will South Africa win?",
+   "spread_pct": 3.0,
+   "mid": 0.825,
+   "vol24": 16006,
+   "liquidity": 3449
+  },
+  {
+   "q": "Will Andrey Gyurov win the 2026 Bulgarian presidential first",
+   "spread_pct": 2.6,
+   "mid": 0.037,
+   "vol24": 87193,
+   "liquidity": 200545
+  },
+  {
+   "q": "Will the Bank of Canada make no change to the target for the",
+   "spread_pct": 2.6,
+   "mid": 0.242,
+   "vol24": 12899,
+   "liquidity": 35004
+  },
+  {
+   "q": "Will the Bank of Canada increase the target for the overnigh",
+   "spread_pct": 2.4,
+   "mid": 0.744,
+   "vol24": 17110,
+   "liquidity": 9029
+  },
+  {
+   "q": "Counter-Strike: Fluxo W7M vs Galorys (BO3) - Circuit X Curitib",
+   "spread_pct": 2.1,
+   "mid": 0.973,
+   "vol24": 16171,
+   "liquidity": 23888
+  },
+  {
+   "q": "Spread: Como 1907 (-1.5)",
+   "spread_pct": 2.0,
+   "mid": 0.34,
+   "vol24": 55904,
+   "liquidity": 56670
+  },
+  {
+   "q": "Como 1907 vs. Manchester United FC: Como 1907 O/U 1.5",
+   "spread_pct": 2.0,
+   "mid": 0.6,
+   "vol24": 13676,
+   "liquidity": 21197
+  },
+  {
+   "q": "Como 1907 vs. Manchester United FC: Manchester United FC O/U 1",
+   "spread_pct": 2.0,
+   "mid": 0.22,
+   "vol24": 22201,
+   "liquidity": 17450
+  },
+  {
+   "q": "Will Elon Musk post 260-279 tweets from October 16 to Octobe",
+   "spread_pct": 2.0,
+   "mid": 0.24,
+   "vol24": 37054,
+   "liquidity": 7504
+  },
+  {
+   "q": "Will Elon Musk post 280-299 tweets from October 16 to Octobe",
+   "spread_pct": 2.0,
+   "mid": 0.24,
+   "vol24": 24893,
+   "liquidity": 7929
+  },
+  {
+   "q": "Will Flávio Bolsonaro win the second round of the 2026 Brazi",
+   "spread_pct": 2.0,
+   "mid": 0.32,
+   "vol24": 148282,
+   "liquidity": 134232
+  },
+  {
+   "q": "US x Iran ceasefire continues through October 28?",
+   "spread_pct": 2.0,
+   "mid": 0.86,
+   "vol24": 42682,
+   "liquidity": 320590
+  },
+  {
+   "q": "Spread: Clippers (-4.5)",
+   "spread_pct": 2.0,
+   "mid": 0.52,
+   "vol24": 278534,
+   "liquidity": 195919
+  },
+  {
+   "q": "Spread: Clippers (-5.5)",
+   "spread_pct": 2.0,
+   "mid": 0.48,
+   "vol24": 107658,
+   "liquidity": 178721
+  },
+  {
+   "q": "Spread: Real Madrid CF (-1.5)",
+   "spread_pct": 2.0,
+   "mid": 0.62,
+   "vol24": 21065,
+   "liquidity": 217283
+  },
+  {
+   "q": "Dota 2: salamit vs HULIGANI - Game 2 Winner",
+   "spread_pct": 2.0,
+   "mid": 0.1,
+   "vol24": 138745,
+   "liquidity": 45189
+  },
+  {
+   "q": "Dota 2: salamit vs HULIGANI (BO3) - EPL Masters Group A",
+   "spread_pct": 2.0,
+   "mid": 0.04,
+   "vol24": 14665,
+   "liquidity": 56790
+  },
+  {
+   "q": "Will Bitcoin reach $85,000 on October 21?",
+   "spread_pct": 2.0,
+   "mid": 0.64,
+   "vol24": 44826,
+   "liquidity": 17228
+  },
+  {
+   "q": "Will Bitcoin reach $85,000 in October?",
+   "spread_pct": 2.0,
+   "mid": 0.92,
+   "vol24": 66111,
+   "liquidity": 49383
+  },
+  {
+   "q": "Russia x Ukraine ceasefire agreement by March 31, 2027?",
+   "spread_pct": 2.0,
+   "mid": 0.37,
+   "vol24": 25499,
+   "liquidity": 73572
+  },
+  {
+   "q": "Russia x Ukraine ceasefire agreement by November 30, 2026?",
+   "spread_pct": 2.0,
+   "mid": 0.12,
+   "vol24": 12346,
+   "liquidity": 53073
+  },
+  {
+   "q": "Will Bitcoin reach $86,000 October 19-25?",
+   "spread_pct": 2.0,
+   "mid": 0.6,
+   "vol24": 27802,
+   "liquidity": 38995
+  },
+  {
+   "q": "Will Aleksandar Vučić – United Serbia win the most seats in ",
+   "spread_pct": 2.0,
+   "mid": 0.67,
+   "vol24": 150439,
+   "liquidity": 285649
+  },
+  {
+   "q": "Will WTI Crude Oil (WTI) hit (HIGH) $110 in October?",
+   "spread_pct": 2.0,
+   "mid": 0.1,
+   "vol24": 10357,
+   "liquidity": 47139
+  },
+  {
+   "q": "Spread: Wizards (-20.5)",
+   "spread_pct": 2.0,
+   "mid": 0.11,
+   "vol24": 11880,
+   "liquidity": 22100
+  },
+  {
+   "q": "Russia-Ukraine peace talks by December 31, 2026?",
+   "spread_pct": 2.0,
+   "mid": 0.71,
+   "vol24": 51709,
+   "liquidity": 51797
+  },
+  {
+   "q": "Russia-Ukraine peace talks by November 30, 2026?",
+   "spread_pct": 2.0,
+   "mid": 0.63,
+   "vol24": 43064,
+   "liquidity": 51615
+  },
+  {
+   "q": "Valorant: CGN Esports vs Joblife (BO3) - Project Blender Phase",
+   "spread_pct": 2.0,
+   "mid": 0.68,
+   "vol24": 150040,
+   "liquidity": 10702
+  },
+  {
+   "q": "Will Anthropic's valuation hit (HIGH) $2.5T by December 31?",
+   "spread_pct": 2.0,
+   "mid": 0.24,
+   "vol24": 27833,
+   "liquidity": 12010
+  },
+  {
+   "q": "Exact Score: Como 1907 2 - 1 Manchester United FC?",
+   "spread_pct": 2.0,
+   "mid": 0.14,
+   "vol24": 10281,
+   "liquidity": 28536
+  },
+  {
+   "q": "Predict.fun FDV above $400M one day after launch?",
+   "spread_pct": 2.0,
+   "mid": 0.91,
+   "vol24": 11547,
+   "liquidity": 27087
+  },
+  {
+   "q": "Will Ethereum reach $2,600 October 19-25?",
+   "spread_pct": 2.0,
+   "mid": 0.43,
+   "vol24": 14305,
+   "liquidity": 37183
+  }
+ ]
+}
