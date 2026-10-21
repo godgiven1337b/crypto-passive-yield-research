@@ -1,0 +1,281 @@
+{
+  "meta": {
+    "worksheet": "WS-23 prediction-market yield",
+    "date": "2026-10-21",
+    "scope": "пассивная доходность и фарм на предикшн-маркетах: LP-пулы, программы наград, аирдроп-потенциал, корзинный yield",
+    "sources": [
+      "gem.azuro.org (docs: pools, tokenomics, buyback, stAZUR, LP FAQ, liquidity-providers)",
+      "defillama.com/protocol/azuro",
+      "defillama.com/protocol/overtime",
+      "defillama.com/protocol/sx-bet",
+      "docs.overtime.io (what-is-overtime, amm-liquidity-mechanics, governance, llms.txt)",
+      "docs.sx.bet (llms.txt, maker-rewards)",
+      "docs.polymarket.com (liquidity-rewards, maker-rebates, taker-rebates, market-making, polymarket-101, llms.txt)",
+      "polymarket.com/rewards (живые дневные пулы)",
+      "docs.polymarket.com/perps/liquidity-rewards",
+      "cointelegraph.com/tags/polymarket (новости сен-окт 2026)",
+      "iq.wiki/wiki/drift + анонс B.E.T. (X @cindyleowtt, авг-2024)",
+      "локально: data/microstructure/pm_baskets.json (снапшот корзин 2026-10-21), data/ws13_airdrops.json (бенчмарки DeFi-ставок)"
+    ],
+    "benchmarks_defi_oct2026": {
+      "sUSDS": 0.038,
+      "stUSDS": 0.0564,
+      "merkl_range": [0.003, 0.086],
+      "jupiter_lend_usdc_spike": 0.09,
+      "source": "ws13_airdrops.json, снапшот 2026-10-16"
+    }
+  },
+  "azuro": {
+    "model": "пул LP: депозит в пул (разбиты по токену и сети, осн. USDC на Polygon/Arbitrum/Base/OP/Gnosis), пул сидирует все условия; доход = маржа (vig), встроенная в кэфы Data Providers; прибыль пула = разница между seated и возвращёнными токенами",
+    "apy_mechanics": "APY = сумма дневных доходов от резолвленных событий / объём пула на конец дня, аннуализировано; docs: >95% месячных позиций исторически положительны, но недели — почти всегда в минусе (negative skew новых депозитов)",
+    "tvl_usd": 528000,
+    "tvl_change_30d_pct": -62.9,
+    "chain_split": {"polygon_pct": 92},
+    "avg_supply_apy_pct": -204.94,
+    "fees_30d_usd": -523000,
+    "volume_30d_usd": 4000000,
+    "gross_revenue_by_quarter_usd": {
+      "q3_2026": -623000,
+      "q2_2026": 466000,
+      "q1_2026": 277000,
+      "q4_2025": -43000,
+      "q3_2025": -114000,
+      "q2_2025": -512000
+    },
+    "token_azur": {
+      "total_supply": 1000000000,
+      "initial_circulating": 152000000,
+      "price_usd": 0.00063,
+      "mcap_usd": 294000,
+      "fdv_usd": 631000,
+      "ath_usd": 0.24,
+      "drawdown_from_ath_pct": -99.7,
+      "buyback_total_azur": 1372429,
+      "buyback_note": "22 транзакции за 3 дня окт-2024, финансируют стейкинг-награды stAZUR; против вестинга 37.5% ecosystem-эмиссии — выкупы ничтожны",
+      "staking": "stAZUR (non-rebasing, награды кампаниями, напр. 482 007 AZUR / 30 дней с 10.12.2024), pAZUR"
+    },
+    "risks": [
+      "LP = дом: при проигрыше линии (sharp-бетторы) пул платит из тела — 3 из последних 6 кварталов отрицательные",
+      "средний Supply APY -204.94% на снапшоте — пул прямо сейчас убыточен",
+      "AZUR -99.7% от ATH: весь incentiva-механизм (Waves, Score) умер",
+      "7-дневный лок на вывод, negative skew новых депозитов"
+    ],
+    "verdict": "LP-фарм мёртв; токен-аккумуляция = ловля падающего ножа"
+  },
+  "overtime": {
+    "model": "ончейн спортбук (Arbitrum/Base/OP); линии от глобальных odds-провайдеров через Chainlink + ~2% protocol fee сверху; до 2026 внешние LP делили прибыль пулов 50/50 с казной",
+    "oip_265": "июнь-июль 2026: внешние депозиты в спортбук-пулы ЗАКРЫТЫ, казначейство — единственный LP, вся прибыль пула идёт в байбек-и-берн OVER; обратимо голосованием",
+    "safebox": "виг/скию-прибыль → SafeBox → buyback & burn OVER (holders revenue)",
+    "tvl_usd": 1230000,
+    "tvl_change_30d_pct": 24.7,
+    "fees_30d_usd": 326000,
+    "fees_annualized_usd": 2860000,
+    "holders_revenue_30d_usd": 69500,
+    "volume_30d_usd": 8300000,
+    "token_over": {
+      "migration": "THALES → OVER 1:1 (миграция открыта на overtime.io)",
+      "price_usd": 0.20,
+      "mcap_usd": 10870000,
+      "treasury_usd": 16160000,
+      "treasury_stables_usd": 5560000,
+      "staking": "стейкинг-программ нет (DefiLlama Staked: $0); доходность токена = выкупы"
+    },
+    "revenue_yield_on_mcap_pct": 26.3,
+    "risks": [
+      "казна концентрирует весь спортивный риск (delta по каждому рынку, риск-лимиты на сторону)",
+      "объём $8.3M/30д маленький; выкупы $69.5K/30д = 0.6% mcap/мес",
+      "для внешнего LP фарм закрыт OIP-265 — остаётся только покупка OVER как bets на казну"
+    ],
+    "verdict": "LP-фарм закрыт самим протоколом; OVER — квази-акция с buyback, не yield-инструмент"
+  },
+  "sx_bet": {
+    "model": "P2P спорт-биржа (ордербук) на собственном SX Rollup (L2); USDC; makers котируют, takers бэтают",
+    "tvl_usd": 0,
+    "staked_usd": 0,
+    "volume_30d_usd": 55600000,
+    "volume_annualized_usd": 650000000,
+    "volume_cumulative_usd": 1015000000,
+    "open_interest_usd": 651000,
+    "fees_30d_usd": 72000,
+    "fees_model": "0 комиссия на одиночные ставки; с 01.10.2025 — 5% с выигрыша по парлеям",
+    "maker_rewards": {
+      "status": "активна",
+      "paid_in": "USDC (per-market пулы)",
+      "formula": "points = размер ликвидности × (кэф тейкера / глобальный консенсус − 1) × top-offer множитель",
+      "multiplier_top_of_book": 5,
+      "requirements": [
+        "котировка лучше Global Line (оранжевая линия консенсуса)",
+        "mainline only (alt-линии не участвуют)",
+        "мин. стейк ~$100",
+        "ордер живёт ≥10 сек",
+        "двусторонность НЕ требуется"
+      ],
+      "catch": "чтобы зарабатывать награды, мейкер обязан давать беттору кэф ЛУЧШЕ консенсуса — т.е. систематически отдавать эдж; награда должна перекрывать отданный эдж × вероятность филла"
+    },
+    "risks": [
+      "адверсариальный отбор: награды собирают те, кто умеет не филлиться на шатких линиях (sharp-флоу адверсарен)",
+      "объём концентрирован у про-MM; OI всего $651K — ёмкость низкая",
+      "SX-токен: эмиссий/стейкинга нет, фарм как класс закрыт (Staked: $0)"
+    ],
+    "verdict": "биржа жива, но фарм мёртв; maker-rewards — игра для спортивного кванта, не для пассивного капитала"
+  },
+  "polymarket": {
+    "status_oct2026": {
+      "entity": "Polymarket International (polymarket.com, заблокирован для США) + polymarket.us (US, лицензия)",
+      "collateral": "pUSD на Polygon (ERC-20, 1:1 backed USDC, энфорс ончейн); Protocol V2 раскатан 06.10.2026",
+      "raise": "$1B раунд, лид 1789 Capital (Trump Jr.-linked), сен-2026, оценка ~$21B",
+      "token": "НЕ анонсирован; JPMorgan (оборвал банковские связи 14.08.2026) упоминает возможный IPO-трек; CEO публично против '100x токенов' (окт-2026)",
+      "regulatory": [
+        "Нью-Йорк иск о нелегальном гэмблинге (24.09.2026)",
+        "Южная Корея: блокировка + передача юзеров прокурорам (сен-2026)",
+        "CFTC-предложения об отделении предикшн-маркетов от казино-гэмблинга (11.10.2026)",
+        "Baltimore против спортивных PM (13.08.2026)"
+      ]
+    },
+    "tvl_usd": 338670000,
+    "taker_fees": {
+      "launched": "2026-05-28",
+      "by_category": {
+        "sports": {"fee_rate": 0.05, "wv_weight": 1.0},
+        "politics_finance_mentions_tech": {"fee_rate": "0.04-0.05", "wv_weight": 1.3},
+        "economics_culture_weather_other": {"fee_rate": "0.04-0.05", "wv_weight": 1.7},
+        "crypto": {"fee_rate": 0.07, "wv_weight": 2.3},
+        "geopolitics": {"fee_rate": 0, "wv_weight": 0}
+      },
+      "formula": "fee = shares × feeRate × p × (1−p); симметрично вокруг 50¢; maker fee = 0 везде"
+    },
+    "maker_rebates": {
+      "status": "активна",
+      "paid_in": "pUSD, ежедневно (мин. начисление $1)",
+      "mechanics": "rebate = (your_fee_equivalent / total_fee_equivalent) × rebate_pool; конкуренция на рынок",
+      "rebate_share_of_fees": {"sports": 0.15, "crypto": 0.20, "other_categories": 0.25}
+    },
+    "taker_rebates_tiers": {
+      "wV_formula": "wV = size × (1−price) × weight × бонусы; только тейкер-трейды",
+      "tiers": [
+        {"name": "Bronze", "wv": 2000, "rebate_pct": 3, "bonus_usd": 10},
+        {"name": "Silver", "wv": 20000, "rebate_pct": 8, "bonus_usd": 50},
+        {"name": "Gold", "wv": 200000, "rebate_pct": 18, "bonus_usd": 250},
+        {"name": "Platinum", "wv": 1000000, "rebate_pct": 32, "bonus_usd": 1500},
+        {"name": "Diamond", "wv": 4000000, "rebate_pct": 44, "bonus_usd": 7500},
+        {"name": "Obsidian", "wv": 10000000, "rebate_pct": 50, "bonus_usd": 25000}
+      ]
+    },
+    "liquidity_rewards_predictions": {
+      "status": "активна (Daily Rewards)",
+      "formula": "S = ((v−s)/v)² × b; сэмпл каждую минуту (до 1440/день), нормировка дважды (внутри сэмпла и дня)",
+      "two_sided_rule": "mid ∈ [0.10, 0.90]: односторонка учитывается с делителем c = 3.0; mid < 0.10 или > 0.90: только двусторонние котировки",
+      "payout": "ежедневно в pUSD, мин. $1",
+      "live_examples_2026_10_21": [
+        {"market": "MrBeast video views day5", "max_spread_cents": 4, "min_shares": 100, "reward_per_day": "37-56"},
+        {"market": "Houthis capture Taiz", "max_spread_cents": 6, "min_shares": 20, "reward_per_day": 50},
+        {"market": "Russia entering Ukrainian cities (11 исходов)", "max_spread_cents": 6, "min_shares": 20, "reward_per_day": 100}
+      ],
+      "scale_estimate": "видимые пулы $37-100/день на рынок; сумма по всем рынкам — сотни $K/мес (оценка)",
+      "crypto_twap_program": {"total_usd": 1000000, "period": "август-2026 (5-мин $550K, 15-мин $350K, 4-час $100K)", "status": "закрыта"}
+    },
+    "liquidity_rewards_perps": {
+      "budget_usd_per_day": 75000,
+      "budget_usd_per_month": 2250000,
+      "new_listing_bonus_usd": 1000,
+      "formula": "raw = maker_score^0.35 × active_liq_score^0.65 × uptime; harmonic mean bid/ask (односторонка = 0)",
+      "requirements": "≥1% trailing-7d maker объёма рынка; ордера в 20 bps от мида (веса 1.00 / 0.25 / 0.10), кап $100K на тир на сторону; выплата pUSD 12:00-12:00 UTC"
+    },
+    "mm_bot_economics": {
+      "revenue": "спрэд + maker-rebate (15-25% тейкер-фит рынка) + liquidity rewards + (теперь) отрицательная комиссия по сути: maker fee 0",
+      "costs": "инвентарный риск, adverse selection, инфра (colo/low-latency на Polygon), конкуренция с уже работающими ботами",
+      "capacity_estimate": "на топ-20 рынках $50-500K капитала на бота при 1-3¢ спрэде; долгие политические рынки глубже",
+      "verdict": "да, бот-ММ может зарабатывать спрэд+награды+ребейт одновременно; главный риск — adverse selection на быстрых крипто-рынках и регуляторный (блокировки юрисдикций)"
+    }
+  },
+  "drift_bet": {
+    "full_name": "B.E.T. (Blockchain Escrowed Trades)",
+    "launched": "анонс авг-2024, широкий раскат 2025",
+    "model": "бинарные рынки поверх перп-инфраструктуры Drift (Solana): worst-case-liability маржа на аккаунт, двусторонние LP-ордера без доп. маржи, 0% процентов на margin extension до расчёта, USDC-only аккаунты без ликвидаций, коллатерал (>30 токенов) продолжает зарабатывать lending-yield пока стоит в ставке",
+    "resolution": "оракулы Drift (Pyth/Chainlink-стек)",
+    "yield_sources": "спрэд ММ в DLOB + maker-rebates Drift + lending interest на коллатерал (капитал НЕ заморожен — ключевое отличие от Polymarket/Kalshi)",
+    "capacity": "малая vs Polymarket (нишевые рынки); годится как доп. плацдарм на Solana",
+    "risks": ["конкуренция с perp-flow", "тонкие книги", "стейбл-депозитный риск Drift (LEND/иншуренс-фанд)", "эксплойт-оверhang протокола (новостной фон 2026)"]
+  },
+  "airdrop_potential": {
+    "polymarket": {
+      "token_announced": false,
+      "signals": ["$1B раунд при ~$21B (сен-2026) — деньги на баланс, не на токен", "JPMorgan обсуждает IPO-андеррайтинг", "CEO скептичен к '100x токенам'", "Protocol V2 окт-2026 — айтем к листингу/децентрализации", " NY-иск и CFTC-предложения давят на структуру"],
+      "thesis": "объём-фарм = бесплатный опцион: ММ-бот с нейтральным carry фармит историю объёма/ликвидности; если дроп случится — метрики уже есть; если нет — бот всё равно в плюсе от спрэда+наград"
+    },
+    "azuro": {"farm_alive": false, "note": "Azuro Score эйрдоп (3% сапплая, вестинг 6 мес) давно раздал; AZUR -99.7%"},
+    "overtime": {"farm_alive": false, "note": "OvertimeScore закрыт вместе с внешним LP (OIP-265); остался OVER-buyback"},
+    "sx": {"farm_alive": false, "note": "эмиссий нет, стейкинг $0; награды только USDC за котировки"}
+  },
+  "basket_yield_vs_defi": {
+    "method": "edge корзины из pm_baskets.json (снапшот 2026-10-21, mid-котировки) / время до погашения = годовая доходность к погашению; сравнение с локальными DeFi-ставками",
+    "baskets": [
+      {
+        "name": "Repub Presidential Nominee 2028 — YES-корзина (43 исхода)",
+        "cost_sum_yes": 0.7875, "edge_pct": 17.9, "expiry": "лето-2028 (номинация)",
+        "annualized_pct": 10.2, "liquidity_usd": 239484,
+        "risk": "список исходов должен покрывать реального номинанта (Other); UMA-резолюция"
+      },
+      {
+        "name": "Dem Presidential Nominee 2028 — YES-корзина (53 исхода)",
+        "cost_sum_yes": 0.8975, "edge_pct": 5.2, "expiry": "лето-2028",
+        "annualized_pct": 2.5, "liquidity_usd": 158754,
+        "risk": "тот же + ёмкость филла на дне книги"
+      },
+      {
+        "name": "Presidential Election Winner 2028 — YES-корзина (54 исхода)",
+        "cost_sum_yes": 0.924, "edge_pct": 3.4, "expiry": "ноя-2028",
+        "annualized_pct": 1.6, "liquidity_usd": 158153,
+        "risk": "самый длинный локап"
+      },
+      {
+        "name": "Exact Score NO-корзины (футбол, 37 исходов)",
+        "edge_pct": "до +11.8 за матч (Gençlerbirliği и др.)",
+        "expiry": "дни", "annualized_pct": "сотни % (номинально)",
+        "liquidity_usd": "14-20 на исход — реальная ёмкость $200-500 на корзину",
+        "risk": "стейл-квоты, филл по аску съедает эдж, DUST"
+      },
+      {
+        "name": "NBA 2027 Champion / UCL 2027 — NO-корзины",
+        "edge_pct_now": "по текущему снапшоту −1.1 / −0.9 (эдж исчез после входа)",
+        "note": "пользовательский кейс '+3-10%' относился к более ранним снапшотам; эдж в этих корзинах непостоянен и выедается конкуренцией"
+      }
+    ],
+    "defi_compare": [
+      {"instrument": "sUSDS (Sky)", "apy_pct": 3.8, "lock": "нет", "counterparty": "Sky (Maker-наследник)", "capacity": "неограничена"},
+      {"instrument": "stUSDS (стейкинг-тир)", "apy_pct": 5.64, "lock": "мягкий", "counterparty": "Sky", "capacity": "высокая"},
+      {"instrument": "Jupiter Lend USDC", "apy_pct": "~9 (спайк)", "lock": "нет", "counterparty": "Jupiter", "capacity": "средняя"},
+      {"instrument": "Merkl кампании", "apy_pct": "0.3-8.6", "lock": "нет", "counterparty": "меркл-валидатор", "capacity": "низкая-средняя"},
+      {"instrument": "PM-корзина Repub-2028 YES", "apy_pct": 10.2, "lock": "~1.75 года", "counterparty": "Polymarket International (кастодиальный прокси) + UMA", "capacity": "~$50-150K реального филла"},
+      {"instrument": "PM-корзина Dem-2028 YES", "apy_pct": 2.5, "lock": "~1.75 года", "counterparty": "тот же", "capacity": "~$50-150K"},
+      {"instrument": "Polymarket MM-бот (спрэд+награды)", "apy_pct": "15-40 (оценка)", "lock": "нет", "counterparty": "Polymarket + контрагенты книги", "capacity": "$50-500K на бота"}
+    ]
+  },
+  "sleeve_assembly": {
+    "target": "prediction-market yield sleeve внутри портфеля, бенчмарк sUSDS 3.8%",
+    "allocation_example_100k": [
+      {"bucket": "Polymarket MM-бот (спрэд + maker-rebates + liquidity rewards; приоритет спорт/политика с тейкер-фит)", "weight_pct": 40, "expected_apy_pct": "15-40", "risk": "adverse selection, регуляторный, операционный"},
+      {"bucket": "Гарантированные корзины длинного погашения (Repub-2028 YES приоритет)", "weight_pct": 25, "expected_apy_pct": "8-10", "risk": "UMA, кастодиальный, локап"},
+      {"bucket": "Ликвидная база sUSDS/stUSDS (реколбрейсинг, маржа бота)", "weight_pct": 20, "expected_apy_pct": "3.8-5.6", "risk": "минимальный"},
+      {"bucket": "Сателлиты: Drift B.E.T. ММ + SX maker-rewards", "weight_pct": 15, "expected_apy_pct": "10-25", "risk": "протокольный Solana/L2, тонкие книги"}
+    ],
+    "kill_switches": [
+      "pUSD/USDC де-пег или пауза контрактов Polymarket → вывод всего sleeve",
+      "UMA-споры/50-50 резолюции на корзиночных рынках → выход из корзин",
+      "регуляторные: расширение NY-иска, CFTC-запреты на категории, блокировка юрисдикций (прецедент Кореи)",
+      "дневной PnL бота хуже −1% NAV или 3 дня подряд негативный inventory-PnL → стоп",
+      "отмена/урезание liquidity-rewards программ (прецедент: крипто-TWAP $1M закрыта после августа) → пересчёт экономики MM"
+    ],
+    "position_limits": [
+      "макс 5% портфеля на один рынок/корзину",
+      "макс 25% sleeve в кастодиальном Polymarket International суммарно (вкл. корзины)",
+      "точный размер exact-score корзин ≤ $1K суммарно (ёмкость)"
+    ]
+  },
+  "top3_sources": [
+    {"rank": 1, "source": "Polymarket MM: спрэд + maker-rebates (15-25% тейкер-фит) + liquidity rewards", "apy": "15-40% (оценка)", "capacity": "$50-500K на бота", "risk": "adverse selection, кастодиальный, регуляторный"},
+    {"rank": 2, "source": "Гарантированные YES-корзины 2028 (Repub-номинация +17.9% к погашению)", "apy": "8-10% годовых", "capacity": "$50-150K", "risk": "локап 1.75 года, UMA, кастодиальный"},
+    {"rank": 3, "source": "Polymarket perps liquidity rewards ($75K/день, pUSD)", "apy": "зависит от доли рынка; на 1% топ-рынка грубо 10-30%", "capacity": "$100K-1M", "risk": "новый продукт (май-2026), конкуренция pro-MM"}
+  ],
+  "verdict_basket_vs_susds": "Repub-2028 YES-корзина (≈10% годовых) бьёт sUSDS 3.8% с запасом 2.5x, но это плата за 1.75-летний локап и кастодиальный риск Polymarket; Dem-2028 (2.5%) и Winner-2028 (1.6%) годовых — хуже sUSDS, брать только Repub-корзину и только в пределах лимитов; sUSDS остаётся базой для ликвидной части sleeve."
+}

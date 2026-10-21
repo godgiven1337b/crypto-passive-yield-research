@@ -1,0 +1,4024 @@
+{
+ "meta": {
+  "generated": "2026-10-21",
+  "method": "gamma events -> clobTokenIds -> CLOB /books (POST batch) -> эффективные книги (родные ask + комплемент bid противоположного токена); история: data-api /trades (последняя цена по ноге); ёмкость: проход книги с добором пустых ног через split за 1.0",
+  "endpoints": [
+   "gamma-api.polymarket.com/events?slug=",
+   "clob.polymarket.com/books",
+   "clob.polymarket.com/markets/{conditionId}",
+   "data-api.polymarket.com/trades"
+  ],
+  "fee_note": "на всех рынках кроме Israel PM указано taker_base_fee=1000 (maker=1000); расчёт fee/set = Σ 0.10*min(p,1-p); Israel PM: fee=None (0)",
+  "snapshot_book_ts": "2026-10-21T~17:50Z"
+ },
+ "baskets": [
+  {
+   "slug": "democratic-presidential-nominee-2028",
+   "title_ru": "Кандидат от демпартии США 2028",
+   "type": "политика",
+   "n_legs": 53,
+   "endDate": "2028-11-08T04:59:00Z",
+   "days_to_resolution": 749,
+   "sum_bid_yes": 0.857,
+   "sum_mid_yes": 0.8975,
+   "sum_ask_yes": 0.94,
+   "sum_eff_ask_no": 52.136,
+   "yes_basket": {
+    "exec_edge_per_set": 0.06,
+    "exec_edge_pct": 6.383,
+    "edge_after_takerfee": -0.034,
+    "guaranteed": "НЕполная",
+    "other_leg_risk": "ДА",
+    "apy_pct_if_guaranteed": 3.11,
+    "sets_to_avg_cost_1": 31342,
+    "cost_per_set_at_50": 0.94,
+    "cost_per_set_at_500": 0.9415,
+    "fee_per_set": 0.0,
+    "edge_after_fee": 0.06
+   },
+   "no_basket": {
+    "exec_edge_per_set": -0.136,
+    "exec_edge_pct": -0.261,
+    "edge_after_takerfee": -0.2224,
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_breakeven": 0,
+    "cost_per_set_at_50": 52.1361,
+    "fee_per_set": 0.0,
+    "edge_after_fee": -0.136
+   },
+   "taker_fee_per_yes_set": 0.094,
+   "taker_fee_per_no_set": 0.0864,
+   "avg_leg_spread_pct": 0.134,
+   "empty_no_legs": [
+    "Will Tim Walz win the 2028 Democratic presidential nomination?",
+    "Will John Fetterman win the 2028 Democratic presidential nomination?",
+    "Will Liz Cheney win the 2028 Democratic presidential nomination?",
+    "Will George Clooney win the 2028 Democratic presidential nomination?",
+    "Will MrBeast win the 2028 Democratic presidential nomination?",
+    "Will Oprah Winfrey win the 2028 Democratic presidential nomination?",
+    "Will Andrew Yang win the 2028 Democratic presidential nomination?",
+    "Will Beto O’Rourke win the 2028 Democratic presidential nomination?",
+    "Will Kim Kardashian win the 2028 Democratic presidential nomination?",
+    "Will Graham Platner win the 2028 Democratic presidential nomination?",
+    "Will Adam Schiff win the 2028 Democratic presidential nomination?",
+    "Will Alex Padilla win the 2028 Democratic presidential nomination?"
+   ],
+   "vol24_event": 437798,
+   "sigma_yes_history_daily": [
+    {
+     "date": "2026-08-23",
+     "sum_yes_lasttrade": 0.3424,
+     "legs_covered": 27
+    },
+    {
+     "date": "2026-08-24",
+     "sum_yes_lasttrade": 0.3365,
+     "legs_covered": 27
+    },
+    {
+     "date": "2026-08-25",
+     "sum_yes_lasttrade": 0.34,
+     "legs_covered": 27
+    },
+    {
+     "date": "2026-08-26",
+     "sum_yes_lasttrade": 0.34,
+     "legs_covered": 27
+    },
+    {
+     "date": "2026-08-27",
+     "sum_yes_lasttrade": 0.5028,
+     "legs_covered": 28
+    },
+    {
+     "date": "2026-08-28",
+     "sum_yes_lasttrade": 0.5,
+     "legs_covered": 28
+    },
+    {
+     "date": "2026-08-29",
+     "sum_yes_lasttrade": 0.502,
+     "legs_covered": 28
+    },
+    {
+     "date": "2026-08-30",
+     "sum_yes_lasttrade": 0.51,
+     "legs_covered": 28
+    },
+    {
+     "date": "2026-08-31",
+     "sum_yes_lasttrade": 0.509,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-01",
+     "sum_yes_lasttrade": 0.5179,
+     "legs_covered": 31
+    },
+    {
+     "date": "2026-09-02",
+     "sum_yes_lasttrade": 0.533,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-03",
+     "sum_yes_lasttrade": 0.519,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-04",
+     "sum_yes_lasttrade": 0.7184,
+     "legs_covered": 33
+    },
+    {
+     "date": "2026-09-05",
+     "sum_yes_lasttrade": 0.7186,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-06",
+     "sum_yes_lasttrade": 0.721,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-09-07",
+     "sum_yes_lasttrade": 0.7106,
+     "legs_covered": 36
+    },
+    {
+     "date": "2026-09-08",
+     "sum_yes_lasttrade": 0.696,
+     "legs_covered": 36
+    },
+    {
+     "date": "2026-09-09",
+     "sum_yes_lasttrade": 0.7516,
+     "legs_covered": 39
+    },
+    {
+     "date": "2026-09-10",
+     "sum_yes_lasttrade": 0.76,
+     "legs_covered": 39
+    },
+    {
+     "date": "2026-09-11",
+     "sum_yes_lasttrade": 0.778,
+     "legs_covered": 39
+    },
+    {
+     "date": "2026-09-12",
+     "sum_yes_lasttrade": 0.7674,
+     "legs_covered": 39
+    },
+    {
+     "date": "2026-09-13",
+     "sum_yes_lasttrade": 0.7502,
+     "legs_covered": 40
+    },
+    {
+     "date": "2026-09-14",
+     "sum_yes_lasttrade": 0.7501,
+     "legs_covered": 40
+    },
+    {
+     "date": "2026-09-15",
+     "sum_yes_lasttrade": 0.7722,
+     "legs_covered": 40
+    },
+    {
+     "date": "2026-09-16",
+     "sum_yes_lasttrade": 0.7626,
+     "legs_covered": 40
+    },
+    {
+     "date": "2026-09-17",
+     "sum_yes_lasttrade": 0.7639,
+     "legs_covered": 40
+    },
+    {
+     "date": "2026-09-18",
+     "sum_yes_lasttrade": 0.781,
+     "legs_covered": 40
+    },
+    {
+     "date": "2026-09-19",
+     "sum_yes_lasttrade": 0.777,
+     "legs_covered": 40
+    },
+    {
+     "date": "2026-09-20",
+     "sum_yes_lasttrade": 0.78,
+     "legs_covered": 41
+    },
+    {
+     "date": "2026-09-21",
+     "sum_yes_lasttrade": 0.7682,
+     "legs_covered": 44
+    },
+    {
+     "date": "2026-09-22",
+     "sum_yes_lasttrade": 0.7872,
+     "legs_covered": 45
+    },
+    {
+     "date": "2026-09-23",
+     "sum_yes_lasttrade": 0.7698,
+     "legs_covered": 48
+    },
+    {
+     "date": "2026-09-24",
+     "sum_yes_lasttrade": 0.7623,
+     "legs_covered": 51
+    },
+    {
+     "date": "2026-09-25",
+     "sum_yes_lasttrade": 0.9107,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-09-26",
+     "sum_yes_lasttrade": 0.93,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-09-27",
+     "sum_yes_lasttrade": 0.9059,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-09-28",
+     "sum_yes_lasttrade": 0.932,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-09-29",
+     "sum_yes_lasttrade": 0.9471,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-09-30",
+     "sum_yes_lasttrade": 0.9271,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-01",
+     "sum_yes_lasttrade": 0.9066,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-02",
+     "sum_yes_lasttrade": 0.9241,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-03",
+     "sum_yes_lasttrade": 0.921,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-04",
+     "sum_yes_lasttrade": 0.919,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-05",
+     "sum_yes_lasttrade": 0.9344,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-06",
+     "sum_yes_lasttrade": 0.9256,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-07",
+     "sum_yes_lasttrade": 0.9664,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-08",
+     "sum_yes_lasttrade": 0.995,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-09",
+     "sum_yes_lasttrade": 0.9579,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-10",
+     "sum_yes_lasttrade": 0.923,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-11",
+     "sum_yes_lasttrade": 0.9186,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-12",
+     "sum_yes_lasttrade": 0.9249,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-13",
+     "sum_yes_lasttrade": 0.919,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-10-14",
+     "sum_yes_lasttrade": 0.9225,
+     "legs_covered": 53
+    },
+    {
+     "date": "2026-10-15",
+     "sum_yes_lasttrade": 0.917,
+     "legs_covered": 53
+    },
+    {
+     "date": "2026-10-16",
+     "sum_yes_lasttrade": 0.9065,
+     "legs_covered": 53
+    },
+    {
+     "date": "2026-10-17",
+     "sum_yes_lasttrade": 0.91,
+     "legs_covered": 53
+    },
+    {
+     "date": "2026-10-18",
+     "sum_yes_lasttrade": 0.9179,
+     "legs_covered": 53
+    },
+    {
+     "date": "2026-10-19",
+     "sum_yes_lasttrade": 0.9354,
+     "legs_covered": 53
+    },
+    {
+     "date": "2026-10-20",
+     "sum_yes_lasttrade": 0.918,
+     "legs_covered": 53
+    },
+    {
+     "date": "2026-10-21",
+     "sum_yes_lasttrade": 0.9169,
+     "legs_covered": 53
+    }
+   ],
+   "sigma_yes_min_max_last30": {
+    "min": 0.7623,
+    "max": 0.995
+   },
+   "top_legs": [
+    {
+     "q": "Will Alexandria Ocasio-Cortez win the 2028 Democratic presidential nomination?",
+     "mid": 0.166,
+     "yes_ask": 0.167,
+     "no_ask": 0.835
+    },
+    {
+     "q": "Will Gavin Newsom win the 2028 Democratic presidential nomination?",
+     "mid": 0.1635,
+     "yes_ask": 0.164,
+     "no_ask": 0.837
+    },
+    {
+     "q": "Will Jon Ossoff win the 2028 Democratic presidential nomination?",
+     "mid": 0.1335,
+     "yes_ask": 0.14,
+     "no_ask": 0.864
+    },
+    {
+     "q": "Will Kamala Harris win the 2028 Democratic presidential nomination?",
+     "mid": 0.0665,
+     "yes_ask": 0.068,
+     "no_ask": 0.935
+    },
+    {
+     "q": "Will Josh Shapiro win the 2028 Democratic presidential nomination?",
+     "mid": 0.0535,
+     "yes_ask": 0.055,
+     "no_ask": 0.948
+    },
+    {
+     "q": "Will Pete Buttigieg win the 2028 Democratic presidential nomination?",
+     "mid": 0.049,
+     "yes_ask": 0.05,
+     "no_ask": 0.951
+    }
+   ],
+   "vol_total": 1296340558,
+   "liquidity_clob": 75480407,
+   "event_desc": "This market will resolve to “Yes” if the named individual wins and accepts the 2028 nomination of the Democratic Party for U.S. president. Otherwise, this market will resolve to “No”.\n\nThe resolution source for this market will be a consensus of official Democratic Party sources.\n\nAny replacement of the democratic nominee before election day will not change the resolution of the market.",
+   "fee_rate_taker": 0.0,
+   "fee_formula": "fee = size * rate * p*(1-p), takerOnly (gamma feeSchedule); legacy takerBaseFee=1000 не соответствует фактической ставке"
+  },
+  {
+   "slug": "epl-2027-champion-20260701200428749",
+   "title_ru": "АПЛ 2026-27",
+   "type": "спорт",
+   "n_legs": 20,
+   "endDate": "2027-06-15T03:59:00Z",
+   "days_to_resolution": 237,
+   "sum_bid_yes": 0.929,
+   "sum_mid_yes": 0.9535,
+   "sum_ask_yes": 0.978,
+   "sum_eff_ask_no": 19.071,
+   "yes_basket": {
+    "exec_edge_per_set": 0.022,
+    "exec_edge_pct": 2.249,
+    "edge_after_takerfee": -0.0498,
+    "guaranteed": "полная (20 клубов = вся лига)",
+    "other_leg_risk": "нет",
+    "apy_pct_if_guaranteed": 3.46,
+    "sets_to_avg_cost_1": 7307,
+    "cost_per_set_at_50": 0.979,
+    "cost_per_set_at_500": 0.9811,
+    "fee_per_set": 0.0165,
+    "edge_after_fee": 0.0055,
+    "apy_pct_after_fee": 0.86
+   },
+   "no_basket": {
+    "exec_edge_per_set": -0.071,
+    "exec_edge_pct": -0.372,
+    "edge_after_takerfee": -0.1399,
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_breakeven": 0,
+    "cost_per_set_at_50": 19.0717,
+    "fee_per_set": 0.0156,
+    "edge_after_fee": -0.0866
+   },
+   "taker_fee_per_yes_set": 0.0718,
+   "taker_fee_per_no_set": 0.0689,
+   "avg_leg_spread_pct": 0.215,
+   "empty_no_legs": [
+    "Will Crystal Palace win the 2026-27 English Premier League (EPL) Championship?",
+    "Will Fulham win the 2026-27 English Premier League (EPL) Championship?",
+    "Will Nottingham Forest win the 2026-27 English Premier League (EPL) Championship?",
+    "Will Sunderland win the 2026-27 English Premier League (EPL) Championship?",
+    "Will Coventry City win the 2026-27 English Premier League (EPL) Championship?",
+    "Will Ipswich Town win the 2026-27 English Premier League (EPL) Championship?"
+   ],
+   "vol24_event": 39984,
+   "sigma_yes_history_daily": [
+    {
+     "date": "2026-08-23",
+     "sum_yes_lasttrade": 0.11,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-08-24",
+     "sum_yes_lasttrade": 0.114,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-08-25",
+     "sum_yes_lasttrade": 0.093,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-08-26",
+     "sum_yes_lasttrade": 0.1146,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-08-27",
+     "sum_yes_lasttrade": 0.106,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-08-28",
+     "sum_yes_lasttrade": 0.2328,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-08-29",
+     "sum_yes_lasttrade": 0.2432,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-08-30",
+     "sum_yes_lasttrade": 0.2352,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-08-31",
+     "sum_yes_lasttrade": 0.316,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-01",
+     "sum_yes_lasttrade": 0.287,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-02",
+     "sum_yes_lasttrade": 0.2896,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-03",
+     "sum_yes_lasttrade": 0.286,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-04",
+     "sum_yes_lasttrade": 0.2539,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-05",
+     "sum_yes_lasttrade": 0.248,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-06",
+     "sum_yes_lasttrade": 0.2686,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-07",
+     "sum_yes_lasttrade": 0.243,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-08",
+     "sum_yes_lasttrade": 0.22,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-09",
+     "sum_yes_lasttrade": 0.232,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-10",
+     "sum_yes_lasttrade": 0.221,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-11",
+     "sum_yes_lasttrade": 0.2415,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-12",
+     "sum_yes_lasttrade": 0.209,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-13",
+     "sum_yes_lasttrade": 0.181,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-14",
+     "sum_yes_lasttrade": 0.138,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-15",
+     "sum_yes_lasttrade": 0.138,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-16",
+     "sum_yes_lasttrade": 0.138,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-17",
+     "sum_yes_lasttrade": 0.13,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-09-18",
+     "sum_yes_lasttrade": 0.675,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-09-19",
+     "sum_yes_lasttrade": 0.664,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-09-20",
+     "sum_yes_lasttrade": 0.6096,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-09-21",
+     "sum_yes_lasttrade": 0.61,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-09-22",
+     "sum_yes_lasttrade": 0.6075,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-09-23",
+     "sum_yes_lasttrade": 0.631,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-09-24",
+     "sum_yes_lasttrade": 0.622,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-09-25",
+     "sum_yes_lasttrade": 0.6253,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-09-26",
+     "sum_yes_lasttrade": 0.9732,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-09-27",
+     "sum_yes_lasttrade": 0.9586,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-09-28",
+     "sum_yes_lasttrade": 0.986,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-09-29",
+     "sum_yes_lasttrade": 0.9918,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-09-30",
+     "sum_yes_lasttrade": 0.9887,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-01",
+     "sum_yes_lasttrade": 1.0036,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-02",
+     "sum_yes_lasttrade": 0.97,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-03",
+     "sum_yes_lasttrade": 1.0,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-04",
+     "sum_yes_lasttrade": 0.9891,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-05",
+     "sum_yes_lasttrade": 0.99,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-06",
+     "sum_yes_lasttrade": 1.0,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-07",
+     "sum_yes_lasttrade": 0.991,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-08",
+     "sum_yes_lasttrade": 1.006,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-09",
+     "sum_yes_lasttrade": 0.987,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-10",
+     "sum_yes_lasttrade": 0.983,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-11",
+     "sum_yes_lasttrade": 1.0218,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-12",
+     "sum_yes_lasttrade": 0.991,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-13",
+     "sum_yes_lasttrade": 0.99,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-14",
+     "sum_yes_lasttrade": 0.994,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-15",
+     "sum_yes_lasttrade": 0.992,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-16",
+     "sum_yes_lasttrade": 0.957,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-17",
+     "sum_yes_lasttrade": 0.997,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-18",
+     "sum_yes_lasttrade": 1.005,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-19",
+     "sum_yes_lasttrade": 1.0078,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-20",
+     "sum_yes_lasttrade": 0.9982,
+     "legs_covered": 20
+    },
+    {
+     "date": "2026-10-21",
+     "sum_yes_lasttrade": 0.9991,
+     "legs_covered": 20
+    }
+   ],
+   "top_legs": [
+    {
+     "q": "Will Arsenal win the 2026-27 English Premier League (EPL) Championship?",
+     "mid": 0.625,
+     "yes_ask": 0.63,
+     "no_ask": 0.38
+    },
+    {
+     "q": "Will Manchester City win the 2026-27 English Premier League (EPL) Championship?",
+     "mid": 0.135,
+     "yes_ask": 0.14,
+     "no_ask": 0.87
+    },
+    {
+     "q": "Will Chelsea win the 2026-27 English Premier League (EPL) Championship?",
+     "mid": 0.0685,
+     "yes_ask": 0.071,
+     "no_ask": 0.934
+    },
+    {
+     "q": "Will Brighton win the 2026-27 English Premier League (EPL) Championship?",
+     "mid": 0.0575,
+     "yes_ask": 0.06,
+     "no_ask": 0.945
+    },
+    {
+     "q": "Will Liverpool win the 2026-27 English Premier League (EPL) Championship?",
+     "mid": 0.041,
+     "yes_ask": 0.042,
+     "no_ask": 0.96
+    },
+    {
+     "q": "Will Manchester United win the 2026-27 English Premier League (EPL) Championship?",
+     "mid": 0.0075,
+     "yes_ask": 0.008,
+     "no_ask": 0.993
+    }
+   ],
+   "vol_total": 22830924,
+   "liquidity_clob": 10966110,
+   "event_desc": "This market will resolve according to the team that wins the 2026-27 English Premier League (EPL) Championship.\n\nIf at any point it becomes impossible for a listed team to win the 2026-27 English Premier League (EPL) Championship per the rules of English Premier League (EPL) (e.g., they are eliminated in the playoffs), the corresponding market will resolve to \"No\".\n\nIf the 2026-27 English Premier ",
+   "fee_rate_taker": 0.03,
+   "fee_formula": "fee = size * rate * p*(1-p), takerOnly (gamma feeSchedule); legacy takerBaseFee=1000 не соответствует фактической ставке",
+   "sigma_yes_min_max_last30": {
+    "min": 0.6075,
+    "max": 1.0218
+   }
+  },
+  {
+   "slug": "french-presidential-election-first-round-winner",
+   "title_ru": "1-й тур президентских Франции",
+   "type": "политика",
+   "n_legs": 16,
+   "endDate": "2027-04-18T23:59:00Z",
+   "days_to_resolution": 179,
+   "sum_bid_yes": 0.925,
+   "sum_mid_yes": 1.0045,
+   "sum_ask_yes": 1.091,
+   "sum_eff_ask_no": 15.068,
+   "yes_basket": {
+    "exec_edge_per_set": -0.091,
+    "exec_edge_pct": -8.341,
+    "edge_after_takerfee": -0.1281,
+    "guaranteed": "НЕполная",
+    "other_leg_risk": "ДА",
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_1": 0,
+    "cost_per_set_at_50": null,
+    "cost_per_set_at_500": null,
+    "fee_per_set": 0.0,
+    "edge_after_fee": -0.091
+   },
+   "no_basket": {
+    "exec_edge_per_set": -0.068,
+    "exec_edge_pct": -0.451,
+    "edge_after_takerfee": -0.0912,
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_breakeven": 0,
+    "cost_per_set_at_50": 15.068,
+    "fee_per_set": 0.0,
+    "edge_after_fee": -0.068
+   },
+   "taker_fee_per_yes_set": 0.0371,
+   "taker_fee_per_no_set": 0.0232,
+   "avg_leg_spread_pct": 0.994,
+   "empty_no_legs": [
+    "Will François Hollande win the most votes in the first round of the 2027 French presidential election?",
+    "Will Gabriel Attal win the most votes in the first round of the 2027 French presidential election?",
+    "Will Sarah Knafo win the most votes in the first round of the 2027 French presidential election?",
+    "Will Dominique de Villepin win the most votes in the first round of the 2027 French presidential election?",
+    "Will Christine Lagarde win the most votes in the first round of the 2027 French presidential election?",
+    "Will Éric Zemmour win the most votes in the first round of the 2027 French presidential election?",
+    "Will Marine Tondelier win the most votes in the first round of the 2027 French presidential election?"
+   ],
+   "vol24_event": 14719,
+   "sigma_yes_history_daily": [
+    {
+     "date": "2026-08-23",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-24",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-25",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-26",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-27",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-28",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-29",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-30",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-31",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-01",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-02",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-03",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-04",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-05",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-06",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-07",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-08",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-09",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-10",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-11",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-12",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-13",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-14",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-15",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-16",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-17",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-18",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-19",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-20",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-21",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-22",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-23",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-24",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-25",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-26",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-27",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-28",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-29",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-30",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-01",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-02",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-03",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-04",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-05",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-06",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-07",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-08",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-09",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-10",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-11",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-12",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-10-13",
+     "sum_yes_lasttrade": 1.0197,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-14",
+     "sum_yes_lasttrade": 1.0785,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-15",
+     "sum_yes_lasttrade": 1.0797,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-16",
+     "sum_yes_lasttrade": 1.0359,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-17",
+     "sum_yes_lasttrade": 1.0152,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-18",
+     "sum_yes_lasttrade": 1.0112,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-19",
+     "sum_yes_lasttrade": 1.0222,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-20",
+     "sum_yes_lasttrade": 1.0322,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-21",
+     "sum_yes_lasttrade": 1.0312,
+     "legs_covered": 16
+    }
+   ],
+   "top_legs": [
+    {
+     "q": "Will Marine Le Pen win the most votes in the first round of the 2027 French presidential election?",
+     "mid": 0.855,
+     "yes_ask": 0.86,
+     "no_ask": 0.15
+    },
+    {
+     "q": "Will Édouard Philippe win the most votes in the first round of the 2027 French presidential election?",
+     "mid": 0.056,
+     "yes_ask": 0.075,
+     "no_ask": 0.949
+    },
+    {
+     "q": "Will Jean-Luc Mélenchon win the most votes in the first round of the 2027 French presidential election?",
+     "mid": 0.0495,
+     "yes_ask": 0.079,
+     "no_ask": 0.98
+    },
+    {
+     "q": "Will Jordan Bardella win the most votes in the first round of the 2027 French presidential election?",
+     "mid": 0.014,
+     "yes_ask": 0.024,
+     "no_ask": 0.996
+    },
+    {
+     "q": "Will Raphaël Glucksmann win the most votes in the first round of the 2027 French presidential election?",
+     "mid": 0.006,
+     "yes_ask": 0.01,
+     "no_ask": 0.998
+    },
+    {
+     "q": "Will David Lisnard win the most votes in the first round of the 2027 French presidential election?",
+     "mid": 0.0055,
+     "yes_ask": 0.009,
+     "no_ask": 0.998
+    }
+   ],
+   "vol_total": 49152,
+   "liquidity_clob": 461990,
+   "event_desc": "A presidential election is scheduled to take place in France on April 18, 2027.\n\nThis market will resolve according to the listed candidate who receives the most valid votes in the first round of this election.\n\nCandidates will be primarily ranked by order of valid votes won. If two or more candidates are tied for any position, ties will be broken by alphabetical order of the candidates’ listed fu",
+   "fee_rate_taker": 0.0,
+   "fee_formula": "fee = size * rate * p*(1-p), takerOnly (gamma feeSchedule); legacy takerBaseFee=1000 не соответствует фактической ставке",
+   "sigma_yes_min_max_last30": {
+    "min": 1.0112,
+    "max": 1.0797
+   }
+  },
+  {
+   "slug": "nba-2027-champion",
+   "title_ru": "NBA чемпион 2027",
+   "type": "спорт",
+   "n_legs": 30,
+   "endDate": "2027-07-01T03:59:00Z",
+   "days_to_resolution": 253,
+   "sum_bid_yes": 0.988,
+   "sum_mid_yes": 1.0235,
+   "sum_ask_yes": 1.059,
+   "sum_eff_ask_no": 29.01,
+   "yes_basket": {
+    "exec_edge_per_set": -0.059,
+    "exec_edge_pct": -5.571,
+    "edge_after_takerfee": -0.1649,
+    "guaranteed": "полная (30 клубов = все чемпионы)",
+    "other_leg_risk": "нет (расширение лиги только с 2027-28)",
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_1": 0,
+    "cost_per_set_at_50": null,
+    "cost_per_set_at_500": null,
+    "fee_per_set": 0.0,
+    "edge_after_fee": -0.059
+   },
+   "no_basket": {
+    "exec_edge_per_set": -0.01,
+    "exec_edge_pct": -0.034,
+    "edge_after_takerfee": -0.109,
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_breakeven": 0,
+    "cost_per_set_at_50": 29.01,
+    "fee_per_set": 0.0,
+    "edge_after_fee": -0.01
+   },
+   "taker_fee_per_yes_set": 0.1059,
+   "taker_fee_per_no_set": 0.099,
+   "avg_leg_spread_pct": 0.23,
+   "empty_no_legs": [
+    "Will Brooklyn Nets win the 2027 NBA Finals?",
+    "Will Sacramento Kings win the 2027 NBA Finals?"
+   ],
+   "vol24_event": 1262804,
+   "sigma_yes_history_daily": [
+    {
+     "date": "2026-08-23",
+     "sum_yes_lasttrade": 1.0209,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-08-24",
+     "sum_yes_lasttrade": 1.0364,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-08-25",
+     "sum_yes_lasttrade": 1.0279,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-08-26",
+     "sum_yes_lasttrade": 1.031,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-08-27",
+     "sum_yes_lasttrade": 1.045,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-08-28",
+     "sum_yes_lasttrade": 1.0335,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-08-29",
+     "sum_yes_lasttrade": 1.038,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-08-30",
+     "sum_yes_lasttrade": 1.041,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-08-31",
+     "sum_yes_lasttrade": 1.0392,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-09-01",
+     "sum_yes_lasttrade": 1.03,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-02",
+     "sum_yes_lasttrade": 1.029,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-03",
+     "sum_yes_lasttrade": 1.036,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-04",
+     "sum_yes_lasttrade": 1.047,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-05",
+     "sum_yes_lasttrade": 1.029,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-06",
+     "sum_yes_lasttrade": 1.018,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-07",
+     "sum_yes_lasttrade": 1.0391,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-08",
+     "sum_yes_lasttrade": 1.0137,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-09",
+     "sum_yes_lasttrade": 1.034,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-10",
+     "sum_yes_lasttrade": 0.9963,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-11",
+     "sum_yes_lasttrade": 1.0119,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-12",
+     "sum_yes_lasttrade": 1.0019,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-13",
+     "sum_yes_lasttrade": 1.025,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-14",
+     "sum_yes_lasttrade": 1.021,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-15",
+     "sum_yes_lasttrade": 0.9971,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-16",
+     "sum_yes_lasttrade": 1.0252,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-17",
+     "sum_yes_lasttrade": 1.025,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-18",
+     "sum_yes_lasttrade": 1.025,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-19",
+     "sum_yes_lasttrade": 1.0294,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-20",
+     "sum_yes_lasttrade": 1.0064,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-21",
+     "sum_yes_lasttrade": 1.029,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-22",
+     "sum_yes_lasttrade": 1.039,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-23",
+     "sum_yes_lasttrade": 1.032,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-24",
+     "sum_yes_lasttrade": 1.01,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-25",
+     "sum_yes_lasttrade": 0.9993,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-26",
+     "sum_yes_lasttrade": 1.0183,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-27",
+     "sum_yes_lasttrade": 1.0122,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-28",
+     "sum_yes_lasttrade": 1.0044,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-29",
+     "sum_yes_lasttrade": 1.0202,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-30",
+     "sum_yes_lasttrade": 1.0301,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-01",
+     "sum_yes_lasttrade": 1.0235,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-02",
+     "sum_yes_lasttrade": 1.022,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-03",
+     "sum_yes_lasttrade": 1.042,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-04",
+     "sum_yes_lasttrade": 1.037,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-05",
+     "sum_yes_lasttrade": 1.023,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-06",
+     "sum_yes_lasttrade": 1.043,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-07",
+     "sum_yes_lasttrade": 1.0551,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-08",
+     "sum_yes_lasttrade": 1.065,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-09",
+     "sum_yes_lasttrade": 1.0192,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-10",
+     "sum_yes_lasttrade": 1.068,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-11",
+     "sum_yes_lasttrade": 1.0377,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-12",
+     "sum_yes_lasttrade": 1.037,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-13",
+     "sum_yes_lasttrade": 1.037,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-14",
+     "sum_yes_lasttrade": 1.042,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-15",
+     "sum_yes_lasttrade": 1.058,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-16",
+     "sum_yes_lasttrade": 1.0491,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-17",
+     "sum_yes_lasttrade": 1.0415,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-18",
+     "sum_yes_lasttrade": 1.065,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-19",
+     "sum_yes_lasttrade": 1.038,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-20",
+     "sum_yes_lasttrade": 1.0482,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-10-21",
+     "sum_yes_lasttrade": 1.044,
+     "legs_covered": 30
+    }
+   ],
+   "sigma_yes_min_max_last30": {
+    "min": 0.9993,
+    "max": 1.068
+   },
+   "top_legs": [
+    {
+     "q": "Will Oklahoma City Thunder win the 2027 NBA Finals?",
+     "mid": 0.215,
+     "yes_ask": 0.22,
+     "no_ask": 0.79
+    },
+    {
+     "q": "Will San Antonio Spurs win the 2027 NBA Finals?",
+     "mid": 0.195,
+     "yes_ask": 0.2,
+     "no_ask": 0.81
+    },
+    {
+     "q": "Will Philadelphia 76ers win the 2027 NBA Finals?",
+     "mid": 0.1095,
+     "yes_ask": 0.11,
+     "no_ask": 0.891
+    },
+    {
+     "q": "Will New York Knicks win the 2027 NBA Finals?",
+     "mid": 0.075,
+     "yes_ask": 0.08,
+     "no_ask": 0.93
+    },
+    {
+     "q": "Will Boston Celtics win the 2027 NBA Finals?",
+     "mid": 0.065,
+     "yes_ask": 0.07,
+     "no_ask": 0.94
+    },
+    {
+     "q": "Will Toronto Raptors win the 2027 NBA Finals?",
+     "mid": 0.0455,
+     "yes_ask": 0.046,
+     "no_ask": 0.955
+    }
+   ],
+   "vol_total": 28056088,
+   "liquidity_clob": 8404497,
+   "event_desc": "This market will resolve to \"Yes\" if the listed team is determined as the champion of the NBA for the 2026-27 season. Otherwise, it will resolve to \"No\".\n\nIf at any point it becomes impossible for a listed team to be named as the champion of NBA for the 2026-27 season per the rules of NBA (e.g., participant is eliminated), the corresponding market will resolve to \"No\".\n\nIf multiple teams are decla",
+   "fee_rate_taker": 0.0,
+   "fee_formula": "fee = size * rate * p*(1-p), takerOnly (gamma feeSchedule); legacy takerBaseFee=1000 не соответствует фактической ставке"
+  },
+  {
+   "slug": "next-french-presidential-election",
+   "title_ru": "Президент Франции 2027",
+   "type": "политика",
+   "n_legs": 45,
+   "endDate": "2027-04-19T03:59:00Z",
+   "days_to_resolution": 180,
+   "sum_bid_yes": 0.982,
+   "sum_mid_yes": 1.018,
+   "sum_ask_yes": 1.054,
+   "sum_eff_ask_no": 44.018,
+   "yes_basket": {
+    "exec_edge_per_set": -0.054,
+    "exec_edge_pct": -5.123,
+    "edge_after_takerfee": -0.1594,
+    "guaranteed": "НЕполная",
+    "other_leg_risk": "ДА: Other-нога неактивна",
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_1": 0,
+    "cost_per_set_at_50": null,
+    "cost_per_set_at_500": null,
+    "fee_per_set": 0.0,
+    "edge_after_fee": -0.054
+   },
+   "no_basket": {
+    "exec_edge_per_set": -0.018,
+    "exec_edge_pct": -0.041,
+    "edge_after_takerfee": -0.1162,
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_breakeven": 0,
+    "cost_per_set_at_50": 44.018,
+    "fee_per_set": 0.0,
+    "edge_after_fee": -0.018
+   },
+   "taker_fee_per_yes_set": 0.1054,
+   "taker_fee_per_no_set": 0.0982,
+   "avg_leg_spread_pct": 0.078,
+   "empty_no_legs": [
+    "Will Xavier Bertrand win the 2027 French presidential election?",
+    "Will Laurent Wauquiez win the 2027 French presidential election?",
+    "Will François Ruffin win the 2027 French presidential election?",
+    "Will Marine Tondelier win the 2027 French presidential election?",
+    "Will Fabien Roussel win the 2027 French presidential election?",
+    "Will Olivier Faure win the 2027 French presidential election?",
+    "Will Ségolène Royal win the 2027 French presidential election?",
+    "Will François Asselineau win the 2027 French presidential election?",
+    "Will Clémentine Autain win the 2027 French presidential election?",
+    "Will Nicolas Dupont-Aignan win the 2027 French presidential election?",
+    "Will Michel Barnier win the 2027 French presidential election?",
+    "Will Valérie Pécresse win the 2027 French presidential election?",
+    "Will François Bayrou win the 2027 French presidential election?",
+    "Will Élisabeth Borne win the 2027 French presidential election?",
+    "Will Yaël Braun-Pivet win the 2027 French presidential election?",
+    "Will Jean Castex win the 2027 French presidential election?",
+    "Will Gérald Darmanin win the 2027 French presidential election?",
+    "Will Carole Delga win the 2027 French presidential election?",
+    "Will Bernard Cazeneuve win the 2027 French presidential election?",
+    "Will Manuel Bompard win the 2027 French presidential election?",
+    "Will Mathilde Panot win the 2027 French presidential election?",
+    "Will Juan Branco win the 2027 French presidential election?",
+    "Will Clémence Guetté win the 2027 French presidential election?",
+    "Will Karim Bouamrane win the 2027 French presidential election?",
+    "Will Lucie Castets win the 2027 French presidential election?",
+    "Will Yannick Jadot win the 2027 French presidential election?",
+    "Will François Baroin win the 2027 French presidential election?",
+    "Will Marion Maréchal win the 2027 French presidential election?",
+    "Will Anasse Kazib win the 2027 French presidential election?",
+    "Will Sylvain Durif win the 2027 French presidential election?"
+   ],
+   "vol24_event": 454314,
+   "sigma_yes_history_daily": [
+    {
+     "date": "2026-08-23",
+     "sum_yes_lasttrade": 0.082,
+     "legs_covered": 23
+    },
+    {
+     "date": "2026-08-24",
+     "sum_yes_lasttrade": 0.1071,
+     "legs_covered": 24
+    },
+    {
+     "date": "2026-08-25",
+     "sum_yes_lasttrade": 0.091,
+     "legs_covered": 24
+    },
+    {
+     "date": "2026-08-26",
+     "sum_yes_lasttrade": 0.097,
+     "legs_covered": 24
+    },
+    {
+     "date": "2026-08-27",
+     "sum_yes_lasttrade": 0.093,
+     "legs_covered": 24
+    },
+    {
+     "date": "2026-08-28",
+     "sum_yes_lasttrade": 0.118,
+     "legs_covered": 25
+    },
+    {
+     "date": "2026-08-29",
+     "sum_yes_lasttrade": 0.116,
+     "legs_covered": 25
+    },
+    {
+     "date": "2026-08-30",
+     "sum_yes_lasttrade": 0.1072,
+     "legs_covered": 25
+    },
+    {
+     "date": "2026-08-31",
+     "sum_yes_lasttrade": 0.111,
+     "legs_covered": 26
+    },
+    {
+     "date": "2026-09-01",
+     "sum_yes_lasttrade": 0.103,
+     "legs_covered": 27
+    },
+    {
+     "date": "2026-09-02",
+     "sum_yes_lasttrade": 0.112,
+     "legs_covered": 27
+    },
+    {
+     "date": "2026-09-03",
+     "sum_yes_lasttrade": 0.108,
+     "legs_covered": 27
+    },
+    {
+     "date": "2026-09-04",
+     "sum_yes_lasttrade": 0.11,
+     "legs_covered": 27
+    },
+    {
+     "date": "2026-09-05",
+     "sum_yes_lasttrade": 0.143,
+     "legs_covered": 28
+    },
+    {
+     "date": "2026-09-06",
+     "sum_yes_lasttrade": 0.145,
+     "legs_covered": 28
+    },
+    {
+     "date": "2026-09-07",
+     "sum_yes_lasttrade": 0.13,
+     "legs_covered": 28
+    },
+    {
+     "date": "2026-09-08",
+     "sum_yes_lasttrade": 0.127,
+     "legs_covered": 28
+    },
+    {
+     "date": "2026-09-09",
+     "sum_yes_lasttrade": 0.125,
+     "legs_covered": 28
+    },
+    {
+     "date": "2026-09-10",
+     "sum_yes_lasttrade": 0.113,
+     "legs_covered": 28
+    },
+    {
+     "date": "2026-09-11",
+     "sum_yes_lasttrade": 0.1105,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-09-12",
+     "sum_yes_lasttrade": 0.246,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-13",
+     "sum_yes_lasttrade": 0.252,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-14",
+     "sum_yes_lasttrade": 0.2888,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-15",
+     "sum_yes_lasttrade": 0.2879,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-16",
+     "sum_yes_lasttrade": 0.302,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-17",
+     "sum_yes_lasttrade": 0.3213,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-18",
+     "sum_yes_lasttrade": 0.326,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-19",
+     "sum_yes_lasttrade": 0.307,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-20",
+     "sum_yes_lasttrade": 0.308,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-21",
+     "sum_yes_lasttrade": 0.5687,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-09-22",
+     "sum_yes_lasttrade": 0.5512,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-09-23",
+     "sum_yes_lasttrade": 0.538,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-09-24",
+     "sum_yes_lasttrade": 0.5531,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-09-25",
+     "sum_yes_lasttrade": 0.5596,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-09-26",
+     "sum_yes_lasttrade": 0.5698,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-09-27",
+     "sum_yes_lasttrade": 0.5243,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-09-28",
+     "sum_yes_lasttrade": 0.5233,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-09-29",
+     "sum_yes_lasttrade": 0.5234,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-09-30",
+     "sum_yes_lasttrade": 0.5263,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-10-01",
+     "sum_yes_lasttrade": 0.5124,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-10-02",
+     "sum_yes_lasttrade": 0.486,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-10-03",
+     "sum_yes_lasttrade": 0.488,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-10-04",
+     "sum_yes_lasttrade": 0.476,
+     "legs_covered": 38
+    },
+    {
+     "date": "2026-10-05",
+     "sum_yes_lasttrade": 0.4622,
+     "legs_covered": 38
+    },
+    {
+     "date": "2026-10-06",
+     "sum_yes_lasttrade": 0.473,
+     "legs_covered": 38
+    },
+    {
+     "date": "2026-10-07",
+     "sum_yes_lasttrade": 0.585,
+     "legs_covered": 40
+    },
+    {
+     "date": "2026-10-08",
+     "sum_yes_lasttrade": 0.5896,
+     "legs_covered": 40
+    },
+    {
+     "date": "2026-10-09",
+     "sum_yes_lasttrade": 0.6262,
+     "legs_covered": 41
+    },
+    {
+     "date": "2026-10-10",
+     "sum_yes_lasttrade": 1.0224,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-11",
+     "sum_yes_lasttrade": 1.0353,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-12",
+     "sum_yes_lasttrade": 1.022,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-13",
+     "sum_yes_lasttrade": 1.0194,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-14",
+     "sum_yes_lasttrade": 1.018,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-15",
+     "sum_yes_lasttrade": 1.0201,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-16",
+     "sum_yes_lasttrade": 1.0421,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-17",
+     "sum_yes_lasttrade": 1.018,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-18",
+     "sum_yes_lasttrade": 1.0196,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-19",
+     "sum_yes_lasttrade": 1.038,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-20",
+     "sum_yes_lasttrade": 1.031,
+     "legs_covered": 45
+    },
+    {
+     "date": "2026-10-21",
+     "sum_yes_lasttrade": 1.032,
+     "legs_covered": 45
+    }
+   ],
+   "sigma_yes_min_max_last30": {
+    "min": 1.031,
+    "max": 1.032
+   },
+   "top_legs": [
+    {
+     "q": "Will Marine Le Pen win the 2027 French presidential election?",
+     "mid": 0.4625,
+     "yes_ask": 0.463,
+     "no_ask": 0.538
+    },
+    {
+     "q": "Will Édouard Philippe win the 2027 French presidential election?",
+     "mid": 0.185,
+     "yes_ask": 0.19,
+     "no_ask": 0.82
+    },
+    {
+     "q": "Will David Lisnard win the 2027 French presidential election?",
+     "mid": 0.1275,
+     "yes_ask": 0.128,
+     "no_ask": 0.873
+    },
+    {
+     "q": "Will Jean-Luc Mélenchon win the 2027 French presidential election?",
+     "mid": 0.105,
+     "yes_ask": 0.11,
+     "no_ask": 0.9
+    },
+    {
+     "q": "Will Raphaël Glucksmann win the 2027 French presidential election?",
+     "mid": 0.0485,
+     "yes_ask": 0.049,
+     "no_ask": 0.952
+    },
+    {
+     "q": "Will François Hollande win the 2027 French presidential election?",
+     "mid": 0.0205,
+     "yes_ask": 0.022,
+     "no_ask": 0.981
+    }
+   ],
+   "vol_total": 154651209,
+   "liquidity_clob": 20255887,
+   "event_desc": "The next French presidential election is currently expected to be held around April 2027.  This market pertains to the outcome of the next French presidential election, regardless of whether it follows the scheduled end of the current term or is held earlier. \n\nThe President of France is elected via a two-round system; a candidate must secure over 50% of the vote to win outright in the first round",
+   "fee_rate_taker": 0.0,
+   "fee_formula": "fee = size * rate * p*(1-p), takerOnly (gamma feeSchedule); legacy takerBaseFee=1000 не соответствует фактической ставке"
+  },
+  {
+   "slug": "presidential-election-winner-2028",
+   "title_ru": "Победитель выборов США 2028",
+   "type": "политика",
+   "n_legs": 54,
+   "endDate": "2028-11-08T04:59:00Z",
+   "days_to_resolution": 749,
+   "sum_bid_yes": 0.892,
+   "sum_mid_yes": 0.924,
+   "sum_ask_yes": 0.956,
+   "sum_eff_ask_no": 53.108,
+   "yes_basket": {
+    "exec_edge_per_set": 0.044,
+    "exec_edge_pct": 4.603,
+    "edge_after_takerfee": -0.0516,
+    "guaranteed": "НЕполная",
+    "other_leg_risk": "ДА",
+    "apy_pct_if_guaranteed": 2.24,
+    "sets_to_avg_cost_1": 28837,
+    "cost_per_set_at_50": 0.956,
+    "cost_per_set_at_500": 0.9561,
+    "fee_per_set": 0.0,
+    "edge_after_fee": 0.044
+   },
+   "no_basket": {
+    "exec_edge_per_set": -0.108,
+    "exec_edge_pct": -0.203,
+    "edge_after_takerfee": -0.1972,
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_breakeven": 0,
+    "cost_per_set_at_50": 53.1089,
+    "fee_per_set": 0.0,
+    "edge_after_fee": -0.108
+   },
+   "taker_fee_per_yes_set": 0.0956,
+   "taker_fee_per_no_set": 0.0892,
+   "avg_leg_spread_pct": 0.076,
+   "empty_no_legs": [
+    "Will Stephen Smith win the 2028 US Presidential Election?",
+    "Will Nikki Haley win the 2028 US Presidential Election?",
+    "Will Tim Walz win the 2028 US Presidential Election?",
+    "Will Vivek Ramaswamy win the 2028 US Presidential Election?",
+    "Will LeBron James win the 2028 US Presidential Election?",
+    "Will Kim Kardashian win the 2028 US Presidential Election?",
+    "Will Zohran Mamdani win the 2028 US Presidential Election?",
+    "Will Eric Trump win the 2028 US Presidential Election?",
+    "Will Pete Hegseth win the 2028 US Presidential Election?",
+    "Will Jalen Brunson win the 2028 US Presidential Election?",
+    "Will Abigail Spanberger win the 2028 US Presidential Election?",
+    "Will Hakeem Jeffries win the 2028 US Presidential Election?",
+    "Will Elissa Slotkin win the 2028 US Presidential Election?",
+    "Will Adam Schiff win the 2028 US Presidential Election?",
+    "Will Josh Stein win the 2028 US Presidential Election?",
+    "Will Alex Padilla win the 2028 US Presidential Election?",
+    "Will Candace Owens win the 2028 US Presidential Election?",
+    "Will Tim Scott win the 2028 US Presidential Election?",
+    "Will Mike Johnson win the 2028 US Presidential Election?",
+    "Will Doug Burgum win the 2028 US Presidential Election?",
+    "Will Tom Cotton win the 2028 US Presidential Election?",
+    "Will John N. Kennedy win the 2028 US Presidential Election?",
+    "Will Rick Scott win the 2028 US Presidential Election?"
+   ],
+   "vol24_event": 388732,
+   "sigma_yes_history_daily": [
+    {
+     "date": "2026-08-23",
+     "sum_yes_lasttrade": 0.393,
+     "legs_covered": 33
+    },
+    {
+     "date": "2026-08-24",
+     "sum_yes_lasttrade": 0.405,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-08-25",
+     "sum_yes_lasttrade": 0.413,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-08-26",
+     "sum_yes_lasttrade": 0.414,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-08-27",
+     "sum_yes_lasttrade": 0.4135,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-08-28",
+     "sum_yes_lasttrade": 0.4041,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-08-29",
+     "sum_yes_lasttrade": 0.4212,
+     "legs_covered": 36
+    },
+    {
+     "date": "2026-08-30",
+     "sum_yes_lasttrade": 0.426,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-08-31",
+     "sum_yes_lasttrade": 0.431,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-09-01",
+     "sum_yes_lasttrade": 0.4398,
+     "legs_covered": 38
+    },
+    {
+     "date": "2026-09-02",
+     "sum_yes_lasttrade": 0.4437,
+     "legs_covered": 38
+    },
+    {
+     "date": "2026-09-03",
+     "sum_yes_lasttrade": 0.451,
+     "legs_covered": 38
+    },
+    {
+     "date": "2026-09-04",
+     "sum_yes_lasttrade": 0.548,
+     "legs_covered": 41
+    },
+    {
+     "date": "2026-09-05",
+     "sum_yes_lasttrade": 0.6228,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-09-06",
+     "sum_yes_lasttrade": 0.6276,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-09-07",
+     "sum_yes_lasttrade": 0.645,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-09-08",
+     "sum_yes_lasttrade": 0.672,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-09-09",
+     "sum_yes_lasttrade": 0.6669,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-09-10",
+     "sum_yes_lasttrade": 0.6786,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-09-11",
+     "sum_yes_lasttrade": 0.669,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-09-12",
+     "sum_yes_lasttrade": 0.687,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-09-13",
+     "sum_yes_lasttrade": 0.6799,
+     "legs_covered": 44
+    },
+    {
+     "date": "2026-09-14",
+     "sum_yes_lasttrade": 0.7066,
+     "legs_covered": 44
+    },
+    {
+     "date": "2026-09-15",
+     "sum_yes_lasttrade": 0.7123,
+     "legs_covered": 44
+    },
+    {
+     "date": "2026-09-16",
+     "sum_yes_lasttrade": 0.7114,
+     "legs_covered": 45
+    },
+    {
+     "date": "2026-09-17",
+     "sum_yes_lasttrade": 0.7209,
+     "legs_covered": 46
+    },
+    {
+     "date": "2026-09-18",
+     "sum_yes_lasttrade": 0.9404,
+     "legs_covered": 47
+    },
+    {
+     "date": "2026-09-19",
+     "sum_yes_lasttrade": 0.9099,
+     "legs_covered": 48
+    },
+    {
+     "date": "2026-09-20",
+     "sum_yes_lasttrade": 0.893,
+     "legs_covered": 48
+    },
+    {
+     "date": "2026-09-21",
+     "sum_yes_lasttrade": 0.9097,
+     "legs_covered": 48
+    },
+    {
+     "date": "2026-09-22",
+     "sum_yes_lasttrade": 0.8923,
+     "legs_covered": 49
+    },
+    {
+     "date": "2026-09-23",
+     "sum_yes_lasttrade": 0.8954,
+     "legs_covered": 50
+    },
+    {
+     "date": "2026-09-24",
+     "sum_yes_lasttrade": 0.899,
+     "legs_covered": 51
+    },
+    {
+     "date": "2026-09-25",
+     "sum_yes_lasttrade": 0.9146,
+     "legs_covered": 51
+    },
+    {
+     "date": "2026-09-26",
+     "sum_yes_lasttrade": 0.908,
+     "legs_covered": 51
+    },
+    {
+     "date": "2026-09-27",
+     "sum_yes_lasttrade": 0.908,
+     "legs_covered": 51
+    },
+    {
+     "date": "2026-09-28",
+     "sum_yes_lasttrade": 0.9065,
+     "legs_covered": 51
+    },
+    {
+     "date": "2026-09-29",
+     "sum_yes_lasttrade": 0.8963,
+     "legs_covered": 52
+    },
+    {
+     "date": "2026-09-30",
+     "sum_yes_lasttrade": 0.9108,
+     "legs_covered": 53
+    },
+    {
+     "date": "2026-10-01",
+     "sum_yes_lasttrade": 0.9123,
+     "legs_covered": 53
+    },
+    {
+     "date": "2026-10-02",
+     "sum_yes_lasttrade": 0.9227,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-03",
+     "sum_yes_lasttrade": 0.912,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-04",
+     "sum_yes_lasttrade": 0.9173,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-05",
+     "sum_yes_lasttrade": 0.919,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-06",
+     "sum_yes_lasttrade": 0.95,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-07",
+     "sum_yes_lasttrade": 0.921,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-08",
+     "sum_yes_lasttrade": 0.9039,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-09",
+     "sum_yes_lasttrade": 0.9066,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-10",
+     "sum_yes_lasttrade": 0.915,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-11",
+     "sum_yes_lasttrade": 0.916,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-12",
+     "sum_yes_lasttrade": 0.9305,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-13",
+     "sum_yes_lasttrade": 0.9516,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-14",
+     "sum_yes_lasttrade": 0.9453,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-15",
+     "sum_yes_lasttrade": 0.932,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-16",
+     "sum_yes_lasttrade": 0.932,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-17",
+     "sum_yes_lasttrade": 0.929,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-18",
+     "sum_yes_lasttrade": 0.9256,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-19",
+     "sum_yes_lasttrade": 0.93,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-20",
+     "sum_yes_lasttrade": 0.9385,
+     "legs_covered": 54
+    },
+    {
+     "date": "2026-10-21",
+     "sum_yes_lasttrade": 0.936,
+     "legs_covered": 54
+    }
+   ],
+   "sigma_yes_min_max_last30": {
+    "min": 0.8963,
+    "max": 0.9516
+   },
+   "top_legs": [
+    {
+     "q": "Will JD Vance win the 2028 US Presidential Election?",
+     "mid": 0.2005,
+     "yes_ask": 0.201,
+     "no_ask": 0.8
+    },
+    {
+     "q": "Will Alexandria Ocasio-Cortez win the 2028 US Presidential Election?",
+     "mid": 0.1295,
+     "yes_ask": 0.13,
+     "no_ask": 0.871
+    },
+    {
+     "q": "Will Gavin Newsom win the 2028 US Presidential Election?",
+     "mid": 0.094,
+     "yes_ask": 0.095,
+     "no_ask": 0.907
+    },
+    {
+     "q": "Will Jon Ossoff win the 2028 US Presidential Election?",
+     "mid": 0.092,
+     "yes_ask": 0.093,
+     "no_ask": 0.909
+    },
+    {
+     "q": "Will Marco Rubio win the 2028 US Presidential Election?",
+     "mid": 0.0855,
+     "yes_ask": 0.087,
+     "no_ask": 0.916
+    },
+    {
+     "q": "Will Kamala Harris win the 2028 US Presidential Election?",
+     "mid": 0.0425,
+     "yes_ask": 0.043,
+     "no_ask": 0.958
+    }
+   ],
+   "vol_total": 718091078,
+   "liquidity_clob": 60498120,
+   "event_desc": "The 2028 US Presidential Election is scheduled to take place on November 7, 2028.\n\nThis market will resolve to the person who wins the 2028 US Presidential Election. Otherwise, this market will resolve to “No.”\n\nThe resolution source for this market is the Associated Press, Fox News, and NBC. This market will resolve once all three sources call the race for the same candidate. If all three sources",
+   "fee_rate_taker": 0.0,
+   "fee_formula": "fee = size * rate * p*(1-p), takerOnly (gamma feeSchedule); legacy takerBaseFee=1000 не соответствует фактической ставке"
+  },
+  {
+   "slug": "republican-presidential-nominee-2028",
+   "title_ru": "Кандидат от республиканцев 2028",
+   "type": "политика",
+   "n_legs": 43,
+   "endDate": "2028-11-08T04:59:00Z",
+   "days_to_resolution": 749,
+   "sum_bid_yes": 0.764,
+   "sum_mid_yes": 0.7875,
+   "sum_ask_yes": 0.811,
+   "sum_eff_ask_no": 42.236,
+   "yes_basket": {
+    "exec_edge_per_set": 0.189,
+    "exec_edge_pct": 23.305,
+    "edge_after_takerfee": 0.1079,
+    "guaranteed": "НЕполная",
+    "other_leg_risk": "ДА",
+    "apy_pct_if_guaranteed": 11.36,
+    "sets_to_avg_cost_1": 60000,
+    "cost_per_set_at_50": 0.811,
+    "cost_per_set_at_500": 0.811,
+    "fee_per_set": 0.0,
+    "edge_after_fee": 0.189
+   },
+   "no_basket": {
+    "exec_edge_per_set": -0.236,
+    "exec_edge_pct": -0.559,
+    "edge_after_takerfee": -0.3124,
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_breakeven": 0,
+    "cost_per_set_at_50": 42.2365,
+    "fee_per_set": 0.0,
+    "edge_after_fee": -0.236
+   },
+   "taker_fee_per_yes_set": 0.0811,
+   "taker_fee_per_no_set": 0.0764,
+   "avg_leg_spread_pct": 0.086,
+   "empty_no_legs": [
+    "Will Sarah Huckabee Sanders win the 2028 Republican presidential nomination?",
+    "Will Matt Gaetz win the 2028 Republican presidential nomination?",
+    "Will John Thune win the 2028 Republican presidential nomination?",
+    "Will Tom Brady win the 2028 Republican presidential nomination?",
+    "Will Erika Kirk win the 2028 Republican presidential nomination?",
+    "Will Kim Kardashian win the 2028 Republican presidential nomination?",
+    "Will Tim Scott win the 2028 Republican presidential nomination?",
+    "Will Mike Johnson win the 2028 Republican presidential nomination?",
+    "Will Rick Scott win the 2028 Republican presidential nomination?"
+   ],
+   "vol24_event": 197922,
+   "sigma_yes_history_daily": [
+    {
+     "date": "2026-08-23",
+     "sum_yes_lasttrade": 0.062,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-08-24",
+     "sum_yes_lasttrade": 0.07,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-08-25",
+     "sum_yes_lasttrade": 0.066,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-08-26",
+     "sum_yes_lasttrade": 0.083,
+     "legs_covered": 21
+    },
+    {
+     "date": "2026-08-27",
+     "sum_yes_lasttrade": 0.096,
+     "legs_covered": 24
+    },
+    {
+     "date": "2026-08-28",
+     "sum_yes_lasttrade": 0.104,
+     "legs_covered": 26
+    },
+    {
+     "date": "2026-08-29",
+     "sum_yes_lasttrade": 0.099,
+     "legs_covered": 27
+    },
+    {
+     "date": "2026-08-30",
+     "sum_yes_lasttrade": 0.28,
+     "legs_covered": 28
+    },
+    {
+     "date": "2026-08-31",
+     "sum_yes_lasttrade": 0.265,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-09-01",
+     "sum_yes_lasttrade": 0.273,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-02",
+     "sum_yes_lasttrade": 0.294,
+     "legs_covered": 31
+    },
+    {
+     "date": "2026-09-03",
+     "sum_yes_lasttrade": 0.277,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-04",
+     "sum_yes_lasttrade": 0.281,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-05",
+     "sum_yes_lasttrade": 0.2995,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-06",
+     "sum_yes_lasttrade": 0.3,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-07",
+     "sum_yes_lasttrade": 0.2924,
+     "legs_covered": 33
+    },
+    {
+     "date": "2026-09-08",
+     "sum_yes_lasttrade": 0.298,
+     "legs_covered": 33
+    },
+    {
+     "date": "2026-09-09",
+     "sum_yes_lasttrade": 0.3,
+     "legs_covered": 33
+    },
+    {
+     "date": "2026-09-10",
+     "sum_yes_lasttrade": 0.282,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-11",
+     "sum_yes_lasttrade": 0.2722,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-12",
+     "sum_yes_lasttrade": 0.308,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-09-13",
+     "sum_yes_lasttrade": 0.808,
+     "legs_covered": 36
+    },
+    {
+     "date": "2026-09-14",
+     "sum_yes_lasttrade": 0.803,
+     "legs_covered": 37
+    },
+    {
+     "date": "2026-09-15",
+     "sum_yes_lasttrade": 0.813,
+     "legs_covered": 38
+    },
+    {
+     "date": "2026-09-16",
+     "sum_yes_lasttrade": 0.8049,
+     "legs_covered": 38
+    },
+    {
+     "date": "2026-09-17",
+     "sum_yes_lasttrade": 0.8026,
+     "legs_covered": 38
+    },
+    {
+     "date": "2026-09-18",
+     "sum_yes_lasttrade": 0.798,
+     "legs_covered": 38
+    },
+    {
+     "date": "2026-09-19",
+     "sum_yes_lasttrade": 0.796,
+     "legs_covered": 38
+    },
+    {
+     "date": "2026-09-20",
+     "sum_yes_lasttrade": 0.804,
+     "legs_covered": 39
+    },
+    {
+     "date": "2026-09-21",
+     "sum_yes_lasttrade": 0.804,
+     "legs_covered": 39
+    },
+    {
+     "date": "2026-09-22",
+     "sum_yes_lasttrade": 0.826,
+     "legs_covered": 40
+    },
+    {
+     "date": "2026-09-23",
+     "sum_yes_lasttrade": 0.823,
+     "legs_covered": 40
+    },
+    {
+     "date": "2026-09-24",
+     "sum_yes_lasttrade": 0.8513,
+     "legs_covered": 41
+    },
+    {
+     "date": "2026-09-25",
+     "sum_yes_lasttrade": 0.8575,
+     "legs_covered": 41
+    },
+    {
+     "date": "2026-09-26",
+     "sum_yes_lasttrade": 0.855,
+     "legs_covered": 41
+    },
+    {
+     "date": "2026-09-27",
+     "sum_yes_lasttrade": 0.847,
+     "legs_covered": 41
+    },
+    {
+     "date": "2026-09-28",
+     "sum_yes_lasttrade": 0.855,
+     "legs_covered": 41
+    },
+    {
+     "date": "2026-09-29",
+     "sum_yes_lasttrade": 0.844,
+     "legs_covered": 41
+    },
+    {
+     "date": "2026-09-30",
+     "sum_yes_lasttrade": 0.8445,
+     "legs_covered": 41
+    },
+    {
+     "date": "2026-10-01",
+     "sum_yes_lasttrade": 0.845,
+     "legs_covered": 41
+    },
+    {
+     "date": "2026-10-02",
+     "sum_yes_lasttrade": 0.8632,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-03",
+     "sum_yes_lasttrade": 0.8787,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-04",
+     "sum_yes_lasttrade": 0.86,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-05",
+     "sum_yes_lasttrade": 0.857,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-06",
+     "sum_yes_lasttrade": 0.8586,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-07",
+     "sum_yes_lasttrade": 0.85,
+     "legs_covered": 42
+    },
+    {
+     "date": "2026-10-08",
+     "sum_yes_lasttrade": 0.852,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-09",
+     "sum_yes_lasttrade": 0.849,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-10",
+     "sum_yes_lasttrade": 0.8357,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-11",
+     "sum_yes_lasttrade": 0.846,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-12",
+     "sum_yes_lasttrade": 0.843,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-13",
+     "sum_yes_lasttrade": 0.843,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-14",
+     "sum_yes_lasttrade": 0.8417,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-15",
+     "sum_yes_lasttrade": 0.8326,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-16",
+     "sum_yes_lasttrade": 0.834,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-17",
+     "sum_yes_lasttrade": 0.819,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-18",
+     "sum_yes_lasttrade": 0.8147,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-19",
+     "sum_yes_lasttrade": 0.812,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-20",
+     "sum_yes_lasttrade": 0.8011,
+     "legs_covered": 43
+    },
+    {
+     "date": "2026-10-21",
+     "sum_yes_lasttrade": 0.8039,
+     "legs_covered": 43
+    }
+   ],
+   "sigma_yes_min_max_last30": {
+    "min": 0.8011,
+    "max": 0.8787
+   },
+   "top_legs": [
+    {
+     "q": "Will J.D. Vance win the 2028 Republican presidential nomination?",
+     "mid": 0.4375,
+     "yes_ask": 0.438,
+     "no_ask": 0.563
+    },
+    {
+     "q": "Will Marco Rubio win the 2028 Republican presidential nomination?",
+     "mid": 0.1465,
+     "yes_ask": 0.147,
+     "no_ask": 0.854
+    },
+    {
+     "q": "Will Tucker Carlson win the 2028 Republican presidential nomination?",
+     "mid": 0.03,
+     "yes_ask": 0.031,
+     "no_ask": 0.971
+    },
+    {
+     "q": "Will Ron DeSantis win the 2028 Republican presidential nomination?",
+     "mid": 0.027,
+     "yes_ask": 0.028,
+     "no_ask": 0.974
+    },
+    {
+     "q": "Will Ted Cruz win the 2028 Republican presidential nomination?",
+     "mid": 0.0245,
+     "yes_ask": 0.025,
+     "no_ask": 0.976
+    },
+    {
+     "q": "Will Donald Trump win the 2028 Republican presidential nomination?",
+     "mid": 0.0195,
+     "yes_ask": 0.02,
+     "no_ask": 0.981
+    }
+   ],
+   "vol_total": 714046088,
+   "liquidity_clob": 51665367,
+   "event_desc": "This market will resolve to “Yes” if the named individual wins and accepts the 2028 nomination of the Republican Party for U.S. president. Otherwise, this market will resolve to “No”.\n\nThe resolution source for this market will be a consensus of official Republican Party sources.\n\nAny replacement of the Republican nominee before election day will not change the resolution of the market.",
+   "fee_rate_taker": 0.0,
+   "fee_formula": "fee = size * rate * p*(1-p), takerOnly (gamma feeSchedule); legacy takerBaseFee=1000 не соответствует фактической ставке"
+  },
+  {
+   "slug": "uefa-champions-league-2027-champion-20260701202025549",
+   "title_ru": "Лига чемпионов УЕФА 2027",
+   "type": "спорт",
+   "n_legs": 36,
+   "endDate": "2027-06-20T03:59:00Z",
+   "days_to_resolution": 242,
+   "sum_bid_yes": 0.997,
+   "sum_mid_yes": 1.0495,
+   "sum_ask_yes": 1.102,
+   "sum_eff_ask_no": 35.003,
+   "yes_basket": {
+    "exec_edge_per_set": -0.102,
+    "exec_edge_pct": -9.256,
+    "edge_after_takerfee": -0.2122,
+    "guaranteed": "полная (36 участников плей-офф)",
+    "other_leg_risk": "нет",
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_1": 0,
+    "cost_per_set_at_50": null,
+    "cost_per_set_at_500": null,
+    "fee_per_set": 0.0285,
+    "edge_after_fee": -0.1305
+   },
+   "no_basket": {
+    "exec_edge_per_set": -0.003,
+    "exec_edge_pct": -0.009,
+    "edge_after_takerfee": -0.1027,
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_breakeven": 0,
+    "cost_per_set_at_50": 35.0032,
+    "fee_per_set": 0.0259,
+    "edge_after_fee": -0.0289
+   },
+   "taker_fee_per_yes_set": 0.1102,
+   "taker_fee_per_no_set": 0.0997,
+   "avg_leg_spread_pct": 0.269,
+   "empty_no_legs": [
+    "Will Feyenoord win the 2026-27 UEFA Champions League Championship?",
+    "Will Slavia Prague win the 2026-27 UEFA Champions League Championship?",
+    "Will Fenerbahçe win the 2026-27 UEFA Champions League Championship?",
+    "Will Slovan Bratislava win the 2026-27 UEFA Champions League Championship?",
+    "Will AEK Athens win the 2026-27 UEFA Champions League Championship?",
+    "Will LASK win the 2026-27 UEFA Champions League Championship?",
+    "Will Viking win the 2026-27 UEFA Champions League Championship?",
+    "Will Sabah win the 2026-27 UEFA Champions League Championship?"
+   ],
+   "vol24_event": 2257034,
+   "sigma_yes_history_daily": [
+    {
+     "date": "2026-08-23",
+     "sum_yes_lasttrade": 0.757,
+     "legs_covered": 22
+    },
+    {
+     "date": "2026-08-24",
+     "sum_yes_lasttrade": 0.756,
+     "legs_covered": 22
+    },
+    {
+     "date": "2026-08-25",
+     "sum_yes_lasttrade": 0.727,
+     "legs_covered": 22
+    },
+    {
+     "date": "2026-08-26",
+     "sum_yes_lasttrade": 0.771,
+     "legs_covered": 22
+    },
+    {
+     "date": "2026-08-27",
+     "sum_yes_lasttrade": 0.79,
+     "legs_covered": 22
+    },
+    {
+     "date": "2026-08-28",
+     "sum_yes_lasttrade": 0.78,
+     "legs_covered": 27
+    },
+    {
+     "date": "2026-08-29",
+     "sum_yes_lasttrade": 0.761,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-08-30",
+     "sum_yes_lasttrade": 0.795,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-08-31",
+     "sum_yes_lasttrade": 0.787,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-09-01",
+     "sum_yes_lasttrade": 0.74,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-09-02",
+     "sum_yes_lasttrade": 0.76,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-09-03",
+     "sum_yes_lasttrade": 0.751,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-09-04",
+     "sum_yes_lasttrade": 0.821,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-09-05",
+     "sum_yes_lasttrade": 0.757,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-09-06",
+     "sum_yes_lasttrade": 0.835,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-09-07",
+     "sum_yes_lasttrade": 0.7865,
+     "legs_covered": 29
+    },
+    {
+     "date": "2026-09-08",
+     "sum_yes_lasttrade": 0.831,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-09",
+     "sum_yes_lasttrade": 0.806,
+     "legs_covered": 30
+    },
+    {
+     "date": "2026-09-10",
+     "sum_yes_lasttrade": 0.784,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-11",
+     "sum_yes_lasttrade": 0.85,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-12",
+     "sum_yes_lasttrade": 0.8406,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-13",
+     "sum_yes_lasttrade": 0.8543,
+     "legs_covered": 32
+    },
+    {
+     "date": "2026-09-14",
+     "sum_yes_lasttrade": 1.009,
+     "legs_covered": 33
+    },
+    {
+     "date": "2026-09-15",
+     "sum_yes_lasttrade": 1.024,
+     "legs_covered": 33
+    },
+    {
+     "date": "2026-09-16",
+     "sum_yes_lasttrade": 1.012,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-17",
+     "sum_yes_lasttrade": 1.015,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-18",
+     "sum_yes_lasttrade": 1.031,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-19",
+     "sum_yes_lasttrade": 1.02,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-20",
+     "sum_yes_lasttrade": 1.046,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-21",
+     "sum_yes_lasttrade": 1.024,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-22",
+     "sum_yes_lasttrade": 1.039,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-23",
+     "sum_yes_lasttrade": 1.0252,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-24",
+     "sum_yes_lasttrade": 1.032,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-25",
+     "sum_yes_lasttrade": 1.033,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-26",
+     "sum_yes_lasttrade": 1.003,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-27",
+     "sum_yes_lasttrade": 1.02,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-28",
+     "sum_yes_lasttrade": 1.0082,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-29",
+     "sum_yes_lasttrade": 1.017,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-09-30",
+     "sum_yes_lasttrade": 1.03,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-10-01",
+     "sum_yes_lasttrade": 1.027,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-10-02",
+     "sum_yes_lasttrade": 1.0264,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-10-03",
+     "sum_yes_lasttrade": 1.019,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-10-04",
+     "sum_yes_lasttrade": 0.987,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-10-05",
+     "sum_yes_lasttrade": 0.966,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-10-06",
+     "sum_yes_lasttrade": 0.987,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-10-07",
+     "sum_yes_lasttrade": 0.9439,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-10-08",
+     "sum_yes_lasttrade": 0.9859,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-10-09",
+     "sum_yes_lasttrade": 0.998,
+     "legs_covered": 34
+    },
+    {
+     "date": "2026-10-10",
+     "sum_yes_lasttrade": 1.025,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-10-11",
+     "sum_yes_lasttrade": 1.0347,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-10-12",
+     "sum_yes_lasttrade": 1.029,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-10-13",
+     "sum_yes_lasttrade": 1.057,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-10-14",
+     "sum_yes_lasttrade": 1.0493,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-10-15",
+     "sum_yes_lasttrade": 1.058,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-10-16",
+     "sum_yes_lasttrade": 1.0297,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-10-17",
+     "sum_yes_lasttrade": 1.031,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-10-18",
+     "sum_yes_lasttrade": 1.0434,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-10-19",
+     "sum_yes_lasttrade": 1.0549,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-10-20",
+     "sum_yes_lasttrade": 1.028,
+     "legs_covered": 35
+    },
+    {
+     "date": "2026-10-21",
+     "sum_yes_lasttrade": 1.0547,
+     "legs_covered": 35
+    }
+   ],
+   "sigma_yes_min_max_last30": {
+    "min": 0.9439,
+    "max": 1.058
+   },
+   "top_legs": [
+    {
+     "q": "Will Barcelona win the 2026-27 UEFA Champions League Championship?",
+     "mid": 0.225,
+     "yes_ask": 0.23,
+     "no_ask": 0.78
+    },
+    {
+     "q": "Will Paris Saint-Germain win the 2026-27 UEFA Champions League Championship?",
+     "mid": 0.185,
+     "yes_ask": 0.19,
+     "no_ask": 0.82
+    },
+    {
+     "q": "Will Arsenal win the 2026-27 UEFA Champions League Championship?",
+     "mid": 0.135,
+     "yes_ask": 0.14,
+     "no_ask": 0.87
+    },
+    {
+     "q": "Will Bayern Munich win the 2026-27 UEFA Champions League Championship?",
+     "mid": 0.135,
+     "yes_ask": 0.14,
+     "no_ask": 0.87
+    },
+    {
+     "q": "Will Real Madrid win the 2026-27 UEFA Champions League Championship?",
+     "mid": 0.105,
+     "yes_ask": 0.11,
+     "no_ask": 0.9
+    },
+    {
+     "q": "Will Manchester City win the 2026-27 UEFA Champions League Championship?",
+     "mid": 0.075,
+     "yes_ask": 0.08,
+     "no_ask": 0.93
+    }
+   ],
+   "vol_total": 58403481,
+   "liquidity_clob": 10896127,
+   "event_desc": "This market will resolve according to the team that wins the 2026-27 UEFA Champions League Championship.\n\nIf at any point it becomes impossible for a listed team to win the 2026-27 UEFA Champions League Championship per the rules of UEFA Champions League (e.g., they are eliminated in the playoffs), the corresponding market will resolve to \"No\".\n\nIf the 2026-27 UEFA Champions League season is cance",
+   "fee_rate_taker": 0.03,
+   "fee_formula": "fee = size * rate * p*(1-p), takerOnly (gamma feeSchedule); legacy takerBaseFee=1000 не соответствует фактической ставке"
+  },
+  {
+   "slug": "who-will-be-the-next-prime-minister-of-israel-after-the-next-election",
+   "title_ru": "Премьер Израиля (выборы 27.10.2026)",
+   "type": "политика",
+   "n_legs": 19,
+   "endDate": "2026-10-28T03:59:00Z",
+   "days_to_resolution": 7,
+   "sum_bid_yes": 0.962,
+   "sum_mid_yes": 0.982,
+   "sum_ask_yes": 1.012,
+   "sum_eff_ask_no": 18.04,
+   "yes_basket": {
+    "exec_edge_per_set": -0.012,
+    "exec_edge_pct": -1.186,
+    "edge_after_takerfee": -0.012,
+    "guaranteed": "НЕполная",
+    "other_leg_risk": "ДА",
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_1": 0,
+    "cost_per_set_at_50": null,
+    "cost_per_set_at_500": null,
+    "fee_per_set": 0.0,
+    "edge_after_fee": -0.012
+   },
+   "no_basket": {
+    "exec_edge_per_set": -0.04,
+    "exec_edge_pct": -0.222,
+    "edge_after_takerfee": -0.04,
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_breakeven": 0,
+    "cost_per_set_at_50": 18.04,
+    "fee_per_set": 0.0,
+    "edge_after_fee": -0.04
+   },
+   "taker_fee_per_yes_set": 0.0,
+   "taker_fee_per_no_set": 0.0,
+   "avg_leg_spread_pct": 0.211,
+   "empty_no_legs": [
+    "Will Yair Lapid be the next Prime Minister of Israel?",
+    "Will Benny Gantz be the next Prime Minister of Israel?",
+    "Will Yair Golan be the next Prime Minister of Israel?",
+    "Will Yariv Levin be the next Prime Minister of Israel?",
+    "Will Ayelet Shaked be the next Prime Minister of Israel?",
+    "Will Yoaz Hendel be the next Prime Minister of Israel?",
+    "Will Gilad Erdan be the next Prime Minister of Israel?",
+    "Will Ofer Winter be the next Prime Minister of Israel?"
+   ],
+   "vol24_event": 586675,
+   "sigma_yes_history_daily": [
+    {
+     "date": "2026-08-23",
+     "sum_yes_lasttrade": 0.014,
+     "legs_covered": 5
+    },
+    {
+     "date": "2026-08-24",
+     "sum_yes_lasttrade": 0.014,
+     "legs_covered": 6
+    },
+    {
+     "date": "2026-08-25",
+     "sum_yes_lasttrade": 0.015,
+     "legs_covered": 6
+    },
+    {
+     "date": "2026-08-26",
+     "sum_yes_lasttrade": 0.023,
+     "legs_covered": 7
+    },
+    {
+     "date": "2026-08-27",
+     "sum_yes_lasttrade": 0.02,
+     "legs_covered": 7
+    },
+    {
+     "date": "2026-08-28",
+     "sum_yes_lasttrade": 0.046,
+     "legs_covered": 8
+    },
+    {
+     "date": "2026-08-29",
+     "sum_yes_lasttrade": 0.0329,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-08-30",
+     "sum_yes_lasttrade": 0.043,
+     "legs_covered": 10
+    },
+    {
+     "date": "2026-08-31",
+     "sum_yes_lasttrade": 0.0477,
+     "legs_covered": 10
+    },
+    {
+     "date": "2026-09-01",
+     "sum_yes_lasttrade": 0.055,
+     "legs_covered": 11
+    },
+    {
+     "date": "2026-09-02",
+     "sum_yes_lasttrade": 0.037,
+     "legs_covered": 11
+    },
+    {
+     "date": "2026-09-03",
+     "sum_yes_lasttrade": 0.0367,
+     "legs_covered": 11
+    },
+    {
+     "date": "2026-09-04",
+     "sum_yes_lasttrade": 0.04,
+     "legs_covered": 11
+    },
+    {
+     "date": "2026-09-05",
+     "sum_yes_lasttrade": 0.039,
+     "legs_covered": 11
+    },
+    {
+     "date": "2026-09-06",
+     "sum_yes_lasttrade": 0.043,
+     "legs_covered": 11
+    },
+    {
+     "date": "2026-09-07",
+     "sum_yes_lasttrade": 0.034,
+     "legs_covered": 11
+    },
+    {
+     "date": "2026-09-08",
+     "sum_yes_lasttrade": 0.037,
+     "legs_covered": 11
+    },
+    {
+     "date": "2026-09-09",
+     "sum_yes_lasttrade": 0.03,
+     "legs_covered": 12
+    },
+    {
+     "date": "2026-09-10",
+     "sum_yes_lasttrade": 0.04,
+     "legs_covered": 12
+    },
+    {
+     "date": "2026-09-11",
+     "sum_yes_lasttrade": 0.042,
+     "legs_covered": 13
+    },
+    {
+     "date": "2026-09-12",
+     "sum_yes_lasttrade": 0.034,
+     "legs_covered": 13
+    },
+    {
+     "date": "2026-09-13",
+     "sum_yes_lasttrade": 0.038,
+     "legs_covered": 13
+    },
+    {
+     "date": "2026-09-14",
+     "sum_yes_lasttrade": 0.0394,
+     "legs_covered": 13
+    },
+    {
+     "date": "2026-09-15",
+     "sum_yes_lasttrade": 0.041,
+     "legs_covered": 13
+    },
+    {
+     "date": "2026-09-16",
+     "sum_yes_lasttrade": 0.031,
+     "legs_covered": 13
+    },
+    {
+     "date": "2026-09-17",
+     "sum_yes_lasttrade": 0.0314,
+     "legs_covered": 13
+    },
+    {
+     "date": "2026-09-18",
+     "sum_yes_lasttrade": 0.0374,
+     "legs_covered": 13
+    },
+    {
+     "date": "2026-09-19",
+     "sum_yes_lasttrade": 0.039,
+     "legs_covered": 14
+    },
+    {
+     "date": "2026-09-20",
+     "sum_yes_lasttrade": 0.082,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-09-21",
+     "sum_yes_lasttrade": 0.065,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-09-22",
+     "sum_yes_lasttrade": 0.068,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-09-23",
+     "sum_yes_lasttrade": 0.067,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-09-24",
+     "sum_yes_lasttrade": 0.065,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-09-25",
+     "sum_yes_lasttrade": 0.058,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-09-26",
+     "sum_yes_lasttrade": 0.063,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-09-27",
+     "sum_yes_lasttrade": 0.0598,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-09-28",
+     "sum_yes_lasttrade": 0.0593,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-09-29",
+     "sum_yes_lasttrade": 0.061,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-09-30",
+     "sum_yes_lasttrade": 0.054,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-10-01",
+     "sum_yes_lasttrade": 0.057,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-10-02",
+     "sum_yes_lasttrade": 0.051,
+     "legs_covered": 15
+    },
+    {
+     "date": "2026-10-03",
+     "sum_yes_lasttrade": 0.201,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-04",
+     "sum_yes_lasttrade": 0.174,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-05",
+     "sum_yes_lasttrade": 0.1515,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-10-06",
+     "sum_yes_lasttrade": 0.1606,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-10-07",
+     "sum_yes_lasttrade": 0.1388,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-10-08",
+     "sum_yes_lasttrade": 0.1439,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-10-09",
+     "sum_yes_lasttrade": 0.158,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-10-10",
+     "sum_yes_lasttrade": 0.153,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-10-11",
+     "sum_yes_lasttrade": 0.18,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-10-12",
+     "sum_yes_lasttrade": 0.19,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-10-13",
+     "sum_yes_lasttrade": 0.204,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-10-14",
+     "sum_yes_lasttrade": 0.203,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-10-15",
+     "sum_yes_lasttrade": 0.2062,
+     "legs_covered": 17
+    },
+    {
+     "date": "2026-10-16",
+     "sum_yes_lasttrade": 0.686,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-10-17",
+     "sum_yes_lasttrade": 0.6882,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-10-18",
+     "sum_yes_lasttrade": 0.7177,
+     "legs_covered": 18
+    },
+    {
+     "date": "2026-10-19",
+     "sum_yes_lasttrade": 0.9258,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-10-20",
+     "sum_yes_lasttrade": 0.9569,
+     "legs_covered": 19
+    },
+    {
+     "date": "2026-10-21",
+     "sum_yes_lasttrade": 0.9876,
+     "legs_covered": 19
+    }
+   ],
+   "sigma_yes_min_max_last30": {
+    "min": 0.1388,
+    "max": 0.9876
+   },
+   "top_legs": [
+    {
+     "q": "Will Gadi Eizenkot be the next Prime Minister of Israel?",
+     "mid": 0.5255,
+     "yes_ask": 0.526,
+     "no_ask": 0.475
+    },
+    {
+     "q": "Will Benjamin Netanyahu be the next Prime Minister of Israel?",
+     "mid": 0.265,
+     "yes_ask": 0.28,
+     "no_ask": 0.74
+    },
+    {
+     "q": "Will Naftali Bennett be the next Prime Minister of Israel?",
+     "mid": 0.145,
+     "yes_ask": 0.15,
+     "no_ask": 0.86
+    },
+    {
+     "q": "Will Avigdor Lieberman be the next Prime Minister of Israel?",
+     "mid": 0.0255,
+     "yes_ask": 0.026,
+     "no_ask": 0.975
+    },
+    {
+     "q": "Will Moshe Feiglin be the next Prime Minister of Israel?",
+     "mid": 0.0035,
+     "yes_ask": 0.004,
+     "no_ask": 0.997
+    },
+    {
+     "q": "Will Itamar Ben Gvir be the next Prime Minister of Israel?",
+     "mid": 0.0025,
+     "yes_ask": 0.003,
+     "no_ask": 0.999
+    }
+   ],
+   "vol_total": 50114288,
+   "liquidity_clob": 4232393,
+   "event_desc": "Legislative elections are schedule to be held in Israel on October 27, 2026. \n\nThis market will resolve to the next individual who is officially appointed and sworn in as Prime Minister of Israel following the 2026 parliamentary election. If an election is called early, this market will immediately resolve to the individual who is officially appointed and sworn in after that election.\n\nTo count fo",
+   "fee_rate_taker": 0.0,
+   "fee_formula": "fee = size * rate * p*(1-p), takerOnly (gamma feeSchedule); legacy takerBaseFee=1000 не соответствует фактической ставке"
+  },
+  {
+   "slug": "worlds-2026-winner",
+   "title_ru": "LoL Worlds 2026",
+   "type": "киберспорт",
+   "n_legs": 16,
+   "endDate": "2026-11-29T04:59:00Z",
+   "days_to_resolution": 39,
+   "sum_bid_yes": 1.028,
+   "sum_mid_yes": 1.0545,
+   "sum_ask_yes": 1.081,
+   "sum_eff_ask_no": 14.972,
+   "yes_basket": {
+    "exec_edge_per_set": -0.081,
+    "exec_edge_pct": -7.493,
+    "edge_after_takerfee": -0.1891,
+    "guaranteed": "частичная (16 из ~20 команд; NO-корзина от этого только выигрывает)",
+    "other_leg_risk": "для NO-стороны нет",
+    "apy_pct_if_guaranteed": null,
+    "sets_to_avg_cost_1": 0,
+    "cost_per_set_at_50": null,
+    "cost_per_set_at_500": null,
+    "fee_per_set": 0.0433,
+    "edge_after_fee": -0.1243
+   },
+   "no_basket": {
+    "exec_edge_per_set": 0.028,
+    "exec_edge_pct": 0.187,
+    "edge_after_takerfee": -0.0748,
+    "apy_pct_if_guaranteed": 1.75,
+    "sets_to_avg_cost_breakeven": 19268,
+    "cost_per_set_at_50": 14.9722,
+    "fee_per_set": 0.0415,
+    "edge_after_fee": -0.0135
+   },
+   "taker_fee_per_yes_set": 0.1081,
+   "taker_fee_per_no_set": 0.1028,
+   "avg_leg_spread_pct": 0.319,
+   "empty_no_legs": [
+    "Will CTBC Flying Oyster win Worlds 2026?",
+    "Will LOS win Worlds 2026?"
+   ],
+   "vol24_event": 329353,
+   "sigma_yes_history_daily": [
+    {
+     "date": "2026-08-23",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-24",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-25",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-26",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-27",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-28",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-29",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-30",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-08-31",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-01",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-02",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-03",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-04",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-05",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-06",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-07",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-08",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-09",
+     "sum_yes_lasttrade": 0.0,
+     "legs_covered": 0
+    },
+    {
+     "date": "2026-09-10",
+     "sum_yes_lasttrade": 1.27,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-11",
+     "sum_yes_lasttrade": 1.27,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-12",
+     "sum_yes_lasttrade": 1.7,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-13",
+     "sum_yes_lasttrade": 1.7,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-14",
+     "sum_yes_lasttrade": 1.1106,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-15",
+     "sum_yes_lasttrade": 1.2101,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-16",
+     "sum_yes_lasttrade": 1.0534,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-17",
+     "sum_yes_lasttrade": 1.0558,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-18",
+     "sum_yes_lasttrade": 1.0343,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-19",
+     "sum_yes_lasttrade": 1.0156,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-20",
+     "sum_yes_lasttrade": 1.0167,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-21",
+     "sum_yes_lasttrade": 1.1076,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-22",
+     "sum_yes_lasttrade": 1.0713,
+     "legs_covered": 9
+    },
+    {
+     "date": "2026-09-23",
+     "sum_yes_lasttrade": 1.0706,
+     "legs_covered": 14
+    },
+    {
+     "date": "2026-09-24",
+     "sum_yes_lasttrade": 1.021,
+     "legs_covered": 14
+    },
+    {
+     "date": "2026-09-25",
+     "sum_yes_lasttrade": 1.076,
+     "legs_covered": 14
+    },
+    {
+     "date": "2026-09-26",
+     "sum_yes_lasttrade": 1.0118,
+     "legs_covered": 14
+    },
+    {
+     "date": "2026-09-27",
+     "sum_yes_lasttrade": 1.0352,
+     "legs_covered": 14
+    },
+    {
+     "date": "2026-09-28",
+     "sum_yes_lasttrade": 1.052,
+     "legs_covered": 14
+    },
+    {
+     "date": "2026-09-29",
+     "sum_yes_lasttrade": 1.0378,
+     "legs_covered": 14
+    },
+    {
+     "date": "2026-09-30",
+     "sum_yes_lasttrade": 1.027,
+     "legs_covered": 14
+    },
+    {
+     "date": "2026-10-01",
+     "sum_yes_lasttrade": 1.0532,
+     "legs_covered": 14
+    },
+    {
+     "date": "2026-10-02",
+     "sum_yes_lasttrade": 1.08,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-03",
+     "sum_yes_lasttrade": 1.0663,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-04",
+     "sum_yes_lasttrade": 1.024,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-05",
+     "sum_yes_lasttrade": 1.0508,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-06",
+     "sum_yes_lasttrade": 1.0404,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-07",
+     "sum_yes_lasttrade": 1.0721,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-08",
+     "sum_yes_lasttrade": 1.0401,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-09",
+     "sum_yes_lasttrade": 1.027,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-10",
+     "sum_yes_lasttrade": 1.0502,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-11",
+     "sum_yes_lasttrade": 1.0393,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-12",
+     "sum_yes_lasttrade": 1.053,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-13",
+     "sum_yes_lasttrade": 1.0588,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-14",
+     "sum_yes_lasttrade": 1.0787,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-15",
+     "sum_yes_lasttrade": 1.0747,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-16",
+     "sum_yes_lasttrade": 1.056,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-17",
+     "sum_yes_lasttrade": 1.0342,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-18",
+     "sum_yes_lasttrade": 1.0594,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-19",
+     "sum_yes_lasttrade": 1.037,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-20",
+     "sum_yes_lasttrade": 1.0362,
+     "legs_covered": 16
+    },
+    {
+     "date": "2026-10-21",
+     "sum_yes_lasttrade": 1.027,
+     "legs_covered": 16
+    }
+   ],
+   "sigma_yes_min_max_last30": {
+    "min": 1.0118,
+    "max": 1.08
+   },
+   "top_legs": [
+    {
+     "q": "Will Gen.G win Worlds 2026?",
+     "mid": 0.335,
+     "yes_ask": 0.34,
+     "no_ask": 0.67
+    },
+    {
+     "q": "Will Hanwha Life Esports win Worlds 2026?",
+     "mid": 0.185,
+     "yes_ask": 0.19,
+     "no_ask": 0.82
+    },
+    {
+     "q": "Will Bilibili Gaming win Worlds 2026?",
+     "mid": 0.165,
+     "yes_ask": 0.17,
+     "no_ask": 0.84
+    },
+    {
+     "q": "Will T1 win Worlds 2026?",
+     "mid": 0.155,
+     "yes_ask": 0.16,
+     "no_ask": 0.85
+    },
+    {
+     "q": "Will Dplus KIA win Worlds 2026?",
+     "mid": 0.065,
+     "yes_ask": 0.066,
+     "no_ask": 0.936
+    },
+    {
+     "q": "Will Anyone's Legend win Worlds 2026?",
+     "mid": 0.0515,
+     "yes_ask": 0.052,
+     "no_ask": 0.949
+    }
+   ],
+   "vol_total": 2290491,
+   "liquidity_clob": 2368366,
+   "event_desc": "This market will resolve according to the winner of the 2026 League of Legends World Championship (Worlds 2026), currently scheduled for October 15 to November 14, 2026.\n\nIf this tournament is postponed after November 28, 2026, 11:59 PM ET, canceled, or a winner has not been declared within this timeframe, this market will resolve to \"Other\".\n\nIf multiple teams are declared winners, this market wi",
+   "fee_rate_taker": 0.05,
+   "fee_formula": "fee = size * rate * p*(1-p), takerOnly (gamma feeSchedule); legacy takerBaseFee=1000 не соответствует фактической ставке"
+  }
+ ]
+}

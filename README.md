@@ -15,6 +15,7 @@ APY-MAX.md                 — МАКСИМИЗАЦИЯ APY: лупы, нагр�
 OPTIONS.md                 — 📋 СВОДНАЯ ТАБЛИЦА ВСЕХ ВАРИАНТОВ (APY/капитал/риски)
 QUANT-EDGES.md             — МИКРОСТРУКТУРА: Pendle mispricing, undersupplied-пулы, фандинг
 BOT-BLUEPRINT.md           — 🤖 АВТОМАТИЗАЦИЯ: архитектура бота, risk-governor, роадмап
+PREDICTION-MARKETS.md      — 🔮 ПРЕДИКШН-МАРКЕТЫ: FLB/MM-эджи, корзины, Kalshi-арбитраж
 models/live_monitor.py     — живой монитор дислокаций (фандинг/пеги/vol-TVL/PT)
 research/                  — детальные отчёты по воркстримам
   01-stablecoin-lending.md — money markets (Aave, Morpho, Sky, ...)
@@ -27,6 +28,7 @@ research/                  — детальные отчёты по воркст
   08-11 (alpha)            — stUSDS, Solana, Pendle high-yield, carry
   12-15 (apy-max)          — программы наград, поинты/аирдропы, малые протоколы, лупинг
   16-19 (quant)            — DEX-микроструктура, Pendle-бэктест, ликвидации, депеги
+  20-23 (pred. markets)    — корзины/CLOB-верификация, Kalshi, поведенческие эджи, PM-yield
 data/*.json                — машиночитаемые данные (проверены cross-check)
 models/                    — количественные модели (Python, numpy)
   yield_math.py            — APR↔APY, комиссии, газ
@@ -56,6 +58,7 @@ python3 models/alpha_scanner.py      # сканер аномалий доход�
 | Альфа-оверлей | ALPHA.md | ~4.3–4.5% | stUSDS + Solana + carry + reUSD |
 | Максимум | APY-MAX.md | **9.7% гросс / 8.5% E[APY]** | Лупы на дешёвом долге + наградные стеки + поинты-опционы |
 | Квант | QUANT-EDGES.md | **~10–14%** | PT-mispricing (hit 92%), undersupplied LP, фандинг-дислокации |
+| Предикшн | PREDICTION-MARKETS.md | **+15–50% APR на рукаве** | FLB-харвест, MM с rebates, after-whistle |
 
 ## Ключевые выводы (TL;DR)
 

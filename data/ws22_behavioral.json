@@ -1,0 +1,186 @@
+{
+ "worksheet": "WS-22",
+ "topic": "Behavioral and structural edges on prediction markets (Polymarket/Kalshi)",
+ "generated": "2026-10-21",
+ "data_cutoff": "2026-10-21",
+ "platform_context": {
+  "polymarket_total": {"orders_matched": 1270000000, "wallets": 3070000, "volume_usd": 82800000000, "source": "Galaxy Research oct-2026"},
+  "monthly_volume": {"mar_2026": 13700000000, "q1_2026_monthly": 25000000000, "politics_2026_monthly": 2000000000},
+  "bot_share_of_volume_pct": 80,
+  "latency_ladder_ms": {"home": "150+", "retail": "10-100", "vps_same_facility": "1-5", "dublin_to_pm_book": "<1", "ny4": 0.36, "ld4": 0.56},
+  "rate_limits": {"standard_orders_per_sec": 40, "elite_orders_per_sec": 600}
+ },
+ "t1_favorite_longshot_bias": {
+  "core_paper": {
+   "id": "arXiv 2609.12878, Cardozo & Rivero-Wildemauwe, sep-2026",
+   "sample": {"trades": 588000000, "wallets": 2480000, "period": "2022-11-11..2026-03-29", "purchases_usd": 23670000000},
+   "returns_hold_to_resolution_pct": {
+    "equal_market": {"longshot_lt10c": -6.30, "favorite_ge90c": 0.277},
+    "pooled_dollar_weighted": {"longshot_lt10c": -19.3, "favorite_ge90c": 0.83},
+    "equal_parent_event": {"longshot_lt10c": 4.09, "favorite_ge90c": 0.392}
+   },
+   "by_category_pct": {
+    "crypto": {"longshot_equal": -14.84, "longshot_pooled": -12.63, "favorite_equal": 0.64, "favorite_pooled": 0.54},
+    "politics": {"longshot_equal": -16.34, "longshot_pooled": -46.15, "favorite_equal": 1.04, "favorite_pooled": 1.42},
+    "finance": {"longshot_equal": -2.62, "longshot_pooled": -72.40, "favorite_equal": 0.09, "favorite_pooled": 1.83},
+    "sports": {"longshot_equal": 2.43, "longshot_pooled": 18.11, "favorite_equal": -0.23, "favorite_pooled": 0.14, "note": "INVERSE - no FLB"},
+    "weather": {"longshot_equal": -25.15, "longshot_pooled": 24.74, "note": "sign flips by weighting"},
+    "culture": {"longshot_equal": -26.49, "longshot_pooled": -18.78},
+    "tech": {"longshot_equal": -20.68, "longshot_pooled": -18.91}
+   },
+   "structure": {"longshot_share_purchases_pct": 18.0, "longshot_share_dollars_pct": 1.2, "favorite_share_purchases_pct": 10.5, "favorite_share_dollars_pct": 43.0, "max_loss_zone_price": "0.20-0.25", "max_gain_zone_price": "~0.60"},
+   "holdings_unrealized": {"longshot_cost_usd": 99700000, "longshot_value_usd": 46600000, "favorite_cost_usd": 5778500000, "favorite_value_usd": 5818800000},
+   "adverse_selection": {"recurrent_favorite_buyer_return_pct": 0.25, "occasional_pct": 0.88}
+  },
+  "counter_evidence": {
+   "reichenbach_walther_2025": {"id": "SSRN 5910522", "sample_trades": 124000000, "finding": "no general longshot bias; yes/default overtrading; well calibrated"},
+   "sports_thesis": {"id": "Link & Hommola via Vernimmen", "sample": 4363, "sports": ["NBA","NHL","NCAA","EPL","LaLiga","Bundesliga","SerieA"], "period": "2025-08..2026-04", "finding": "inverse band-conditional bias: underpricing below 0.90", "decile_edge": {"0.00_0.10": 0.017, "0.40_0.50_max": 0.033, "0.80_0.90": 0.010, "0.90_1.00": -0.002}, "mean_edge": 0.020, "peak": 0.042, "soccer_longshot_coinflip_typical": 0.055, "laliga_peak_coinflip": 0.076, "seriea_longshot": 0.064, "caveat": "weakens after Feb-2026 structural break"},
+   "time_varying_weather": {"id": "arXiv 2610.13593 oct-2026", "sample": {"events": 2189, "contracts": 21697, "taker_trades": 8544732, "period": "2025-12-05..2026-07-31"}, "longshot_overpricing_30_48h": -0.009, "favorite_overpricing_final_12h_bias_at_6h": -0.10, "bin_70_90_at_6h_pp": -11.2, "buy_no_favorites_1_12h": {"trades": 184, "notional_usd": 1840, "no_win_rate_pct": 20.7, "post_fee_roi_pct": 50.71, "pnl_usd": 933, "per_trade_usd": 5.07, "ci95": [1.76, 102.98]}, "buy_no_longshots_30_48h": {"trades": 11924, "win_rate_pct": 97.8, "post_fee_roi_pct": -0.23}, "caveat": "no depth/slippage modeled"},
+   "kalshi_reverse_flb": {"weather": "tick-size mechanism: 1c shade at 2c = 50% markup; vig migrates to mid-rungs, tails near-fair (OddsShopper aug-2026)", "unemployment": "SSRN 7110758, 287 contracts, reverse FLB"}
+  },
+  "strategy_estimate": {
+   "rule": "buy >=90c / NO on <10c, categories Politics+Finance+Crypto only (exclude Sports)",
+   "per_cycle_pct": [0.3, 0.8],
+   "cycle_days": [1, 14],
+   "annualized_gross_pct_estimate": [15, 50],
+   "fees": "taker 0.04-0.05 finance/politics; maker 0",
+   "confidence": "medium - category filter + weighting scheme critical"
+  },
+  "verdict": "REAL but category-conditional; core bot module"
+ },
+ "t2_resolution_source_macro": {
+  "market_volumes": {
+   "fed_dec_2025_usd": 393900000,
+   "fed_sep_usd": 220600000,
+   "fed_jul_2026_usd": 144000000,
+   "fed_oct_2026_usd": 52000000,
+   "fed_oct_2026_nochange_sub_usd": 50800000,
+   "fed_oct_2026_daily_quiet_usd_estimate": [1500000, 2500000],
+   "derived_markets": {"dissent_oct_usd": 23100, "oct_jan_bundle_usd": 44100},
+   "fomc_date_next": "2026-10-28"
+  },
+  "latency_observations": {
+   "core_cpi_beat_repricing": "62 points in 0.65s; hike odds 20%->48.5%",
+   "top_bots": "sub-50ms WS; 1-5ms infra leaders",
+   "news_cpu_spike_pct": "300-500"
+  },
+  "realistic_capture": {
+   "release_race": "lost for solo: sub-second window, first 1-5 bots take it; ceiling $100-1500/event on $10-50K size, 15-20 events/yr",
+   "pre_positioning_vs_fedwatch": "divergence 2-5pp on quiet markets, hours-days horizon, limit orders",
+   "derived_slow_markets": "dissents/bundles reprice in minutes but liquidity <$50K",
+   "crypto_updown": "67% of purchases but 5-min manipulated (see t5); own WS-16 check: DEX within 2.6bp of Binance"
+  },
+  "verdict": "not a core edge for solo bot; use as pre-positioning module"
+ },
+ "t3_late_market_convergence": {
+  "resolution_time_study": {
+   "source": "Polysyncer, 18274 markets, 2025-05..2026-05",
+   "median_min": 41, "p25_min": 14, "p75": "2h12m", "p90": "6h24m", "p95": "14h8m", "p99": "4d5h", "p999": "11d",
+   "by_category": {"nba_median_min": 22, "soccer_median_min": 28, "other_sports_median_min": 34, "crypto_price_median_min": 38, "earnings_median_min": 64, "politics_race_median": "2h48m", "politics_policy_median": "4h22m", "geopolitics_median": "5h16m", "culture_median_min": 22},
+   "dispute_rate_pct": {"overall": 1.0, "nba": 0.2, "soccer": 0.3, "crypto": 0.6, "earnings": 0.8, "politics_race": 1.6, "politics_policy": 3.4, "geopolitics": 4.8},
+   "trend": "Q3-25 52m/1.4% -> Q2-26 37m/0.7%",
+   "uma_liveness_hours": 2,
+   "happy_path_pct": 99,
+   "dispute_added_median_hours": 49,
+   "worst_outlier": "27d14h geopolitics ceasefire-definition dispute",
+   "capital_recycling_factor_sports_vs_policy": 8.7
+  },
+  "late_hours_pricing": {
+   "favorites_075_095_overpriced_final_1_12h": true,
+   "bias_at_6h": -0.10,
+   "profitable_side": "cheap NO on favorite, +50.71% ROI post-fee (184 trades, $1840 notional)",
+   "naive_buy_95c_late": "negative edge in weather sample; folklore theta-harvest example 5.2%/72h (=630% APR nominal) bears resolution risk",
+   "hold_to_resolution_ge90c_pooled_pct": 0.83
+  },
+  "after_whistle_module": {
+   "cycle": "sport result known -> buy 95-99c -> resolution 22-38m median",
+   "per_cycle_net_pct_estimate": [0.5, 2.0],
+   "capacity": "thin books: min leg liquidity $600-1100 (own pm_baskets.json weather sample)",
+   "risks": ["dispute tail 0.2-0.4% sports", "43% of disputes = ambiguous wording", "proposer competition shrinking medians"]
+  },
+  "verdict": "yield-module for bot with dispute filter; late-NO-on-favorite = high-ROI signal with micro capacity"
+ },
+ "t4_smart_money_copy": {
+  "profit_distribution": {
+   "losers_share_pct": 70,
+   "addresses_1m_plus": 668,
+   "addresses_1m_plus_share_of_realized_gains_pct": 71,
+   "consistently_5k_month_pct": 0.015,
+   "alt_estimates": {"over_1k_month_pct": 1.25, "over_5k_month_addresses": 6600},
+   "yale_2026": "3% of traders capture 27% of all profits",
+   "top20_profit_range_usd_early_2026": [739000, 4300000]
+  },
+  "copy_economics": {
+   "median_modeled_edge_30d_pct": 1.39,
+   "median_modeled_edge_alltime_pct": 2.07,
+   "median_copy_cost_pct": 4,
+   "conclusion": "copying median top = -EV",
+   "high_volume_archetype_win_rate_pct": 69
+  },
+  "mechanics": {
+   "clob_matching": "off-chain at operator: no public order mempool",
+   "detection": "on-chain fill events + WS market channel deltas; realistic copy lag 1-5s+",
+   "front_own_tx": "not applicable to victim orders (off-chain); whale resting limit orders visible in book -> queue competition/pegging possible",
+   "tools": ["polymarketanalytics.com", "polyscalping.org (3.26M wallets)", "polycopy.app (500K+)", "polyfollow.com", "arkham", "laikalabs.ai"],
+   "copyable_sweet_spot": "3-15 trades/week wallets"
+  },
+  "verdict": "blind copy = -EV; use smart-flow as signal/filter only"
+ },
+ "t5_uma_risks": {
+  "mechanism": {"proposer_bond_usdc": 750, "liveness_hours": 2, "escalations_max": 2, "uma_vote_share_of_contracts_pct": 0.2},
+  "incidents": [
+   {"case": "Ukraine minerals deal", "date": "2025-03", "what": "5M UMA across 3 accounts = 25% votes, false YES on no-deal", "paid_out_wrong_usd": 7000000},
+   {"case": "Strategy sold BTC by May 31", "date": "2025-05/06", "what": "disputed twice, DVM token vote, $60M at stake", "paid_out_wrong_usd": null},
+   {"case": "5-min BTC up/down settlement manipulation", "date": "2025-2026", "what": "spot pushed at settlement; 821 manipulators ~$8.2M profit mostly from retail; 15-min contracts clean (arXiv 2606.31675)", "profit_usd": 8200000},
+   {"case": "suspicious fast-resolving markets", "date": "2026", "what": "Bloomberg flagged $200M suspicious trades", "usd": 200000000}
+  ],
+  "uma_power_concentration": {"wallets_half_voting_power": 9, "one_wallet_dispute_record": "80/80 won"},
+  "dispute_taxonomy_pct": {"ambiguous_wording": 43, "source_conflicts": 22, "late_reversals": 14, "edge_case_timing": 11, "bad_faith": 6},
+  "checklist_before_entry": ["numeric outcome + single source + timezone", "no announce/intend/clarify wording", "leg liquidity >= $5K", "category != geopolitics", "not 5-min crypto", "volume > $1M (disputes 0.4% vs 1.8% <$10K)"],
+  "risk_categories": {"low": "sports 0.2-0.4%, crypto-price 0.6% (5min excluded), earnings 0.8%", "medium": "politics races 1.6%", "high": "policy 3.4%, geopolitics 4.8%"},
+  "verdict": "operational risk module, mandatory filters for all strategies"
+ },
+ "t6_market_making": {
+  "liquidity_rewards": {
+   "docs_checked": "2026-10-21",
+   "order_score": "S = ((v - s)/v)^2 * b",
+   "sampling": "1/min, 1440/day, payout daily midnight UTC, min $1",
+   "two_sided_boost_c": 3.0,
+   "extremes_rule": "mid <0.10 or >0.90 requires double-sided quoting",
+   "example_campaign": {"crypto_twap_aug_2026_usd": 1000000, "split": {"5min": 550000, "15min": 350000, "4h": 100000}, "status": "ended"}
+  },
+  "maker_rebates": {
+   "crypto_pct": 20, "sports_pct": 15, "finance_politics_etc_pct": 25, "geopolitics": 0,
+   "taker_fee_rates": {"crypto": 0.07, "sports": 0.05, "finance_politics": "0.04-0.05"},
+   "formula": "fee_equivalent = C * feeRate * p * (1-p); rebate = share of per-market pool; daily pUSD; min $1; maker fee 0; 0-fee markets excluded",
+   "change_clause": "percentages at Polymarket sole discretion"
+  },
+  "economics": {
+   "solo_postmortem_peak_daily_usdc": [200, 300],
+   "dominant_player": "Wintermute LP on Polymarket+Kalshi since May-2026 (firm $3.5T annual volume); bots ~80% of platform volume",
+   "niche": "long-tail rewarded markets (earnings/weather/minor sports), pools $500-5000/mo per market",
+   "niche_estimate_daily_usdc": [50, 300],
+   "risks": ["inventory on binary news", "adverse selection at mid (quadratic score)", "0-fee holidays kill rebates", "disputes freeze inventory"]
+  },
+  "verdict": "viable fully-automatable second engine; long-tail only; est 10-30% APR on capital"
+ },
+ "top3_edges": [
+  {"rank": 1, "name": "FLB harvest: buy NO on longshots / tokens >=90c in Politics+Finance+Crypto", "evidence": "longshots <10c pooled -19.3c/$; favorites >=90c pooled +0.83c/$; Finance favorites +1.83%, Politics +1.42% pooled (588M trades)", "est_return": "+0.3-0.8%/cycle (1-14d) -> 15-50% APR gross with rotation", "automation": "trivial: scanner + CLOB API + category/price filters", "capacity": "high (43% of dollars = $9.66B trade >=90c)"},
+  {"rank": 2, "name": "Market making on rewarded long-tail markets (rewards + 15-25% rebates)", "evidence": "rebate pools funded by taker fees; quadratic midpoint rewards; solo postmortem 200-300 USDC/day peak", "est_return": "$50-300/day on $50-100K inventory; 10-30% APR", "automation": "full but operationally heavy (inventory mgmt)", "capacity": "medium; avoid Wintermute-dominated top markets"},
+  {"rank": 3, "name": "Late cheap NO on overpriced favorites (final 1-12h) + after-whistle 95-99c yield module", "evidence": "favorites 0.75-0.95 overpriced ~10pp at 6h; NO +50.7% ROI post-fee (small sample); sport resolution median 22-28m", "est_return": "+50% ROI per trade signal (micro capacity); after-whistle 0.5-2%/cycle", "automation": "easy: end-date window + price-band filter + dispute checklist", "capacity": "micro for late-NO; medium for after-whistle"}
+ ],
+ "sources_key": {
+  "flb_core": "https://arxiv.org/html/2609.12878v1",
+  "flb_time_varying": "https://arxiv.org/html/2610.13593v1",
+  "reichenbach_2025": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5910522",
+  "sports_thesis_pdf": "https://www.vernimmen.net/ftp/where_crowds_get_it_wrong__probability_band_mispricing_on_polymarket.pdf",
+  "resolution_times": "https://www.polysyncer.com/blog/polymarket-resolution-time-2026",
+  "uma_case_7m": "https://orochi.network/blog/oracle-manipulation-in-polymarket-2025",
+  "settlement_manipulation": "https://arxiv.org/abs/2606.31675",
+  "uma_whales": "https://bitquery.io/investigations/who-decides-polymarket-disputes",
+  "liq_rewards_docs": "https://docs.polymarket.com/programs/liquidity-rewards",
+  "maker_rebates_docs": "https://docs.polymarket.com/programs/maker-rebates",
+  "fed_oct_market": "https://polymarket.com/event/fed-decision-in-october-20260617190323537",
+  "latency": "https://www.quantvps.com/blog/how-latency-impacts-polymarket-trading-performance"
+ }
+}
