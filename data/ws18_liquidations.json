@@ -1,0 +1,261 @@
+{
+  "worksheet": "WS-18",
+  "topic": "Liquidation economics and bad-debt opportunities in DeFi (legal protocol mechanics)",
+  "generated": "2026-10-21",
+  "data_cutoff": "2026-10-21",
+  "market_context": {
+    "btc_usd": 82700,
+    "eth_usd": 2414,
+    "eth_gas_gwei": 0.11,
+    "phase": "post-bear recovery: Oct-2025 peak (BTC ATH 126,080), $19B cascade 2025-10-10/11, bottom Jun-Jul 2026 (BTC ~58K), now -34% from ATH",
+    "internal_crosschecks": ["WS-1 (Aave v3/v4 TVL, KelpDAO bad debt)", "WS-7 (cascade, depegs, hack registry)", "WS-9 (Jupiter Lend params)", "WS-15 (Kamino penalty, DeFi Saver fees)"]
+  },
+  "aave": {
+    "v3_mechanics": {
+      "trigger": "HF < 1.0",
+      "close_factor": {"default_pct": 50, "at_hf_below_0.95_pct": 100, "v33_note": "whole-position close factor (not per reserve); dust <~$1,000 -> 100%, leftover <$500 -> revert forces cleanup", "unverified_claims": ["2% close factor for HF 0.95-1.0 (secondary articles only)"]},
+      "liquidation_bonus_pct_current_eth_core": {"WETH": 5.0, "WBTC": 5.0, "wstETH": 6.0, "weETH": 7.0, "AAVE": 7.5, "LINK": 7.0, "USDC": 4.5, "USDT": 4.5, "correlated_emode": 1.0, "average_realized_all_time": 5.2, "stress": ">10"},
+      "liquidation_protocol_fee_lpf": {"default_pct_of_bonus": 10, "USDC_DAI_pct": 20, "proposal_aug_2026": "raise WBTC/WETH/wstETH to 20%", "aave_total_take_post_oct2025_bps_per_liquidated_dollar": 173},
+      "flash_loans": {"premium_pct": 0.05, "usage": "flash-borrow debt -> repay -> seize collateral with bonus -> swap -> repay; bots batch multiple liquidations, scan ~19,000 positions per price update"},
+      "svr": {"live": "2025-03-28 on Ethereum", "9mo_results": {"volume_usd": 675000000, "events": 3900, "recaptured_usd": 16000000, "recapture_rate_non_toxic_mev_pct": 73, "split": "65% Aave DAO / 35% Chainlink"}, "note": "since mid-Oct-2025 SVR auction reaches nearly all liquidated value; liquidation backruns sold via private OFA (MEV-Share/Titan/Atlas)"}
+    },
+    "v4_horizont": {
+      "public_testnet": "2025-11-19",
+      "mainnet_ethereum": "2026-03-30",
+      "avalanche": "2026-07-15",
+      "tvl_aug_2026_usd": {"v4": 660000000, "v3": 16800000000},
+      "engine": {
+        "close_factor": "no fixed cap: max repay = min(debt, debtToCover, debtToTarget) restoring spoke target HF (Main 1.24, Lido 1.0137, Ethena Correlated 1.0277); 100% at bad-debt threshold 1/(1+LB)",
+        "dynamic_bonus": "dutch-style: ramps from small at HF~1.0 to maxLiquidationBonus at healthFactorForMaxBonus (0.90 volatile / 0.99 correlated)",
+        "max_liquidation_bonus_pct_at_launch": {"ETH": 5.55, "wstETH": 6.66, "weETH": 7.77, "WBTC": 5.55, "AAVE": 8.33, "USDC": 5.0, "USDT": 5.0, "correlated_spokes": "1.0-3.0"},
+        "mapping": "v4 max LB = 1.11x v3 bonus, liquidationBonusFactor 0.9",
+        "dust_rule": "remaining debt <$1,000 -> must liquidate in full",
+        "flash_loans": "disabled at launch (planned 5 bps)",
+        "oracles": "Chainlink SVR + CAPO (LST/stables) + Pendle discount oracles (PT)",
+        "risk_note_chaos_labs": "dynamic design can prolong unprofitability of liquidations just below HF 1.0 -> slow-liquidation niche for patient capital"
+      },
+      "umbrella": {
+        "launched": "2025-06-05",
+        "stakes": "aUSDC/aUSDT/aWETH + GHO",
+        "mechanics": "autonomous slashing above per-asset deficit offset (~first $100K to DAO); 20-day cooldown + 2-day unstake window (miss -> restart)",
+        "size": {"at_launch_usd": 250000000, "nov_2025_usd": 340000000},
+        "coverage_expansion": "ARFC 2025-10-08 passed 2025-12-04: Aave debt $13.8B->$21.3B in 4 months; +$192M coverage; emissions $10.35M/yr",
+        "slashing_ever_executed": false
+      }
+    },
+    "volumes": {
+      "all_time_2020_to_feb_2026": {"liquidations": 310000, "usd": 4650000000, "share_of_borrow_txs_pct": 3.3},
+      "y2025_official": {"usd_gt": 1100000000, "events_gt": 100000},
+      "y2023_2024_annual": "not published; proxy 2024-08-05 crash day $231-285M (sources conflict)",
+      "crash_windows": [
+        {"date": "2025-10-10", "usd_24h": {"chaos_first_24h": 180000000, "aave_blog_full_day_gt": 250000000, "bitquery_eth_only": 207000000}, "avg_size_usd": 68000, "events_approx": 3700, "bonuses_usd_approx": 10000000, "lpf_to_dao_usd": 1000000, "svr_extra_usd": 1000000, "bad_debt_usd": "400-500K (CRV/ENS/LINK/wS/UNI)", "dao_net_usd": 1500000, "stable_withdrawals_processed_usd": 1700000000, "aave_token_flash_crash_pct": -64},
+        {"date": "2026-01-31_to_02-05", "usd_week": 429000000, "txs": 12500, "chaos_7d": {"seized_usd": 202470000, "bonuses_usd": 9340000, "avg_bonus_pct": 4.6, "lpf_usd": 980000, "svr_recaptured_usd": 2800000, "bad_debt_usd": 30000, "dao_net_usd": 2830000}, "context": "BTC to $60K, ETH to $1,750 - record week"},
+        {"date": "2025-02-03", "usd_24h": 210000000, "note": "zero new bad debt; existing bad debt -2.7%"}
+      ],
+      "evm_8_lenders_ethereum_debt_cleared_usd": {"2021": 1620000000, "2022": 1900000000, "2023": 159000000, "2024": 938000000, "2025": 1760000000, "2026_to_sep": 1090000000, "total": 7470000000},
+      "bad_debt_onchain_history": {"total_v3_usd": 125000000, "rsETH_2026_share_usd": 124000000, "pre_2024_usd": "<50"}
+    }
+  },
+  "kamino": {
+    "live_params_decoded_2026_10_21": {
+      "program": "KLend2g3cP87fffoy8q1mQqGKjrxjC8boSyAYavgmjD",
+      "bonus_formula": "max(minBonus, LTV_now - LTV_liq), capped at maxBonus, then solvency cap; badDebt bonus 99 bps at LTV>=99%",
+      "bonus_bps": {"SOL_usdc_btc": {"min": 100, "max": 1000}, "LST_jitosol_msol_jupsol": {"min": 100, "max": 1500}, "ETH": {"min": 500, "max": 2000}, "JUP_JTO_JLP": {"min": 500, "max": "1500-2000"}},
+      "protocol_liq_fee_pct_of_bonus": 50,
+      "close_factor_pct_per_round": "20 (product docs) / 25 (curator default); 100% at LTV>~95% or dust",
+      "cap_per_instruction_usd": 500000
+    },
+    "realized_borrower_cost_pct_of_position": {"median_oct_2025": 0.07, "avg_nov_2025": 0.11, "avg_q4_2025": 0.14, "q1_2025": "0.8-0.95 (5x improvement via competition + partial rounds + 50% protocol share)"},
+    "adl": {"trigger": "Risk Council; 72h no-penalty margin call, then penalty from 0.5% escalating", "ever_used": {"when": "2025-12 Adrena market", "debt_usd": 100000, "median_bonus_pct": 0.47}},
+    "socialize_loss_ever_triggered": false,
+    "oracles": "Scope aggregator: Chainlink Data Streams + Pyth Pro; $19.33B processed, 0 exploits; LST by stake-rate",
+    "volumes": {
+      "y2025": {"collateral_seized_usd": 156900000, "events": 75843, "bad_debt": 0, "monthly_peaks": {"feb": 35060000, "oct": 25470000, "nov": 26470000}},
+      "y2026_jan_sep": {"collateral_seized_usd_approx": 49800000, "events_approx": 147400, "feb_5_6": {"usd": 19360000, "events_48h": 55649, "wallets": 30030, "avg_bonus_pct": 1.1}},
+      "y2024": "not published (monthly reports began 2025)"
+    },
+    "liquidator_fees": {"apr_2025_usd": 303000, "oct_10_2025_usd": 260000, "split_across_bots": "~114 each time"},
+    "unique_liquidators": {"feb_2025": 78, "oct_2025": 114, "nov_2025": 166, "feb_2026": 166, "peak_2025": 208},
+    "oct_10_2025": {"collateral_usd": 20000000, "events": "8,000+", "borrower_wallets": 1700, "top5_wallets_share_of_seized_pct": 30, "usdc_borrow_rate_spike_pct": 45, "bad_debt": 0},
+    "ecosystem": ["permissionless liquidate-and-redeem", "Kamino runs own redundant bots", "open liquidation-bot guide", "open-source bot terminator (stale, v1)", "Kamino Swap (2024-12) lowers swap barrier", "bug bounty up to $1M (Sherlock)"]
+  },
+  "other_protocols": [
+    {"name": "Morpho Blue / Midnight", "bonus": "LIF fixed per LLTV ~5-15% (cap 1.15x); Midnight ramps premium from 0 over ~15 min; pre-liquidations", "bad_debt": "socialized to market lenders; 2025-10-10 ~$30M liqs near-zero bad debt; 2026-03-25 Resolv USR exploit $180M liqs across 15 vaults; 2026-08-25 Pendle oracle change $36.1M/33 txs"},
+    {"name": "Fluid (Instadapp)", "bonus": "from 0.1%, tick/range-based DEX-swap liquidations, ~150k gas, ~5% at a time", "retail_reality": "on-chain example: bot kept $82.49 of $911.37 bonus (9%); negative-PnL liquidations exist"},
+    {"name": "Jupiter Lend", "bonus": "2-8%; close 20% (100% at >95% LTV); ticks 0.15%", "history": "$120M+ liquidations, $0 bad debt; auto-deleveraging never triggered (WS-9)"},
+    {"name": "Curve LLAMMA (crvUSD)", "bonus": "band-based soft liquidation", "note": "hundreds of loans in liquidation for weeks (CoinDesk 2026-09-08); 2026-04 Egorov proposed tokenizing ~$700K bad-debt claims (first tradable bad-debt design)"},
+    {"name": "Drift (perps)", "bonus": "throttled partial 25-slot window; oracle vs 5-min TWAP, block if >=50% deviation", "oct_10_2025": "~$76M, 0 failed, no ADL, insurance fund +$600K", "hack": "2026-04-01 ~$285M -> rebranded Velocity DEX 2026-07-01 (not in WS-7 registry, single-source)"},
+    {"name": "Liquity V2 (Bold)", "bonus": "curve-based; redemption arb permissionless: BOLD<$1 -> redeem $1 from lowest-rate troves; thin edge"},
+    {"name": "MarginFi (Project 0)", "bonus": "5% (2.5 liquidator + 2.5 insurance); receivership up to 10%, zero-capital, atomic abort"},
+    {"name": "Save/Solend (legacy)", "bonus": "5% bounty, close 20%"}
+  ],
+  "oct_2025_cascade": {
+    "total": {"usd_24h": "19-20B", "accounts": "1.6M+", "peak": "$3.21B in one minute (~21:15 UTC)", "btc_move": "$116,500 -> $102,700 (-12%)", "real_losses_coinshares": "possibly >$50B (underreporting)"},
+    "adl": "largest ADL episode on record (perps/CEX): Binance compensations $283M; Hyperliquid HLP >+$40M",
+    "solana": {"total_usd": "~2B", "long_sol": "1.7B", "sol_price": "$207->$177 <1h", "dex_volume_24h": "$7B+"},
+    "trigger": "US-China 100% tariff shock on 40-50x leverage"
+  },
+  "unit_economics": {
+    "aave_traced_example_burnbytes_2026_08": {"debt_repaid_usd": 11809, "collateral_seized_usd": 12424, "gross_bonus_usd": 614.56, "bonus_pct": 5.2, "paid_to_coinbase_usd": 530.1, "coinbase_share_of_bonus_pct": 86.3, "liquidator_kept_usd": "<2", "runner_up_bid_usd": 441.4, "operator_conclusion": "day-to-day liquidations practically unprofitable; $1,000-2,000 per crash window with 100-200 simultaneous liquidatable positions; SVR/Atlas no longer worth it"},
+    "systematic": {"libmev_sep2024_aug2025": {"extracted_usd": 168500000, "tips_paid_usd": 101300000, "tips_share_pct": 60}, "flash_boys_2019": "median PGA winner kept ~65%"},
+    "kamino_worked_example": {"position_usd": 2800, "bonus_pct": 5, "gross_usd": 140, "protocol_share_usd": 28, "slippage_usd": 3, "jito_tip_usd": "20-70", "net_usd": "40-90", "at_1pct_bonus": "~zero or negative"},
+    "solana_tips_share_of_gross_pct": "50-60",
+    "jito": {"bundle_max_txs": 5, "auction_tick_ms": 50, "min_tip_lamports": 1000, "block_engine_regions": 8, "shredstream": "sunset 2026-09-05 -> DoubleZero Edge", "slots": "250ms since 2026-09-18 (epoch 1037)"},
+    "el bots": "0x0e49: ~10% of all MEV in 30 days; 8 Aave liquidations + 5 arbs in one 125-step bundle"
+  },
+  "competition": {
+    "evm": {"active_pro_teams": "often <=20 per week (Extropy)", "addresses_ever": 1877, "yearly_active_bots": {"2021": 311, "2022": 333, "2023": 179, "2024": 155, "2025": 349, "2026_to_sep": 788}, "top10_share_of_debt_pct_by_year": {"2021": 62, "2023": 74, "2024": 73, "2025": 67, "2026": 70}, "top_bot": {"address": "0xf057...0004", "cleared_since_feb_2025_usd": 579000000, "share_pct": 30, "aave_2025": "$124M seized in 563 liquidations"}, "crash_day_top3_share_pct": "43-67"},
+    "median_job": {"loan_usd": {"2021": 4845, "2025": 127, "2026": 80, "aave_v3": ">2000"}, "gas_per_job_usd": {"2025": 1.77, "2026": 0.49}},
+    "pga_vs_pba": "PGA (public mempool gas wars, pre-2022) -> PBA: builders (top-2 >90% blocks) + private OFAs; Aave liquidation backruns -> Chainlink SVR auctions (MEV-Share refunds ~90% to originator = protocol)",
+    "l2": {"base_flashblocks": "10x200ms since 2025-07-17", "arbitrum_timeboost": "98% of liquidations bypass express lane; cumulative ARB liquidation MEV only $5.65M (Entropy 2025-04)"},
+    "solo_cases": ["r/ethdev 2024-09: solo'd all liquidations for one week, then muscled out", "baransel.dev 2026-04: lost ~60% of races initially, $5K capital, 20-min RPC outage = 3 lost liquidations", "Medium: +$222 (+37.3%) in 3 months on ~$600, niche venue (unrepresentative)"],
+    "labor_market": "senior MEV searcher $120-300K base - the money is in joining teams"
+  },
+  "tools": [
+    {"name": "Gelato Web3 Functions", "status": "dead 2026-03-31 (RaaS pivot)", "pricing": "Relay = legacy, fee-oracle, no public price list"},
+    {"name": "Gelato Relay", "status": "legacy; Safe dropped 2026-09-01"},
+    {"name": "Chainlink Automation / CRE", "status": "alive; official Gelato migration path", "pricing": "gas*(1+premium); Polygon example 70%; 80k gas overhead; CRE by quote"},
+    {"name": "OpenZeppelin Defender", "status": "retired 2026-07-01", "pricing": "replaced by OSS Relayer/Monitor (AGPL, self-host, Solana support)"},
+    {"name": "Keep3r", "status": "zombie: KP3R ~$0.86 (-99.9% ATH), TVL $3.2M"},
+    {"name": "DeFi Saver", "status": "alive - automation FOR borrowers (anti-liquidation), not bot-as-a-service", "pricing": "no subscription; 0.25% per advanced tx + 0.05% automation (~0.3% on swapped); min $30K L1 / $500 L2", "scale": "$445M under automation (ATH $1.5B+); >$1B Aave v3 positions"},
+    {"name": "Liquidium", "status": "NOT a liquidation tool: BTC lending, pivoted Stacks->ICP (liquidium.fi), $6M TVL, 0.5% activation fee"},
+    {"name": "Open-source bots", "status": "educational only: dkirsche/aave-liquidator (abandoned 2023), morpho/solend bots archived; maintained libs: degenbot (573 stars), artemis"}
+  ],
+  "infrastructure_costs_monthly_usd": {
+    "eth_rpc_paid": [50, 500],
+    "eth_archive_self": [300, 800],
+    "eth_archive_managed": [500, 2000],
+    "builders": "free access (Titan/beaver); pay via tips",
+    "solana_rpc_helius": [49, 999],
+    "solana_dedicated": [2200, 3800],
+    "solana_competitive_stack": [1800, 3800],
+    "solana_colo_per_box": [200, 800],
+    "working_capital_solana_usd": [5000, 30000],
+    "note": "Solana has no flash loans -> inventory + tip buffer mandatory; EVM flash loans (0.05%) reduce capital to gas buffer"
+  },
+  "scenarios_100k": [
+    {"scenario": "majors (Aave/Morpho ETH, Kamino main)", "infra_month": "500-3800", "engagement": "24/7", "expected": "negative EV: top-10 ~70% of debt, 60-86% of bonus to builders, SVR + private orderflow; operator-confirmed <$2 net per liquidation"},
+    {"scenario": "long-tail (new protocols first weeks, small L2s, receivership)", "infra_month": "50-500", "engagement": "active development", "expected": "$0-2K/mo typical; 0-30%/yr with 1-2 lucky cascades; niches die in weeks"},
+    {"scenario": "crisis firefighter (3-5 days/yr readiness)", "infra_month": "50-300", "engagement": "24/7 on-call in cascade", "expected": "Aave operator: $1-2K per crash window; Kamino Oct-2025: $260K/114 bots (~$2.3K median day)"},
+    {"scenario": "passive exposure (Umbrella staking etc.)", "infra_month": 0, "engagement": "passive", "expected": "yield in protocol token + slashing tail (April-2026 bypassed)"}
+  ],
+  "bad_debt": {
+    "mechanisms": {
+      "aave": "never sold/auctioned bad debt: 2022 treasury (Eisenberg CRV ~$1.6M); 2025+ Umbrella autonomous slashing (never executed); 2026 industry coalition",
+      "morpho": "socialization to market lenders, no treasury",
+      "euler_v2": "socialization to vault depositors",
+      "kamino": "socialize_loss never triggered; ADL once (~$100K)",
+      "first_tradable_design": "Curve 2026-04: tokenize ~$700K LlamaLend bad-debt claims so trapped lenders can sell; DAO swap fees buy it off - watch as pilot"
+    },
+    "kelpdao_case_2026": {
+      "hack": "2026-04-18 17:35 UTC: forged LayerZero packet via 1-of-1 DVN; 116,500 unbacked rsETH (~$290M, ~18% supply; Lazarus per Chainalysis)",
+      "exploit_on_aave": "deposited 89,567 rsETH, borrowed 82,650 WETH ($190.9M) + 821 wstETH ($2.3M) at HF 1.01-1.03",
+      "bad_debt": {"scenarios_usd": [123700000, 230100000], "booked_onchain_usd": 124500000},
+      "umbrella": "WETH module 23,507 WETH (~$54.1M) too small; paused; no slashing",
+      "bank_run": "deposits $48.5B -> ~$30B in a week (-$12.4B)",
+      "funding": {"recoveries_eth": 87955, "gap_eth": 75081, "plan": "Aave treasury 25,000 ETH (~$57.5M) + Mantle 30,000 ETH credit + 14,570 ETH public pledges (EtherFi/Lido/Ethena/Ink/BGD/Stani)", "defi_united_raised": "~$163M initially, later reported ~$300M"},
+      "timeline": {"2026-05-06": "hacker positions liquidated", "2026-05-13": "rsETH backing fully restored, ops resumed", "2026-05-18": "WETH borrowing restored", "2026-09": "Kelp sues LayerZero + Pellegrano"},
+      "solo_lessons": ["bad debt was NOT purchasable - closed by coalition", "rsETH itself was buyable at 0.80-0.90 on DEX (+11-25% in ~25 days)", "buying attacker-flow assets = freeze/blacklist risk"]
+    },
+    "other_cases": [
+      {"name": "Venus", "date": "2025-09-02", "event": "$27M phishing drain -> force-liquidated attacker wallet, full recovery; 2026-03 Thena exploit -> $2.15M bad debt"},
+      {"name": "Loopscale", "date": "2025-04-26", "event": "$5.8M oracle attack; hacker returned majority for 10-20% bounty"},
+      {"name": "Radiant", "date": "2024-10-16", "event": "$50-58M DPRK multisig hack; RFP-50 15% revenue remediation; wound down 2026-06-01"},
+      {"name": "ZeroLend", "date": "2026-02-17", "event": "shutdown; concealed 2025-02-23 exploit"},
+      {"name": "Sonne", "date": "2024-05-14", "event": "~$20M hack; bad-debt sale NOT verifiable in public sources"},
+      {"name": "MIM/Abracadabra", "date": "2026-06-08 to 2026-09", "event": "final depeg; wind-down vote; $21M bad debt vs $0.9M collateral; payout ~$0.04 vs $0.029 market"},
+      {"name": "Maple 2022 / Goldfinch 2024", "event": "$54M sour loans -> pivot; third default ~58% loss -> wind-down"}
+    ]
+  },
+  "depeg_triage": {
+    "events": [
+      {"event": "USDC (SVB)", "date": "2023-03-11/13", "low": 0.87, "exit": 0.998, "days": 2, "gross_return_pct": 14.9, "diagnosis": "reserves intact, bank-run irrational"},
+      {"event": "USD0++ (Usual)", "date": "2025-01-10/13", "low": 0.89, "exit": 1.0, "days": "3-30", "gross_return_pct": 11.5, "diagnosis": "protocol-guaranteed path (revenue switch + 1:1 unstaking)"},
+      {"event": "USDe (tariffs)", "date": "2025-04-07", "low": 0.93, "exit": 1.0, "days": "2-7", "gross_return_pct": 7.5, "diagnosis": "CEX venue stress; on-chain pools richer"},
+      {"event": "USDe (record cascade)", "date": "2025-10-10/11", "low": 0.65, "exit": 1.0, "days": "<1", "gross_return_pct": 53.8, "diagnosis": "perp forced-deleveraging, reserves intact; Binance outages delayed arb"},
+      {"event": "rsETH (KelpDAO exploit)", "date": "2026-04-18/05-13", "low": 0.85, "exit": 1.0, "days": 25, "gross_return_pct": 17.6, "range_pct": "11-25 (entries 0.80-0.90)", "tail_risk": "L2 haircut scenario was -73%"},
+      {"event": "MIM (wind-down)", "date": "2026-06/09", "low": 0.029, "exit": 0.04, "days": "TBD", "gross_return_pct": 38, "diagnosis": "litigation/treasury risk, not peg arb"},
+      {"event": "2026 YTD others", "date": "2026-01..10", "event_note": "no major stablecoin depegs through mid-Oct 2026"}
+    ],
+    "discipline": ["only issuers with verifiable reserves", "per-issuer limits, execute CEX+DEX in the moment", "never buy attacker-linked flows (freeze/blacklist)", "IRR accounting for idle capital (rsETH ~+250% annualized on deployed part)"],
+    "frequency": "1-2 paying events per year (2023 USDC; 2025 USD0++/USDe x2; 2026 rsETH/MIM)",
+    "structural_mini_niches": ["Liquity V2 redemption arb (permissionless, thin)", "Curve LLAMMA slow soft-liquidations (weeks)", "Aave v4 small positions lingering below HF 1.0"]
+  },
+  "prevention_market": {
+    "defi_saver": {"positions_managed": ">$1B Aave v3", "under_automation_usd": 445000000, "proof_points": "382 auto-repays defended $446M collateral with ZERO liquidations (early 2026, The Block Research); user case: $5,896 fees vs $173,094 saved", "fees": "0.25% per advanced tx + 0.05% automation; min $30K L1 / $500 L2", "aave_v4_support": "day-one 2026-03-30"},
+    "post_cascade_launches": ["Reactive Network 'Aave Unified Protection' (2025-10-14)", "Strike BTC loans without price liquidations"],
+    "insurance_contraction": {"onchain_insurance_tvl_usd": 126000000, "peak_2021_usd": 1900000000, "at_risk_usd": "26.8B+", "conclusion": "users pay for execution (automation), not policies; no liquidation-insurance boom after 10/10"},
+    "alerts": "commoditized (free Aave/DeBank/Telegram); paid niche thin (DeFiNotify, CryptocurrencyAlerting)",
+    "capacity_assessment": "median liquidated loan $80-127 = dust economics; thick positions already served by incumbents -> micro-market needing distribution, not viable solo"
+  },
+  "verdict_matrix": [
+    {"option": "classic bot on majors", "capital": "$10-50K + $0.5-3.8K/mo", "time": "24/7", "expected": "negative EV", "verdict": "NO"},
+    {"option": "long-tail bot", "capital": "$5-20K", "time": "active dev", "expected": "0-30%/yr, heavy tail to zero", "verdict": "hobby/learning only"},
+    {"option": "depeg/bad-debt triage (firefighter capital)", "capital": "$50-100K stables", "time": "2-4 h/wk monitoring + event readiness", "expected": "0% most months; +7..+54% per event, 1-2x/yr", "verdict": "YES as optional overlay"},
+    {"option": "slow soft-liquidations (Curve LLAMMA, v4 tails)", "capital": "$20-50K", "time": "patience", "expected": "small but nonzero, no speed race", "verdict": "optional"},
+    {"option": "prevention service", "capital": "$10-50K", "time": "product + distribution", "expected": "micro-MRR vs DeFi Saver", "verdict": "NO without a team"},
+    {"option": "passive exposure (Umbrella staking)", "capital": "any", "time": "0", "expected": "yield in protocol token + slashing tail", "verdict": "portfolio context only"}
+  ],
+  "verdict": {
+    "worth_it_for_solo_100k": false,
+    "headline": "liquidations = mature utility market of ~20 EVM teams + a handful of Solana shops; three sequential taxes on margin (builders/tips 60-86%, SVR 73% recapture / 173 bps Aave take, dutch auctions); infrastructure bar $1.8-3.8K/mo (Solana) with managed tooling dead (Gelato, Defender); semi-passive solo is structurally impossible: asset is either dust (needs machine-gun automation) or cascade (needs war-readiness)",
+    "rational_solo_play": "'firefighter capital': stables + monitoring for depegs/cascades - USDe $0.65 (+54% <1 day, Oct-2025), rsETH 0.85 (+11-25% in 25 days, Apr-May 2026), USDC $0.87 (+15% in 2 days, 2023); frequency 1-2x/yr; main risk = mistaking a true default (UST) for a panic depeg",
+    "realistic_yields_discussed": "majors: negative after infra (operator: <$2 net per liquidation, $1-2K per crash window); long-tail: $0-2K/mo, 0-30%/yr optimistic; community datapoints: 1/3 bots ~breakeven, ~30% losers"
+  },
+  "sources": [
+    {"id": "aave_hist_liq", "title": "Aave: Historical Liquidations", "url": "https://aave.com/blog/historical-liquidations", "date": "2026-02-06"},
+    {"id": "aave_v4_liq", "title": "Aave: v4 Liquidations engine", "url": "https://aave.com/blog/aave-v4-liquidations", "date": "2025-12-11"},
+    {"id": "aave_v4_live", "title": "Aave v4 live on Ethereum", "url": "https://aave.com/blog/aave-v4-live-ethereum", "date": "2026-03-30"},
+    {"id": "arfc_v4", "title": "ARFC Aave v4 Activation (params)", "url": "https://governance.aave.com/t/arfc-aave-v4-activation-on-ethereum-mainnet/24293", "date": "2026-03-13"},
+    {"id": "arfc_lpf", "title": "ARFC LPF increase (173 bps take)", "url": "https://governance.aave.com/t/arfc-liquidation-protocol-fee-increase-for-wbtc-weth-and-wsteth-on-aave-v3-ethereum-core/25470", "date": "2026-08-12"},
+    {"id": "chaos_1011", "title": "Chaos Labs: Oct 10-11 2025 risk report", "url": "https://governance.aave.com/t/chaos-labs-risk-report-insights-from-recent-market-events-10-11-25/23248", "date": "2025-10-11"},
+    {"id": "chaos_net_positive", "title": "Chaos Labs: Aave net positive after Feb-2026 stress", "url": "https://chaoslabs.xyz/posts/aave-emerges-net-positive-after-market-stress", "date": "2026-02-02"},
+    {"id": "aave_recap2025", "title": "Aave 2025 Recap (>$1.1B liquidated)", "url": "https://aave.com/blog/aave-2025-recap", "date": "2026-01-29"},
+    {"id": "burnbytes", "title": "Aave v3/v4 liquidation bot operator post-mortem", "url": "https://governance.aave.com/t/aave-v3-v4-liquidation-bot/25565", "date": "2026-08-30"},
+    {"id": "rseth_incident", "title": "Aave: rsETH Incident Report", "url": "https://governance.aave.com/t/rseth-incident-report-april-20-2026/24580", "date": "2026-04-20"},
+    {"id": "rseth_funding", "title": "ARFC rsETH Incident Funding Update", "url": "https://governance.aave.com/t/arfc-rseth-incident-funding-update/24740", "date": "2026-04-24"},
+    {"id": "capo_postmortem", "title": "Aave: wstETH CAPO oracle post-mortem", "url": "https://governance.aave.com/t/post-mortem-exchange-rate-misallignment-on-wsteth-core-and-prime-instances/24269", "date": "2026-03-10"},
+    {"id": "bitquery_lending", "title": "Bitquery: Ethereum DeFi Lending 2021-2026", "url": "https://bitquery.io/investigations/ethereum-defi-lending-2021-2026", "date": "2026-09-23"},
+    {"id": "bitquery_bots", "title": "Bitquery: DeFi Liquidation Bots (concentration)", "url": "https://bitquery.io/investigations/defi-liquidation-bots", "date": "2026-09-24"},
+    {"id": "pangea", "title": "Pangea: Aave's Liquidators (avg bonus 5.2%)", "url": "https://blog.pangea.foundation/aaves-liquidators", "date": "2025-09-26"},
+    {"id": "kamino_847", "title": "Kamino: Oct 10 2025 risk event analysis", "url": "https://gov.kamino.finance/t/kamino-lend-risk-event-analysis-10th-of-october-2025/847", "date": "2025-10-11"},
+    {"id": "kamino_yir", "title": "Kamino: 2025 Year in Review", "url": "https://gov.kamino.finance/t/kamino-lend-2025-year-in-review/866", "date": "2026-02-03"},
+    {"id": "kamino_docs", "title": "Kamino docs (liquidations/engine/ADL/oracles) + KLend2 on-chain decode", "url": "https://kamino.com/docs/products/borrow/liquidations", "date": "2026-10-21"},
+    {"id": "jito_docs", "title": "Jito: low-latency tx send / ShredStream sunset", "url": "https://docs.jito.wtf/lowlatencytxnsend", "date": "2026-10-21"},
+    {"id": "fti", "title": "FTI: Crypto Crash October 2025", "url": "https://www.fticonsulting.com/insights/articles/crypto-crash-october-2025-leverage-met-liquidity", "date": "2025-12-24"},
+    {"id": "defiant_autopsy", "title": "The Defiant: 10/10 crash autopsy (HLP >$40M)", "url": "https://thedefiant.io/newsletter/defi-daily/the-ultimate-10-10-crash-autopsy", "date": "2025-10-14"},
+    {"id": "rockawayx", "title": "RockawayX: Solana in the record liquidation", "url": "https://www.rockawayx.com/insights/solana-proves-resilient-during-the-largest-crypto-liquidation-on-record", "date": "2025-10"},
+    {"id": "coindesk_usde", "title": "CoinDesk: USDe $0.65 during $19B cascade", "url": "https://www.coindesk.com/markets/2025/10/11/ethenas-usde-briefly-loses-peg-during-usd19b-crypto-liquidation-cascade", "date": "2025-10-11"},
+    {"id": "coindesk_curve_bd", "title": "CoinDesk: Curve founder pitches tradable bad-debt claims", "url": "https://www.coindesk.com/markets/2026/04/27/curve-founder-pitches-market-based-fix-for-usd700k-bad-debt-in-contrast-to-aave-bailout", "date": "2026-04-27"},
+    {"id": "coindesk_curve_weeks", "title": "CoinDesk: Curve loans weeks in liquidation", "url": "https://www.coindesk.com/tech/2026/09/08/hundreds-of-defi-loans-on-curve-stayed-in-liquidation-for-weeks-without-dying", "date": "2026-09-08"},
+    {"id": "kelp_back", "title": "Kelp is back (rsETH backing restored)", "url": "https://bitcoinfoundation.org/news/defi/kelp-is-back", "date": "2026-05-13"},
+    {"id": "umbrella_docs", "title": "Aave docs: Umbrella", "url": "https://aave.com/docs/aave-v3/umbrella", "date": "2026-10-21"},
+    {"id": "umbrella_launch", "title": "Blockworks: Umbrella reshapes Aave staking", "url": "https://blockworks.com/news/umbrella-reshapes-aave-staking", "date": "2025-06-06"},
+    {"id": "bpi_stables", "title": "BPI: Stablecoin Risks (Umbrella ~$340M)", "url": "https://bpi.com/stablecoin-risks-some-warning-bells/", "date": "2025-11-03"},
+    {"id": "mim_winddown", "title": "Unchained: Abracadabra MIM shutdown ~$0.04", "url": "https://unchainedcrypto.com/abracadabra-moves-to-shut-down-mim-stablecoin-offering-holders-roughly-4-cents-per-token", "date": "2026-09-30"},
+    {"id": "defisaver", "title": "DeFi Saver automation (fees, $446M defended)", "url": "https://defisaver.com/features/automation", "date": "2026-10-21"},
+    {"id": "reactive", "title": "Reactive Network: Aave Unified Protection", "url": "https://blog.reactive.network/aave-unified-protection-multi-strategy-automated-liquidation-defense-with-reactive-smart-contracts", "date": "2025-10-14"},
+    {"id": "mimic_gelato", "title": "Mimic: Gelato Web3 Automation ending", "url": "https://mimic.fi/blog/gelato-web3-automation-is-ending-use-mimic", "date": "2026-02-09"},
+    {"id": "oz_defender", "title": "OpenZeppelin: Defender sunset", "url": "https://www.openzeppelin.com/news/doubling-down-on-open-source-and-phasing-out-defender", "date": "2025-06-30"},
+    {"id": "chainlink_auto", "title": "Chainlink Automation economics", "url": "https://docs.chain.link/chainlink-automation/overview/automation-economics", "date": "2026-10-21"},
+    {"id": "extropy", "title": "Extropy: MEV cross-chain analysis (<20 teams, >90% to proposers, Solana stack $1.8-3.8K)", "url": "https://academy.extropy.io/pages/articles/mev-crosschain-analysis-2025.html", "date": "2025-12-12"},
+    {"id": "libmev", "title": "ethresear.ch: Imperfect commitment in MEV auctions (60% tips)", "url": "https://ethresear.ch/t/imperfect-commitment-in-maximal-extractable-value-auctions/25001", "date": "2026-05-29"},
+    {"id": "flash_boys", "title": "Daian et al.: Flash Boys 2.0 (arXiv 1904.05234)", "url": "https://arxiv.org/abs/1904.05234", "date": "2019-04"},
+    {"id": "eigenphi_0e49", "title": "EigenPhi: myth-buster 10 (bot 0x0e49)", "url": "https://eigenphi.substack.com/p/myth-buster-10-the-best-mev-bot-0e49", "date": "2025-05-30"},
+    {"id": "helius", "title": "Helius pricing", "url": "https://www.helius.dev/pricing", "date": "2026-10-21"},
+    {"id": "dysnix", "title": "Dysnix: Solana MEV infrastructure", "url": "https://dysnix.com/blog/solana-mev-infrastructure", "date": "2026-10-21"},
+    {"id": "base_flashblocks", "title": "The Block/Chainstack: Base Flashblocks 200ms", "url": "https://docs.chainstack.com/docs/flashblocks-on-base", "date": "2025-07-17"},
+    {"id": "timeboost", "title": "arXiv 2509.22143: Timeboost empirical (98% liqs bypass)", "url": "https://arxiv.org/abs/2509.22143", "date": "2025-09"},
+    {"id": "entropy_arb", "title": "Entropy Advisors: Arbitrum liquidation MEV $5.65M", "url": "https://dune.com/entropy_advisors/arbitrum-mev-liquidations", "date": "2025-04-22"},
+    {"id": "baransel", "title": "baransel.dev: Solana liquidation bot build log", "url": "https://baransel.dev/post/build-solana-liquidation-bot-that-makes-money", "date": "2026-04-06"},
+    {"id": "gabrielpoca", "title": "Liquity V2 liquidation operator writeup", "url": "https://gabrielpoca.com/posts/2025-12-15-liquity-v2-and-how-liquidation-bots-work", "date": "2025-12-15"},
+    {"id": "leow_drift", "title": "Cindy Leow (Drift): Oct 10 stats", "url": "https://x.com/cindyleowtt/status/1977217662376636685", "date": "2025-10"},
+    {"id": "venus", "title": "CoinDesk: Venus $27M force-liquidation recovery", "url": "https://www.coindesk.com/tech/2025/09/02/bnb-chain-based-venus-protocol-drained-of-usd27m", "date": "2025-09-02"},
+    {"id": "radiant", "title": "The Block: Radiant winding down", "url": "https://www.theblock.co/news/defi/2026-06-01-unable-to-recover-from-roughly-50-million-hack-radiant-capital-is-winding-down-403254", "date": "2026-06-01"},
+    {"id": "internal", "title": "Internal crosschecks: WS-1, WS-7, WS-9, WS-15 (data/*.json)", "url": "research/07-market-state-risks.md", "date": "2026-10-16"}
+  ],
+  "confidence_flags": {
+    "verified_multi_source": ["Aave all-time/2025 volumes", "Oct-2025 cascade figures", "Kamino 2025 volumes and fees", "Bitquery concentration", "SVR results", "KelpDAO case", "Umbrella launch/scale", "depeg levels USDC/USDe/rsETH/MIM", "DeFi Saver fees/proof points", "tool shutdowns"],
+    "single_source_or_estimate": ["Kamino top-bot earnings in cascade ($25-50K calc)", "Solana colocation box pricing", "Drift hack 2026-04-01 (absent from WS-7 registry)", "+37%/quarter on $600 Medium case", "USD0++ prints below $0.89", "Sonne bad-debt sale (unverified)", "DeFi United $300M vs $163M", "Aave annual 2023/2024 USD totals"]
+  }
+}
