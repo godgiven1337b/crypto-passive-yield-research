@@ -16,6 +16,7 @@ OPTIONS.md                 — 📋 СВОДНАЯ ТАБЛИЦА ВСЕХ ВА�
 QUANT-EDGES.md             — МИКРОСТРУКТУРА: Pendle mispricing, undersupplied-пулы, фандинг
 BOT-BLUEPRINT.md           — 🤖 АВТОМАТИЗАЦИЯ: архитектура бота, risk-governor, роадмап
 PREDICTION-MARKETS.md      — 🔮 ПРЕДИКШН-МАРКЕТЫ: FLB/MM-эджи, корзины, Kalshi-арбитраж
+LIMITLESS-VERDICT.md       — 🏁 LIMITLESS: оракул-превью доказано, арена мертва (-99%)
 models/live_monitor.py     — живой монитор дислокаций (фандинг/пеги/vol-TVL/PT)
 research/                  — детальные отчёты по воркстримам
   01-stablecoin-lending.md — money markets (Aave, Morpho, Sky, ...)
@@ -29,6 +30,7 @@ research/                  — детальные отчёты по воркст
   12-15 (apy-max)          — программы наград, поинты/аирдропы, малые протоколы, лупинг
   16-19 (quant)            — DEX-микроструктура, Pendle-бэктест, ликвидации, депеги
   20-23 (pred. markets)    — корзины/CLOB-верификация, Kalshi, поведенческие эджи, PM-yield
+  26-30 (limitless)        — платформа, оракул-бэктест, кросс-арб, награды, адверсариал
 data/*.json                — машиночитаемые данные (проверены cross-check)
 models/                    — количественные модели (Python, numpy)
   yield_math.py            — APR↔APY, комиссии, газ

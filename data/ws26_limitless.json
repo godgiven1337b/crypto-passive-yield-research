@@ -1,0 +1,190 @@
+{
+ "meta": {
+  "research": "WS-26 Limitless Exchange platform study",
+  "date": "2026-10-24",
+  "probe_time_utc": "06:35-07:05",
+  "api_base": "https://api.limitless.exchange",
+  "ws_url": "wss://ws.limitless.exchange (/markets namespace, Socket.IO)",
+  "docs": "https://docs.limitless.exchange",
+  "first_hand": true
+ },
+ "platform": {
+  "chain": "Base (8453)",
+  "collateral": "USDC (native Base, 0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913)",
+  "legal_entity_tos": "Street Chow Inc., Panamanian company (ToS updated 2026-09-15)",
+  "self_reported_cumulative_volume": "$1B+ (docs 'What is Limitless?', unverified)",
+  "active_markets_total": 548,
+  "categories_seen": "crypto up/down (5m/15m/hourly/daily/weekly), sports (tennis/cricket), esports (LoL), politics, stocks dailies, packs/parlays, user-generated, custom",
+  "dune": "https://dune.com/limitless_exchange/limitless"
+ },
+ "live_activity_2026_10_24": {
+  "top_market_volumes_usd": {
+   "G2_vs_DK_esports": 329,
+   "BTC_hourly": 109,
+   "Trump_Putin_Xi_politics": 108,
+   "tennis_match": 91
+  },
+  "leaderboard_24h": {
+   "traders_with_realized_pnl": 146,
+   "top_pnl_usd": 1307,
+   "top_cost_basis_usd": 6109
+  },
+  "leaderboard_30d": {
+   "top_pnl_usd": 83914,
+   "top2_pnl_usd": 64674,
+   "rank3_pnl_usd": 4072,
+   "total_rows_capped": 2500
+  }
+ },
+ "eth_5min_series": {
+  "sample": "72 slots, last 6h to 2026-10-24T06:50Z",
+  "sum_volume_usd": 336.55,
+  "slots_nonzero": 28,
+  "slots_zero": 44,
+  "median_slot_volume_usd": 0.0,
+  "max_slot_volume_usd": 93.91,
+  "busiest_slot_analysis": {
+   "eth-up-or-down-5-min-1792815600": {
+    "trades": 6,
+    "distinct_traders": 1,
+    "trader": "0x64647137 (sixfours_v2.0)",
+    "clips_usd": [
+     3.66,
+     3.65,
+     1.26,
+     1.3,
+     1.21,
+     0.94
+    ],
+    "timing": "t+12..19s and t+189s of 300s window"
+   },
+   "eth-up-or-down-5-min-1792821600": {
+    "trades": 1,
+    "trader": "0x58270979 (CloudyBraveHorse)",
+    "clip_usd": 19.35
+   }
+  },
+  "competition_verdict": "no bots detected: human-speed clips $1-20, 1 trader per slot, 61% slots empty",
+  "peak_sweep_oct23_12_20_utc": {
+   "slots": 96,
+   "nonzero": 19,
+   "sum_usd": 367.64,
+   "max_slot_usd": 60.0,
+   "median": 0.0
+  },
+  "price_to_beat_example": {
+   "slot": "06:20-06:25Z",
+   "eth_twap_open": 2375.752350768238
+  }
+ },
+ "market_mechanics": {
+  "cadence": "5-min slots pre-created; next slot listed & tradable before current closes (timeline endpoint)",
+  "resolution": "Chainlink 60s-TWAP (eth-usd-twap-60s-streams), Up if closeTWAP>=openTWAP; migrated from spot 2026-08-19",
+  "resolution_lag_observed": "~2 min after slot end (WS marketResolved 06:57:03 for 06:50-06:55 slot)",
+  "oracle": "pythAddress also present; chartSource=chainlink; streamType twap in metadata.chainlinkDataStream",
+  "orderbook": "YES-side LIVE GTC book; minSize=50 shares; maxSpread=0.065; price ticks 0.001",
+  "slot_metadata_flags": {
+   "externalProvider": "polymarket",
+   "externalSlug_pattern": "eth-updown-5m-<same unix ts>",
+   "isPolyArbitrage": true,
+   "shouldMarketMake": true,
+   "takerDelayMs": {
+    "5min": 250,
+    "15min": 500
+   },
+   "settings_5min": {
+    "minSize": "50000000 (50 shares)",
+    "maxSpread": 0.065,
+    "dailyReward": "0",
+    "rebateRate": "0.3",
+    "creatorFeePct": 0
+   },
+   "note": "5-min series is a Polymarket mirror; Limitless runs its own internal MM; taker delay is an anti-latency-arb measure; no LP rewards on 5m/15m"
+  },
+  "venue_check_2026_10_24": {
+   "crypto_lumy_hourly_5m_15m": "new COLLATERAL venue 0x05c7 (feeModule 0x7B6f)",
+   "sports_esports": "exchange 0x05c7 but feeModuleType=None (legacy fee model)",
+   "btc_hourly_volume_dynamic": "109->190 USD within ~1h (2026-10-24 morning)"
+  }
+ },
+ "fees": {
+  "new_venues_since_2026_10_14": {
+   "taker": "5% x (1 - price) of USDC value, both sides, paid in USDC via feeModule 0x7B6ffe5bA8B5ec7afB0AaBaE629D12dA5bC62565 (simple) / 0x01b7dF643247B377D5c39FcC40b9c28B4A827524 (NegRisk)",
+   "maker": 0,
+   "formula": "fee = rate_bps * N * (S - N) / (10000 * S); N=USDC notional, S=shares; round half-up to 10 raw units",
+   "buy_reserve": "5% of order amount held as fee reserve",
+   "signing": "feeRateBps=0 in EIP-712 order on new venues"
+  },
+  "legacy_venues": {
+   "taker_buy": "0.40-3.00% in outcome tokens",
+   "taker_sell": "0.42-1.50% in USDC",
+   "maker": 0,
+   "amm": "flat 0.40%"
+  },
+  "rebates": "100% of eligible taker fees on Daily/Hourly/15-min Crypto fund maker pool; daily USDC payout pro-rata",
+  "points_program": "GET /portfolio/points: currentSeason + archived season1/2/3+; isRewardable=True on 5-min slots accrues points; UGM excluded since Sep 2026"
+ },
+ "api_quality": {
+  "auth": "scoped API tokens (UI-generated), HMAC-SHA256 headers lmts-api-key/lmts-timestamp/lmts-signature; scopes trading/account_creation/delegated_signing",
+  "rate_limits_changelog": "5 mutations/min/profile; 120 public reads/min/IP; 60 owner reads/min/account; partner pack routes 10 req/10s",
+  "order_types": [
+   "GTC",
+   "FOK",
+   "FAK",
+   "postOnly"
+  ],
+  "extras": [
+   "cancel-replace + batch",
+   "MM heartbeat (auto-cancel on silence)",
+   "clientOrderId idempotency",
+   "recvWindow HTTP 425",
+   "maintenance/status",
+   "timeline pre-fetch",
+   "partner subaccounts",
+   "delegated signing",
+   "trading MCP server"
+  ],
+  "sdks": "TS @limitless-exchange/sdk, Py limitless-sdk, Go limitless-exchange-go-sdk, Rust limitless-exchange-rust-sdk (>=1.2.0 for new venues)",
+  "ws": "public channels no-auth (prices, orderbook, oracle, lifecycle), 24h forced reconnect, 30s HMAC window for private subs",
+  "no_testnet": true
+ },
+ "contracts": {
+  "ctf": "0xC9c98965297Bc527861c898329Ee280632B76e18 (canonical Gnosis CTF on Base)",
+  "exchange_v3": "0x05c748E2f4DcDe0ec9Fa8DDc40DE6b867f923fa5 (deployed, 17178 bytes runtime code)",
+  "fee_module_v3_collateral": "0x7B6ffe5bA8B5ec7afB0AaBaE629D12dA5bC62565 (deployed, 6129 bytes)",
+  "audit": "fork of Polymarket ctf-exchange/neg-risk; upstream ChainSecurity-audited; Limitless diffs (LIMITLESS_SAFE sig type, Base config) NOT audited",
+  "github_fork": {
+   "repo": "limitless-labs-group/limitless-ctf-exchange (fork of Polymarket/ctf-exchange)",
+   "forked_at": "2025-01-28",
+   "last_push": "2025-03-05",
+   "limitless_commits": "4 (feat: add limitless deployment 2025-01-29; feat: upgrade safe proxy lib 2025-02-06; update safe proxy naming + addresses 2025-03-04/05)",
+   "note": "platform development started Jan 2025; changelog/docs begin Nov 2025"
+  }
+ },
+ "access": {
+  "trading_blocked": [
+   "United States",
+   "China (Republic of China)",
+   "Canada Ontario",
+   "Canada Alberta"
+  ],
+  "fully_blocked": [
+   "Russia",
+   "Belarus",
+   "Cuba",
+   "Iran",
+   "North Korea",
+   "Syria",
+   "Crimea/Donetsk/Luhansk"
+  ],
+  "kyc": "none by default; company may request proof anytime",
+  "onramp": "USDC on Base to your wallet (bridge yourself); Privy social-login embedded wallets; gas sponsored for smart wallets"
+ },
+ "history_changelog": {
+  "2025-11": "first SDK pre-releases",
+  "2026-07-01": "predictable second-precision slugs (Polymarket parity)",
+  "2026-08-19": "TWAP resolution for 5m/15m crypto",
+  "2026-10-14": "new trading venues, COLLATERAL fee module, USDC-paid fees",
+  "2026-10-19": "partner curated packs"
+ }
+}

@@ -1,0 +1,331 @@
+{
+  "worksheet": "WS-29 Limitless rewards map",
+  "date": "2026-10-24",
+  "data_sources": [
+    {
+      "source": "docs.limitless.exchange (llms.txt index, 175 pages)",
+      "fetched": "2026-10-24",
+      "note": "нет отдельных страниц points/token/staking — только API /portfolio/points"
+    },
+    {
+      "source": "api.limitless.exchange live scans",
+      "fetched": "2026-10-24 ~06:45-07:15 UTC",
+      "note": "350 активных рынков (1-й снапшот), 238 isRewardable; повторный снапшот 175/136"
+    },
+    {
+      "source": "limitless.exchange/token, /staking, /rewards (web)",
+      "fetched": "2026-10-24"
+    },
+    {
+      "source": "локальная копия доков WS-26 (changelog до 2026-10-19)",
+      "path": "data/ws26_raw/"
+    },
+    {
+      "source": "limitless.exchange/blog (points-season-1/2/3/4-announcement)",
+      "fetched": "2026-10-24"
+    },
+    {
+      "source": "icoanalytics.org/projects/limitless; finance.yahoo.com (Chainwire PR 2025-10-20); iq.wiki; defirate.com (2026-05-05); theblock.co (2026-06-17); coinmarketcap CMC-AI (cliff unlock); airdrops.io (обновл. 2026-10-15); coingecko (limitless-3)",
+      "fetched": "агентом WS-29, 2026-10-24"
+    },
+    {
+      "source": "docs.polymarket.com (programs/*, perps/*, changelogs); clob.polymarket.com API скан 45k рынков; defirate.com trackers; CNBC 2026-09-30",
+      "fetched": "агентом WS-29, 2026-10-24"
+    },
+    {
+      "source": "kalshi.com/incentives, /fee-schedule (2026-10-02); help.kalshi.com (LIP 13823851, LPP 15410219); legalsportsreport.com 2026-09-30; actionnetwork.com",
+      "fetched": "агентом WS-29, 2026-10-24"
+    }
+  ],
+  "platform_state": {
+    "chain": "Base (USDC; Gnosis CTF/ERC-1155; гибрид off-chain CLOB + on-chain AMM; venue-система, новые рынки на новых venue с 2026-10-14). 'Ранее Blast' НЕ подтвердилось ни одним источником",
+    "active_markets_snapshot1": 350,
+    "rewardable_snapshot1": 238,
+    "active_markets_snapshot2": 175,
+    "rewardable_snapshot2": 136,
+    "rewardable_share_pct": 68,
+    "rewardable_mix": "почти все crypto up/down 5m/15m/hourly/daily (lumy-автоматизация) + часть спорта; политики/долгие рынки без флага",
+    "volume_observations_micro_usdc": {
+      "btc_5min_per_window": "1k-22.6k micro = $1-23 за окно",
+      "btc_hourly_per_window": "109.2k micro = $109 за окно",
+      "top_tennis_match_lifetime": "482k micro = $482",
+      "note": "объёмы микроскопические, весь борд порядка единиц тысяч USD/день"
+    },
+    "taker_fee_new_venues": "5% x (1 - price) от USDC-стоимости, обе стороны; legacy CLOB: buy 0.4-3.0% (в токенах), sell 0.42-1.5% (в USDC)",
+    "maker_fee": 0,
+    "taker_delay_5m_markets_ms": 250,
+    "volume_decay": {
+      "cumulative_by_2025_09": ">500M USD (наша WS-21, 09.2025)",
+      "current_run_rate": "~5-20k USD/день (замер 2026-10-24)",
+      "decay_factor": "платформа сжалась в ~50-100x с пика"
+    },
+    "volume_history_monthly": {
+      "2025-08": "$5.7M",
+      "2025-09": "$109M",
+      "2025-12": "$128.6M",
+      "2026-01": "$204.9M",
+      "2026-02": "$372.8M",
+      "2026-03": "$538.5M",
+      "2026-04": "$1.66B (рекорд, 5.6% рынка предикшнов)",
+      "2026-06": "~$2B/мес (The Block/Bernstein)",
+      "cumulative_by_2026-05": ">$3.9B",
+      "2026-10": "единицы тысяч USD/день (наши live-замеры; единицы volume — micro-USDC, перекрёстно подтверждено двумя независимыми снимками)",
+      "story": "бум на инцентивах S1-S4 -> коллапс после смерти LMTS: обвал в сотни раз к окт-2026"
+    },
+    "users": "~60% APAC / 30% Europe, US-юзеры не допущены (The Block, 2026-06-17); ~70k MAU (непроверено)"
+  },
+  "programs": {
+    "maker_rebates": {
+      "currency": "USDC, ежедневно (UTC-day, выплата после закрытия дня)",
+      "mechanics": "rebate-кредит = executed maker fills x taker fee; пул рынка = taker fees x rebateRate; выплата pro-rata по доле кредита",
+      "rebate_rate_observed": {
+        "hourly_daily_crypto": 1.0,
+        "5min_crypto": 0.3,
+        "sports_politics": 0
+      },
+      "deductions": [
+        "referral share (10-40% с фит referred-тейкеров)",
+        "creator fee на Community-рынках"
+      ],
+      "funding": "из тейкер-фитов; при объёмах платформы ~$5-20k/день суммарный пул порядка $50-150/день на все рынки",
+      "no_quote_requirements": "нет обязательных bid/ask-требований и uptime-минимумов — платят только за исполненные филлы",
+      "docs": "docs.limitless.exchange/user-guide/maker-rebates.md"
+    },
+    "lp_rewards": {
+      "currency": "USDC",
+      "mechanics": "минутные эпохи, ордера в пределах maxSpread от мидпойнта и >= minSize; бонус за близость к миду; односторонние котировки штрафуются (size / c, c=3 на 5m); буст-окна до $5000/рынок/день; выплата ежедневно 22:30 UTC",
+      "observed_2026_10_24": "dailyReward=0 и rewardsEpoch=0 на ВСЕХ 30+ проверенных рынках — бюджеты выключены/пауза",
+      "settings_sample": {
+        "minSize_shares": 100,
+        "maxSpread": 0.035,
+        "5min": {
+          "minSize_shares": 50,
+          "maxSpread": 0.065
+        }
+      },
+      "is_rewardable_flag_meaning": "рынок участвует в LP-rewards/поинтах (поля settings.dailyReward/rewardsEpoch/rebateRate)",
+      "docs": "docs.limitless.exchange/user-guide/lp-rewards.md"
+    },
+    "points": {
+      "status": "работает (сезоны; архив season1/2/3; 28-дневные 'месяцы'; currentSeason live)",
+      "earn": "по сделкам (trade), реализованному PnL и удержанию до разрешения (hold-to-resolution); Community-рынки исключены (2026-09-07)",
+      "value": "конвертация в LMTS заявлена на странице токена ('ways to earn: points program'), курс/формула не опубликованы",
+      "staking_boost": "'Coming Soon' — множитель поинтам за стейк LMTS",
+      "api": "GET /portfolio/points (auth)",
+      "season": "Season 4: 2026-05-25 — 2026-10-26 (анонс 2026-06-12; тир-ресеты 4-недельными циклами 22 июн/20 июл/17 авг/14 сен)",
+      "qualification": "$200 торгового объёма",
+      "mechanics": "поинты за 'quality trading' (активные рынки, анти-спам — формулы нет), LP 'steady stream', рефералы 4% поинтов (6% при 5+ рефералах)",
+      "tier_boosts": [
+        [
+          "Bronze",
+          "0-9,999",
+          "+0%"
+        ],
+        [
+          "Silver",
+          "10k-49,999",
+          "+2%"
+        ],
+        [
+          "Gold",
+          "50k-199,999",
+          "+4%"
+        ],
+        [
+          "Platinum",
+          "200k-499,999",
+          "+10%"
+        ],
+        [
+          "Diamond",
+          "500k+",
+          "+20%"
+        ]
+      ],
+      "redemption": "доля аирдропа LMTS, скейлится по поинтам; курс конвертации не опубликован",
+      "seasons_history": [
+        "S1: 2025-07-01 — 2025-09-22 (запуск программы; 'points determine your airdrop size when the token launches')",
+        "S2: 2025-09-22 — 2026-01-26",
+        "S3: 2026-01-26 — 2026-05-25 (claim открыт 2026-10-15, ~3% supply)",
+        "S4: 2026-05-25 — 2026-10-26 (бюджет не анонсирован; 'upgraded points system' по airdrops.io)",
+        "S5: НЕ анонсирована по состоянию на 2026-10-24"
+      ],
+      "anti_abuse_precedent": "wash-объёмный аккаунт вычищен из статистики поинтов (Huddle #1, 2026-06-30) — детект wash-трейдинга реален и применяется",
+      "extra": "market-creator fee share ~50% генерируемых фитов (AirdropAlert); реферальные перешли с поинтов на USDC (июль 2026); $1M World Cup 2026 pool"
+    },
+    "referral": {
+      "currency": "USDC ежедневно, min $1 payout",
+      "tiers": [
+        [
+          "Starter",
+          0,
+          0.1
+        ],
+        [
+          "Bronze",
+          25000,
+          0.18
+        ],
+        [
+          "Silver",
+          250000,
+          0.25
+        ],
+        [
+          "Gold",
+          3000000,
+          0.32
+        ],
+        [
+          "Diamond",
+          20000000,
+          0.4
+        ]
+      ],
+      "note": "только taker-фиты referred-юзеров; атрибуция навсегда"
+    },
+    "challenges": {
+      "active": "Packs Challenge, до 2026-10-28, приз 100,000 LMTS (~$3.3k по курсу 2026-10-24) топ-5 pack-трейдерам",
+      "past": "Hourly Prophet Challenge (серия недельных, ноябрь 2025)"
+    },
+    "staking_lmts": {
+      "apy_pct": 11.0,
+      "currency": "LMTS",
+      "min_stake_period_h": 48,
+      "staked_lmts": 19960633,
+      "staked_pct_circ": 4.4
+    }
+  },
+  "token": {
+    "symbol": "LMTS",
+    "chain": "Base",
+    "address": "0x9EadbE35F3Ee3bF3e28180070C429298a1b02F93",
+    "tge": "2025-10-22 (Base)",
+    "price_usd": 0.0333,
+    "mcap_usd": 4383529,
+    "fdv_usd": 33309826,
+    "ath_usd": 0.6943,
+    "drawdown_from_ath_pct": -95.2,
+    "supply_total": 1000000000,
+    "circulating": 452268694,
+    "fdv_mcap_ratio": 7.6,
+    "allocation_pct": {
+      "investors": 26.26,
+      "team": 25.0,
+      "ecosystem": 23.31,
+      "treasury": 13.0,
+      "strategy": 10.0,
+      "public_sale": 1.37,
+      "advisers": 1.0,
+      "public_allocation": 0.06
+    },
+    "vesting": "Sablier lockups 38%+20% supply; overhang разблокировок",
+    "buybacks": "'часть комиссий платформы направляется на buybacks, стейкинг и инцентив-пулы' (FAQ токен-страницы)",
+    "where": "Aerodrome (Base), Coinbase convert",
+    "airdrop_history": {
+      "total_airdrop_incentives_pct_supply": 24.37,
+      "season1": "2% supply, 100% unlock на TGE 2025-10-22 (+0.25% Wallchain Epoch 1)",
+      "season3": "3% supply (30M LMTS); claim открыт 2025-05-25... уточнение: раздача 2026-05-25, claim-окно открыто с 2026-10-15",
+      "season4": "финал 2026-10-26; бюджет сезона не анонсирован; Season 5 НЕ анонсирована",
+      "conversion_formula": "не публикуется",
+      "lmts_price_journey": "public sale $0.075 -> ATH $0.6943 (2025-10-22) -> ATL 2026-10-19 -> $0.0333 (2026-10-24); cliff-анлок 85.4M LMTS был 2026-04-22",
+      "buybacks": "$150k к дек 2025 из комиссий (заявка платформы)"
+    },
+    "price_context": "ATH $0.6943 вероятно на TGE-эпохе (окт-ноя 2025), к 2026-10-24 = $0.0333"
+  },
+  "tos_wash_trading": {
+    "prohibited": [
+      "wash trading",
+      "spoofing",
+      "layering",
+      "coordinated trading",
+      "мультиакки для обхода ограничений/манипуляции исходами"
+    ],
+    "enforcement": "приостановка/блокировка аккаунта на sole discretion, без уведомления; market manipulation и fraud прямо запрещены",
+    "detection_notes": "механизм детекта не опубликован; rebate-программа построена на executed fills против внешних тейкеров —.self-trade круги (A снимает котировку B) генерируют тейкер-фит, но это ровно wash trading по ToS => НЕ рассматриваем",
+    "source": "docs.limitless.exchange/user-guide/terms-of-service (локальная копия ws26_raw, строки 131-132, 194)"
+  },
+  "oracle_edge_5m": {
+    "market": "BTC/ETH Up-or-Down 5-min; разрешение: Chainlink 60s TWAP на T_close >= Price to Beat (TWAP на T_open)",
+    "taker_delay_ms": 250,
+    "edge_mechanism": "тейкер с прямым стримом Chainlink TWAP в последние 60-120с окна торгует против устаревших котировок мейкеров; fee 5%x(1-p) ~2.5% в мид-поинте",
+    "liquidity_cap": "объём окна $1-23 => потолок дохода низкий; калибровка 15 окон (2026-10-24): объёмы 1-22.6k micro-USDC",
+    "calibration_sample": {
+      "windows_checked": 15,
+      "resolved": 15,
+      "note": "исходы чередуются штатно; прайс-история у закрытых 5m недоступна через historical-price (пусто)"
+    }
+  },
+  "funding": {
+    "total_raised": "$17-18M (3 раунда)",
+    "pre_seed": "$3M (сен 2024): 1confirmation, Paper Ventures, Collider, Public Works, Anagram, Figment",
+    "strategic": "$4M (июль 2025): Coinbase Ventures, Maelstrom (Arthur Hayes, также advisor), Node Capital, Punk DAO, WAGMI, Echo Base Ecosystem Fund",
+    "seed": "$10M PR / ~$9M по ICO Analytics (окт 2025): лид 1confirmation + DCG, F-Prime, Arrington, Coinbase Ventures, Node, Collider",
+    "valuation": "не раскрыта",
+    "public_sale": "Kaito Launchpad 25.09-05.10.2025: $1M под $200M+ заявок, цена $0.075",
+    "sources": [
+      "ETF.com",
+      "Cryptorank",
+      "ICO Analytics",
+      " agent recon 2026-10-24"
+    ],
+    "details": {
+      "pre_seed": "$3M (2024-09): 1confirmation (лид), Paper Ventures, Collider, Public Works, Anagram, Figment, ангелы Polygon/Monad",
+      "strategic": "$4M (2025-07): Coinbase Ventures, Maelstrom (Arthur Hayes, advisor), Node Capital, Punk DAO, WAGMI, Collider, Flyer One, SID VP, Echo Base",
+      "seed": "$10M PR / $9M ICO Analytics (2025-10-20): 1confirmation (лид), DCG, F-Prime, Arrington, Coinbase Ventures, Node, Collider"
+    }
+  },
+  "risks": {
+    "regulatory": "CFTC DCM-заявка Limitless Markets US LLC (2026-05-01, pending); Arbitrum DAO голосовал за бан Limitless (сен 2026, кейс grant misuse 75k ARB)",
+    "platform": "обвал объёмов в сотни раз; миграция на новые venue (2026-10-14) ломает интеграции; LP-бюджеты обнулены",
+    "token": "LMTS -95% от ATH, ATL 19.10.2026; Sablier-разблокировки 58% supply; стейкинг-эмиссия 11%"
+  },
+  "comparison": {
+    "polymarket": {
+      "predictions_maker_rewards": {
+        "status_2026_10_24": "СПИТ: скан CLOB API (45k+ рынков) — ноль активных reward-конфигов; работают кампаниями",
+        "past_campaigns": "March Madness $2M+ (март 2026); crypto-TWAP $1M (авг 2026, закрыта: 5m $550k/15m $350k/4h $100k)",
+        "mechanics": "дневные выплаты, S=((v-s)/v)^2 x size, Q_min баланс 3:1, минутные сэмплы, two-sided при mid вне [0.10,0.90]"
+      },
+      "perps_rewards": {
+        "pool": "$75,000/день, поровну между активными perps-рынками + $1k бонус новому рынку в 1-й день",
+        "token": "pUSD, ежедневно 12:00 UTC",
+        "formula": "raw = maker_score^0.35 x active_liquidity_score^0.65 x uptime; нужен >=1% maker volume за 7д; учёт ликвидности в 20bps от мида (кап $100k notional/тирку)",
+        "extra": "OI-награды 6% APR на OI (порог $5M ср. дневного OI)",
+        "fees": "taker 0.04%->0.02%, maker 0.0125%->0.00%, ребейт 0.005% при $1B+ объёма",
+        "qualification_note": "порог >=1% 7д maker-объёма: на пустых перп-рынках достижимо малым капиталом, на ликвидных - нет"
+      },
+      "taker_rebates": "7 тиров Bronze->Obsidian по 30д взвешенному тейкер-объёму ($2k->$10M): 3%->50% ребейт + бонусы $10->$25k, ежедневно pUSD (с 2026-05-28)",
+      "token": "нет; TGE-спекуляции (рынок 'When POLY TGE' на Myriad)",
+      "volume": "intl: YTD2026 $75.4B, сен $4.7B; PM US $13B/30д (+93%)",
+      "maker_rebates_live": "перераспределение 20% (crypto) / 15% (sports, понижено с 25% 2026-07-10) / 25% (остальное) тейкер-фитов мейкерам, ежедневно pUSD"
+    },
+    "kalshi": {
+      "liquidity_incentive_program": "дневные выплаты $1-$1,000/рынок/день, снапшоты 1/сек, US-only, min payout $1, ЗАКРЫВАЕТСЯ 2027-01-01",
+      "volume_incentive_program": "ЗАКРЫТ досрочно с 2026-10-13 (CFTC-scrutiny, advisory авг 2026)",
+      "lp_program": "дизайгнированные MM по аукциону, перп-серии, терминация 2026-12-31",
+      "fees_2026_10_02": "taker 0.07xCxPx(1-P) standard/sports/5m-crypto; financials 0.025; 5m/1m financials 0.10; maker = 50% taker; перпы: taker 0.06%, maker-ребейт 0.0075%, фии waived до 2026-12-31",
+      "volume": "$84.4B/30д (76.2% индустрии)",
+      "wash_context": "WSJ/LSR: ~1M однотипных трейдов >$5B на Kalshi ETH-перпос с авг 2026 (аллегации wash под taker-инцентивы); Kalshi отрицает"
+    },
+    "verdict_on_10_50k": "Polymarket perps ($75k/день, живая формула) >> Kalshi LIP (US-only, до 01.2027, $1-1k/рынок) >> Limitless (пулы $50-150/день на всех, LP=0)"
+  },
+  "ev_summary": {
+    "maker_rebates_realistic_per_day": "$20-100 (доля 40-80% пула $50-150/день на всю платформу)",
+    "lp_rewards_now": "$0 (бюджеты обнулены 2026-10-24)",
+    "oracle_taker_edge_per_day": "$100-400 (ёмкость окон: 5m $1-23, hourly ~$109)",
+    "points_value": "спекулятивно: курс не публикуется; S4 финал 26.10.2026, S5 не анонсирован",
+    "challenge_prize": "100k LMTS ~ $3.3k на топ-5 (Packs Challenge до 28.10.2026)",
+    "monthly_on_10_50k": "$1-8k/мес абсолютом при боте 24/7; доход на инфраструктуру, не на капитал"
+  },
+  "team": {
+    "founded": "дек 2023",
+    "founders": [
+      "CJ Hetherington (CEO)",
+      "Roman Mogylnyi",
+      "Dima Horshkov (CPO)",
+      "Rev Miller"
+    ],
+    "entity": "Limitless Labs; Limitless Markets US LLC (CFTC DCM заявка 2026-05-01, pending)"
+  }
+}

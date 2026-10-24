@@ -71,10 +71,11 @@ def pm_leg(t_rec, ext_slugs):
             for tid in tok[:2]:
                 try:
                     b = get(f"{CLOB}/book?token_id={tid}")
+                    # PM CLOB sorts bids ascending / asks descending => best levels are LAST
                     entry["books"].append({
                         "token": tid[:16] + "...",
-                        "bids": b.get("bids", [])[:4],
-                        "asks": b.get("asks", [])[:4],
+                        "bids": b.get("bids", [])[-6:],
+                        "asks": b.get("asks", [])[-6:],
                     })
                 except Exception as e:
                     entry["books"].append({"err": str(e)[:80]})
@@ -100,12 +101,34 @@ def kalshi_leg(t_rec):
             out["series"][st] = mkts
         except Exception as e:
             out["series"][st] = {"err": str(e)[:80]}
-    # books for current-hour + next-hour + daily nearest strikes
+    # books for near-spot strikes: hourly buckets around spot + daily tails around spot
     want = []
     now = datetime.datetime.now(datetime.timezone.utc)
+    spot_ref = {"KXBTC": 80786.0, "KXETH": 2378.8}
+    try:
+        for st in ("KXBTC", "KXETH"):
+            for sym in ("BTCUSDT", "ETHUSDT"):
+                pass
+    except Exception:
+        pass
+    def _strike(t):
+        for part in t.split("-"):
+            if part[:1] in ("T", "B") and part[1:].replace(".", "").isdigit():
+                return float(part[1:])
+        return None
     for st in ("KXBTC", "KXETH"):
-        for hh in ((now.hour - 4) % 24, (now.hour - 3) % 24):  # ET hour = UTC-4 (EDT)
-            want.append(f"{st}-26OCT24{hh:02d}")
+        mk = out["series"].get(st, [])
+        if isinstance(mk, list):
+            hh_now = f"{st}-26OCT24{(now.hour - 4) % 24:02d}"
+            hh_next = f"{st}-26OCT24{(now.hour - 3) % 24:02d}"
+            near = [m for m in mk if (m["ticker"].startswith(hh_now) or m["ticker"].startswith(hh_next))
+                    and _strike(m["ticker"]) and abs(_strike(m["ticker"]) - spot_ref[st]) < spot_ref[st] * 0.01]
+            near.sort(key=lambda m: abs(_strike(m["ticker"]) - spot_ref[st]))
+            want += [m["ticker"] for m in near[:4]]
+            dn = [m for m in mk if "26OCT2417" in m["ticker"] and _strike(m["ticker"])
+                  and abs(_strike(m["ticker"]) - spot_ref[st]) < spot_ref[st] * 0.04]
+            dn.sort(key=lambda m: abs(_strike(m["ticker"]) - spot_ref[st]))
+            want += [m["ticker"] for m in dn[:3]]
     for st in ("KXBTC", "KXETH"):
         for m in out["series"].get(st, []) if isinstance(out["series"].get(st), list) else []:
             tk = m["ticker"]
@@ -115,7 +138,11 @@ def kalshi_leg(t_rec):
     for tk in want:
         try:
             ob = get(f"{KAL}/markets/{tk}/orderbook")
-            out["books"][tk] = {"yes": ob.get("yes", [])[:4], "no": ob.get("no", [])[:4]}
+            fp = ob.get("orderbook_fp") or {}
+            out["books"][tk] = {
+                "yes": [[float(p), float(s)] for p, s in (fp.get("yes_dollars") or [])[:4]],
+                "no": [[float(p), float(s)] for p, s in (fp.get("no_dollars") or [])[:4]],
+            }
         except Exception as e:
             out["books"][tk] = {"err": str(e)[:80]}
     t_rec["kalshi_ts"] = ts()
