@@ -1,0 +1,74 @@
+{
+ "ts": "2026-10-24",
+ "monitor_log_analysis": {
+  "days": 3.5,
+  "alert_snapshots": 6,
+  "alert_observations": 9,
+  "episodes": [
+   {
+    "asset": "BTC",
+    "pair": "Bybit-OKX",
+    "seen": "21.10 14:18-15:24",
+    "peak_pp": 8.7,
+    "closed_by": "16:31 (Bybit-OKX <4)"
+   },
+   {
+    "asset": "SOL",
+    "pair": "HL-Binance",
+    "seen": "21.10 15:24-16:57",
+    "peak_pp": 5.9,
+    "closed": "17:41"
+   },
+   {
+    "asset": "BTC",
+    "pair": "Bybit-HL",
+    "seen": "21.10 16:57",
+    "peak_pp": 6.1,
+    "note": "ротация площадок"
+   },
+   {
+    "asset": "BTC",
+    "pair": "HL-OKX",
+    "seen": "24.10 03:35",
+    "peak_pp": 7.7
+   },
+   {
+    "asset": "ETH",
+    "pair": "Binance-HL",
+    "seen": "24.10 03:35",
+    "peak_pp": 4.2,
+    "note": "HL-ETH сломался с плато, HL-BTC нет"
+   },
+   {
+    "asset": "BTC",
+    "pair": "HL-Bybit",
+    "seen": "24.10 05:21",
+    "peak_pp": 8.9
+   }
+  ],
+  "patterns": [
+   "эпизоды живут часы (подтверждает 33д-статистику: медиана 8ч)",
+   "дислокация РОТИРУЕТ площадки (Bybit-OKX -> Bybit-HL -> HL-OKX -> HL-Bybit) — мониторить надо все пары",
+   "HL-BTC держит плато 10.95% во всех снимках; HL-ETH плавает (10.95 -> 0.85 -> 2.85) — плато не константа по активам"
+  ]
+ },
+ "funding_arb_backtest_180d": {
+  "naive_perp_perp_taker": "УБИТО: все 5 пар -21..-46% годовых; каждая сделка -0.35% = комиссия 4 taker-ног x 3x",
+  "maker_churn": "тоже минус (-6.8..-1.4%/год): спрэд осциллирует сквозь exit-порог -> churn",
+  "WORKING_buy_and_hold": {
+   "HL-Bybit": "+11.93% годовых нетто (3x, maker, 66д)",
+   "HL-Binance": "+7.11% годовых нетто (3x, maker, 180д)",
+   "Binance-OKX": "отрицательный — CEX-CEX спрэда нет"
+  },
+  "monthly_HL-Binance_spread_pp": {
+   "2026-04": 0.66,
+   "05": 0.36,
+   "06": 3.41,
+   "07": 2.81,
+   "08": 1.05,
+   "09": 3.28,
+   "10": 4.58
+  },
+  "conclusion": "рабочая механика = пассивный керри (вход при широком спрэде, ребаланс раз в месяц), НЕ эпизодный трейдинг"
+ }
+}

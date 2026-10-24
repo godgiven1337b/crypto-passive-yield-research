@@ -1,0 +1,243 @@
+{
+ "params": {
+  "p_lo": 0.85,
+  "p_hi": 0.97,
+  "min_volume": 5000,
+  "entry_slip": 0.01,
+  "days_before": [
+   7,
+   3,
+   1
+  ],
+  "generated": "2026-10-24T05:31:53.390758+00:00"
+ },
+ "report": {
+  "other|T-1d": {
+   "n": 1,
+   "win_rate": 100.0,
+   "avg_pnl_pct": 7.53,
+   "median_pnl_pct": 7.53,
+   "total_usd_per_1": 0.075
+  },
+  "other|T-3d": {
+   "n": 1,
+   "win_rate": 100.0,
+   "avg_pnl_pct": 7.53,
+   "median_pnl_pct": 7.53,
+   "total_usd_per_1": 0.075
+  },
+  "other|T-7d": {
+   "n": 3,
+   "win_rate": 100.0,
+   "avg_pnl_pct": 11.183,
+   "median_pnl_pct": 11.73,
+   "total_usd_per_1": 0.335
+  },
+  "politics|T-1d": {
+   "n": 2,
+   "win_rate": 100.0,
+   "avg_pnl_pct": 7.445,
+   "median_pnl_pct": 11.05,
+   "total_usd_per_1": 0.149
+  },
+  "politics|T-3d": {
+   "n": 2,
+   "win_rate": 100.0,
+   "avg_pnl_pct": 7.445,
+   "median_pnl_pct": 11.05,
+   "total_usd_per_1": 0.149
+  },
+  "politics|T-7d": {
+   "n": 2,
+   "win_rate": 100.0,
+   "avg_pnl_pct": 7.445,
+   "median_pnl_pct": 11.05,
+   "total_usd_per_1": 0.149
+  },
+  "sports|T-1d": {
+   "n": 1,
+   "win_rate": 100.0,
+   "avg_pnl_pct": 14.29,
+   "median_pnl_pct": 14.29,
+   "total_usd_per_1": 0.143
+  },
+  "sports|T-3d": {
+   "n": 1,
+   "win_rate": 100.0,
+   "avg_pnl_pct": 14.29,
+   "median_pnl_pct": 14.29,
+   "total_usd_per_1": 0.143
+  },
+  "sports|T-7d": {
+   "n": 5,
+   "win_rate": 60.0,
+   "avg_pnl_pct": -32.444,
+   "median_pnl_pct": 10.5,
+   "total_usd_per_1": -1.622
+  }
+ },
+ "trades_sample": [
+  {
+   "category": "politics",
+   "q": "Marseille public gathering ban effectively lifte",
+   "days_before": 7,
+   "entry": 0.89,
+   "outcome": 1.0,
+   "pnl_pct": 11.05,
+   "volume": 15679.957089
+  },
+  {
+   "category": "politics",
+   "q": "Marseille public gathering ban effectively lifte",
+   "days_before": 3,
+   "entry": 0.89,
+   "outcome": 1.0,
+   "pnl_pct": 11.05,
+   "volume": 15679.957089
+  },
+  {
+   "category": "politics",
+   "q": "Marseille public gathering ban effectively lifte",
+   "days_before": 1,
+   "entry": 0.89,
+   "outcome": 1.0,
+   "pnl_pct": 11.05,
+   "volume": 15679.957089
+  },
+  {
+   "category": "politics",
+   "q": "Marseille public gathering ban effectively lifte",
+   "days_before": 7,
+   "entry": 0.953,
+   "outcome": 1.0,
+   "pnl_pct": 3.84,
+   "volume": 11571.494787
+  },
+  {
+   "category": "politics",
+   "q": "Marseille public gathering ban effectively lifte",
+   "days_before": 3,
+   "entry": 0.953,
+   "outcome": 1.0,
+   "pnl_pct": 3.84,
+   "volume": 11571.494787
+  },
+  {
+   "category": "politics",
+   "q": "Marseille public gathering ban effectively lifte",
+   "days_before": 1,
+   "entry": 0.953,
+   "outcome": 1.0,
+   "pnl_pct": 3.84,
+   "volume": 11571.494787
+  },
+  {
+   "category": "other",
+   "q": "Will Jynxzi reach Unreal rank in Fortnite by Oct",
+   "days_before": 7,
+   "entry": 0.92,
+   "outcome": 1.0,
+   "pnl_pct": 7.53,
+   "volume": 10964.372139
+  },
+  {
+   "category": "other",
+   "q": "Will Jynxzi reach Unreal rank in Fortnite by Oct",
+   "days_before": 3,
+   "entry": 0.92,
+   "outcome": 1.0,
+   "pnl_pct": 7.53,
+   "volume": 10964.372139
+  },
+  {
+   "category": "other",
+   "q": "Will Jynxzi reach Unreal rank in Fortnite by Oct",
+   "days_before": 1,
+   "entry": 0.92,
+   "outcome": 1.0,
+   "pnl_pct": 7.53,
+   "volume": 10964.372139
+  },
+  {
+   "category": "sports",
+   "q": "M25 Tamworth: Matthew Dellavedova vs Stefan Vuji",
+   "days_before": 7,
+   "entry": 0.85,
+   "outcome": 0.0,
+   "pnl_pct": -100.0,
+   "volume": 44934.48708600001
+  },
+  {
+   "category": "sports",
+   "q": "M15 Ithaca: Vignesh Gogineni vs Rafael Ymer",
+   "days_before": 7,
+   "entry": 0.92,
+   "outcome": 0.0,
+   "pnl_pct": -100.0,
+   "volume": 7180.487091
+  },
+  {
+   "category": "sports",
+   "q": "Cali: Gustavo Heide vs Santiago Rodriguez Tavern",
+   "days_before": 7,
+   "entry": 0.875,
+   "outcome": 1.0,
+   "pnl_pct": 12.99,
+   "volume": 70988.28713699999
+  },
+  {
+   "category": "sports",
+   "q": "Fort Worth: Jenson Brooksby vs Patrick Maloney",
+   "days_before": 7,
+   "entry": 0.865,
+   "outcome": 1.0,
+   "pnl_pct": 14.29,
+   "volume": 100422.300996
+  },
+  {
+   "category": "sports",
+   "q": "Fort Worth: Jenson Brooksby vs Patrick Maloney",
+   "days_before": 3,
+   "entry": 0.865,
+   "outcome": 1.0,
+   "pnl_pct": 14.29,
+   "volume": 100422.300996
+  },
+  {
+   "category": "sports",
+   "q": "Fort Worth: Jenson Brooksby vs Patrick Maloney",
+   "days_before": 1,
+   "entry": 0.865,
+   "outcome": 1.0,
+   "pnl_pct": 14.29,
+   "volume": 100422.300996
+  },
+  {
+   "category": "other",
+   "q": "Liaoning Flying Leopards vs. Sichuan Blue Whales",
+   "days_before": 7,
+   "entry": 0.885,
+   "outcome": 1.0,
+   "pnl_pct": 11.73,
+   "volume": 32335.423401
+  },
+  {
+   "category": "other",
+   "q": "Beijing Royal Fighters vs. Jiangsu Dragons",
+   "days_before": 7,
+   "entry": 0.865,
+   "outcome": 1.0,
+   "pnl_pct": 14.29,
+   "volume": 13411.478207
+  },
+  {
+   "category": "sports",
+   "q": "Ningbo Open: Elena Rybakina vs Katarzyna Kawa",
+   "days_before": 7,
+   "entry": 0.895,
+   "outcome": 1.0,
+   "pnl_pct": 10.5,
+   "volume": 355992.71900099993
+  }
+ ]
+}
