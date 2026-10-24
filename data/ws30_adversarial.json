@@ -169,8 +169,35 @@
   "venue_v3_exchange": "0x05c748E2f4DcDe0ec9Fa8DDc40DE6b867f923fa5 (Base, CTF Exchange fork of Polymarket; used by current 5-min markets)",
   "fee_module": "0x7B6ffe5bA8B5ec7afB0AaBaE629D12dA5bC62565 (COLLATERAL type)",
   "ctf": "0xC9c98965297Bc527861c898329Ee280632B76e18 (canonical Gnosis CTF on Base)",
-  "audit_status": "upstream ChainSecurity audit covers Polymarket ctf-exchange, NOT Limitless modifications (LIMITLESS_SAFE sig type, Base config); no independent Limitless audit published on docs security page",
-  "automationType": "lumy = Limitless in-house recurring-market automation (creates/resolves series); confirmed on every fetched market object"
+  "audit_status": "DefiLlama audits:0; only upstream ChainSecurity audit of Polymarket; Limitless modifications explicitly not covered; no bug bounty found",
+  "automationType": "lumy = Limitless in-house recurring-market automation (creates/resolves series); confirmed on every fetched market object",
+  "code_lineage": "CONFIRMED on-chain hard fork of Polymarket/ctf-exchange (GitHub fork=true; bytecode embeds EIP-712 domain \"Limitless CTF Exchange\" + Polymarket proxy wallet impls)",
+  "deployments": {
+   "v1": "2025-02-06",
+   "v2": "2025-12-15",
+   "v3_and_negrisk": "2025-12-17",
+   "new_fee_modules": "2026-10-12"
+  },
+  "admin": {
+   "address": "0xa06ccf9139d011ed66cb6a84b007d33f7472f4c3",
+   "type": "single hot EOA (no code, nonce 2236)",
+   "powers": [
+    "pauseTrading/unpauseTrading",
+    "addAdmin/addOperator/removeAdmin",
+    "setProxyFactory/setSafeFactory",
+    "registerToken"
+   ],
+   "scope": "admin of v1/v2/v3 CTF exchanges, v3 NegRisk exchange+operator, both new-venue fee modules",
+   "upgradeability": "not upgradeable (monolithic; hence v1->v2->v3 redeployments)"
+  },
+  "tvl_defillama": {
+   "current_usd": 361000,
+   "peak_usd": 1434000,
+   "peak_date": "2025-09-22",
+   "largest_1d_drops": "withdrawal waves with fast retrace, not drains"
+  },
+  "exploit_history": "none found: DefiLlama hacks [], Google News zero, rekt.news zero, IQ.wiki clean; Blast-era unconfirmed (Base-native since 2024-09)",
+  "funding": "pre-seed $3M (2024-09), strategic $4M (2025-07), public sale $1M (2025-10, $75M FDV), seed $9M (2025-10, 1confirmation)"
  },
  "markets_sample": [
   {
@@ -3348,5 +3375,13 @@
   "with_late_trades": 15,
   "late_taker_pnl_usd_24h": -16.3,
   "interpretation": "no free stale liquidity: empty bids; existing late takers are retail and lose money in aggregate"
+ },
+ "chainlink_stream_access": {
+  "free_tier": false,
+  "auth": "HMAC-SHA256 per request (Authorization UUID + timestamp + signature)",
+  "public_discovery": "181 public feeds; ETH/BTC TWAP-60s NOT among them (entitlement streams tied to subscriptions)",
+  "third_party_subscription": "possible self-serve paid; no published third-party restriction found",
+  "on_chain": "Limitless does not post TWAP reports on-chain; resolution captured off-chain, payouts via Gnosis CTF reportPayouts; VerifierProxy exists on Base unused by Limitless",
+  "free_alternatives_quality": "Limitless oracle-candles (1m, delayed) or CEX proxy (basis 12.5 bps > median margin 5.7 bps)"
  }
 }
