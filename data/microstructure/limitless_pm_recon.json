@@ -1,0 +1,43 @@
+{
+ "ts": "2026-10-24T07:00Z",
+ "limitless_recon": {
+  "api": "api.limitless.exchange (public REST: /markets/active, /markets/{slug}); docs.limitless.exchange",
+  "structure": "5/15-min & hourly & daily up/down ETH/BTC/BNB/DOGE/XRP/SOL + спорт/политика, Chainlink 60s-TWAP resolution, isRewardable=True",
+  "slug_pattern": "eth-up-or-down-5-min-{unix_slot} (слоты кратны 300/900)",
+  "VOLUME_VERDICT": "арена пуста: 5m ETH окна $0-94 (медиана $0, $147/2ч); 15m $352/2ч; весь active board < $1k; крупнейший рынок $329 (esports)",
+  "conclusion": "оракул-превью механика реальна, но собирать нечего на Limitless"
+ },
+ "polymarket_short_windows": {
+  "discovery": "та же структура с РЕАЛЬНЫМ потоком: btc-updown-5m/15m слаги, $76-97k объёма на окно, семейство >$1-2M/день",
+  "resolution": "Chainlink BTC/USD 60s-TWAP streams (public WebSocket) — тот же источник, что Limitless",
+  "trade_density": ">10.5k сделок на 15-мин окно (11/сек) — высокая активность ботов",
+  "preliminary_efficiency": {
+   "method": "prices-history свежезакрывшихся 5m окон (грубая, 4-5 точек)",
+   "windows": [
+    {
+     "win": "5m-1792823400",
+     "price_before_end": 0.535,
+     "outcome": "UP"
+    },
+    {
+     "win": "5m-1792823100",
+     "price_before_end": 0.995,
+     "outcome": "UP"
+    },
+    {
+     "win": "5m-5m-1792822800",
+     "price_before_end": 0.525,
+     "outcome": "DOWN"
+    },
+    {
+     "win": "5m-1792822500",
+     "price_before_end": 0.005,
+     "outcome": "DOWN"
+    }
+   ],
+   "read": "в 'очевидных' окнах рынок ЗАРАНЕЕ сходится к 0.995/0.005 — оракул-боты уже работают; в неопределённых стоит ~0.53 (честный коинфлип)",
+   "verdict_preliminary": "наивный 'читай TWAP и богатей' скорее всего уже съеден; остаточный эдж = латентная гонка или модельная оценка вероятности в неопределённых окнах — финальный вердикт за WS-27/30"
+  }
+ },
+ "next_data_needed": "тик-уровень T-60..T-0 (WebSocket live) — paper-run"
+}
