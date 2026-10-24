@@ -126,7 +126,7 @@
     <div>Fed funds: <b>3.75–4.00%</b> (hike в сент-2026)</div>
     <div>T-bill 3M: <b>4.1–4.3%</b> (CMT 4.9%)</div>
     <div>Инфляция CPI: <b>~3.7%</b> г/г</div>
-    <div>Фаза рынка: <b>BTC −34% от ATH</b>, DeFi TVL $90B (−40% г/г)</div>
+    <div>Фаза рынка: <b>BTC −34% от ATH</b>, DeFi TVL $90B (−39% г/г)</div>
   </div>
   <div class="note"><b>Зачем тогда крипта?</b> Чистый T-bill вне крипты даёт ~4.3% без смарт-контрактных рисков — и это главный бенчмарк-соперник всей отрасли.
   Крипто-yield оправдан только там, где он даёт <b>устойчивую премию к T-bill за понятный риск</b> (кредитный, ликвидности, страхования) или где нужен ончейн-капитал.
@@ -155,7 +155,7 @@
   <span class="badge b-warn">осторожно</span> — эдж есть, но с жёсткими условиями ·
   <span class="badge b-bad">не брать</span> — опровергнуто проверкой ·
   <span class="badge b-info">мёртвая арена</span> — механика работает, денег там нет.
-  Значок <span class="grade">B</span> — уровень доказанности: B = собственный бэктест или длительная живая история, C = оценки/одиночные замеры (уровня A нет ни у одного эджа — таков честный аудит).</p>
+  Уровень доказанности: B/B− = собственный бэктест, длительная живая история или сильная внешняя база с частичной верификацией; C = оценки и одиночные замеры. Уровня A нет ни у одного эджа — таков честный аудит.</p>
   <div class="gloss">
     <p><b>E[APY]</b> — матожидание доходности: номинальный APY минус вероятностные потери (взломы, депеги, смертность премий).</p>
     <p><b>б.п. / п.п.</b> — базовые пункты (0.01%) / процентные пункты.</p>
@@ -201,7 +201,7 @@
     <tr><td>HL-керри buy-and-hold</td><td>15%</td><td>шорт-перп HL + лонг-перп Bybit/Binance, 2x, maker; вход при 7д-среднем спрэде &gt;3 п.п.</td><td class="g">+5–8% на ногу</td></tr>
     <tr><td>Pendle PT-правило</td><td>15%</td><td>dte≤60д, исполняемый порог implied &gt; trail30+180 б.п. (по аскам)</td><td class="g">underlying +1.5–3.5 п.п.</td></tr>
     <tr><td>FLB на Polymarket</td><td>15%</td><td>токены ≥90¢, Politics/Finance/Crypto, без входа в последние 24ч, ≤$1.5k/рынок</td><td class="y">+0.3–0.6%/цикл (forward-проверка)</td></tr>
-    <tr><td>Луп syrupUSDC/Maple</td><td>12%</td><td>3.5x (буфер NAV ~24%); kill: Maple borrow &gt;5.5%, депег syrup &gt;14%</td><td class="y">~9–10% гросс</td></tr>
+    <tr><td>Луп syrupUSDC/Maple</td><td>12%</td><td>3.5x (буфер NAV ~24%); kill по аудиту: Maple borrow &gt;4.6% (48ч подряд), сироп-NAV &lt;0.97, спрэд &lt;1.2 п.п.</td><td class="y">~9–10% гросс</td></tr>
     <tr><td>Пилот undersupplied LP</td><td>3%</td><td>vol/TVL&gt;20x устойчиво ≥7 дней, узкий диапазон</td><td class="y">опытные данные</td></tr>
   </table></div>
   <div class="note" style="margin-top:14px"><b>Go/No-Go перед деньгами:</b> 2-недельная бумажная прокрутка. FLB: медиана ≥ +0.25¢/$ после комиссий, n≥100, win≥88% ·
@@ -300,7 +300,7 @@ const CARDS=[
 ["+LVR перевернулся: комиссии 8–26% против выноса 1.65% при текущей воле","+никто не мониторит vol/TVL систематически — ниша пуста","+скринер встроен в наш живой монитор"],
 ["однодневные всплески 300–6500% — артефакты, фильтр 7 дней обязателен","смарт-риск v4-hooks","режимность оборота"],
 "QUANT-EDGES.md §2 · живые кандидаты в монитор-логе"],
-[3,"warn","B","FLB на Polymarket (токены ≥90¢)","+0.3–0.8%/цикл брутто",6.0,"$1.5k/рынок","$9.66B в зоне ≥90¢",5.5,
+[3,"warn","B−","FLB на Polymarket (токены ≥90¢)","+0.3–0.8%/цикл брутто",6.0,"$1.5k/рынок","$9.66B в зоне ≥90¢",5.5,
 ["+доказательная база 588M сделок: +0.83¢/$ pooled, Finance +1.83%","+ротация 1–14 дней, автоматизация тривиальна"],
 ["наш бэктест заблокирован API — только forward-проверка","комиссии ≈ ⅓ эджа; спорт инвертирован (исключить)","adverse selection документирована"],
 "PREDICTION-MARKETS.md §2.1 · 15–50% APR брутто при ротации"],
@@ -357,7 +357,7 @@ function renderCards(){
     const [tier,v,grade,name,apy,eapy,cap,liq,risk,plus,minus,why]=c;
     return `<div class="card"><div class="top"><div><h3>${name}</h3>${RISK(risk)}</div>
     <div style="display:flex;gap:6px;flex-direction:column;align-items:flex-end">
-      <span class="badge ${VB[v][1]}">${VB[v][0]}</span><span class="grade g-${grade.toLowerCase()}" title="Уровень доказанности: B = бэктест/живая история, C = оценки">доказ-ть ${grade}</span>
+      <span class="badge ${VB[v][1]}">${VB[v][0]}</span><span class="grade ${grade[0]==='B'?'g-b':'g-c'}" title="Уровень доказанности: B = бэктест/живая история, C = оценки">доказ-ть ${grade}</span>
     </div></div>
     <div class="nums"><span class="pill"><b>${apy}</b></span><span class="pill">капитал: <b>${cap}</b></span><span class="pill">ёмкость: <b>${liq}</b></span></div>
     <div class="pm"><div class="plus"><div class="h">Плюсы</div><ul>${plus.map(x=>`<li>${x.replace(/^\+/,'')}</li>`).join('')}</ul></div>
