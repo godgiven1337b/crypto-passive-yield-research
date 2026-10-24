@@ -9,50 +9,15 @@
    3,
    1
   ],
-  "generated": "2026-10-24T05:31:53.390758+00:00"
+  "generated": "2026-10-24T05:41:04.563558+00:00"
  },
  "report": {
-  "other|T-1d": {
-   "n": 1,
-   "win_rate": 100.0,
-   "avg_pnl_pct": 7.53,
-   "median_pnl_pct": 7.53,
-   "total_usd_per_1": 0.075
-  },
-  "other|T-3d": {
-   "n": 1,
-   "win_rate": 100.0,
-   "avg_pnl_pct": 7.53,
-   "median_pnl_pct": 7.53,
-   "total_usd_per_1": 0.075
-  },
   "other|T-7d": {
-   "n": 3,
-   "win_rate": 100.0,
-   "avg_pnl_pct": 11.183,
-   "median_pnl_pct": 11.73,
-   "total_usd_per_1": 0.335
-  },
-  "politics|T-1d": {
    "n": 2,
    "win_rate": 100.0,
-   "avg_pnl_pct": 7.445,
-   "median_pnl_pct": 11.05,
-   "total_usd_per_1": 0.149
-  },
-  "politics|T-3d": {
-   "n": 2,
-   "win_rate": 100.0,
-   "avg_pnl_pct": 7.445,
-   "median_pnl_pct": 11.05,
-   "total_usd_per_1": 0.149
-  },
-  "politics|T-7d": {
-   "n": 2,
-   "win_rate": 100.0,
-   "avg_pnl_pct": 7.445,
-   "median_pnl_pct": 11.05,
-   "total_usd_per_1": 0.149
+   "avg_pnl_pct": 13.01,
+   "median_pnl_pct": 14.29,
+   "total_usd_per_1": 0.26
   },
   "sports|T-1d": {
    "n": 1,
@@ -77,87 +42,6 @@
   }
  },
  "trades_sample": [
-  {
-   "category": "politics",
-   "q": "Marseille public gathering ban effectively lifte",
-   "days_before": 7,
-   "entry": 0.89,
-   "outcome": 1.0,
-   "pnl_pct": 11.05,
-   "volume": 15679.957089
-  },
-  {
-   "category": "politics",
-   "q": "Marseille public gathering ban effectively lifte",
-   "days_before": 3,
-   "entry": 0.89,
-   "outcome": 1.0,
-   "pnl_pct": 11.05,
-   "volume": 15679.957089
-  },
-  {
-   "category": "politics",
-   "q": "Marseille public gathering ban effectively lifte",
-   "days_before": 1,
-   "entry": 0.89,
-   "outcome": 1.0,
-   "pnl_pct": 11.05,
-   "volume": 15679.957089
-  },
-  {
-   "category": "politics",
-   "q": "Marseille public gathering ban effectively lifte",
-   "days_before": 7,
-   "entry": 0.953,
-   "outcome": 1.0,
-   "pnl_pct": 3.84,
-   "volume": 11571.494787
-  },
-  {
-   "category": "politics",
-   "q": "Marseille public gathering ban effectively lifte",
-   "days_before": 3,
-   "entry": 0.953,
-   "outcome": 1.0,
-   "pnl_pct": 3.84,
-   "volume": 11571.494787
-  },
-  {
-   "category": "politics",
-   "q": "Marseille public gathering ban effectively lifte",
-   "days_before": 1,
-   "entry": 0.953,
-   "outcome": 1.0,
-   "pnl_pct": 3.84,
-   "volume": 11571.494787
-  },
-  {
-   "category": "other",
-   "q": "Will Jynxzi reach Unreal rank in Fortnite by Oct",
-   "days_before": 7,
-   "entry": 0.92,
-   "outcome": 1.0,
-   "pnl_pct": 7.53,
-   "volume": 10964.372139
-  },
-  {
-   "category": "other",
-   "q": "Will Jynxzi reach Unreal rank in Fortnite by Oct",
-   "days_before": 3,
-   "entry": 0.92,
-   "outcome": 1.0,
-   "pnl_pct": 7.53,
-   "volume": 10964.372139
-  },
-  {
-   "category": "other",
-   "q": "Will Jynxzi reach Unreal rank in Fortnite by Oct",
-   "days_before": 1,
-   "entry": 0.92,
-   "outcome": 1.0,
-   "pnl_pct": 7.53,
-   "volume": 10964.372139
-  },
   {
    "category": "sports",
    "q": "M25 Tamworth: Matthew Dellavedova vs Stefan Vuji",

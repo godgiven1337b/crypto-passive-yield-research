@@ -1,0 +1,807 @@
+{
+ "month_top20": [
+  {
+   "rank": 1,
+   "name": "BreakTheBank",
+   "wallet": "0xf0318c32136c2db7fec88b84869aee6a1106c80c",
+   "vol_usd": 70687986,
+   "pnl_usd": 8289959,
+   "margin_pct": 11.7
+  },
+  {
+   "rank": 2,
+   "name": "joseph00677",
+   "wallet": "0xcdcccd0f2d86e450d973da415ad2430e5cc7935a",
+   "vol_usd": 44111177,
+   "pnl_usd": 7201193,
+   "margin_pct": 16.3
+  },
+  {
+   "rank": 3,
+   "name": "e46m3",
+   "wallet": "0x4f1d5ae26fc31472966e951af3183308736d8de2",
+   "vol_usd": 2392638,
+   "pnl_usd": 3320003,
+   "margin_pct": 138.8
+  },
+  {
+   "rank": 4,
+   "name": "Diabolical-Prize",
+   "wallet": "0x7c37b52eb226bcb9411375ec48b0169663fb6aeb",
+   "vol_usd": 41989592,
+   "pnl_usd": 2851407,
+   "margin_pct": 6.8
+  },
+  {
+   "rank": 5,
+   "name": "HomeRunHazard",
+   "wallet": "0x5268527977f700f9bf9b6d5cd843859e4e70135d",
+   "vol_usd": 108518917,
+   "pnl_usd": 2005610,
+   "margin_pct": 1.8
+  },
+  {
+   "rank": 6,
+   "name": "Papeasy",
+   "wallet": "0x111f73e91f85b6fe4de1ddec3de2fe32122e355b",
+   "vol_usd": 56223,
+   "pnl_usd": 1892284,
+   "margin_pct": 3365.7
+  },
+  {
+   "rank": 7,
+   "name": "SmartPredictOrNot",
+   "wallet": "0xe6ca6ebbec97e8a46ff3dbdb2a99d46254fbbff4",
+   "vol_usd": 21682034,
+   "pnl_usd": 1433139,
+   "margin_pct": 6.6
+  },
+  {
+   "rank": 8,
+   "name": "0xb0e74DF9430A089Aa102e2207Af5fde1967439D2-1789545517033",
+   "wallet": "0xb0e74df9430a089aa102e2207af5fde1967439d2",
+   "vol_usd": 4940,
+   "pnl_usd": 1393188,
+   "margin_pct": 28202.3
+  },
+  {
+   "rank": 9,
+   "name": "mooseborzoii",
+   "wallet": "0x1f3a646ce5cbe2c70270e7a46161d89b7c7b895d",
+   "vol_usd": 113835571,
+   "pnl_usd": 1360891,
+   "margin_pct": 1.2
+  },
+  {
+   "rank": 10,
+   "name": "RichieRicher",
+   "wallet": "0x361b16e3ddfe1d415d41008daac2631d94ab74fe",
+   "vol_usd": 5971931,
+   "pnl_usd": 1253822,
+   "margin_pct": 21.0
+  },
+  {
+   "rank": 11,
+   "name": "Bigggggggg",
+   "wallet": "0x511f9c771449162349795d17becf8b37031acbe1",
+   "vol_usd": 4939173,
+   "pnl_usd": 1161465,
+   "margin_pct": 23.5
+  },
+  {
+   "rank": 12,
+   "name": "3edmond.dantes",
+   "wallet": "0x983eedfbd75803602e4a6e6ea9aab6dc6b9c6748",
+   "vol_usd": 2627376,
+   "pnl_usd": 1052061,
+   "margin_pct": 40.0
+  },
+  {
+   "rank": 13,
+   "name": "Lucerys",
+   "wallet": "0x1387d145aaf01f6e33b66525dda6e1f51f6955f8",
+   "vol_usd": 4279191,
+   "pnl_usd": 945132,
+   "margin_pct": 22.1
+  },
+  {
+   "rank": 14,
+   "name": "balthazar",
+   "wallet": "0x5a218c7ad04135830a45c41aaed7294df7809318",
+   "vol_usd": 4850745,
+   "pnl_usd": 942675,
+   "margin_pct": 19.4
+  },
+  {
+   "rank": 15,
+   "name": "Kch-Temp",
+   "wallet": "0x924379a79c64b77ad5816ad362122a5f6228658e",
+   "vol_usd": 11984658,
+   "pnl_usd": 900084,
+   "margin_pct": 7.5
+  },
+  {
+   "rank": 16,
+   "name": "Mooseborzoiii",
+   "wallet": "0x57a85952044f2c8e4d31b475aab6987d2f98ebc2",
+   "vol_usd": 11051549,
+   "pnl_usd": 894277,
+   "margin_pct": 8.1
+  },
+  {
+   "rank": 17,
+   "name": "UpTheBlues",
+   "wallet": "0x2a69660046d7acc4ab204d7cc5ba78b0776cd2f7",
+   "vol_usd": 145724172,
+   "pnl_usd": 862809,
+   "margin_pct": 0.6
+  },
+  {
+   "rank": 18,
+   "name": "0xBc43c8bfBC4d77c2FC9011adaD38Ba43b88996d3-1765231687816",
+   "wallet": "0xbc43c8bfbc4d77c2fc9011adad38ba43b88996d3",
+   "vol_usd": 23825157,
+   "pnl_usd": 757440,
+   "margin_pct": 3.2
+  },
+  {
+   "rank": 19,
+   "name": "aHjCz",
+   "wallet": "0x2b5920274740ca61745eeb077587bf5bb4ff9db6",
+   "vol_usd": 1702597,
+   "pnl_usd": 729130,
+   "margin_pct": 42.8
+  },
+  {
+   "rank": 20,
+   "name": "alex20011",
+   "wallet": "0x4868c31e81040e002b41984842b84bae8923a1c1",
+   "vol_usd": 1964173,
+   "pnl_usd": 725626,
+   "margin_pct": 36.9
+  }
+ ],
+ "alltime_top20": [
+  {
+   "rank": 1,
+   "name": "Theo4",
+   "wallet": "0x56687bf447db6ffa42ffe2204a05edaa20f55839",
+   "vol_usd": 43013259,
+   "pnl_usd": 22053934,
+   "margin_pct": 51.3
+  },
+  {
+   "rank": 2,
+   "name": "swisstony",
+   "wallet": "0x204f72f35326db932158cba6adff0b9a1da95e14",
+   "vol_usd": 1850584673,
+   "pnl_usd": 18482463,
+   "margin_pct": 1.0
+  },
+  {
+   "rank": 3,
+   "name": "Fredi9999",
+   "wallet": "0x1f2dd6d473f3e824cd2f8a89d9c69fb96f6ad0cf",
+   "vol_usd": 76611317,
+   "pnl_usd": 16619507,
+   "margin_pct": 21.7
+  },
+  {
+   "rank": 4,
+   "name": "RN1",
+   "wallet": "0x2005d16a84ceefa912d4e380cd32e7ff827875ea",
+   "vol_usd": 1412412054,
+   "pnl_usd": 13136093,
+   "margin_pct": 0.9
+  },
+  {
+   "rank": 5,
+   "name": "kch123",
+   "wallet": "0x6a72f61820b26b1fe4d956e17b6dc2a1ea3033ee",
+   "vol_usd": 293444003,
+   "pnl_usd": 11351407,
+   "margin_pct": 3.9
+  },
+  {
+   "rank": 6,
+   "name": "BreakTheBank",
+   "wallet": "0xf0318c32136c2db7fec88b84869aee6a1106c80c",
+   "vol_usd": 323643091,
+   "pnl_usd": 9476329,
+   "margin_pct": 2.9
+  },
+  {
+   "rank": 7,
+   "name": "mintblade",
+   "wallet": "0x96cfcb0c30942cfcd1cdf76c7d408794d66b1acb",
+   "vol_usd": 17759922,
+   "pnl_usd": 9110690,
+   "margin_pct": 51.3
+  },
+  {
+   "rank": 8,
+   "name": "fishalive",
+   "wallet": "0xed64a7bf029040aa331abc87902434d815ef217d",
+   "vol_usd": 13281460,
+   "pnl_usd": 8998447,
+   "margin_pct": 67.8
+  },
+  {
+   "rank": 9,
+   "name": "frostrizz",
+   "wallet": "0xbc11a64ab34a03a043fbe80598fa065ee87eeec6",
+   "vol_usd": 23091318,
+   "pnl_usd": 8801838,
+   "margin_pct": 38.1
+  },
+  {
+   "rank": 10,
+   "name": "Len9311238",
+   "wallet": "0x78b9ac44a6d7d7a076c14e0ad518b301b63c6b76",
+   "vol_usd": 16402745,
+   "pnl_usd": 8709973,
+   "margin_pct": 53.1
+  },
+  {
+   "rank": 11,
+   "name": "sparklingwater123",
+   "wallet": "0x664ce9fb97ae1bbd538d7381b2f4e92dab16f49c",
+   "vol_usd": 19001699,
+   "pnl_usd": 8350188,
+   "margin_pct": 43.9
+  },
+  {
+   "rank": 12,
+   "name": "zxgngl",
+   "wallet": "0xd235973291b2b75ff4070e9c0b01728c520b0f29",
+   "vol_usd": 40551791,
+   "pnl_usd": 7807266,
+   "margin_pct": 19.3
+  },
+  {
+   "rank": 13,
+   "name": "RepTrump",
+   "wallet": "0x863134d00841b2e200492805a01e1e2f5defaa53",
+   "vol_usd": 13983231,
+   "pnl_usd": 7532410,
+   "margin_pct": 53.9
+  },
+  {
+   "rank": 14,
+   "name": "GRIMDRIP",
+   "wallet": "0x3f87d51f27ba6e19ec52aaeebb68559a839c742c",
+   "vol_usd": 13603969,
+   "pnl_usd": 7512275,
+   "margin_pct": 55.2
+  },
+  {
+   "rank": 15,
+   "name": "DEEDDIT",
+   "wallet": "0x09b428f7c2b469786286214aa5c90dd9015f7320",
+   "vol_usd": 72132443,
+   "pnl_usd": 7469951,
+   "margin_pct": 10.4
+  },
+  {
+   "rank": 16,
+   "name": "endlessFate",
+   "wallet": "0x5e4c3b5b81171e2ca4ab776ac0d6bba787f9dba2",
+   "vol_usd": 26282165,
+   "pnl_usd": 7249616,
+   "margin_pct": 27.6
+  },
+  {
+   "rank": 17,
+   "name": "joseph00677",
+   "wallet": "0xcdcccd0f2d86e450d973da415ad2430e5cc7935a",
+   "vol_usd": 44111177,
+   "pnl_usd": 6949617,
+   "margin_pct": 15.8
+  },
+  {
+   "rank": 18,
+   "name": "PrincessCaro",
+   "wallet": "0x8119010a6e589062aa03583bb3f39ca632d9f887",
+   "vol_usd": 23520810,
+   "pnl_usd": 6083643,
+   "margin_pct": 25.9
+  },
+  {
+   "rank": 19,
+   "name": "walletmobile",
+   "wallet": "0xe9ad918c7678cd38b12603a762e638a5d1ee7091",
+   "vol_usd": 32196692,
+   "pnl_usd": 5942685,
+   "margin_pct": 18.5
+  },
+  {
+   "rank": 20,
+   "name": "beachboy4",
+   "wallet": "0xc2e7800b5af46e6093872b177b7a5e7f0563be51",
+   "vol_usd": 239125773,
+   "pnl_usd": 5833300,
+   "margin_pct": 2.4
+  }
+ ],
+ "categories_month": {
+  "politics": [
+   {
+    "rank": 1,
+    "name": "e46m3",
+    "wallet": "0x4f1d5ae26fc31472966e951af3183308736d8de2",
+    "vol_usd": 930781,
+    "pnl_usd": 822325,
+    "margin_pct": 88.3
+   },
+   {
+    "rank": 2,
+    "name": "anoin123",
+    "wallet": "0x96489abcb9f583d6835c8ef95ffc923d05a86825",
+    "vol_usd": 4473708,
+    "pnl_usd": 596906,
+    "margin_pct": 13.3
+   },
+   {
+    "rank": 3,
+    "name": "TeamA",
+    "wallet": "0x9ba9dec33838f4ec9f032f7247d7481987e63ce9",
+    "vol_usd": 499761,
+    "pnl_usd": 520900,
+    "margin_pct": 104.2
+   },
+   {
+    "rank": 4,
+    "name": "paddaa",
+    "wallet": "0x60a92c8620846d81f5ea17b0564e0d4b7c545a71",
+    "vol_usd": 1841524,
+    "pnl_usd": 478721,
+    "margin_pct": 26.0
+   },
+   {
+    "rank": 5,
+    "name": "Bigggggggg",
+    "wallet": "0x511f9c771449162349795d17becf8b37031acbe1",
+    "vol_usd": 2412670,
+    "pnl_usd": 447867,
+    "margin_pct": 18.6
+   }
+  ],
+  "crypto": [
+   {
+    "rank": 1,
+    "name": "Papeasy",
+    "wallet": "0x111f73e91f85b6fe4de1ddec3de2fe32122e355b",
+    "vol_usd": 56223,
+    "pnl_usd": 1892284,
+    "margin_pct": 3365.7
+   },
+   {
+    "rank": 2,
+    "name": "Tokor",
+    "wallet": "0xa19cbababc312f9df185e49d7004c249ed1ade6b",
+    "vol_usd": 2061994,
+    "pnl_usd": 407339,
+    "margin_pct": 19.8
+   },
+   {
+    "rank": 3,
+    "name": "0x06dc51826bc524d9a83770e7de9dd7e005b0452",
+    "wallet": "0x06dc51826bc524d9a83770e7de9dd7e005b04524",
+    "vol_usd": 29087208,
+    "pnl_usd": 283153,
+    "margin_pct": 1.0
+   },
+   {
+    "rank": 4,
+    "name": "getbipped",
+    "wallet": "0x252d7bae5ec87553dcafb23e275c202ac0d3c456",
+    "vol_usd": 1496433,
+    "pnl_usd": 270810,
+    "margin_pct": 18.1
+   },
+   {
+    "rank": 5,
+    "name": "0x1a5de81b8313e63ef64aD72CdcC60FDc00610543-1775560822430",
+    "wallet": "0xe5e1072b676d83ba78d1a20460fd4d072b85badc",
+    "vol_usd": 932827,
+    "pnl_usd": 211449,
+    "margin_pct": 22.7
+   }
+  ],
+  "sports": [
+   {
+    "rank": 1,
+    "name": "BreakTheBank",
+    "wallet": "0xf0318c32136c2db7fec88b84869aee6a1106c80c",
+    "vol_usd": 62875368,
+    "pnl_usd": 8254998,
+    "margin_pct": 13.1
+   },
+   {
+    "rank": 2,
+    "name": "joseph00677",
+    "wallet": "0xcdcccd0f2d86e450d973da415ad2430e5cc7935a",
+    "vol_usd": 43955823,
+    "pnl_usd": 7272159,
+    "margin_pct": 16.5
+   },
+   {
+    "rank": 3,
+    "name": "HomeRunHazard",
+    "wallet": "0x5268527977f700f9bf9b6d5cd843859e4e70135d",
+    "vol_usd": 108337438,
+    "pnl_usd": 2006096,
+    "margin_pct": 1.9
+   },
+   {
+    "rank": 4,
+    "name": "Diabolical-Prize",
+    "wallet": "0x7c37b52eb226bcb9411375ec48b0169663fb6aeb",
+    "vol_usd": 9491400,
+    "pnl_usd": 1697841,
+    "margin_pct": 17.9
+   },
+   {
+    "rank": 5,
+    "name": "SmartPredictOrNot",
+    "wallet": "0xe6ca6ebbec97e8a46ff3dbdb2a99d46254fbbff4",
+    "vol_usd": 21682034,
+    "pnl_usd": 1433139,
+    "margin_pct": 6.6
+   }
+  ],
+  "weather": [
+   {
+    "rank": 1,
+    "name": "Poligarch",
+    "wallet": "0xb40e89677d59665d5188541ad860450a6e2a7cc9",
+    "vol_usd": 716881,
+    "pnl_usd": 37032,
+    "margin_pct": 5.2
+   },
+   {
+    "rank": 2,
+    "name": "badatmath.",
+    "wallet": "0x8fbd7cf5f806f563080864694415829f7229a959",
+    "vol_usd": 526836,
+    "pnl_usd": 29794,
+    "margin_pct": 5.7
+   },
+   {
+    "rank": 3,
+    "name": "Bilberry",
+    "wallet": "0xbf13934a1fec7d3211fc15c138d84ac2a691b91a",
+    "vol_usd": 1335347,
+    "pnl_usd": 26224,
+    "margin_pct": 2.0
+   },
+   {
+    "rank": 4,
+    "name": "0x15d368a75e5645c003a624f6f567a6a049ce7d1a-1792328635986",
+    "wallet": "0x15d368a75e5645c003a624f6f567a6a049ce7d1a",
+    "vol_usd": 408071,
+    "pnl_usd": 22885,
+    "margin_pct": 5.6
+   },
+   {
+    "rank": 5,
+    "name": "0xb0e74DF9430A089Aa102e2207Af5fde1967439D2-1789545517033",
+    "wallet": "0xb0e74df9430a089aa102e2207af5fde1967439d2",
+    "vol_usd": 378,
+    "pnl_usd": 14838,
+    "margin_pct": 3925.5
+   }
+  ],
+  "finance": [
+   {
+    "rank": 1,
+    "name": "dromedaryy",
+    "wallet": "0x6575759174ad221bba9947bc3f18750ec769b198",
+    "vol_usd": 1705117,
+    "pnl_usd": 190316,
+    "margin_pct": 11.2
+   },
+   {
+    "rank": 2,
+    "name": "TheReturnOfDarthMaul",
+    "wallet": "0x3a8aa345d5db7ec5138298c8c4f4540259be7699",
+    "vol_usd": 93325,
+    "pnl_usd": 83930,
+    "margin_pct": 89.9
+   },
+   {
+    "rank": 3,
+    "name": "0xD71776A8d4FdDeb3c150C4607B3f8bec31213B85-1778810464493",
+    "wallet": "0xd71776a8d4fddeb3c150c4607b3f8bec31213b85",
+    "vol_usd": 6945,
+    "pnl_usd": 60569,
+    "margin_pct": 872.1
+   },
+   {
+    "rank": 4,
+    "name": "BMM-1",
+    "wallet": "0xdf1c2e388bde2fbacabaf85c75a6b69cc35e2ebb",
+    "vol_usd": 172988,
+    "pnl_usd": 54025,
+    "margin_pct": 31.2
+   },
+   {
+    "rank": 5,
+    "name": "thanksforplayin",
+    "wallet": "0x38d812aff0b79f3bf5da2a477f780bcc163eea7c",
+    "vol_usd": 1712151,
+    "pnl_usd": 53048,
+    "margin_pct": 3.1
+   }
+  ],
+  "tech": [
+   {
+    "rank": 1,
+    "name": "aenews2",
+    "wallet": "0x44c1dfe43260c94ed4f1d00de2e1f80fb113ebc1",
+    "vol_usd": 3023702,
+    "pnl_usd": 205068,
+    "margin_pct": 6.8
+   },
+   {
+    "rank": 2,
+    "name": "0xe0f0d7fdfa9512a6f82d59c613438517ac186ce9-1791903693368",
+    "wallet": "0x45166d6dee918955495ef5e493742f47d6e404de",
+    "vol_usd": 1782002,
+    "pnl_usd": 204765,
+    "margin_pct": 11.5
+   },
+   {
+    "rank": 3,
+    "name": "forgotmydinner",
+    "wallet": "0x4a0eecbf4d18cb6b868f30a7b6e75b7905b9a4b1",
+    "vol_usd": 320273,
+    "pnl_usd": 107010,
+    "margin_pct": 33.4
+   },
+   {
+    "rank": 4,
+    "name": "Bigggggggg",
+    "wallet": "0x511f9c771449162349795d17becf8b37031acbe1",
+    "vol_usd": 188135,
+    "pnl_usd": 56786,
+    "margin_pct": 30.2
+   },
+   {
+    "rank": 5,
+    "name": "AJSV",
+    "wallet": "0xad5353afe30c2da57709e2704ef3ccdcf67eef24",
+    "vol_usd": 957699,
+    "pnl_usd": 45547,
+    "margin_pct": 4.8
+   }
+  ],
+  "culture": [
+   {
+    "rank": 1,
+    "name": "TheImpasse",
+    "wallet": "0x2824ab453e1bcc26d7fc44fcbf58d07cb8e2a954",
+    "vol_usd": 137794,
+    "pnl_usd": 38202,
+    "margin_pct": 27.7
+   },
+   {
+    "rank": 2,
+    "name": "0xb0e74DF9430A089Aa102e2207Af5fde1967439D2-1789545517033",
+    "wallet": "0xb0e74df9430a089aa102e2207af5fde1967439d2",
+    "vol_usd": 0,
+    "pnl_usd": 30176,
+    "margin_pct": null
+   },
+   {
+    "rank": 3,
+    "name": "AJSV",
+    "wallet": "0xad5353afe30c2da57709e2704ef3ccdcf67eef24",
+    "vol_usd": 809403,
+    "pnl_usd": 19265,
+    "margin_pct": 2.4
+   },
+   {
+    "rank": 4,
+    "name": "shovelingdigging",
+    "wallet": "0xe904443b4084bbda216e344353a44cd4324a2d9f",
+    "vol_usd": 175572,
+    "pnl_usd": 17385,
+    "margin_pct": 9.9
+   },
+   {
+    "rank": 5,
+    "name": "0x8f6970acd7c9466fc1d09a7c17071705c8e52923-1792437064758",
+    "wallet": "0x8f6970acd7c9466fc1d09a7c17071705c8e52923",
+    "vol_usd": 11657,
+    "pnl_usd": 16007,
+    "margin_pct": 137.3
+   }
+  ]
+ },
+ "weather_alltime": [
+  {
+   "rank": 1,
+   "name": "gopfan2",
+   "wallet": "0xf2f6af4f27ec2dcf4072095ab804016e14cd5817",
+   "vol_usd": 4619095,
+   "pnl_usd": 317221,
+   "margin_pct": 6.9
+  },
+  {
+   "rank": 2,
+   "name": "aenews2",
+   "wallet": "0x44c1dfe43260c94ed4f1d00de2e1f80fb113ebc1",
+   "vol_usd": 10149715,
+   "pnl_usd": 285676,
+   "margin_pct": 2.8
+  },
+  {
+   "rank": 3,
+   "name": "ColdMath",
+   "wallet": "0x594edb9112f526fa6a80b8f858a6379c8a2c1c11",
+   "vol_usd": 11100420,
+   "pnl_usd": 134264,
+   "margin_pct": 1.2
+  },
+  {
+   "rank": 4,
+   "name": "gopfan",
+   "wallet": "0x6af75d4e4aaf700450efbac3708cce1665810ff1",
+   "vol_usd": 739901,
+   "pnl_usd": 118426,
+   "margin_pct": 16.0
+  },
+  {
+   "rank": 5,
+   "name": "Poligarch",
+   "wallet": "0xb40e89677d59665d5188541ad860450a6e2a7cc9",
+   "vol_usd": 17431692,
+   "pnl_usd": 95605,
+   "margin_pct": 0.5
+  },
+  {
+   "rank": 6,
+   "name": "HighTempTation",
+   "wallet": "0x6011655c4afb76f36dd1b08a137a1ba73466b31e",
+   "vol_usd": 2595644,
+   "pnl_usd": 95144,
+   "margin_pct": 3.7
+  }
+ ],
+ "leaderboard_24h_overall": null,
+ "hlp_monthly": [
+  {
+   "month": "2025-01",
+   "dpnl_usd": null,
+   "tvl_end_usd": 389801042,
+   "cum_pnl_usd": 57468246
+  },
+  {
+   "month": "2025-02",
+   "dpnl_usd": 2150988,
+   "tvl_end_usd": 505334307,
+   "cum_pnl_usd": 59619234
+  },
+  {
+   "month": "2025-03",
+   "dpnl_usd": 1094228,
+   "tvl_end_usd": 195096425,
+   "cum_pnl_usd": 60713462
+  },
+  {
+   "month": "2025-04",
+   "dpnl_usd": 875151,
+   "tvl_end_usd": 196287692,
+   "cum_pnl_usd": 61588613
+  },
+  {
+   "month": "2025-05",
+   "dpnl_usd": 3339573,
+   "tvl_end_usd": 364625013,
+   "cum_pnl_usd": 64928187
+  },
+  {
+   "month": "2025-06",
+   "dpnl_usd": 2594887,
+   "tvl_end_usd": 399993970,
+   "cum_pnl_usd": 67523074
+  },
+  {
+   "month": "2025-07",
+   "dpnl_usd": 2623128,
+   "tvl_end_usd": 364984750,
+   "cum_pnl_usd": 70146202
+  },
+  {
+   "month": "2025-08",
+   "dpnl_usd": 4370912,
+   "tvl_end_usd": 513142660,
+   "cum_pnl_usd": 74517114
+  },
+  {
+   "month": "2025-09",
+   "dpnl_usd": 3106919,
+   "tvl_end_usd": 501718849,
+   "cum_pnl_usd": 77624033
+  },
+  {
+   "month": "2025-10",
+   "dpnl_usd": 44758490,
+   "tvl_end_usd": 583799599,
+   "cum_pnl_usd": 122382523
+  },
+  {
+   "month": "2025-11",
+   "dpnl_usd": -4440082,
+   "tvl_end_usd": 448059641,
+   "cum_pnl_usd": 117942441
+  },
+  {
+   "month": "2025-12",
+   "dpnl_usd": 286568,
+   "tvl_end_usd": 354939839,
+   "cum_pnl_usd": 118229009
+  },
+  {
+   "month": "2026-01",
+   "dpnl_usd": 962473,
+   "tvl_end_usd": 269004392,
+   "cum_pnl_usd": 119191482
+  },
+  {
+   "month": "2026-02",
+   "dpnl_usd": 19045877,
+   "tvl_end_usd": 381564677,
+   "cum_pnl_usd": 138237359
+  },
+  {
+   "month": "2026-03",
+   "dpnl_usd": 385885,
+   "tvl_end_usd": 431112020,
+   "cum_pnl_usd": 138623243
+  },
+  {
+   "month": "2026-04",
+   "dpnl_usd": -2101370,
+   "tvl_end_usd": 371664549,
+   "cum_pnl_usd": 136521873
+  },
+  {
+   "month": "2026-05",
+   "dpnl_usd": 273755,
+   "tvl_end_usd": 356873841,
+   "cum_pnl_usd": 136795629
+  },
+  {
+   "month": "2026-06",
+   "dpnl_usd": 105681,
+   "tvl_end_usd": 273595647,
+   "cum_pnl_usd": 136901310
+  },
+  {
+   "month": "2026-07",
+   "dpnl_usd": -65205,
+   "tvl_end_usd": 247397499,
+   "cum_pnl_usd": 136836105
+  },
+  {
+   "month": "2026-08",
+   "dpnl_usd": 298188,
+   "tvl_end_usd": 186308789,
+   "cum_pnl_usd": 137134292
+  },
+  {
+   "month": "2026-09",
+   "dpnl_usd": 1280518,
+   "tvl_end_usd": 182967459,
+   "cum_pnl_usd": 138414810
+  },
+  {
+   "month": "2026-10",
+   "dpnl_usd": 453865,
+   "tvl_end_usd": 177146592,
+   "cum_pnl_usd": 138868676
+  }
+ ]
+}

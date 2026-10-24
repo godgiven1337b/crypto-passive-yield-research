@@ -1,0 +1,792 @@
+{
+ "worksheet": "WS-24",
+ "topic": "Real player behavior in our strategic niches: Polymarket top/median traders, Hyperliquid HLP & funding arb, MM coverage, unoccupied angles",
+ "generated": "2026-10-24",
+ "data_cutoff": "2026-10-24",
+ "methodology": {
+  "live_apis": [
+   "data-api.polymarket.com/v1/leaderboard (timePeriod=month|all, category, orderBy=PNL)",
+   "data-api.polymarket.com/activity",
+   "data-api.polymarket.com/positions",
+   "api.hyperliquid.xyz/info vaultDetails (HLP 0xdfc24b077bc1425ad1dea75bcb6f8158e10df303)"
+  ],
+  "caveats": [
+   "v1/leaderboard: param window ignored, requires timePeriod; default-window response cached/unstable (different PnL for same trader across calls)",
+   "leaderboard is winners-only sample: 42% of frequent board regulars are net-negative lifetime; board overstates edge ~3.68x (leolabs.me guide, oct-2026)",
+   "lb-api.polymarket.com retired -> data-api.polymarket.com/v2/leaderboard",
+   "HLP monthly PnL interpolated from ~biweekly points (±0.1-0.2pp)"
+  ]
+ },
+ "polymarket_leaderboards": {
+  "month_top20": [
+   {
+    "rank": 1,
+    "name": "BreakTheBank",
+    "vol_usd": 70687986,
+    "pnl_usd": 8289959,
+    "margin_pct": 11.7
+   },
+   {
+    "rank": 2,
+    "name": "joseph00677",
+    "vol_usd": 44111177,
+    "pnl_usd": 7201193,
+    "margin_pct": 16.3
+   },
+   {
+    "rank": 3,
+    "name": "e46m3",
+    "vol_usd": 2392638,
+    "pnl_usd": 3320003,
+    "margin_pct": 138.8
+   },
+   {
+    "rank": 4,
+    "name": "Diabolical-Prize",
+    "vol_usd": 41989592,
+    "pnl_usd": 2851407,
+    "margin_pct": 6.8
+   },
+   {
+    "rank": 5,
+    "name": "HomeRunHazard",
+    "vol_usd": 108518917,
+    "pnl_usd": 2005610,
+    "margin_pct": 1.8
+   },
+   {
+    "rank": 6,
+    "name": "Papeasy",
+    "vol_usd": 56223,
+    "pnl_usd": 1892284,
+    "margin_pct": 3365.7
+   },
+   {
+    "rank": 7,
+    "name": "SmartPredictOrNot",
+    "vol_usd": 21682034,
+    "pnl_usd": 1433139,
+    "margin_pct": 6.6
+   },
+   {
+    "rank": 8,
+    "name": "0xb0e74DF9430A089Aa102e2207Af5fde1967439D2-1789545517033",
+    "vol_usd": 4940,
+    "pnl_usd": 1393188,
+    "margin_pct": 28202.3
+   },
+   {
+    "rank": 9,
+    "name": "mooseborzoii",
+    "vol_usd": 113835571,
+    "pnl_usd": 1360891,
+    "margin_pct": 1.2
+   },
+   {
+    "rank": 10,
+    "name": "RichieRicher",
+    "vol_usd": 5971931,
+    "pnl_usd": 1253822,
+    "margin_pct": 21.0
+   },
+   {
+    "rank": 11,
+    "name": "Bigggggggg",
+    "vol_usd": 4939173,
+    "pnl_usd": 1161465,
+    "margin_pct": 23.5
+   },
+   {
+    "rank": 12,
+    "name": "3edmond.dantes",
+    "vol_usd": 2627376,
+    "pnl_usd": 1052061,
+    "margin_pct": 40.0
+   },
+   {
+    "rank": 13,
+    "name": "Lucerys",
+    "vol_usd": 4279191,
+    "pnl_usd": 945132,
+    "margin_pct": 22.1
+   },
+   {
+    "rank": 14,
+    "name": "balthazar",
+    "vol_usd": 4850745,
+    "pnl_usd": 942675,
+    "margin_pct": 19.4
+   },
+   {
+    "rank": 15,
+    "name": "Kch-Temp",
+    "vol_usd": 11984658,
+    "pnl_usd": 900084,
+    "margin_pct": 7.5
+   },
+   {
+    "rank": 16,
+    "name": "Mooseborzoiii",
+    "vol_usd": 11051549,
+    "pnl_usd": 894277,
+    "margin_pct": 8.1
+   },
+   {
+    "rank": 17,
+    "name": "UpTheBlues",
+    "vol_usd": 145724172,
+    "pnl_usd": 862809,
+    "margin_pct": 0.6
+   },
+   {
+    "rank": 18,
+    "name": "0xBc43c8bfBC4d77c2FC9011adaD38Ba43b88996d3-1765231687816",
+    "vol_usd": 23825157,
+    "pnl_usd": 757440,
+    "margin_pct": 3.2
+   },
+   {
+    "rank": 19,
+    "name": "aHjCz",
+    "vol_usd": 1702597,
+    "pnl_usd": 729130,
+    "margin_pct": 42.8
+   },
+   {
+    "rank": 20,
+    "name": "alex20011",
+    "vol_usd": 1964173,
+    "pnl_usd": 725626,
+    "margin_pct": 36.9
+   }
+  ],
+  "month_top20_totals": {
+   "sum_vol_usd": 620000000,
+   "sum_pnl_usd": 40000000,
+   "blended_margin_pct": 6.4,
+   "median_margin_pct": 19.4
+  },
+  "alltime_top10": [
+   {
+    "rank": 1,
+    "name": "Theo4",
+    "vol_usd": 43013259,
+    "pnl_usd": 22053934,
+    "margin_pct": 51.3
+   },
+   {
+    "rank": 2,
+    "name": "swisstony",
+    "vol_usd": 1850584673,
+    "pnl_usd": 18482463,
+    "margin_pct": 1.0
+   },
+   {
+    "rank": 3,
+    "name": "Fredi9999",
+    "vol_usd": 76611317,
+    "pnl_usd": 16619507,
+    "margin_pct": 21.7
+   },
+   {
+    "rank": 4,
+    "name": "RN1",
+    "vol_usd": 1412412054,
+    "pnl_usd": 13136093,
+    "margin_pct": 0.9
+   },
+   {
+    "rank": 5,
+    "name": "kch123",
+    "vol_usd": 293444003,
+    "pnl_usd": 11351407,
+    "margin_pct": 3.9
+   },
+   {
+    "rank": 6,
+    "name": "BreakTheBank",
+    "vol_usd": 323643091,
+    "pnl_usd": 9476329,
+    "margin_pct": 2.9
+   },
+   {
+    "rank": 7,
+    "name": "mintblade",
+    "vol_usd": 17759922,
+    "pnl_usd": 9110690,
+    "margin_pct": 51.3
+   },
+   {
+    "rank": 8,
+    "name": "fishalive",
+    "vol_usd": 13281460,
+    "pnl_usd": 8998447,
+    "margin_pct": 67.8
+   },
+   {
+    "rank": 9,
+    "name": "frostrizz",
+    "vol_usd": 23091318,
+    "pnl_usd": 8801838,
+    "margin_pct": 38.1
+   },
+   {
+    "rank": 10,
+    "name": "Len9311238",
+    "vol_usd": 16402745,
+    "pnl_usd": 8709973,
+    "margin_pct": 53.1
+   }
+  ],
+  "alltime_top20_totals": {
+   "sum_vol_usd": 4590000000,
+   "sum_pnl_usd": 197500000,
+   "blended_margin_pct": 4.3,
+   "median_margin_pct": 25.9
+  },
+  "categories_month_top3": {
+   "politics": [
+    {
+     "rank": 1,
+     "name": "e46m3",
+     "wallet": "0x4f1d5ae26fc31472966e951af3183308736d8de2",
+     "vol_usd": 930781,
+     "pnl_usd": 822325,
+     "margin_pct": 88.3
+    },
+    {
+     "rank": 2,
+     "name": "anoin123",
+     "wallet": "0x96489abcb9f583d6835c8ef95ffc923d05a86825",
+     "vol_usd": 4473708,
+     "pnl_usd": 596906,
+     "margin_pct": 13.3
+    },
+    {
+     "rank": 3,
+     "name": "TeamA",
+     "wallet": "0x9ba9dec33838f4ec9f032f7247d7481987e63ce9",
+     "vol_usd": 499761,
+     "pnl_usd": 520900,
+     "margin_pct": 104.2
+    }
+   ],
+   "crypto": [
+    {
+     "rank": 1,
+     "name": "Papeasy",
+     "wallet": "0x111f73e91f85b6fe4de1ddec3de2fe32122e355b",
+     "vol_usd": 56223,
+     "pnl_usd": 1892284,
+     "margin_pct": 3365.7
+    },
+    {
+     "rank": 2,
+     "name": "Tokor",
+     "wallet": "0xa19cbababc312f9df185e49d7004c249ed1ade6b",
+     "vol_usd": 2061994,
+     "pnl_usd": 407339,
+     "margin_pct": 19.8
+    },
+    {
+     "rank": 3,
+     "name": "0x06dc51826bc524d9a83770e7de9dd7e005b0452",
+     "wallet": "0x06dc51826bc524d9a83770e7de9dd7e005b04524",
+     "vol_usd": 29087208,
+     "pnl_usd": 283153,
+     "margin_pct": 1.0
+    }
+   ],
+   "sports": [
+    {
+     "rank": 1,
+     "name": "BreakTheBank",
+     "wallet": "0xf0318c32136c2db7fec88b84869aee6a1106c80c",
+     "vol_usd": 62875368,
+     "pnl_usd": 8254998,
+     "margin_pct": 13.1
+    },
+    {
+     "rank": 2,
+     "name": "joseph00677",
+     "wallet": "0xcdcccd0f2d86e450d973da415ad2430e5cc7935a",
+     "vol_usd": 43955823,
+     "pnl_usd": 7272159,
+     "margin_pct": 16.5
+    },
+    {
+     "rank": 3,
+     "name": "HomeRunHazard",
+     "wallet": "0x5268527977f700f9bf9b6d5cd843859e4e70135d",
+     "vol_usd": 108337438,
+     "pnl_usd": 2006096,
+     "margin_pct": 1.9
+    }
+   ],
+   "weather": [
+    {
+     "rank": 1,
+     "name": "Poligarch",
+     "wallet": "0xb40e89677d59665d5188541ad860450a6e2a7cc9",
+     "vol_usd": 716881,
+     "pnl_usd": 37032,
+     "margin_pct": 5.2
+    },
+    {
+     "rank": 2,
+     "name": "badatmath.",
+     "wallet": "0x8fbd7cf5f806f563080864694415829f7229a959",
+     "vol_usd": 526836,
+     "pnl_usd": 29794,
+     "margin_pct": 5.7
+    },
+    {
+     "rank": 3,
+     "name": "Bilberry",
+     "wallet": "0xbf13934a1fec7d3211fc15c138d84ac2a691b91a",
+     "vol_usd": 1335347,
+     "pnl_usd": 26224,
+     "margin_pct": 2.0
+    }
+   ],
+   "finance": [
+    {
+     "rank": 1,
+     "name": "dromedaryy",
+     "wallet": "0x6575759174ad221bba9947bc3f18750ec769b198",
+     "vol_usd": 1705117,
+     "pnl_usd": 190316,
+     "margin_pct": 11.2
+    },
+    {
+     "rank": 2,
+     "name": "TheReturnOfDarthMaul",
+     "wallet": "0x3a8aa345d5db7ec5138298c8c4f4540259be7699",
+     "vol_usd": 93325,
+     "pnl_usd": 83930,
+     "margin_pct": 89.9
+    },
+    {
+     "rank": 3,
+     "name": "0xD71776A8d4FdDeb3c150C4607B3f8bec31213B85-1778810464493",
+     "wallet": "0xd71776a8d4fddeb3c150c4607b3f8bec31213b85",
+     "vol_usd": 6945,
+     "pnl_usd": 60569,
+     "margin_pct": 872.1
+    }
+   ],
+   "tech": [
+    {
+     "rank": 1,
+     "name": "aenews2",
+     "wallet": "0x44c1dfe43260c94ed4f1d00de2e1f80fb113ebc1",
+     "vol_usd": 3023702,
+     "pnl_usd": 205068,
+     "margin_pct": 6.8
+    },
+    {
+     "rank": 2,
+     "name": "0xe0f0d7fdfa9512a6f82d59c613438517ac186ce9-1791903693368",
+     "wallet": "0x45166d6dee918955495ef5e493742f47d6e404de",
+     "vol_usd": 1782002,
+     "pnl_usd": 204765,
+     "margin_pct": 11.5
+    },
+    {
+     "rank": 3,
+     "name": "forgotmydinner",
+     "wallet": "0x4a0eecbf4d18cb6b868f30a7b6e75b7905b9a4b1",
+     "vol_usd": 320273,
+     "pnl_usd": 107010,
+     "margin_pct": 33.4
+    }
+   ],
+   "culture": [
+    {
+     "rank": 1,
+     "name": "TheImpasse",
+     "wallet": "0x2824ab453e1bcc26d7fc44fcbf58d07cb8e2a954",
+     "vol_usd": 137794,
+     "pnl_usd": 38202,
+     "margin_pct": 27.7
+    },
+    {
+     "rank": 2,
+     "name": "0xb0e74DF9430A089Aa102e2207Af5fde1967439D2-1789545517033",
+     "wallet": "0xb0e74df9430a089aa102e2207af5fde1967439d2",
+     "vol_usd": 0,
+     "pnl_usd": 30176,
+     "margin_pct": null
+    },
+    {
+     "rank": 3,
+     "name": "AJSV",
+     "wallet": "0xad5353afe30c2da57709e2704ef3ccdcf67eef24",
+     "vol_usd": 809403,
+     "pnl_usd": 19265,
+     "margin_pct": 2.4
+    }
+   ]
+  },
+  "weather_alltime_top6": [
+   {
+    "rank": 1,
+    "name": "gopfan2",
+    "wallet": "0xf2f6af4f27ec2dcf4072095ab804016e14cd5817",
+    "vol_usd": 4619095,
+    "pnl_usd": 317221,
+    "margin_pct": 6.9
+   },
+   {
+    "rank": 2,
+    "name": "aenews2",
+    "wallet": "0x44c1dfe43260c94ed4f1d00de2e1f80fb113ebc1",
+    "vol_usd": 10149715,
+    "pnl_usd": 285676,
+    "margin_pct": 2.8
+   },
+   {
+    "rank": 3,
+    "name": "ColdMath",
+    "wallet": "0x594edb9112f526fa6a80b8f858a6379c8a2c1c11",
+    "vol_usd": 11100420,
+    "pnl_usd": 134264,
+    "margin_pct": 1.2
+   },
+   {
+    "rank": 4,
+    "name": "gopfan",
+    "wallet": "0x6af75d4e4aaf700450efbac3708cce1665810ff1",
+    "vol_usd": 739901,
+    "pnl_usd": 118426,
+    "margin_pct": 16.0
+   },
+   {
+    "rank": 5,
+    "name": "Poligarch",
+    "wallet": "0xb40e89677d59665d5188541ad860450a6e2a7cc9",
+    "vol_usd": 17431692,
+    "pnl_usd": 95605,
+    "margin_pct": 0.5
+   },
+   {
+    "rank": 6,
+    "name": "HighTempTation",
+    "wallet": "0x6011655c4afb76f36dd1b08a137a1ba73466b31e",
+    "vol_usd": 2595644,
+    "pnl_usd": 95144,
+    "margin_pct": 3.7
+   }
+  ]
+ },
+ "player_forensics": {
+  "BreakTheBank": {
+   "rank": "#1 month (+$8.29M on $70.7M vol, 11.7%) / #6 all-time (+$9.48M)",
+   "style": "HF sports bot: ~2,900 trades/day (492 fills in 5h), NBA spreads/moneylines (Grizzlies-Warriors), buys-to-resolution (486 buy/6 sell), median ticket $19, p90 $2,600, max $62.7K",
+   "current_book": "EPL outrights (Man City $389K @0.71; Arsenal 400K shares avg 0.0308, +$238K) + 2026 midterms Balance-of-Power baskets ~$1.1M @0.65-0.91"
+  },
+  "joseph00677": {
+   "rank": "#2 month (+$7.20M on $44.1M, 16.3%)",
+   "style": "directional soccer favorites (Depor, Real, Leverkusen, Arsenal), median price 0.83, single tickets up to $4.6M, ~104 trades/day; currently in CS:GO esports (fnatic-Liquid, -$24K)"
+  },
+  "HomeRunHazard": {
+   "rank": "#3 sports month (+$2.01M on $108.5M, 1.8%)",
+   "style": "pure HF sports bot: 2,400 trades/day, NBA O/U + NCAA + tennis QUALIFICATION rounds, all buys, median $67, max $4.9K — volume-factory archetype"
+  },
+  "Papeasy": {
+   "rank": "#1 crypto month (+$1.89M on $56K leaderboard vol; margin >30x — board vol counter excludes part of flow)",
+   "style": "5-minute BTC Up/Down grinder: ~1,900 trades/day, median ticket $3, REDEEMs $0.8-2.1K several times/day across 5-min rounds; plus one large earlier win suspected (activity paged only to Oct-20 due to rate limit)"
+  },
+  "Theo4": {
+   "rank": "#1 all-time (+$22.05M on $43.0M, 51.3%)",
+   "style": "2024-election whale: 351 buys on 'Trump wins 2024' Nov-24, inactive since 2024-11-13; press: French ex-bank trader 'Théo', 4 linked accounts (Theo4/Fredi9999/PrincessCaro/Michie), ~$85M realized across accounts per Chainalysis"
+  },
+  "swisstony": {
+   "rank": "#2 all-time (+$18.48M on $1.85B, 1.0%)",
+   "style": "volume grinder/MM: 500 most recent rows all REDEEM of micro soccer positions ($0-10 each) Aug-Oct 2026; press: ~15,450 trades, WR ~50%, ~$45-115 profit/position + $2.12M referrals (CrowdIntel)"
+  },
+  "RN1": {
+   "rank": "#4 all-time (+$13.14M on $1.41B, 0.9%)",
+   "style": "still active HF sports bot: 3,488 trades/day today (NCAA, tennis quals, Air Force-Wyoming), median price 0.42, all buys"
+  },
+  "kch123": {
+   "rank": "#5 all-time (+$11.35M on $293M, 3.9%)",
+   "style": "sports (NHL/soccer run Jun-2026, inactive since); press WR 60.9-82.9% over up to 78,148 trades"
+  },
+  "e46m3": {
+   "rank": "#1 politics month (+$3.32M on $2.39M, 138.8%)",
+   "style": "1,935 trades/day across correlated multi-leg markets (oil<80 AND R-house, Ballon d'Or, Brazil runoff), median price 0.93 — basket/relative-value sniping"
+  }
+ },
+ "median_profile": {
+  "sources": {
+   "academic": "Akey, Gregoire, Harvie, Martineau SSRN 6443103 (2.4M users, 588M trades, $67B, 11.2022-03.2026)",
+   "galaxy_research_2026-10-01": "2.9M accounts, 1.27B orders, $82.8B",
+   "sergeenkov_dune_2026-04": "2.5M addresses, realized-only PnL"
+  },
+  "pnl_percentiles_all_users": {
+   "p50": "-$2",
+   "p70": "$0",
+   "p92": "+$100",
+   "p95": "+$251",
+   "range": "-$10M..+$22M"
+  },
+  "share_losing": {
+   "mark_to_market": "69% (academic) / 69.2% retail (Galaxy)",
+   "realized_only": "84.1% (Sergeenkov)"
+  },
+  "profit_concentration": {
+   "top0_1pct_of_winners": "51.2% of all gains",
+   "top1pct": "76.5%",
+   "top5pct": "91.4%",
+   "top0_04pct_addresses": ">70% ($3.7B)"
+  },
+  "median_profitable_wallet": "$10-20 lifetime ($1-5/mo); 60-80th pct among profitable: $20-500 lifetime (~$2-40/mo)",
+  "monthly_earnings_thresholds": {
+   ">$1k_per_month": "1.25% of addresses",
+   ">$5k_per_month": "0.26% (~6,600)",
+   ">$10k_per_month": "0.13% (~3,250)"
+  },
+  "persistence": {
+   "one_off": "53% of monthly-profitable hit it in a single month",
+   "13plus_months_at_5k": "2.6% of the 6,600"
+  },
+  "systematic_bot_economics": {
+   "capital": "$50-200K",
+   "markets": "20-50 concurrent",
+   "win_rate": "85-98%",
+   "per_market_edge": "$0.80-1.50 per 5-min window",
+   "daily_pnl_mature_mm": "$200-800/day per Polymarket blog",
+   "maker_share_top_bot_group": "47.3% vs 17.1% bottom-95%"
+  },
+  "copytrading_verdict": {
+   "primary_source": "Polycopy Research 08.09.2026",
+   "edge_median_top100": "1.39% (30d) / 2.07% (all-time) per position",
+   "copy_costs": "4.12% / 3.51%",
+   "negative_after_costs": "77% of measurable top traders"
+  }
+ },
+ "hyperliquid": {
+  "hlp": {
+   "address": "0xdfc24b077bc1425ad1dea75bcb6f8158e10df303",
+   "tvl_now_usd": 177100000,
+   "tvl_peak_usd": 603900000,
+   "peak_date": "2025-09-03",
+   "apr_30d_pct": 3.86,
+   "alltime_pnl_usd": 138870000,
+   "perp_alltime_pnl_usd": 90400000,
+   "pnl_30d_usd": 571400,
+   "pnl_7d_usd": 143100,
+   "pnl_24h_usd": 24400,
+   "monthly_pnl_usd": {
+    "2025-01": 7090000,
+    "2025-02": 4330000,
+    "2025-03": -1320000,
+    "2025-04": 1190000,
+    "2025-05": 3310000,
+    "2025-06": 2550000,
+    "2025-07": 3450000,
+    "2025-08": 4610000,
+    "2025-09": 4270000,
+    "2025-10": 41580000,
+    "2025-11": -3690000,
+    "2025-12": 230000,
+    "2026-01": 14410000,
+    "2026-02": 5620000,
+    "2026-03": 440000,
+    "2026-04": -2200000,
+    "2026-05": 320000,
+    "2026-06": 30000,
+    "2026-07": 10000,
+    "2026-08": 890000,
+    "2026-09": 650000,
+    "2026-10_to24": 1090000
+   },
+   "events": [
+    {
+     "date": "2025-03-12",
+     "name": "whale slap 0xf3F (50x ETH >$200M notional)",
+     "hlp_pnl": "-$4M"
+    },
+    {
+     "date": "2025-03-26",
+     "name": "JELLY short-attack, validator intervention, settled $0.0095 vs oracle ~$0.50",
+     "hlp_pnl": "~+$703K closed (unrealized -$12-13.5M at worst)"
+    },
+    {
+     "date": "2025-10-10/11",
+     "name": "tariff crash, $10.3B HL liquidations, backstop absorbed $576M",
+     "hlp_pnl": "+$41.5M (~+10%)"
+    },
+    {
+     "date": "2025-11-12",
+     "name": "POPCAT 19-wallet manipulation",
+     "hlp_pnl": "-$4.9M"
+    },
+    {
+     "date": "2026-01-31",
+     "name": "Hyperunit whale ETH-long liquidation",
+     "hlp_pnl": "~+$15M"
+    },
+    {
+     "date": "2026-04",
+     "name": "Fartcoin incident",
+     "hlp_pnl": "month closed -$2.2M"
+    }
+   ],
+   "max_drawdown": "-$4.66M on cumulative PnL (intra-month JELLY mark: -$13.5M)",
+   "capacity": "no hard cap; TVL -71% from peak (redemptions + APR compression)"
+  },
+  "funding_arb": {
+   "live_snapshot_2026_10_24": {
+    "HL_BTC_apr_pct": 11.0,
+    "Binance_BTC_apr_pct": 7.9,
+    "HL_ETH_apr_pct": 2.9,
+    "Binance_ETH_apr_pct": 7.1,
+    "symbols_with_abs_spread_gt5pct": "136 of 168 common",
+    "median_spread_apr_pct": 5.5,
+    "extremes": "ALT -685% HL vs -413% Binance"
+   },
+   "returns_2025_26": {
+    "backtest_cross_sectional_keel": "+49.2% over 2.1y (~21%/y), Sharpe 1.39, maxDD -10.5%",
+    "vendor_claims": "28-42% APR (ArbitrageScanner)",
+    "boros_notional": "$20B+ across 170+ markets by mid-2026; spread-markets HL-vs-Gate launched 15.10.2026"
+   },
+   "compression": "majors squeezed to low single-digit APR; HLP APR 17-20% (2025) -> ~4% (now); niche institutionalized"
+  },
+  "famous_accounts": {
+   "james_wynn": "peak $84-100M May-2025; $1.27B BTC 40x long liquidated 29-30.05.2025 (-$85-100M+); 9 liquidations by Jul-2025; Apr-2026 balance $100M -> $900",
+   "hyperunit_whale_0xb317": "+$150-192M shorting crash Oct-2025, then -$250M on ETH long by 31.01.2026, $53 left",
+   "aguilatrades": "~-$37.6-40M cumulative 2025, 33 career liquidations",
+   "0xf3F": "~$20M by Mar-2025 incl. $9.4M on $520M BTC short"
+  }
+ },
+ "mm_coverage": {
+  "on_platforms": [
+   {
+    "firm": "Wintermute",
+    "since": "2026-05 (Polymarket+Kalshi)",
+    "notes": ">$10B/day firm-wide; Jake Ostrovskis quote on two-sided liquidity"
+   },
+   {
+    "firm": "Susquehanna (SIG)",
+    "since": "2024-04 (Kalshi), desk since 2023",
+    "notes": "first institutional Kalshi MM; live in-game sports"
+   },
+   {
+    "firm": "Jump Trading",
+    "since": "~2025-11 quiet, doubled 2026",
+    "notes": "takes both Kalshi and Polymarket liquidity incentives"
+   },
+   {
+    "firm": "Galaxy Digital",
+    "since": "talks 2025-11, LP per The Block",
+    "notes": ""
+   },
+   {
+    "firm": "DRW / Akuna / Flow Traders",
+    "notes": "building desks; Citadel Securities & HRT deliberately OUT of sports contracts"
+   }
+  ],
+  "confirmed_thin_niches": {
+   "weather": "top-1 all-time category PnL $317K (gopfan2); month top $37K; tickets $12-18 median; no pro MM",
+   "earnings": "Kalshi NVDA tag: ~$565K across 17 earnings markets lifetime — dust",
+   "small_leagues": "Uruguay match -> 46 UMA disputes in 42 min (Bitquery 09.10.2026); thin books, no pro MM",
+   "overall": "70% of all closed markets on both venues had <$10K volume; ~45K Polymarket markets zero volume"
+  }
+ },
+ "unoccupied_angles": [
+  {
+   "angle": "15-min/5-min crypto markets, MAKER side",
+   "evidence": "maker cohort +$728.5K/week on $153M weekly volume; top-5 makers $811K/week; only 36.8% of participant wallets profitable (median -$3) — taker side is the food",
+   "risks": "bot-vs-bot, dynamic taker fees since Jan-2026 (up to ~3.15% at 50c), 250ms taker delay, settlement-manipulation patterns in 5-min (Stanford)"
+  },
+  {
+   "angle": "weather long-tail (ladders, non-hub cities)",
+   "evidence": "top category player $37K/month with $12 median tickets; all-time ceiling $317K; FLB time-structure documented (favorites overpriced 1-12h before peak)",
+   "risks": "tiny capacity (~$30K/mo top), UMA dispute tail"
+  },
+  {
+   "angle": "cross PM/Kalshi stat-arb on divergent resolutions",
+   "evidence": "24h price ranges 40-88% (PM) vs 44-93% (Kalshi) same events; 'few large traders eligible on both venues' (R. Sethi); Wintermute arbing but long tail untouched",
+   "risks": "US eligibility, capital split, fee drag"
+  },
+  {
+   "angle": "science/tech long-tail specialists",
+   "evidence": "41.2% of science-category traders profitable vs 25.1% sports (Galaxy) — most profitable specialization, tiny sample"
+  }
+ ],
+ "avoid": [
+  "longshots <10c: -19.3c/$ pooled (arXiv 2609.12878); 20-25c zone = max losses",
+  "sports LIVE vs stadium-feed bots: $5->$3.7M bot case (15-40s TV lag); retail entry later & worse prices (Della Vedova)",
+  "geopolitics with UMA disputes: Ukraine minerals $7M mis-paid (Mar-2025); $345M Iran market frozen, trader -$700K (Jun-2026); 9 wallets >50% UMA votes",
+  "overheated midterms-2026: $1.4B volume, odds already compressed (Dems 92% House)",
+  "copytrading leaderboards: median top-100 edge 1.4-2.1% vs 3.5-4.1% copy costs, 77% negative after costs"
+ ],
+ "sources": [
+  {
+   "name": "Polymarket data-api v1/leaderboard, activity, positions (live fetch)",
+   "date": "2026-10-24"
+  },
+  {
+   "name": "Hyperliquid info API vaultDetails HLP",
+   "date": "2026-10-24"
+  },
+  {
+   "name": "SSRN 6443103 Akey et al. Who Wins and Who Loses in Prediction Markets",
+   "date": "2026-04/10"
+  },
+  {
+   "name": "Galaxy Research, The Behavior of Polymarket Traders",
+   "date": "2026-10-01"
+  },
+  {
+   "name": "Sergeenkov/The Defiant Dune profitability report",
+   "date": "2026-04-06"
+  },
+  {
+   "name": "Polycopy Research, cost of copying top-100",
+   "date": "2026-09-08"
+  },
+  {
+   "name": "60 Minutes/CBS on Domer",
+   "date": "2025-11-30"
+  },
+  {
+   "name": "Finance Magnates, Polymarket dynamic fees vs latency bots (Dexter's Lab data)",
+   "date": "2026-01-07"
+  },
+  {
+   "name": "Telonex Research, 15-min crypto markets week teardown",
+   "date": "2026-02-13"
+  },
+  {
+   "name": "Bitquery, who decides Polymarket disputes",
+   "date": "2026-10-09"
+  },
+  {
+   "name": "Orochi Network, UMA oracle manipulation case",
+   "date": "2026-10-22"
+  },
+  {
+   "name": "Yahoo/Decrypt Wintermute liquidity Polymarket+Kalshi",
+   "date": "2026-05-29"
+  },
+  {
+   "name": "tradermath.org, quant firms in prediction markets",
+   "date": "2026-08-08"
+  },
+  {
+   "name": "CNBC, thinly traded contracts",
+   "date": "2026-07-02"
+  },
+  {
+   "name": "earnpark HLP vault review; CoinDesk/DL News JELLY & whale-slap; Presto Labs James Wynn",
+   "date": "2025-2026"
+  },
+  {
+   "name": "leolabs.me Polymarket leaderboard API guide",
+   "date": "2026-10"
+  }
+ ]
+}

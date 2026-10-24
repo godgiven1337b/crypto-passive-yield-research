@@ -1,0 +1,11 @@
+{
+ "params": {
+  "sample": 220,
+  "p_lo": 0.85,
+  "p_hi": 0.97,
+  "entry_slip": 0.01,
+  "generated": "2026-10-24T06:00:34.765033+00:00"
+ },
+ "report": {},
+ "trades": []
+}
