@@ -74,6 +74,13 @@ def collect_markets(max_events: int = 560, min_volume: float = 10_000) -> list[d
                 continue
             if end_ts > time.time() - 86400 or end_ts < time.time() - 90 * 86400:
                 continue
+            created = str(e.get("createdAt") or e.get("startDate") or "")[:19]
+            try:
+                created_ts = int(datetime.fromisoformat(created).replace(tzinfo=timezone.utc).timestamp())
+            except ValueError:
+                created_ts = 0
+            if created_ts and end_ts - created_ts < 10 * 86400:
+                continue  # короткоживущие (крипто-дейли) — T-1/T-3 не существуют
             for m in e.get("markets") or []:
                 try:
                     vol = float(m.get("volumeNum") or 0)
